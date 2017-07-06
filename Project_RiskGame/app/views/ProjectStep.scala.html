@@ -1,0 +1,1270 @@
+@*(hm: Map[models.Phase, List[models.ProjectStep]])*@
+@(model: models.InitialGameStat)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project Steps</title>
+        <link rel="shortcut icon" href="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" hredef="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        @*<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/jquery.bootgrid.css")" />*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/sweetalert.css")" />
+        <script src="@routes.Assets.at("javascripts/sweetalert.min.js")" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/demo.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/style.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/animate-custom.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/flipclock.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/sweetalert.css")" />
+        @*<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>*@
+        <script src="@routes.Assets.at("javascripts/sweetalert.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/flipclock.js")"></script>
+        <script src="@routes.Assets.at("javascripts/html2canvas.js")"></script>
+        <script src="@routes.Assets.at("javascripts/html2canvas.svg.js")"></script>
+        <script type="text/javascript" charset="utf-8" src="@routes.Application.gameJs()"></script>
+        @*<script src="@routes.Assets.at("javascripts/jquery.bootgrid.fa.js.js")" type="text/javascript"></script>*@
+        @*<script src="@routes.Assets.at("javascripts/jquery.bootgrid.js")" type="text/javascript"></script>*@
+        <style type="text/css">
+
+        .container > header {
+            padding: 0px 30px 10px 30px !important;
+
+        }
+
+        td {
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        .ProjectStepStyle{
+            background: #F25827;
+            border-color:#F05C2B;
+        }
+
+
+
+        .ProjectStepStyle:hover,
+        .ProjectStepStyle:focus,
+        .ProjectStepStyle:active,
+        .ProjectStepStyle.active {
+            background: #F53C00 !important;
+            border-color:#F53C00 !important;
+        }
+        .ProjectStepStyle:active,
+        .ProjectStepStyle.active {
+            background: #F53C00 !important;
+            border-color:#F53C00 !important;
+        }
+
+        .ProjectStepStyle.disabled,
+        .ProjectStepStyle[disabled]{
+            background: #595a5b !important;
+            border-color:#595a5b !important;
+        }
+
+        :disabled {
+            background: #595a5b !important;
+            border-color:#595a5b !important;
+        }
+        .stepStyle{
+            /* BUTTON STYLING */
+            border-top: 1px solid #fff;
+            box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 10px #000, 0 10px 30px #1b1b1b;
+            /*background: red;*/
+            /* FONT STYLING */
+
+            text-decoration: none;
+            color: #14467a;
+            font-weight: bold;
+        }
+        .stepStyle:hover{
+            /* BUTTON SHADOW */
+            box-shadow: 0 6px 6px #002851, 0 6px 0 #002851, -1px 0px 0 #003872, 0px 0px 0 #003872, 0px 7px 8px #000, 0 7px 20px #1b1b1b;
+        }
+        /* BLUE GRADIENT ON BUTTON */
+        .grad {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(114,184,255,1)), color-stop(100%,rgba(64,150,238,1)));
+            background: linear-gradient(to bottom, rgba(114,184,255,1) 0%,rgba(64,150,238,1) 100%);
+        }
+
+        /* ANIMATE THE BUTTON */
+        .transition,
+        .transition:hover,
+        {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .highlight {
+            position: relative;
+            margin: -200px auto 0 auto;
+            width: 500px;
+            height: 400px;
+            opacity: 0.4;
+            background: -moz-radial-gradient(top, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+            background: -webkit-gradient(radial, top top, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+            background: -webkit-radial-gradient(top, ellipse cover, rgba(255,255,255,0.3) 0px,rgba(255,255,255,0) 275px);
+        }
+        .phaseStyle{
+            /* BUTTON STYLING */
+            border-top: 1px solid #fff;
+            box-shadow: 0 5px 8px #EDBF5C, 0 8px 0 #EDBF5C, -2px 1px 0 #EDBF5C, 2px 1px 0 #EDBF5C, 0px 8px 10px #000, 0 10px 30px #EDBF5C;
+
+            /* FONT STYLING */
+
+            text-decoration: none;
+            color: #14467a;
+            font-weight: bold;
+        }
+
+        .phaseStyle:hover{
+            /* BUTTON SHADOW */
+            color: #ffffff;
+            box-shadow: 0 6px 6px #EDBF5C, 0 6px 0 #EDBF5C, -1px 0px 0 #EDBF5C, 0px 0px 0 #EDBF5C, 0px 7px 8px #000, 0 7px 20px #EDBF5C;
+        }
+        .modalHeader{
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(114,184,255,1)), color-stop(100%,rgba(64,150,238,1)));
+            background: linear-gradient(to bottom, rgba(114,184,255,1) 0%,rgba(64,150,238,1) 100%);
+        }
+
+
+
+
+        </style>
+
+
+    </head>
+    <script>
+
+
+            function myfunc() {
+
+                alert("aaaaaaaa");
+            }
+            var lastclickedTab;
+
+            function onProjectStepTabClick(){
+
+                lastclickedTab="projectStep";
+            }
+            function onRiskDashboardClick(){
+                lastclickedTab="riskDashboard";
+                $.ajax({
+                    type: 'POST',
+                    url: '@routes.GameController.getRiskCards()',
+//                     data : '',
+                    data: JSON.stringify(''),
+                    // dataType: 'json',
+                    contentType: 'application/json',
+                    success: function (data) {
+//                        alert(data);
+                        var result = " ";
+                        $("#grid-basic tbody") .empty();
+                        var firstRisk=data[0].riskId;
+                        for (i = 0; i < data.length; i++) {
+
+                            var obj = data[i];
+//                            obj.isComplete = obj.isComplete === 'false' ? "Not Completed" : "Completed";
+                            var isCompleted="";
+                            var isDisabled="";
+//                            alert(obj.budget+" "+obj.personnel);
+                            if(obj.complete){
+//                                alert('object is true')
+                                isCompleted="Completed"
+                                isDisabled="disabled='true'";
+                            }else{
+                                isCompleted="Pending"
+                            }
+
+
+
+                            var eligibleBudget=0;
+                            var eligibleCapabilityBonus=0;
+                            var eligibleCapabilityPoints=0;
+                            var eligiblePersonnelRemaining=0;
+////                            alert('hereee');
+                            eligibleBudget= parseInt(document.getElementById('budgetremaining').innerHTML) - obj.budget;
+                            eligibleCapabilityBonus= parseInt(document.getElementById('capabilitybonus').innerHTML) + obj.capabilityBonus;
+                            eligibleCapabilityPoints= parseInt(document.getElementById('capabilitypoints').innerHTML) + obj.capabilityPoints;
+                            eligiblePersonnelRemaining= parseInt(document.getElementById('personnelremaining').innerHTML) - obj.personnel;
+
+//                            alert(eligibleBudget+" "+eligiblePersonnelRemaining);
+////
+                            var setClassColor;
+                            var buttonDisable;
+                            if(eligibleBudget<0 || eligiblePersonnelRemaining<0){
+                                setClassColor="ProjectStepStyle";
+                                buttonDisable="true";
+//                                alert("you cannot perform this step "+obj.projectStepName );
+                            }else{
+                                setClassColor=" ";
+                                buttonDisable="false"
+                            }
+//                              alert(document.getElementById('budgetremaining').innerHTML);
+//                            alert("elig"+setColor);
+
+//                            alert(eligibleBudget+" "+eligibleCapabilityBonus+" "+eligibleCapabilityPoints+" "+eligiblePersonnelRemaining);
+
+
+
+
+//                            result=result+"<button id='"+obj.riskId+"' onclick='onRiskClick(id)'>"+obj.riskDescription+"</button><br/>";
+
+                            appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td>" + isCompleted + "</td>" +
+                                    "<td><button "+isDisabled+"" +
+                                    "  class='open-riskDialog btn btn-warning' href='#riskDialog'" +
+                                    "data-toggle='modal' "+
+                                    " data-buttondisable='"+buttonDisable+"'" +
+                                    "data-risk='" + obj.riskId +
+                                    "' data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                    "' data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                    "' " +
+//                                    "onclick=onMitigateRisk('"+obj.riskId+"')" +
+                                    ">Mitigate</button></td></tr>";
+                            $("#grid-basic tbody").append(appendquery);
+
+                        }
+                        document.getElementById('risks').innerHTML = result;
+                        onRiskClick(firstRisk);
+                    },
+                    error: function (data) {
+                        alert("error");
+                        //setError('Make call failed');
+                    }
+                });
+
+            }
+
+            $(document).on("click", ".open-riskDialog", function () {
+             //   alert($(this).data('risk'));
+
+//                var title = $(this).data('title');
+
+                var riskId=$(this).data('risk');
+                var budget = $(this).data('budget');
+                var budgetValue = $(this).data('budgetvalue');
+                var personnel = $(this).data('personnel');
+                var personnelValue = $(this).data('personnelvalue');
+                var buttonDisabled= $(this).data('buttondisable');
+                if(buttonDisabled===true){
+                    document.getElementById("isRiskDisabled").innerHTML="You don't have enough resources to mitigate this risk!";
+                }else{
+                    document.getElementById("isRiskDisabled").innerHTML="";
+                }
+                var projectStepId = $(this).data('id');
+//                $(".perform-risk").attr("id",projectStepId);
+                $(".perform-risk").attr("disabled",buttonDisabled);
+//                alert(buttonDisabled);
+
+
+                $(".perform-risk").attr("id",riskId);
+                $("#RiskBudget").text(budget);
+                $("#RiskBudgetValue").text(budgetValue);
+                $("#riskwindowtitle").text(riskId);
+                $("#RiskPersonnel").text(personnel);
+                $("#RiskPersonnelValue").text(personnelValue);
+//                $("#ProjectStepId").val(projectStepId);
+//                alert("<button id='"+projectStepId+"' class='btn btn-success perform-step'  style='margin-bottom: 20px' onclick='onPerformStep("+"\""+projectStepId+"\""+")' >Perform this Step</button>");
+//
+
+
+            });
+
+            function onMitigateRisk(id){
+//                alert(id);
+                onRiskClick(id);
+                onPerformStep(id);
+
+                $('#btnMitigateRisk').val(id);
+                $('#btnMitigateRisk').trigger('click');
+            }
+
+
+            var riskClicked="";
+            var totalSteps=0;
+            var stepsDone=0;
+            var onlyPlanning=true;
+            function onRiskClick(id){
+//                alert("fghjh "+id);
+                riskClicked=id;
+                var obj = {
+                    'riskid': id
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '@routes.GameController.getMitigationSteps()',
+//                     data : '',
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json',
+                    success: function (data) {
+
+                        totalSteps=data.length;
+                        stepsDone=0;
+                        var result = "";
+                        for (i = 0; i < data.length; i++) {
+                            var obj = data[i];
+
+                            var status;
+                            if(obj.status){
+                                stepsDone++;
+                                obj.status="disabled='true'";
+                            }
+
+//                                result= result+"<h1>"+obj.projectStepName+"</h1>";
+//                            alert();
+
+
+                            var eligibleBudget=0;
+                            var eligibleCapabilityBonus=0;
+                            var eligibleCapabilityPoints=0;
+                            var eligiblePersonnelRemaining=0;
+////                            alert('hereee');
+                            eligibleBudget= parseInt(document.getElementById('budgetremaining').innerHTML) - obj.budget;
+                            eligibleCapabilityBonus= parseInt(document.getElementById('capabilitybonus').innerHTML) + obj.capabilityBonus;
+                            eligibleCapabilityPoints= parseInt(document.getElementById('capabilitypoints').innerHTML) + obj.capabilityPoints;
+                            eligiblePersonnelRemaining= parseInt(document.getElementById('personnelremaining').innerHTML) - obj.personnel;
+
+//                            alert(eligibleBudget+" "+eligiblePersonnelRemaining);
+////
+                            var setClassColor;
+                            var buttonDisable;
+                            if(eligibleBudget<0 || eligiblePersonnelRemaining<0){
+                                setClassColor="ProjectStepStyle";
+                                buttonDisable="true";
+//                                alert("you cannot perform this step "+obj.projectStepName );
+                            }else{
+                                setClassColor=" ";
+                                buttonDisable="false"
+                            }
+//                              alert(document.getElementById('budgetremaining').innerHTML);
+//                            alert("elig"+setColor);
+
+//                            alert(eligibleBudget+" "+eligibleCapabilityBonus+" "+eligibleCapabilityPoints+" "+eligiblePersonnelRemaining);
+                            if(onlyPlanning){
+                                if(obj.phaseName=="PLANNING"){
+                                    result = result + "<button " +
+                                            " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                            " style='white-space: normal; ' " +
+                                            " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                            " data-toggle='modal' " +obj.status+
+                                            " data-buttondisable='"+buttonDisable+"'" +
+                                            "data-title='" + obj.projectStepName +
+                                            "'data-id='" + obj.projectStepId +
+                                            "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                            "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                            "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                            "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                            "'data-level='Level:' data-levelvalue='" + obj.level +
+                                            "'data-id='" + obj.projectStepId +
+                                            "'" +
+//                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                            "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                            "  id='todolink'>" + obj.projectStepName +
+                                            "</button><div class='col-md-1' style='height:90px;'></div>";
+//
+                                }else{
+                                    result = result + "<button disabled" +
+                                            " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                            " style='white-space: normal; ' " +
+                                            " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                            " data-toggle='modal' " +obj.status+
+                                            " data-buttondisable='"+buttonDisable+"'" +
+                                            "data-title='" + obj.projectStepName +
+                                            "'data-id='" + obj.projectStepId +
+                                            "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                            "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                            "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                            "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                            "'data-level='Level:' data-levelvalue='" + obj.level +
+                                            "'data-id='" + obj.projectStepId +
+                                            "'" +
+//                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                            "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                            "  id='todolink'>" + obj.projectStepName +
+                                            "</button><div class='col-md-1' style='height:90px;'></div>";
+//
+                                }
+
+
+                            }else{
+                                result = result + "<button " +
+                                        " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                        " style='white-space: normal; ' " +
+                                        " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                        " data-toggle='modal' " +obj.status+
+                                        " data-buttondisable='"+buttonDisable+"'" +
+                                        "data-title='" + obj.projectStepName +
+                                        "'data-id='" + obj.projectStepId +
+                                        "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                        "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                        "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                        "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                        "'data-level='Level:' data-levelvalue='" + obj.level +
+                                        "'data-id='" + obj.projectStepId +
+                                        "'" +
+//                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                        "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                        "  id='todolink'>" + obj.projectStepName +
+                                        "</button><div class='col-md-1' style='height:90px;'></div>";
+//
+                            }
+
+
+                        }
+//                        alert(stepsDone+"/"+totalSteps);
+
+                        document.getElementById('risksteps').innerHTML = result;
+                        document.getElementById('stepForRisk').innerHTML='Steps that are needed to be performed for '+id;
+                    },
+                    error: function (data) {
+                        alert("error in risk click");
+                        //setError('Make call failed');
+                    }
+                });
+
+            }
+
+
+            function onPerformStep(id){
+
+//                var isEligibleToPerformStep=true;
+                var performedStep=document.getElementById(id).innerHTML;
+                var isProduction = $('#btnIsProduction').val();
+               // alert("in project skip..turn no is " + document.getElementById('turnNo').innerHTML);
+                if(isProduction == "true"){
+                    var obj = {
+                        'id': 'null',
+                        'riskid' : 'null',
+                        'gameid':@model.getGameId,
+                        'skipturn':'false',
+                        'isProduction':isProduction,
+                        'riskmitigatedcount': parseInt($('#txtRisk').val()),
+                        'oneturn':document.getElementById('oneTurn').innerHTML,
+                        'twoturn':document.getElementById('twoTurn').innerHTML,
+                        'type': 'production',
+                        'budget': document.getElementById('budgetremaining').innerHTML,
+                        'capabilitybonus': document.getElementById('capabilitybonus').innerHTML,
+                        'capabilitypoints': document.getElementById('capabilitypoints').innerHTML,
+                        'personnel' :document.getElementById('personnelremaining').innerHTML,
+                        'turnno': document.getElementById('turnNo').innerHTML,
+                        'timetaken': 3,
+                        'performedsteps': 0,
+                        'totalsteps':totalSteps
+                    };
+                }
+
+                else if(id.indexOf("Skip") !==-1 && isProduction == "false"){
+//                    alert(id);
+                    var obj = {
+                        'id': 'null',
+                        'riskid' : 'null',
+                        'gameid':@model.getGameId,
+                        'skipturn':'true',
+                        'isProduction':isProduction,
+                        'riskmitigatedcount': parseInt($('#txtRisk').val()),
+                        'oneturn':document.getElementById('oneTurn').innerHTML,
+                        'twoturn':document.getElementById('twoTurn').innerHTML,
+                        'type': 'skipstep',
+                        'budget': document.getElementById('budgetremaining').innerHTML,
+                        'capabilitybonus': document.getElementById('capabilitybonus').innerHTML,
+                        'capabilitypoints': document.getElementById('capabilitypoints').innerHTML,
+                        'personnel' :document.getElementById('personnelremaining').innerHTML,
+                        'turnno': document.getElementById('turnNo').innerHTML,
+                        'timetaken': 3,
+                        'performedsteps': 0,
+                        'totalsteps':totalSteps
+                    };
+                }
+
+                else if(id.indexOf("CRM") !==-1){
+//                    alert(id);
+                    var obj = {
+                        'id': 'null',
+                        'riskid' : id,
+                        'gameid':@model.getGameId,
+                        'skipturn':'false',
+                        'isProduction':isProduction,
+                        'riskmitigatedcount': parseInt($('#txtRisk').val()),
+                        'oneturn':document.getElementById('oneTurn').innerHTML,
+                        'twoturn':document.getElementById('twoTurn').innerHTML,
+                        'type': 'risk',
+                        'budget': document.getElementById('budgetremaining').innerHTML,
+                        'capabilitybonus': document.getElementById('capabilitybonus').innerHTML,
+                        'capabilitypoints': document.getElementById('capabilitypoints').innerHTML,
+                        'personnel' :document.getElementById('personnelremaining').innerHTML,
+                        'turnno': document.getElementById('turnNo').innerHTML,
+                        'timetaken': 3,
+                        'performedsteps': stepsDone,
+                        'totalsteps':totalSteps
+                    };
+                } else{
+                    var obj = {
+                        'id': id,
+                        'riskid' : 'null',
+                        'gameid':@model.getGameId,
+                        'skipturn':'false',
+                        'isProduction':isProduction,
+                        'riskmitigatedcount': parseInt($('#txtRisk').val()),
+                        'oneturn':document.getElementById('oneTurn').innerHTML,
+                        'twoturn':document.getElementById('twoTurn').innerHTML,
+                        'type': 'projectstep',
+                        'budget': document.getElementById('budgetremaining').innerHTML,
+                        'capabilitybonus': document.getElementById('capabilitybonus').innerHTML,
+                        'capabilitypoints': document.getElementById('capabilitypoints').innerHTML,
+                        'personnel' :document.getElementById('personnelremaining').innerHTML,
+                        'turnno': document.getElementById('turnNo').innerHTML,
+                        'timetaken': 3,
+                        'performedsteps': 0,
+                        'totalsteps':1
+                    };
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@routes.GameController.performStep()',
+                    // data : JSON.stringify(obj),
+                    data: JSON.stringify(obj),
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (data) {
+                        onlyPlanning=false;
+                        document.getElementById('myCurrentTurn').innerHTML = performedStep;
+                        if(data.complete=="true"){
+//                            alert(data.complete);
+                            swal({
+                                        title: "Congratulations !",
+                                        text: "You ended up the game with "+data.budget,
+                                        confirmButtonColor: "#DD6B55",
+                                        confirmButtonText: "QuitGame",
+                                        closeOnConfirm: false,
+                                    },
+                                    function(isConfirm){
+                                        if (isConfirm) {
+//                                            alert("here");
+                                            $('#lnkLeave').trigger('click');
+
+                                        }
+                                    });
+                        }
+
+
+                       else if(data.steptype == "OOPS")
+                        {
+                           // $('#updateactivity').trigger('click');
+
+                            var alertmsg = "You lost ";
+
+                            if(data.oops_resource !=0) {
+                                alertmsg = alertmsg + data.oops_resource + " resource, ";
+                            }
+                            if(data.oops_points !=0) {
+                                alertmsg = alertmsg + data.oops_points + " capability points, ";
+                            }
+                            if(data.oops_bonus !=0) {
+                                alertmsg = alertmsg + data.oops_bonus + " capability bonus, ";
+                            }
+                            if(data.oops_budget !=0) {
+                                alertmsg = alertmsg + data.oops_budget + " dollars, ";
+                            }
+                            alertmsg = alertmsg.substring(0, alertmsg.length - 2);
+
+                            swal({   title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" });
+
+                            $("#oopsmsg").val(alertmsg);
+                            $("#isoops").val("true");
+                            $('#updateactivity').trigger('click');
+                          //  swal("YOU GOT AN OOPS CARD!",alertmsg, "error");
+                            document.getElementById('myCurrentTurn').innerHTML = "You got an OOPS card!";
+                        }
+                        else if(data.steptype == "SURPRISE"){
+
+                            var alertmsg = "You gained ";
+
+                            if(data.surprise_resource !=0) {
+                                alertmsg = alertmsg + data.surprise_resource + " resource, ";
+                            }
+                            if(data.surprise_points !=0) {
+                                alertmsg = alertmsg + data.surprise_points + " capability points, ";
+                            }
+                            if(data.surprise_bonus !=0) {
+                                alertmsg = alertmsg + data.surprise_bonus + " capability bonus, ";
+                            }
+                            if(data.surprise_budget !=0) {
+                                alertmsg = alertmsg + data.surprise_budget + " dollars, ";
+                            }
+                            alertmsg = alertmsg.substring(0, alertmsg.length - 2);
+
+                            swal({   title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" });
+                            $("#isoops").val("false");
+                            $("#oopsmsg").val(alertmsg);
+                            $('#updateactivity').trigger('click');
+                           // swal("YOU GOT A SURPRISE CARD!",alertmsg, "error");
+                            document.getElementById('myCurrentTurn').innerHTML = "You got a Surprise card!";
+                        }
+                        else if(data.steptype == "production"){
+                            var alertmsg = "";
+                            if(data.prod_money < 0){
+                                alertmsg = "Your product is not doing well. You lost " + Math.abs(data.prod_money) + " dollars in Production.";
+                            }
+                            else{
+                                alertmsg = "Your product is doing well. You won " + Math.abs(data.prod_money) + " dollars in Production.";
+                            }
+
+                            swal(alertmsg);
+                        }
+                        else if(data.steptype == "skipstep"){
+                            if($('#btnIsProduction').val() != "true"){
+                                swal({   title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" });
+                            }
+
+                        }
+                        else if(data.steptype == "risk"){
+                            if(data.risk_status == "success"){
+                                swal({   title: "SUCCESS!",   text: "RISK SUCCESSFULLY MITIGATED",   imageUrl: "/assets/images/rockon.png" });
+                            }
+                            else{
+                                swal({   title: "OOPS",   text: "RISK NOT MITIGATED",   imageUrl: "/assets/images/oops.png" });
+                            }
+                        }
+                        else
+                        {
+                            swal({   title: "SUCCESS!",   text: "PROJECT STEP SUCCESSFUL",   imageUrl: "/assets/images/rockon.png" });
+
+                        }
+                        document.getElementById('budgetremaining').innerHTML = data.budget;
+                        document.getElementById('capabilitypoints').innerHTML = data.capabilitypoints;
+                        document.getElementById('capabilitybonus').innerHTML = data.capabilitybonus;
+                        document.getElementById('personnelremaining').innerHTML = data.personnel;
+                        document.getElementById('turnNo').innerHTML = data.currentturn;
+                        document.getElementById('oneTurn').innerHTML = data.oneturn;
+                        document.getElementById('twoTurn').innerHTML = data.twoturn;
+                        onPhaseClick(currentPhase);
+
+                        onRiskClick(riskClicked);
+
+                        if(id.indexOf("CRM") !==-1 || lastclickedTab.indexOf("risk")!==-1){
+
+                            onRiskDashboardClick();
+                            $('#riskDialog').modal('hide');
+                        }
+                        refreshProjectSteps();
+
+
+                    },
+                    error: function (data) {
+                      //  alert("error in perform project step");
+                        alert(data);
+                        //setError('Make call failed');
+                    }
+                });
+            }
+
+            var currentPhase="";
+            var stepsDoneInPlanning=0;
+            function onPhaseClick(clicked_id) {
+
+                 //  alert(clicked_id);
+                currentPhase=clicked_id;
+                var test = 'abc';
+//                    var test = $.('#id').val();
+//                    alert(clicked_id);
+                var obj = {
+                    'phaseId': clicked_id
+                };
+
+                if(currentPhase == "CPM6"){
+                    swal({   title: "Are you sure?",   text: "You will not be able to do any further project steps after production!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, Go to Production!",   closeOnConfirm: false }, function(){
+
+               var maxTurns = document.getElementById('labelTurns').innerText;
+               var currentTurn =  document.getElementById('turnNo').innerHTML;
+                     /*   $('#grid-basic > tbody  > tr').each(function() {
+                            var status = $(this).find("input.name").val();
+
+
+                        });*/
+                        var riskcount = 0;
+                        $('#grid-basic tr').each(function() {
+                            var status = $(this).find("td").eq(2).html();
+
+                            if(status == "COMPLETED"){
+                                riskcount++;
+                            }
+                        });
+                        $('#txtRiskCount').val(riskcount.toString());
+                        //alert(riskcount);
+                        currentPhase = "CPM1";
+                        $('#btnIsProduction').val("true");
+                        $('#btnSkip').trigger('click');
+                    if(currentTurn < maxTurns) {
+                        swal("Your product is LIVE!", "You have successfully deployed your software to production.", "success");
+                    }
+                        });
+                }
+
+                else {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@routes.GameController.getProjectSteps()',
+                        // data : JSON.stringify(obj),
+                        data: JSON.stringify(obj),
+                        // dataType: 'json',
+                        contentType: 'application/json',
+                        success: function (data) {
+//                            alert(Object.prototype.toString.call(data));
+//                        alert('im here');
+                            var result = "";
+                            for (i = 0; i < data.length; i++) {
+                                var obj = data[i];
+                                if (currentPhase == "CPM1") {
+                                    if (obj.status) {
+                                        stepsDoneInPlanning++;
+                                    }
+                                }
+//                                alert(obj.status);
+                                var status;
+                                if (obj.status) {
+                                    obj.status = "disabled='true'"
+                                }
+
+
+                                var eligibleBudget = 0;
+                                var eligibleCapabilityBonus = 0;
+                                var eligibleCapabilityPoints = 0;
+                                var eligiblePersonnelRemaining = 0;
+////                            alert('hereee');
+                                eligibleBudget = parseInt(document.getElementById('budgetremaining').innerHTML) - obj.budget;
+                                eligibleCapabilityBonus = parseInt(document.getElementById('capabilitybonus').innerHTML) + obj.capabilityBonus;
+                                eligibleCapabilityPoints = parseInt(document.getElementById('capabilitypoints').innerHTML) + obj.capabilityPoints;
+                                eligiblePersonnelRemaining = parseInt(document.getElementById('personnelremaining').innerHTML) - obj.personnel;
+
+//                            alert(eligibleBudget+" "+eligiblePersonnelRemaining);
+////
+                                var setClassColor;
+                                var buttonDisable;
+                                if (eligibleBudget < 0 || eligiblePersonnelRemaining < 0) {
+                                    setClassColor = "ProjectStepStyle";
+                                    buttonDisable = "true";
+//                                alert("you cannot perform this step "+obj.projectStepName );
+                                } else {
+                                    setClassColor = " ";
+                                    buttonDisable = "false"
+                                }
+//                              alert(document.getElementById('budgetremaining').innerHTML);
+//                            alert("elig"+setColor);
+
+//                            alert(eligibleBudget+" "+eligibleCapabilityBonus+" "+eligibleCapabilityPoints+" "+eligiblePersonnelRemaining);
+
+                                result = result + "<button " +
+                                        " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                        " style='white-space: normal; ' " +
+                                        " class='open-EditTodo col-md-3 btn btn-success " + setClassColor + "'" +
+                                        " data-toggle='modal' " + obj.status +
+                                        " data-buttondisable='" + buttonDisable + "'" +
+                                        "data-title='" + obj.projectStepName +
+                                        "'data-id='" + obj.projectStepId +
+                                        "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                        "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                        "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                        "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                        "'data-level='Level:' data-levelvalue='" + obj.level +
+                                        "'data-id='" + obj.projectStepId +
+                                        "'" +
+//                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                        "title='Budget :" + obj.budget + "  Level: " + obj.level + "  Personnel: " + obj.personnel + "'" +
+                                        "  id='todolink'>" + obj.projectStepName +
+                                        "</button><div class='col-md-1' style='height:90px;'></div>";
+//                                    "</button><div class='col-md-1' style='height:90px;"+setColor+"'"></div>";
+
+                            }
+
+//                            alert("*********"+stepsDoneInPlanning);
+                            document.getElementById('desc').innerHTML = "Steps in " + document.getElementById(currentPhase).innerHTML ;
+
+                            document.getElementById('results').innerHTML = result;
+
+                        },
+                        error: function (data) {
+                            alert("error");
+                            //setError('Make call failed');
+                        }
+                    });
+                }
+            }
+
+            $(document).on("click", ".open-EditTodo", function () {
+//                alert($(this).data('title'));
+
+                var title = $(this).data('title');
+                var budget = $(this).data('budget');
+                var budgetValue = $(this).data('budgetvalue');
+                var capabilityPoints = $(this).data('capabilitypoints');
+                var capabilityPointsValue = $(this).data('capabilitypointsvalue');
+                var capabilityBonus = $(this).data('capabilitybonus');
+                var capabilityBonusValue = $(this).data('capabilitybonusvalue');
+
+                var level = $(this).data('level');
+                var levelValue = $(this).data('levelvalue');
+                var personnel = $(this).data('personnel');
+                var personnelValue = $(this).data('personnelvalue');
+//                alert(buttonDisabled);
+                var buttonDisabled= $(this).data('buttondisable');
+                if(buttonDisabled===true){
+                    document.getElementById("isDisabled").innerHTML="Oops! You don't have enough resources to perform this step!";
+                }else{
+                    document.getElementById("isDisabled").innerHTML="";
+                }
+                var projectStepId = $(this).data('id');
+                $(".perform-step").attr("id",projectStepId);
+                $(".perform-step").attr("disabled",buttonDisabled);
+                $("#windowtitle").text(title);
+                $("#Budget").text(budget);
+                $("#BudgetValue").text(budgetValue);
+                $("#CapabilityPoints").text(capabilityPoints);
+                $("#CapabilityPointsValue").text(capabilityPointsValue);
+                $("#CapabilityBonus").text(capabilityBonus);
+                $("#CapabilityBonusValue").text(capabilityBonusValue);
+                $("#Level").text(level);
+                $("#LevelValue").text(levelValue);
+                $("#Personnel").text(personnel);
+                $("#PersonnelValue").text(personnelValue);
+                $("#ProjectStepId").val(projectStepId);
+//                alert("<button id='"+projectStepId+"' class='btn btn-success perform-step'  style='margin-bottom: 20px' onclick='onPerformStep("+"\""+projectStepId+"\""+")' >Perform this Step</button>");
+//
+
+
+            });
+
+
+
+
+            function totalGameTimer() {
+
+                var sec = 0;
+
+                function pad(val) {
+                    return val > 9 ? val : "0" + val;
+                }
+
+                var timer = setInterval(function () {
+                    document.getElementById("seconds").innerHTML = pad(++sec % 60);
+                    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+                }, 1000);
+
+                setTimeout(function () {
+                    clearInterval(timer);
+                }, 50000000);
+            }
+            function refreshProjectSteps(){
+                @*alert(@model.getPhases.get(0).getPhaseName);*@
+                var result="";
+            @for(phases <- model.getPhases()) {
+
+                result = result+ "<button class='col-md-3 btn btn-warning' " +
+                        "style='background-color: #DB8B00 !important;'" +
+                        "onclick='onPhaseClick(id)' " +
+                        "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 60px;'> </div>";
+
+
+                }
+                document.getElementById('listOfProjectSteps').innerHTML = result;
+//                alert(result);
+
+            }
+
+            function newfunc(){
+                swal("", "Please do not refresh the screen else you will lose your data", "warning");
+
+            }
+    </script>
+    <body style="background-image: url(@routes.Assets.at("images/bg.jpg"));" onload="onProjectStepTabClick();newfunc();onPhaseClick('CPM1');
+    totalGameTimer()">
+        <input type="hidden" name="phase" id="phase" value="plan"/>
+        <input type="hidden" name="username" id="username" value='@model.getUserName()'/>
+        <input type="hidden" name="gameid" id="gameid" value='@model.getGameId()'/>
+        <input type="hidden" name="turn" id="turn" value='@model.getTurnNo()'/>
+        <input type="hidden" name="moveTime" id="moveTime" value='@model.getTimeForEachMove()'/>
+        <input type="hidden" id="notmymove" value=''/>
+
+        <div class="container" >
+
+            <form  id="dashform" hidden method ="GET" action="@routes.DashboardController.viewDashboard()">
+            </form>
+
+            <button hidden id="btnMitigateRisk" value=""></button>
+
+            <header style="" >
+
+                <div class="col-md-2" style="background-color: #CED4BD">RISK-GAME</div>
+                @*<div class="col-md-2 " ></div>*@
+                <div class="col-md-2" style="background-color: #CED4BD" id="gameid">Game ID: @model.getGameId()</div>
+                <div class="col-md-3" style="background-color: #CED4BD">
+                    Total no. of turns:
+                    <span id="labelTurns">@model.getStepsForEachPlayer()</span>
+                </div>
+                <div class="col-md-3" style="background-color: #CED4BD">
+                    Total Game time
+                    <span id="minutes">00</span>:<span id="seconds">00</span>
+                </div>
+                <div class="col-md-2" style="display: inline-block;">
+                        <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome @model.getUserName().split("@")(0)!</div>
+                    <div style=" display: inline-block;" class="btn-group">
+                        <button type="button"
+                        class=" dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Help</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" onclick="window.open('/assets/images/Riskdesc.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Risk Description</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="lnkLeave" href="#">Leave Game</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout" >Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <div class="col-xs-12" style="height: 30px;"></div>
+
+            <header>
+
+                    <!--// start of big1 div -->
+                <div class="col-md-2" style="border-right: 1px dashed #969C9E">
+
+
+                        <!-- //first div -->
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: #A8A2A3">
+                            <h4 class="panel-title">My Status</h4>
+                        </div>
+                        <div class="panel-body" style="height: 200px; overflow-wrap: break-word;overflow-y: scroll;font-size:small; text-align: left">
+                            <div style=" display: inline-block;">Budget:</div><div style=" display: inline-block; float: right " id="budgetremaining"> @model.getBudget()</div>
+                            <div style=" display: inline-block;">Capability Points:</div><div style=" display: inline-block; float: right" id="capabilitypoints"> @model.getCapabilityPoints()</div>
+                            <div style=" display: inline-block;">Capability Bonus:</div><div style=" display: inline-block; float: right" id="capabilitybonus"> @model.getCapabilityBonus()</div>
+                            <div style=" display: inline-block;">Personnel:</div><div style=" display: inline-block; float: right" id="personnelremaining"> @model.getResources</div>
+                            <div>No. of resources who will return after </div>
+                            <div style=" display: inline-block;">One Turn:</div><div style=" display: inline-block; float: right" id="oneTurn">0</div><br/>
+                            <div style=" display: inline-block;">Two Turns:</div><div style=" display: inline-block; float: right" id="twoTurn">0</div>
+                            @*<a data-toggle="modal" data-target="#myAssetModal" style="color: blue">More info >></a>*@
+
+                        </div>
+                        <div class="modal fade" id="myAssetModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Status</h4>
+                                    </div>
+                                    <div class="modal-body" style="text-align: left">
+                                        <div>Budget Remaining: @model.getBudget()</div>
+                                        <div>Capability Points: @model.getCapabilityPoints()</div>
+                                        <div>Capability Bonus: @model.getCapabilityBonus()</div>
+                                        <div>Risks Mitigated</div>
+
+                                        <div style="height: 30px;"></div>
+                                        <div style="font-weight: bolder;
+                                            font-size: large" >
+                                            <h2>Project Steps Completed</h2>
+                                        </div>
+                                        <div>Planning: 2/ 10</div>
+                                        <div>Requirements: 2/9</div>
+                                        <div>Design: </div>
+                                        <div>Implementation</div>
+                                        <div>Testing</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                        <!-- //end  of first div -->
+
+                        <!-- //second div -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: #A8A2A3">
+                            <h4 class="panel-title">Current Action</h4>
+                        </div>
+                        <div class="panel-body" style="height: 150px; overflow-wrap: break-word;overflow-y: scroll">
+                            <div style=" display: inline-block;">Turn No: </div><div style=" display: inline-block;" id="turnNo">1</div>
+
+                            <div class="col-md-3 mytimer" style="zoom: 0.4;padding:0" hidden>
+
+                            </div>
+                            <input type ="text" hidden id="btnIsProduction" value="false"/>
+                            <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)">Skip Turn</button>
+                            <button style="display: none" class="btn btn-danger" id="btnSkipTimeout" onclick="onPerformStep(id)">Timeout button</button>
+                            <div>Your last turn:</div>
+                            <div id="myCurrentTurn"></div>
+
+                        </div>
+
+                    </div>
+
+                        <!-- \\ end of second div -->
+
+                        <!-- \\ start of third div -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: #A8A2A3">
+                            <h4 class="panel-title">Active Players </h4>
+                        </div>
+                        <div id="activePlayersList" class="panel-body" style="height: 60px;overflow-wrap: break-word;overflow-y: scroll">
+                            user1<br/>
+                            user2<br/>
+                        </div>
+                    </div>
+                    @*<div style="height: 300px;*@
+                    @*border: 1px solid transparent;*@
+                    @*background-size: 100% 100%;*@
+                    @*background-image: url(@routes.Assets.at("images/chat1.jpg")) !important;"></div>*@
+
+
+                </div>
+                    <!-- \\ end of big1 div -->
+
+
+
+
+                    <!-- \\ start of center div - phases and steps -->
+                <div class="col-md-8 card" style="border: 1px solid transparent">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" onclick="onProjectStepTabClick()" href="#projectSteps">Project Steps</a></li>
+                        <li><a data-toggle="tab" href="#riskDashboard" onclick="onRiskDashboardClick()">Risk Dashboard</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="projectSteps" class="tab-pane fade in active">
+                            <div class="col-md-12" style="border: 1px solid transparent">
+
+                                <div style="height: 20px; "></div>
+
+                                <div id="listOfProjectSteps">
+
+
+                                    @for(phase <- model.getPhases()) {
+                                        @if(phase.getPhaseName().equalsIgnoreCase("PLANNING")){
+
+                                            <button  class="col-md-3 btn btn-warning"
+                                            style="background-color: #DB8B00 !important;"
+                                            onclick="onPhaseClick(id)"
+                                            id=@phase.getPhaseId>@phase.getPhaseName()</button>
+                                            <div class="col-md-1" style="height: 60px;"> </div>
+                                        }else{
+                                            <button disabled="true" class="col-md-3 btn btn-warning"
+                                            style="background-color: #DB8B00 !important;"
+                                            onclick="onPhaseClick(id)"
+                                            id=@phase.getPhaseId>@phase.getPhaseName()</button>
+                                            <div class="col-md-1" style="height: 60px;"> </div>
+                                        }
+
+                                    }
+
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                            <div class="col-md-12" style="border: 1px solid transparent;
+                                height: 400px">
+                                <hr style="width: 100%;
+                                    color: black;
+                                    height: 1px;
+                                    background-color: black;" />
+                                <div id="desc"></div>
+                                <div class="col-md-12" style="height: 30px;"> </div>
+
+                                <div id="results"></div>
+                            </div>
+
+
+
+                        </div>
+                        <div id="riskDashboard" class="tab-pane fade">
+
+                            <div id="risks"></div>
+                            <input type="text" id="txtRiskCount" hidden value="0" />
+
+                            <table id="grid-basic" class="table table-condensed table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="font-weight: bold; background-color: #7cbcd6" data-column-id="riskidcolumn" >Risk ID</th>
+                                        <th style="font-weight: bold; background-color: #7cbcd6" data-column-id="riskcolumn" data-formatter="link" data-order="desc">Risk Description</th>
+                                        <th style="font-weight: bold;background-color: #7cbcd6" data-column-id="statuscolumn">Status</th>
+                                        <th style="font-weight: bold;background-color: #7cbcd6" data-column-id="mitigatecolumn"></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+                            <br/>
+                            <div id="stepForRisk"></div>
+
+                            <br/><br/>
+                            <div id="risksteps"></div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                    <!-- \\ end of center div - phases and steps -->
+
+
+                <div class="col-md-2" style="border-left: 1px Dashed #969C9E;
+                    border-width: thin">
+
+
+                    <div class="panel panel-default" style="width:195px;margin-bottom: 5px; background: beige;">
+                        <div class="panel-heading" style="background-color: #A8A2A3">
+                            <h4 class="panel-title">Chat</h4>
+                        </div>
+                        <div id="chatArea" class="panel-body" style="height: 200px;font-size: 12px;
+                            border: 1px solid transparent;
+                            background-size: 100% 100%; overflow-wrap: break-word;overflow-y: scroll;text-align: left">
+                        </div>
+
+                    </div>
+
+                    <textarea id="txtMessage" placeholder="Enter text (max 250 characters) and hit enter." style="width:195px;margin-bottom:20px;">
+
+                    </textarea>
+                    <div>
+                        @*<input id="btnSend" style="width: inherit;" type="button" value="send"/>*@
+                    </div>
+
+
+                    <div class="panel panel-default" style="width:195px;">
+                        <div class="panel-heading" style="background-color: #A8A2A3">
+                            <h4 class="panel-title">Activity Log </h4>
+                        </div>
+                        <div class="panel-body" style="height: 300px;font-size: 12px; overflow-wrap: break-word;overflow-y: scroll" id="activity-log">
+
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+
+                <!-- This will be displayed if he is the observer -->
+
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+
+
+
+
+            <div class="modal fade" tabindex="-1" role="dialog" style="margin-top: 150px;" id="editTodoDialog">
+                <div class="modal-dialog" align="center">
+                    <div class="modal-content" style="width: 350px;">
+                        <div class="modal-header modalHeader" align="left" >
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">
+                                Close</span></button>
+                            <h4 id="windowtitle" class="modal-title" ></h4>
+
+
+                        </div>
+                        <div class="modal-body" align="center" style="display: inline">
+
+                            <table>
+                                <tr>
+                                    <td><h5 id="Budget" > </h5></td>
+                                    <td><h5 id="BudgetValue"></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5 id="CapabilityPoints" > </h5></td>
+                                    <td><h5 id="CapabilityPointsValue"></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5 id="CapabilityBonus" > </h5></td>
+                                    <td><h5 id="CapabilityBonusValue"></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5 id="Level" > </h5></td>
+                                    <td><h5 id="LevelValue"></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5 id="Personnel" > </h5></td>
+                                    <td> <h5 id="PersonnelValue"></h5></td>
+                                </tr>
+
+                            </table>
+
+                            <input type="hidden" id="ProjectStepId" value="">
+
+                            <div class="col-xs-12" style="height: 30px;"></div>
+                            <div id="performstep"></div>
+                            <button disabled=""  id="" class="btn btn-success perform-step"  style="margin-bottom: 20px" onclick="onPerformStep(id)" >Perform this Step</button>
+                            <button data-dismiss="modal" class="btn btn-danger"  style="margin-bottom: 20px" aria-label="Close">Cancel</button>
+                            <button disabled="" hidden  id="updateactivity" class=""  style="margin-bottom: 20px"  ></button>
+                            <input type="text" hidden id="oopsmsg" />
+                            <input type="text" hidden id="isoops" />
+                            <div id="isDisabled" style="color: #8b0000;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" tabindex="-1" role="dialog" style="margin-top: 150px;" id="riskDialog">
+                <div class="modal-dialog" align="center">
+                    <div class="modal-content" style="width: 350px;">
+                        <div class="modal-header modalHeader" align="left" >
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">
+                                Close</span></button>
+                            <h4 id="riskwindowtitle" class="modal-title" >new window</h4>
+
+
+                        </div>
+                        <div class="modal-body" align="center" style="display: inline">
+
+                            <table>
+                                <tr>
+                                    <td><h5 id="RiskBudget" > </h5></td>
+                                    <td><h5 id="RiskBudgetValue"></h5></td>
+                                </tr>
+
+                                <tr>
+                                    <td><h5 id="RiskPersonnel" > </h5></td>
+                                    <td> <h5 id="RiskPersonnelValue"></h5></td>
+                                </tr>
+
+                            </table>
+
+                            <input type="hidden" id="ProjectStepId" value="">
+
+                            <div class="col-xs-12" style="height: 30px;"></div>
+                            <div id="performstep"></div>
+                            <button id="performrisk" class="btn btn-success perform-risk"  style="margin-bottom: 20px" onclick="onMitigateRisk(id)" >Perform this Risk</button>
+                            <button data-dismiss="modal" class="btn btn-danger"  style="margin-bottom: 20px" aria-label="Close">Cancel</button>
+                            <div id="isRiskDisabled" style="color: #8b0000;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
