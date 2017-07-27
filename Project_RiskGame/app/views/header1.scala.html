@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style>
-  .navbar-nav > li > a  , .navbar-brand {
+  .navbar-nav > li > a, .navbar-brand {
     padding-top:5px !important; padding-bottom:0 !important;
     height: 30px; color: white;
   }
 
- #uname {
-    padding-top:5px !important; padding-bottom:0 !important;
-    height: 30px; color: white;
-  }
   .navbar {min-height:30px !important;}
 
   header {
@@ -24,6 +20,7 @@
   }
 
   </style>
+  
 </head>
 <body>
   <header>
@@ -33,16 +30,12 @@
 
       </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="#">Signed in as
+      <li><a href="#">Signed in as
      </a></li>
-       <!--\\<li><a href="#">Signed in as <div id="uname">@Http.Context.current().args.get("username").asInstanceOf[String]</div>
-      <li><a href="#">Signed in as @Http.Context.current().args.get("username").asInstanceOf[String] 
-      </a></li>-->
-      <li><a href="#" id="uname">@Http.Context.current().args.get("username").asInstanceOf[String]
+      <li><a href="#" id="uname">
       </a></li>
       <script> 
-            var uname=document.getElementById("uname").innerHTML;
-            sessionStorage.username =uname;
+            document.getElementById("uname").innerHTML=sessionStorage.getItem("username");
       </script>
       <li> <a href="/logout" >Logout</a></li>
       <li>&nbsp;&nbsp;&nbsp;</li>
