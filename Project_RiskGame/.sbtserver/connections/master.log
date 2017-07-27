@@ -1214,3 +1214,6 @@ New client attempting to connect on port: 64812-52834
 This client on port 64812 has uuid ad96249f-2a29-4309-9628-7ef32717fc7c configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
 Connected Clients: activator-5c4329f7-7e48-4553-85f2-500560e7d48f, play-fork-run-d992588b-b6b6-4d67-9295-cc3e10f91746, play-fork-run-c9735ed9-78e7-401b-ad8d-8152ba24704e, play-fork-run-ad96249f-2a29-4309-9628-7ef32717fc7c
 Taking next connection to: 52834
+Checking to see if clients are empty...
+We have 2 non-daemon clients, continuing serving connections.
+Taking next connection to: 52834
