@@ -1,1 +1,7 @@
 New log file opened at Thu Jul 27 10:19:38 EDT 2017 by 1104@Dineshs-MacBook-Air.local
+Taking next connection to: 49911
+New client attempting to connect on port: 49912-49911
+  Address = /10.0.0.238:49911
+This client on port 49912 has uuid 6f7e93bb-02f8-4b3f-b34c-f016076edb0a configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-6f7e93bb-02f8-4b3f-b34c-f016076edb0a
+Taking next connection to: 49911
