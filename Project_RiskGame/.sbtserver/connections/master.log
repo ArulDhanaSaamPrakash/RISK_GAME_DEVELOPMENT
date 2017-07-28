@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 New log file opened at Fri Jul 28 15:34:15 EDT 2017 by 4729@Dineshs-Air.wv.cc.cmu.edu
 Taking next connection to: 57904
 New client attempting to connect on port: 57905-57904
@@ -8,6 +9,21 @@ Taking next connection to: 57904
 New client attempting to connect on port: 57906-57904
   Address = /128.237.130.90:57904
 Handshake exception on socket: 57906
+=======
+New log file opened at Fri Jul 28 17:43:33 EDT 2017 by 2398@Aruls-Air.wv.cc.cmu.edu
+Taking next connection to: 50940
+New client attempting to connect on port: 50942-50940
+  Address = /128.237.160.61:50940
+This client on port 50942 has uuid 787941f4-3035-4f95-8852-b6301a482a9c configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-787941f4-3035-4f95-8852-b6301a482a9c
+Taking next connection to: 50940
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50940
+New client attempting to connect on port: 51167-50940
+  Address = /128.237.160.61:50940
+Handshake exception on socket: 51167
+>>>>>>> Stashed changes
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -17,6 +33,7 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
+<<<<<<< Updated upstream
 Taking next connection to: 57904
 New client attempting to connect on port: 57907-57904
   Address = /128.237.130.90:57904
@@ -203,3 +220,17 @@ Taking next connection to: 57904
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
 Taking next connection to: 57904
+=======
+Taking next connection to: 50940
+New client attempting to connect on port: 51168-50940
+  Address = /128.237.160.61:50940
+This client on port 51168 has uuid 317c32a2-6bcf-4744-b4e5-ccdb1772ac39 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-787941f4-3035-4f95-8852-b6301a482a9c, play-fork-run-317c32a2-6bcf-4744-b4e5-ccdb1772ac39
+Taking next connection to: 50940
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50940
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50940
+>>>>>>> Stashed changes
