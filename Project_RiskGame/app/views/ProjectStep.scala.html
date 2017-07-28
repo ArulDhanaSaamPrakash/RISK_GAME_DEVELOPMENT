@@ -44,7 +44,12 @@
             border-color:#F05C2B;
         }
 
-
+        .sweet-alert { 
+            position: fixed;
+            height:210px;
+            width: 180px; 
+            top:340px;
+            left:340px;}
 
         .ProjectStepStyle:hover,
         .ProjectStepStyle:focus,
@@ -547,8 +552,8 @@
                         if(data.complete=="true"){
 //                            alert(data.complete);
                             swal({
-                                        title: "Congratulations !",
-                                        text: "You ended up the game with "+data.budget,
+                                        title: "",
+                                        text: "You ended the game with budget "+data.budget,
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "QuitGame",
                                         closeOnConfirm: true,
@@ -688,7 +693,7 @@
                 };
 
                 if(currentPhase == "CPM6"){
-                    swal({   title: "Are you sure?",   text: "You will not be able to do any further project steps after production!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, Go to Production!",   closeOnConfirm: false }, function(){
+                    swal({   title: "Are you sure!!!",   text: "Do you want to move to Production?",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes",   closeOnConfirm: false }, function(){
 
                var maxTurns = document.getElementById('labelTurns').innerText;
                var currentTurn =  document.getElementById('turnNo').innerHTML;
@@ -888,7 +893,7 @@
             }
 
             function newfunc(){
-                swal("", "Please do not refresh the screen else you will lose your data", "warning");
+                swal("", "Do not refresh the screen");
 
             }
     </script>
@@ -1081,7 +1086,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" onclick="onProjectStepTabClick()" href="#projectSteps">Project Steps</a></li>
                         <li><a data-toggle="tab" href="#riskDashboard" onclick="onRiskDashboardClick()">Risk Dashboard</a></li>
-                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)">Skip Turn</button>
+                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)" style="float:right">Skip Turn</button>
                         <button style="display: none" class="btn btn-danger" id="btnSkipTimeout" onclick="onPerformStep(id)">Timeout button</button>
 
                     </ul>
@@ -1254,11 +1259,12 @@
                             </table>
 
                             <input type="hidden" id="ProjectStepId" value="">
-
+                           <!-- <div class="sweet-alert"> -->
                             <div class="col-xs-12" style="height: 10px;"></div>
                             <div id="performstep"></div>
                             <button disabled=""  id="" class="btn btn-success perform-step"  style="margin-bottom: 10px" onclick="onPerformStep(id)" >Perform this Step</button>
                             <button data-dismiss="modal" class="btn btn-danger"  style="margin-bottom: 10px" aria-label="Close">Cancel</button>
+                           
                             <button disabled="" hidden  id="updateactivity" class=""  style="margin-bottom: 10px"  ></button>
                             <input type="text" hidden id="oopsmsg" />
                             <input type="text" hidden id="isoops" />
