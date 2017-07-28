@@ -1,13 +1,13 @@
-New log file opened at Fri Jul 28 10:33:27 EDT 2017 by 20974@Aruls-MacBook-Air.local
-Taking next connection to: 53380
-New client attempting to connect on port: 53381-53380
-  Address = /10.0.0.144:53380
-This client on port 53381 has uuid a50db709-bb2d-45fc-b391-8d56db14d711 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-a50db709-bb2d-45fc-b391-8d56db14d711
-Taking next connection to: 53380
-New client attempting to connect on port: 53382-53380
-  Address = /10.0.0.144:53380
-Handshake exception on socket: 53382
+New log file opened at Fri Jul 28 11:04:04 EDT 2017 by 4167@Dineshs-MacBook-Air.local
+Taking next connection to: 57605
+New client attempting to connect on port: 57606-57605
+  Address = /10.0.0.238:57605
+This client on port 57606 has uuid 05ec34a8-1791-48b8-9cc7-af8abafa833c configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-05ec34a8-1791-48b8-9cc7-af8abafa833c
+Taking next connection to: 57605
+New client attempting to connect on port: 57609-57605
+  Address = /10.0.0.238:57605
+Handshake exception on socket: 57609
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -17,30 +17,12 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 53380
-New client attempting to connect on port: 53383-53380
-  Address = /10.0.0.144:53380
-This client on port 53383 has uuid d6476243-bde9-4d10-a730-05322fd914e0 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-a50db709-bb2d-45fc-b391-8d56db14d711, play-fork-run-d6476243-bde9-4d10-a730-05322fd914e0
-Taking next connection to: 53380
+Taking next connection to: 57605
+New client attempting to connect on port: 57610-57605
+  Address = /10.0.0.238:57605
+This client on port 57610 has uuid f9434bb2-7631-4e0c-9b0c-0dd9637766c7 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-05ec34a8-1791-48b8-9cc7-af8abafa833c, play-fork-run-f9434bb2-7631-4e0c-9b0c-0dd9637766c7
+Taking next connection to: 57605
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53380
+Taking next connection to: 57605
