@@ -61,8 +61,8 @@ Seq[Any](_display_(/*1.2*/main(null)/*1.12*/ {_display_(Seq[Any](format.raw/*1.1
 object player extends player_Scope0.player
               /*
                   -- GENERATED --
-                  DATE: Fri Jul 28 15:10:23 EDT 2017
-                  SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/app/views/player.scala.html
+                  DATE: Fri Jul 28 19:28:34 EDT 2017
+                  SOURCE: /Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/app/views/player.scala.html
                   HASH: 334d2ea18f63c43ece3f4c139f04f172e35bc535
                   MATRIX: 829->1|847->11|886->13|917->18|1072->147|1086->153|1132->179
                   LINES: 32->1|32->1|32->1|33->2|39->8|39->8|39->8

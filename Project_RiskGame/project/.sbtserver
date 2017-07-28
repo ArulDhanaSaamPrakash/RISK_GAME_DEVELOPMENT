@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-#Server Startup at 2017-07-28T19:34+0000
-#Fri Jul 28 15:34:15 EDT 2017
-server.uri=http\://0.0.0.0\:57904
-=======
-#Server Startup at 2017-07-28T21:43+0000
-#Fri Jul 28 17:43:33 EDT 2017
-server.uri=http\://0.0.0.0\:50940
->>>>>>> Stashed changes
+#Server Startup at 2017-07-28T23:27+0000
+#Fri Jul 28 19:27:48 EDT 2017
+server.uri=http\://0.0.0.0\:63574
