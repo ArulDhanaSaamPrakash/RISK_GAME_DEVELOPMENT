@@ -1,5 +1,0 @@
-New log file opened at Thu Jul 27 17:23:48 EDT 2017 by 3395@Aruls-Air.wv.cc.cmu.edu
-Sending msg to client play-fork-run-d992588b-b6b6-4d67-9295-cc3e10f91746: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/.sbtserver/connections/master.log))
-Sending msg to client play-fork-run-d992588b-b6b6-4d67-9295-cc3e10f91746: DetachedLogEvent(LogMessage(debug,sbt client logs are in: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/.sbtserver/connections/play-fork-run-d992588b-b6b6-4d67-9295-cc3e10f91746.log))
-Sending msg to client play-fork-run-d992588b-b6b6-4d67-9295-cc3e10f91746: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/.sbtserver/master.log))
-Reading next message from client.
