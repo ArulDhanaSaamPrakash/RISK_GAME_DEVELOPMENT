@@ -364,7 +364,7 @@
                                 if(obj.phaseName=="PLANNING"){
                                     result = result + "<button " +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal; ' " +
+                                            " style='white-space: normal;height:55px; ' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -385,7 +385,7 @@
                                 }else{
                                     result = result + "<button disabled" +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal; ' " +
+                                            " style='white-space: normal;height:55px; ' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -409,7 +409,7 @@
                             }else{
                                 result = result + "<button " +
                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                        " style='white-space: normal; ' " +
+                                        " style='white-space: normal;height:55px; ' " +
                                         " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                         " data-toggle='modal' " +obj.status+
                                         " data-buttondisable='"+buttonDisable+"'" +
@@ -588,8 +588,8 @@
                             }
                             alertmsg = alertmsg.substring(0, alertmsg.length - 2);
 
-                            swal({   title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" });
-
+                           // swal({   title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" });
+                            document.getElementById('swalmessages').innerHTML = alertmsg;
                             $("#oopsmsg").val(alertmsg);
                             $("#isoops").val("true");
                             $('#updateactivity').trigger('click');
@@ -614,7 +614,9 @@
                             }
                             alertmsg = alertmsg.substring(0, alertmsg.length - 2);
 
-                            swal({   title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" });
+                            //swal({   title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" });
+                            //var temp="Got a Suprise card";
+                            document.getElementById('swalmessages').innerHTML = alertmsg;
                             $("#isoops").val("false");
                             $("#oopsmsg").val(alertmsg);
                             $('#updateactivity').trigger('click');
@@ -630,26 +632,34 @@
                                 alertmsg = "Your product is doing well. You won " + Math.abs(data.prod_money) + " dollars in Production.";
                             }
 
-                            swal(alertmsg);
+                            //swal(alertmsg);
+                                document.getElementById('swalmessages').innerHTML = alertmsg;
                         }
                         else if(data.steptype == "skipstep"){
                             if($('#btnIsProduction').val() != "true"){
-                                swal({   title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" });
+                                //swal({   title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" });
+                                var temp1="Skipped turn";
+                                document.getElementById('swalmessages').innerHTML = temp1;
                             }
 
                         }
                         else if(data.steptype == "risk"){
                             if(data.risk_status == "success"){
-                                swal({   title: "SUCCESS!",   text: "RISK SUCCESSFULLY MITIGATED",   imageUrl: "/assets/images/rockon.png" });
+                                //swal({   title: "SUCCESS!",   text: "RISK SUCCESSFULLY MITIGATED",   imageUrl: "/assets/images/rockon.png" });
+                                var temp2="Risk was mitigated";
+                                document.getElementById('swalmessages').innerHTML = temp2;
                             }
                             else{
-                                swal({   title: "OOPS",   text: "RISK NOT MITIGATED",   imageUrl: "/assets/images/oops.png" });
+                                //swal({   title: "OOPS",   text: "RISK NOT MITIGATED",   imageUrl: "/assets/images/oops.png" });
+                                var temp3="Risk not mitigated";
+                                document.getElementById('swalmessages').innerHTML = temp3;
                             }
                         }
                         else
                         {
-                            swal({   title: "SUCCESS!",   text: "PROJECT STEP SUCCESSFUL",   imageUrl: "/assets/images/rockon.png" });
-
+                            //swal({   title: "SUCCESS!",   text: "PROJECT STEP SUCCESSFUL",   imageUrl: "/assets/images/rockon.png" });
+                            var temp4="Project Step Successful";
+                            document.getElementById('swalmessages').innerHTML = temp4;
                         }
                         document.getElementById('budgetremaining').innerHTML = data.budget;
                         document.getElementById('capabilitypoints').innerHTML = data.capabilitypoints;
@@ -962,7 +972,7 @@
                           <h4 class="panel-title">Current Action</h4>
                       </div>
                       <div class="panel-body" style="height: 350px; overflow-wrap: break-word;text-align:justify;">
-                          <div style=" display: inline-block;text-align:justify;">Turn No: </div>
+                          <div style=" display: inline-block;text-align:center;">Current Turn No: </div>
 
                  <div style=" display: inline-block;text-align:justify" id="turnNo">1</div>
 
@@ -972,9 +982,9 @@
 
 
                           <input type ="text" hidden id="btnIsProduction" value="false"/>
-                          <div>Your last turn:</div>
+                          <div>Your last turn status:</div>
 
-                            <div id="swalmessages"> This is another Div..  </div>
+                            <div id="swalmessages">  </div>
 
                             <div id="myCurrentTurn" style="display: none;">
                             </div>
