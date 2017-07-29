@@ -30,7 +30,7 @@
         <style type="text/css">
 
         .container > header {
-            padding: 0px 30px 10px 30px !important;
+            padding: 0px 0px 0px 0px !important;
 
         }
 
@@ -44,10 +44,10 @@
             border-color:#F05C2B;
         }
 
-        .sweet-alert { 
+        .sweet-alert {
             position: fixed;
             height:210px;
-            width: 180px; 
+            width: 180px;
             top:340px;
             left:340px;}
 
@@ -906,7 +906,7 @@
         <input type="hidden" name="moveTime" id="moveTime" value='@model.getTimeForEachMove()'/>
         <input type="hidden" id="notmymove" value=''/>
 
-        <div class="container" >
+        <div class="container" style="padding: 0px 0px 0px 0px !important;">
 
             <form  id="dashform" hidden method ="GET" action="@routes.DashboardController.viewDashboard()">
             </form>
@@ -950,18 +950,18 @@
 
 
 
-            <div class="col-xs-12" style="height: 30px;"></div>
+            <div class="col-xs-12" style="height: 10px;"></div>
 
             <header>
 
                     <!--// start of big1 div -->
-                <div class="col-md-2" style="border-right: 1px dashed #969C9E">
+                <div class="col-md-2" style="border-right: 1px dashed #969C9E;padding: 0px 0px 0px 0px !important;">
 
                   <div class="panel panel-default">
                       <div class="panel-heading" style="background-color: #A8A2A3">
                           <h4 class="panel-title">Current Action</h4>
                       </div>
-                      <div class="panel-body" style="height: 350px;width:200px; overflow-wrap: break-word;overflow-y: scroll">
+                      <div class="panel-body" style="height: 350px; overflow-wrap: break-word;">
                           <div style=" display: inline-block;">Turn No: </div><div style=" display: inline-block;" id="turnNo">1</div>
 
 
@@ -981,7 +981,7 @@
 
 
                         <!-- \\ start of third div -->
-                        <div class="panel panel-default" style="width:195px;margin-bottom: 5px; background: beige;">
+                        <div class="panel panel-default" style="margin-bottom: 5px; background: beige;padding: 0px 0px 0px 0px !important;">
                             <div class="panel-heading" style="background-color: #A8A2A3">
                                 <h4 class="panel-title">Chat</h4>
                             </div>
@@ -992,7 +992,7 @@
 
                         </div>
 
-                        <textarea id="txtMessage" placeholder="Enter text (max 250 characters) and hit enter." style="width:195px;margin-bottom:20px;">
+                        <textarea id="txtMessage" placeholder="Enter text (max 250 characters) and hit enter." style="width:223px;margin-bottom:20px;">
 
                         </textarea>
                         <div>
@@ -1179,12 +1179,12 @@
 
 
                 <div class="col-md-2" style="border-left: 1px Dashed #969C9E;
-                    border-width: thin">
+                    border-width: thin;padding: 0px 0px 0px 0px !important;">
                     <div class="panel panel-default">
                         <div class="panel-heading" style="background-color: #A8A2A3">
                             <h4 class="panel-title">Active Players </h4>
                         </div>
-                        <div id="activePlayersList" class="panel-body" style="height: 60px;overflow-wrap: break-word;overflow-y: scroll">
+                        <div id="activePlayersList" class="panel-body" style="height: 200px;overflow-wrap: break-word;">
                             user1<br/>
                             user2<br/>
                         </div>
@@ -1197,7 +1197,7 @@
 
 
 
-                    <div class="panel panel-default" style="width:195px;overflow-y: scroll">
+                    <div class="panel panel-default" >
                         <div class="panel-heading" style="background-color: #A8A2A3">
                             <h4 class="panel-title">Action Log </h4>
                         </div>
@@ -1264,7 +1264,7 @@
                             <div id="performstep"></div>
                             <button disabled=""  id="" class="btn btn-success perform-step"  style="margin-bottom: 10px" onclick="onPerformStep(id)" >Perform this Step</button>
                             <button data-dismiss="modal" class="btn btn-danger"  style="margin-bottom: 10px" aria-label="Close">Cancel</button>
-                           
+
                             <button disabled="" hidden  id="updateactivity" class=""  style="margin-bottom: 10px"  ></button>
                             <input type="text" hidden id="oopsmsg" />
                             <input type="text" hidden id="isoops" />
