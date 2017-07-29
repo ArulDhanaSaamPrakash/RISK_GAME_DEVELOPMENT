@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2017-07-28 20:03:35,776 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-2 - Starting application default Akka system: application
 2017-07-28 20:03:35,933 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 2017-07-28 20:03:48,049 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
@@ -9,3 +10,14 @@
 2017-07-28 20:03:50,678 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
 2017-07-28 20:04:18,775 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-2 - Shutdown application default Akka system: application
 2017-07-28 20:04:18,911 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+=======
+2017-07-28 19:30:22,636 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-2 - Starting application default Akka system: application
+2017-07-28 19:30:22,858 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2017-07-28 19:30:32,977 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-07-28 19:30:33,998 [WARN] from application in ForkJoinPool-1-worker-1 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-07-28 19:30:34,023 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2017-07-28 19:30:35,273 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-07-28 19:30:36,068 [INFO] from play.api.libs.concurrent.ActorSystemProvider in ForkJoinPool-1-worker-1 - Starting application default Akka system: application
+2017-07-28 19:30:36,204 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-07-28 19:30:36,490 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+>>>>>>> origin/master

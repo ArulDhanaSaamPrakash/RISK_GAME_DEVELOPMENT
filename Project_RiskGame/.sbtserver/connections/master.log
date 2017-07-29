@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 New log file opened at Fri Jul 28 19:43:37 EDT 2017 by 3655@Aruls-Air.wv.cc.cmu.edu
 Taking next connection to: 64437
 New client attempting to connect on port: 64438-64437
@@ -29,6 +30,18 @@ Taking next connection to: 64437
 New client attempting to connect on port: 49217-64437
   Address = /128.237.160.61:64437
 Handshake exception on socket: 49217
+=======
+New log file opened at Fri Jul 28 19:27:48 EDT 2017 by 6147@Dineshs-Air.wv.cc.cmu.edu
+Taking next connection to: 63574
+New client attempting to connect on port: 63575-63574
+  Address = /128.237.130.90:63574
+This client on port 63575 has uuid c9973aa6-b9e8-40c4-b825-0116ecd6273e configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-c9973aa6-b9e8-40c4-b825-0116ecd6273e
+Taking next connection to: 63574
+New client attempting to connect on port: 63578-63574
+  Address = /128.237.130.90:63574
+Handshake exception on socket: 63578
+>>>>>>> origin/master
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -38,6 +51,7 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
+<<<<<<< HEAD
 Taking next connection to: 64437
 New client attempting to connect on port: 49218-64437
   Address = /128.237.160.61:64437
@@ -137,3 +151,14 @@ New client attempting to connect on port: 51498-64437
 This client on port 51498 has uuid 40068537-5168-41fe-a93b-f2d79b81dca9 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
 Connected Clients: activator-f069c547-dcaa-4d83-9d96-059e1d3ff255, play-fork-run-40068537-5168-41fe-a93b-f2d79b81dca9
 Taking next connection to: 64437
+=======
+Taking next connection to: 63574
+New client attempting to connect on port: 63579-63574
+  Address = /128.237.130.90:63574
+This client on port 63579 has uuid 2b9ce7d2-1fc8-4d48-a62a-78ac03ec70e5 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-c9973aa6-b9e8-40c4-b825-0116ecd6273e, play-fork-run-2b9ce7d2-1fc8-4d48-a62a-78ac03ec70e5
+Taking next connection to: 63574
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63574
+>>>>>>> origin/master
