@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for riskgame#riskgame_2.11;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies riskgame#riskgame_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6a246431[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@76967765[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -432,7 +432,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (80ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (88ms)[0m
 [0m[[0minfo[0m] [0mResolving com.google.inject.extensions#extensions-parent;4.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.inject.extensions#extensions-parent;4.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.inject.extensions#extensions-parent;4.0[0m
@@ -8128,7 +8128,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 15856ms :: artifacts dl 398ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 9757ms :: artifacts dl 186ms[0m
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 compile produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 runtime produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 test produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-test.xml[0m
@@ -8143,5 +8143,5 @@
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 pom produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 scala-tool produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for riskgame#riskgame_2.11;1.0 fork-run produced in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/resolution-cache/reports/riskgame-riskgame_2.11-fork-run.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (15856ms resolve - 398ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (9757ms resolve - 186ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
