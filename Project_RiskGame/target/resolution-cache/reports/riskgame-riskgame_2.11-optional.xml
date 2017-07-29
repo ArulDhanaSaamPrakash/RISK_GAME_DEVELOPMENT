@@ -7,11 +7,7 @@
 		revision="1.0"
 		conf="optional"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-<<<<<<< HEAD
 		date="20170728185151"/>
-=======
-		date="20170728192825"/>
->>>>>>> origin/master
 	<dependencies>
 	</dependencies>
 </ivy-report>
