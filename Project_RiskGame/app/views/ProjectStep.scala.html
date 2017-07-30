@@ -156,6 +156,24 @@
     </head>
     <script>
 
+var isImplementedBeforeProduction=false;
+var isOOPSCard=false;
+var isSurpriseCard=false;
+var isSkipped=false;
+var c=1;
+var cr=1;
+var cd=1;
+var ci=1;
+var cp=1;
+var ct=1;
+var isImplementationPlanningDone=false;
+var isDesignPlanningDone=false;
+var isTestingPlanningDone=false;
+var isProductionPlanningDone=false;
+var isRequirementPlanningDone=false;
+
+
+
 
             function myfunc() {
 
@@ -186,7 +204,7 @@
 
                             var obj = data[i];
 //                            obj.isComplete = obj.isComplete === 'false' ? "Not Completed" : "Completed";
-                            
+
                             var isDisabled="";
 //                            alert(obj.budget+" "+obj.personnel);
                             if(obj.complete){
@@ -573,7 +591,8 @@
                        else if(data.steptype == "OOPS")
                         {
                            // $('#updateactivity').trigger('click');
-
+                           isOOPSCard=true;
+                           console.log(isOOPSCard+"   hello am as ");
                             var alertmsg = "You lost ";
 
                             if(data.oops_resource !=0) {
@@ -599,7 +618,7 @@
                             document.getElementById('myCurrentTurn').innerHTML = "You got an OOPS card!";
                         }
                         else if(data.steptype == "SURPRISE"){
-
+                            isSurpriseCard=true;
                             var alertmsg = "You gained ";
 
                             if(data.surprise_resource !=0) {
@@ -638,6 +657,7 @@
                                 document.getElementById('swalmessages').innerHTML = alertmsg;
                         }
                         else if(data.steptype == "skipstep"){
+                          isSkipped=true;
                             if($('#btnIsProduction').val() != "true"){
                                 //swal({   title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" });
                                 var temp1="Skipped turn";
@@ -679,7 +699,7 @@
                             onRiskDashboardClick();
                             $('#riskDialog').modal('hide');
                         }
-                        refreshProjectSteps();
+                    //    refreshProjectSteps();
 
 
                     },
@@ -787,6 +807,68 @@
 
 //                            alert(eligibleBudget+" "+eligibleCapabilityBonus+" "+eligibleCapabilityPoints+" "+eligiblePersonnelRemaining);
 
+if(isOOPSCard)
+{
+  isOOPSCard=false;
+}
+if(isSurpriseCard)
+{
+  isSurpriseCard=false;
+}
+
+if(isSkipped)
+{
+  isSkipped=false;
+}
+
+if((obj.projectStepId == 'CPSM25' || obj.projectStepId == 'CPSM26' ||obj.projectStepId == 'CPSM27' ||obj.projectStepId == 'CPSM28' ||obj.projectStepId == 'CPSM29' ||obj.projectStepId == 'CPSM30' ||obj.projectStepId == 'CPSM31' ||obj.projectStepId == 'CPSM32' ||obj.projectStepId == 'CPSM33'
+  || obj.projectStepId == 'CPSM34' ||obj.projectStepId == 'CPSM35'
+   ||obj.projectStepId == 'CPSM36')&&(obj.status == "disabled='true'")
+   &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(c==1))
+{
+isImplementedBeforeProduction=true;
+c=2;
+console.log(isImplementedBeforeProduction+" i am inside if condition");
+}
+
+if((obj.projectStepId == 'CPSM16')&&(obj.status == "disabled='true'")
+&&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cr==1))
+{
+cr=2;
+isRequirementPlanningDone=true;
+}
+if((obj.projectStepId == 'CPSM17')&&(obj.status == "disabled='true'")
+&&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(ct==1))
+{
+ct=2;
+isTestingPlanningDone=true;
+}
+if((obj.projectStepId == 'CPSM18')&&(obj.status == "disabled='true'")
+&&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(ci==1))
+{
+ci=2;
+isImplementationPlanningDone=true;
+}
+if((obj.projectStepId == 'CPSM19')&&(obj.status == "disabled='true'")
+&&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cd==1))
+{
+cd=2;
+isDesignPlanningDone=true;
+}
+if((obj.projectStepId == 'CPSM20')&&(obj.status == "disabled='true'")
+&&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cp==1))
+{
+cp=2;
+isProductionPlanningDone=true;
+}
+
+
+
+isSkipped=true;
+isOOPSCard=true;
+isSurpriseCard=true;
+
+
                                 result = result + "<button " +
                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
                                         " style='white-space: normal;height:55px ' " +
@@ -815,6 +897,118 @@
 
                             document.getElementById('results').innerHTML = result;
 
+
+                            @*alert(@model.getPhases.get(0).getPhaseName);*@
+                            var result="";
+                            var count=0;
+                        @for(phases <- model.getPhases()) {
+
+                  count++;
+                  if(count==1)
+                  {
+                  result = result+ "<button class='col-md-3 btn btn-warning' " +
+                      "style='background-color: #DB8B00 !important;'" +
+                      "onclick='onPhaseClick(id)' " +
+                      "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                  }
+                  else if(count==2)
+                  {
+                    if(isRequirementPlanningDone)
+                    {
+                      result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    }
+                    else {
+                      result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #DB8B00 !important;'" +
+                            "onclick='onPhaseClick(id)' " +
+                            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+                    }
+                  }
+                  else if(count==3)
+                  {
+                    if(isDesignPlanningDone)
+                    {
+                      result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    }
+                    else {
+                      result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #DB8B00 !important;'" +
+                            "onclick='onPhaseClick(id)' " +
+                            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+                    }
+                  }
+                  else if(count==4)
+                  {
+                    if(isImplementationPlanningDone)
+                    {
+                      result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    }
+                    else {
+                      result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #DB8B00 !important;'" +
+                            "onclick='onPhaseClick(id)' " +
+                            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+                    }
+                  }
+                  else if(count==5)
+                  {
+                    if(isTestingPlanningDone)
+                    {
+                      result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    }
+                    else {
+                      result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #DB8B00 !important;'" +
+                            "onclick='onPhaseClick(id)' " +
+                            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+                    }
+                  }
+                  else if(count==6)
+                  {
+                    console.log(isProductionPlanningDone+" i am is production planning"+isImplementedBeforeProduction+" i am before guy");
+                    if(isImplementedBeforeProduction && isProductionPlanningDone)
+                    {
+                    result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    }
+                    else {
+                    result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #DB8B00 !important;'" +
+                          "onclick='onPhaseClick(id)' " +
+                          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+                    }
+                  }
+
+                            }
+
+                            document.getElementById('listOfProjectSteps').innerHTML = result;
+                  //                alert(result);
+
+
+
+
+
+
+
                         },
                         error: function (data) {
                             alert("error");
@@ -822,6 +1016,11 @@
                         }
                     });
                 }
+
+
+
+
+
             }
 
             $(document).on("click", ".open-EditTodo", function () {
@@ -890,15 +1089,45 @@
             function refreshProjectSteps(){
                 @*alert(@model.getPhases.get(0).getPhaseName);*@
                 var result="";
+                var count=0;
             @for(phases <- model.getPhases()) {
 
-                result = result+ "<button class='col-md-3 btn btn-warning' " +
-                        "style='background-color: #DB8B00 !important;'" +
-                        "onclick='onPhaseClick(id)' " +
-                        "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+count++;
+if(count<6)
+{
+  result = result+ "<button class='col-md-3 btn btn-warning' " +
+          "style='background-color: #DB8B00 !important;'" +
+          "onclick='onPhaseClick(id)' " +
+          "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+}
+else {
+  console.log(isImplementedBeforeProduction);
+  console.log("i am here in");
+  if(isImplementedBeforeProduction)
+  {
+    result = result+ "<button class='col-md-3 btn btn-warning' " +
+            "style='background-color: #DB8B00 !important;'" +
+            "onclick='onPhaseClick(id)' " +
+            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+  }
+  else {
+    result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+            "style='background-color: #DB8B00 !important;'" +
+            "onclick='onPhaseClick(id)' " +
+            "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
+
+  }
+}
+
+
+
+
+
+
 
 
                 }
+
                 document.getElementById('listOfProjectSteps').innerHTML = result;
 //                alert(result);
 
@@ -939,23 +1168,24 @@
                     <span id="minutes">00</span>:<span id="seconds">00</span>
                 </div>
                 <div class="col-md-2" style="display: inline-block;">
-                        <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome @model.getUserName().split("@")(0)!</div>
-                    <div style=" display: inline-block;" class="btn-group">
-                        <button type="button"
-                        class=" dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                  <div style=" display: inline-block;" class="btn-group">
+                      <button type="button"
+                      class=" dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
 
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Help</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#" onclick="window.open('/assets/images/Riskdesc.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Risk Description</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a id="lnkLeave" href="#">Leave Game</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/logout" >Logout</a></li>
-                        </ul>
-                    </div>
+                      </button>
+                      <ul class="dropdown-menu">
+                          <li><a href="#" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Help</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#" onclick="window.open('/assets/images/Riskdesc.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Risk Description</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a id="lnkLeave" href="#">Leave Game</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="/logout" >Logout</a></li>
+                      </ul>
+                  </div>
+                        <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome @model.getUserName().split("@")(0)!</div>
+
                 </div>
             </header>
 
@@ -997,7 +1227,7 @@
                           <h4 class="panel-title">Alert Messages</h4>
                       </div>
                       <div class="panel-body" style="height: 200px; overflow-wrap: break-word;text-align:justify;">
-                          
+
                       </div>
                   </div>
 
