@@ -167,6 +167,7 @@
 
                 lastclickedTab="projectStep";
             }
+            var isCompleted="";
             function onRiskDashboardClick(){
                 lastclickedTab="riskDashboard";
                 $.ajax({
@@ -185,7 +186,7 @@
 
                             var obj = data[i];
 //                            obj.isComplete = obj.isComplete === 'false' ? "Not Completed" : "Completed";
-                            var isCompleted="";
+                            
                             var isDisabled="";
 //                            alert(obj.budget+" "+obj.personnel);
                             if(obj.complete){
@@ -938,24 +939,23 @@
                     <span id="minutes">00</span>:<span id="seconds">00</span>
                 </div>
                 <div class="col-md-2" style="display: inline-block;">
-                  <div style=" display: inline-block;" class="btn-group">
-                      <button type="button"
-                      class=" dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-
-                      </button>
-                      <ul class="dropdown-menu">
-                          <li><a href="#" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Help</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="#" onclick="window.open('/assets/images/Riskdesc.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Risk Description</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a id="lnkLeave" href="#">Leave Game</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="/logout" >Logout</a></li>
-                      </ul>
-                  </div>
                         <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome @model.getUserName().split("@")(0)!</div>
+                    <div style=" display: inline-block;" class="btn-group">
+                        <button type="button"
+                        class=" dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
 
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Help</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" onclick="window.open('/assets/images/Riskdesc.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Risk Description</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="lnkLeave" href="#">Leave Game</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout" >Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </header>
 
@@ -997,7 +997,7 @@
                           <h4 class="panel-title">Alert Messages</h4>
                       </div>
                       <div class="panel-body" style="height: 200px; overflow-wrap: break-word;text-align:justify;">
-
+                          
                       </div>
                   </div>
 
@@ -1059,7 +1059,7 @@
                                                 </div>
                                                 <div style="display:inline-block;position:absolute;top:0;right:0;">
 
-                                                  <div class="col-md-3 mytimer" style="zoom: 0.4;-moz-transform: scale(0.4);padding:0" hidden>
+                                                  <div class="col-md-3 mytimer" style="zoom: 0.4;padding:0" hidden>
 
                                                   </div>
                                                   <input type ="text" hidden id="btnIsProduction" value="false"/>

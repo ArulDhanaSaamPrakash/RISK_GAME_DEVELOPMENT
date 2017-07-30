@@ -70,8 +70,8 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 object footer extends footer_Scope0.footer
               /*
                   -- GENERATED --
-                  DATE: Sat Jul 29 14:48:23 EDT 2017
-                  SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/app/views/footer.scala.html
+                  DATE: Sat Jul 29 21:49:46 EDT 2017
+                  SOURCE: /Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/app/views/footer.scala.html
                   HASH: c4ec49809a7f319f40ee35c51ee0e18f151d2973
                   MATRIX: 829->0|974->118|1002->119|1035->126|1166->230|1194->231|1226->236
                   LINES: 32->1|39->8|39->8|40->9|45->14|45->14|46->15

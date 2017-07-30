@@ -1160,3 +1160,39 @@ Caused by: java.lang.NullPointerException: null
 2017-07-29 18:01:18,526 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
 2017-07-29 18:01:18,554 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
 >>>>>>> origin/master
+2017-07-29 21:50:12,655 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-07-29 21:50:12,710 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-07-29 21:50:12,711 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-07-29 21:50:12,729 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-07-29 21:50:12,759 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-07-29 21:50:12,828 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-07-29 21:50:12,869 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-07-29 21:51:04,385 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-14 - Shutdown application default Akka system: application
+2017-07-29 21:51:04,394 [INFO] from application in application-akka.actor.default-dispatcher-14 - Shutting down connection pool.
+2017-07-29 21:51:04,431 [WARN] from application in application-akka.actor.default-dispatcher-14 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-07-29 21:51:04,467 [WARN] from application in application-akka.actor.default-dispatcher-14 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-07-29 21:51:04,470 [INFO] from application in application-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
+2017-07-29 21:51:04,489 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-14 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-07-29 21:51:04,535 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-14 - Starting application default Akka system: application
+2017-07-29 21:51:04,562 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-14 - Application started (Dev)
+2017-07-29 21:51:04,581 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-07-29 21:56:54,127 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-29 - Shutdown application default Akka system: application
+2017-07-29 21:56:54,140 [INFO] from application in application-akka.actor.default-dispatcher-29 - Shutting down connection pool.
+2017-07-29 21:56:54,186 [WARN] from application in application-akka.actor.default-dispatcher-29 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-07-29 21:56:54,252 [WARN] from application in application-akka.actor.default-dispatcher-29 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-07-29 21:56:54,253 [INFO] from application in application-akka.actor.default-dispatcher-29 - Creating Pool for datasource 'default'
+2017-07-29 21:56:54,268 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-29 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-07-29 21:56:54,375 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-29 - Starting application default Akka system: application
+2017-07-29 21:56:54,438 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-29 - Application started (Dev)
+2017-07-29 21:56:54,457 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-07-29 22:06:43,886 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-46 - Shutdown application default Akka system: application
+2017-07-29 22:06:43,900 [INFO] from application in application-akka.actor.default-dispatcher-46 - Shutting down connection pool.
+2017-07-29 22:06:43,933 [WARN] from application in application-akka.actor.default-dispatcher-46 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-07-29 22:06:43,968 [WARN] from application in application-akka.actor.default-dispatcher-46 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-07-29 22:06:43,969 [INFO] from application in application-akka.actor.default-dispatcher-46 - Creating Pool for datasource 'default'
+2017-07-29 22:06:43,982 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-46 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-07-29 22:06:44,014 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-46 - Starting application default Akka system: application
+2017-07-29 22:06:44,048 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-46 - Application started (Dev)
+2017-07-29 22:06:44,068 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-07-29 22:10:12,640 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-158 - Shutdown application default Akka system: application
+2017-07-29 22:10:12,661 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-158 - Shutting down connection pool.
