@@ -45,10 +45,10 @@
         }
 
         .sweet-alert {
-            position: fixed;
+            position: absolute;
             height:200px;
             width: 230px;
-            top:390px;
+            top:410px;
             left:277px;}
 
         .ProjectStepStyle:hover,
@@ -549,6 +549,7 @@
                     success: function (data) {
                         onlyPlanning=false;
                         document.getElementById('myCurrentTurn').innerHTML = performedStep;
+                        document.getElementById('prevstep').innerHTML = performedStep;
                         if(data.complete=="true"){
 //                            alert(data.complete);
                             swal({
@@ -589,7 +590,7 @@
                             alertmsg = alertmsg.substring(0, alertmsg.length - 2);
 
                            // swal({   title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" });
-                            document.getElementById('swalmessages').innerHTML = alertmsg;
+                            document.getElementById('swalmessages').innerHTML = "You got an OOPS card!"+alertmsg;
                             $("#oopsmsg").val(alertmsg);
                             $("#isoops").val("true");
                             $('#updateactivity').trigger('click');
@@ -616,7 +617,7 @@
 
                             //swal({   title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" });
                             //var temp="Got a Suprise card";
-                            document.getElementById('swalmessages').innerHTML = alertmsg;
+                            document.getElementById('swalmessages').innerHTML = "You got a Surprise card!"+alertmsg;
                             $("#isoops").val("false");
                             $("#oopsmsg").val(alertmsg);
                             $('#updateactivity').trigger('click');
@@ -967,16 +968,21 @@
                     <!--// start of big1 div -->
                 <div class="col-md-2" style="border-right: 1px dashed #969C9E;padding: 0px 0px 0px 0px !important;">
 
-                  <div class="panel panel-default">
+                  <div class="panel panel-default" style="font-size: 12px;">
                       <div class="panel-heading" style="background-color: #A8A2A3">
                           <h4 class="panel-title">Action Details</h4>
                       </div>
-                      <div class="panel-body" style="height: 150px; overflow-wrap: break-word;text-align:justify;">
+                      <div class="panel-body" style="height: 170px; overflow-wrap: break-word;text-align:justify;">
                           <div style=" display: inline-block;text-align:center;">Current Turn No: </div>
 
                  <div style=" display: inline-block;text-align:justify" id="turnNo">1</div>
 
                           <input type ="text" hidden id="btnIsProduction" value="false"/>
+                          <hr>
+                          <div>Previous step Name:</div>
+
+                            <div id="prevstep"> </div>
+                            <hr>
                           <div>Your last turn status:</div>
 
                             <div id="swalmessages">  </div>
