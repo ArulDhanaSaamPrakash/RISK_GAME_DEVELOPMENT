@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/Project_RiskGame/conf/routes
-// @DATE:Sat Jul 29 22:13:23 EDT 2017
+// @SOURCE:/Users/dineshp/Desktop/Project/RISK_GAME_DEVELOPMENT/Project_RiskGame/conf/routes
+// @DATE:Sun Jul 30 00:08:45 EDT 2017
 
 
 package router {

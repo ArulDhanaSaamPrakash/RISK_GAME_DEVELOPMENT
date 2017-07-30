@@ -248,8 +248,9 @@ var isRequirementPlanningDone=false;
 
 
 //                            result=result+"<button id='"+obj.riskId+"' onclick='onRiskClick(id)'>"+obj.riskDescription+"</button><br/>";
-
-                            appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td>" + isCompleted + "</td>" +
+                            var tempStatus="riskStatus"+obj.riskId;
+                            
+                            appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td id="+tempStatus+">" + isCompleted + "</td>" +
                                     "<td><button "+isDisabled+"" +
                                     "  class='open-riskDialog btn btn-warning' href='#riskDialog'" +
                                     "data-toggle='modal' "+

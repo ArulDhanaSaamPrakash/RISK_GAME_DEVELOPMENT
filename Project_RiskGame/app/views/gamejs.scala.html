@@ -436,11 +436,14 @@ $("#btnSkip").attr("disabled",false);
 $('#btnMitigateRisk').click(function(){
 
     var id = $('#btnMitigateRisk').val();
-    var title = "Risk with id " + id + " is "+isCompleted;
-    funcChangeTurn(title);
-
+     var tempStatus="riskStatus"+id;
+        var status= document.getElementById('swalmessages').innerHTML;
+        var title = "("+id+") "+status;
+        document.getElementById('prevstep').innerHTML = id;
+        funcChangeTurn(title);
 });
 
+    
     var funcChangeTurn = function(title){
 
         updateActivityLogs(title);
