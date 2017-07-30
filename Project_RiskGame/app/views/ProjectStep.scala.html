@@ -249,7 +249,7 @@ var isRequirementPlanningDone=false;
 
 //                            result=result+"<button id='"+obj.riskId+"' onclick='onRiskClick(id)'>"+obj.riskDescription+"</button><br/>";
                             var tempStatus="riskStatus"+obj.riskId;
-                            
+
                             appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td id="+tempStatus+">" + isCompleted + "</td>" +
                                     "<td><button "+isDisabled+"" +
                                     "  class='open-riskDialog btn btn-warning' href='#riskDialog'" +
@@ -426,28 +426,288 @@ var isRequirementPlanningDone=false;
                                 }
 
 
-                            }else{
-                                result = result + "<button " +
-                                        " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                        " style='white-space: normal;height:55px; ' " +
-                                        " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
-                                        " data-toggle='modal' " +obj.status+
-                                        " data-buttondisable='"+buttonDisable+"'" +
-                                        "data-title='" + obj.projectStepName +
-                                        "'data-id='" + obj.projectStepId +
-                                        "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
-                                        "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
-                                        "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
-                                        "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
-                                        "'data-level='Level:' data-levelvalue='" + obj.level +
-                                        "'data-id='" + obj.projectStepId +
-                                        "'" +
-//                                            "data-todo='{'id':12,'todo':'xyz'}'"+
-                                        "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
-                                        "  id='todolink'>" + obj.projectStepName +
-                                        "</button>";
-//
                             }
+                            else {
+
+                              if(obj.phaseName=="PLANNING"){
+                                  result = result + "<button " +
+                                          " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                          " style='white-space: normal;height:55px; ' " +
+                                          " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                          " data-toggle='modal' " +obj.status+
+                                          " data-buttondisable='"+buttonDisable+"'" +
+                                          "data-title='" + obj.projectStepName +
+                                          "'data-id='" + obj.projectStepId +
+                                          "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                          "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                          "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                          "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                          "'data-level='Level:' data-levelvalue='" + obj.level +
+                                          "'data-id='" + obj.projectStepId +
+                                          "'" +
+                            //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                          "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                          "  id='todolink'>" + obj.projectStepName +
+                                          "</button>";
+                            //
+                              }
+                              else {
+                                      if(isImplementationPlanningDone||isDesignPlanningDone||isTestingPlanningDone||isRequirementPlanningDone||isProductionPlanningDone)
+                                        {
+                                                if(isImplementationPlanningDone && obj.phaseName=="IMPLEMENTATION")
+                                                      {
+                                                                    result = result + "<button " +
+                                                                              " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                              " data-toggle='modal' " +obj.status+
+                                                                              " data-buttondisable='"+buttonDisable+"'" +
+                                                                              "data-title='" + obj.projectStepName +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                              "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                              "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                              "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                              "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'" +
+                                                                //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                              "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                              "  id='todolink'>" + obj.projectStepName +
+                                                                              "</button>";
+
+                                                                }
+                                                      else if(obj.phaseName=="IMPLEMENTATION"){
+                                                        result = result + "<button disabled" +
+                                                                  " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                  " style='white-space: normal;height:55px; ' " +
+                                                                  " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                  " data-toggle='modal' " +obj.status+
+                                                                  " data-buttondisable='"+buttonDisable+"'" +
+                                                                  "data-title='" + obj.projectStepName +
+                                                                  "'data-id='" + obj.projectStepId +
+                                                                  "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                  "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                  "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                  "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                  "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                  "'data-id='" + obj.projectStepId +
+                                                                  "'" +
+                                                    //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                  "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                  "  id='todolink'>" + obj.projectStepName +
+                                                                  "</button>";
+                                                      }
+
+
+                                                                if(isDesignPlanningDone && obj.phaseName=="DESIGN")
+                                                                {
+
+                                                                      result = result + "<button " +
+                                                                              " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                              " data-toggle='modal' " +obj.status+
+                                                                              " data-buttondisable='"+buttonDisable+"'" +
+                                                                              "data-title='" + obj.projectStepName +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                              "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                              "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                              "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                              "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'" +
+                                                                //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                              "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                              "  id='todolink'>" + obj.projectStepName +
+                                                                              "</button>";
+                                                                //
+
+                                                                }
+                                                                else if(obj.phaseName=="DESIGN")
+                                                                {
+                                                                  result = result + "<button disabled" +
+                                                                          " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                          " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                          " data-toggle='modal' " +obj.status+
+                                                                          " data-buttondisable='"+buttonDisable+"'" +
+                                                                          "data-title='" + obj.projectStepName +
+                                                                          "'data-id='" + obj.projectStepId +
+                                                                          "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                          "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                          "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                          "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                          "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                          "'data-id='" + obj.projectStepId +
+                                                                          "'" +
+                                                            //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                          "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                          "  id='todolink'>" + obj.projectStepName +
+                                                                          "</button>";
+                                                                }
+
+
+
+                                                                //next one
+
+                                                                if(isTestingPlanningDone && obj.phaseName=="TESTING")
+                                                                {
+
+                                                                      result = result + "<button " +
+                                                                              " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                              " data-toggle='modal' " +obj.status+
+                                                                              " data-buttondisable='"+buttonDisable+"'" +
+                                                                              "data-title='" + obj.projectStepName +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                              "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                              "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                              "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                              "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                              "'data-id='" + obj.projectStepId +
+                                                                              "'" +
+                                                                //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                              "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                              "  id='todolink'>" + obj.projectStepName +
+                                                                              "</button>";
+                                                                //
+
+                                                                }
+                                                                else if(obj.phaseName=="TESTING")
+                                                                {
+                                                                  result = result + "<button disabled" +
+                                                                          " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                          " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                          " data-toggle='modal' " +obj.status+
+                                                                          " data-buttondisable='"+buttonDisable+"'" +
+                                                                          "data-title='" + obj.projectStepName +
+                                                                          "'data-id='" + obj.projectStepId +
+                                                                          "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                          "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                          "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                          "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                          "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                          "'data-id='" + obj.projectStepId +
+                                                                          "'" +
+                                                            //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                          "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                          "  id='todolink'>" + obj.projectStepName +
+                                                                          "</button>";
+                                                                }
+
+                                                                if(isRequirementPlanningDone && obj.phaseName=="REQUIREMENTS")
+                                                                                {
+
+                                                                                          result = result + "<button " +
+                                                                                                        " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                                                        " style='white-space: normal;height:55px; ' " +
+                                                                                                            " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                                                        " data-toggle='modal' " +obj.status+
+                                                                                                        " data-buttondisable='"+buttonDisable+"'" +
+                                                                                                        "data-title='" + obj.projectStepName +
+                                                                                                        "'data-id='" + obj.projectStepId +
+                                                                                                        "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                                                        "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                                                        "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                                                            "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                                                            "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                                                            "'data-id='" + obj.projectStepId +
+                                                                                                            "'" +
+                                                                                              //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                                                            "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                                                            "  id='todolink'>" + obj.projectStepName +
+                                                                                                            "</button>";
+                                                                                              //
+
+                                                                              }
+                                                                              else if(obj.phaseName=="REQUIREMENTS")
+                                                                              {
+                                                                                result = result + "<button disabled" +
+                                                                                              " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+                                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                                                  " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+                                                                                              " data-toggle='modal' " +obj.status+
+                                                                                              " data-buttondisable='"+buttonDisable+"'" +
+                                                                                              "data-title='" + obj.projectStepName +
+                                                                                              "'data-id='" + obj.projectStepId +
+                                                                                              "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+                                                                                              "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+                                                                                              "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+                                                                                                  "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+                                                                                                  "'data-level='Level:' data-levelvalue='" + obj.level +
+                                                                                                  "'data-id='" + obj.projectStepId +
+                                                                                                  "'" +
+                                                                                    //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+                                                                                                  "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+                                                                                                  "  id='todolink'>" + obj.projectStepName +
+                                                                                                  "</button>";
+                                                                              }
+                                                                //next oneTurn
+
+
+                                                              }
+                                                              else {
+
+
+
+  //This is else part
+  result = result + "<button disabled" +
+          " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
+          " style='white-space: normal;height:55px; ' " +
+          " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
+          " data-toggle='modal' " +obj.status+
+          " data-buttondisable='"+buttonDisable+"'" +
+          "data-title='" + obj.projectStepName +
+          "'data-id='" + obj.projectStepId +
+          "'data-budget='Budget:' data-budgetvalue='" + obj.budget +
+          "'data-capabilitypoints='Capability Points:' data-capabilitypointsvalue='" + obj.capabilityPoints +
+          "'data-personnel='Personnel:' data-personnelvalue='" + obj.personnel +
+          "'data-capabilitybonus='Capability Bonus:' data-capabilitybonusvalue='" + obj.capabilityBonus +
+          "'data-level='Level:' data-levelvalue='" + obj.level +
+          "'data-id='" + obj.projectStepId +
+          "'" +
+  //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
+          "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
+          "  id='todolink'>" + obj.projectStepName +
+          "</button>";
+
+
+                                                              }
+
+
+
+                              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                         }
