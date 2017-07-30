@@ -5,9 +5,13 @@
 		revision="0.1-SNAPSHOT"
 		status="integration"
 <<<<<<< HEAD
+<<<<<<< HEAD
 		publication="20170729185506"
 =======
 		publication="20170729175357"
+>>>>>>> origin/master
+=======
+		publication="20170729200728"
 >>>>>>> origin/master
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>

@@ -4,7 +4,11 @@
 		module="riskgame_2.11"
 		revision="1.0"
 		status="integration"
+<<<<<<< HEAD
 		publication="20170729214947"
+=======
+		publication="20170729200754"
+>>>>>>> origin/master
 	>
 		<description>
 		riskgame
