@@ -1,0 +1,51 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /config                           controllers.GameController.startGame()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+POST     /login                  controllers.LoginController.login()
+GET     /logout                  controllers.LoginController.logout()
+
+GET     /playerjoin                controllers.Application.playerJoin()
+
+POST     /register                  controllers.RegisterController.register()
+
+POST  /uploadimage           controllers.GameController.saveImageSnapshot()
+
+POST     /host                  controllers.GameController.hostGame()
+POST     /join                  controllers.GameController.joinGame()
+POST     /leave                  controllers.GameController.leaveGame()
+POST     /Activegames                  controllers.DashboardController.activeGames()
+POST     /Completegames                  controllers.DashboardController.completedGames()
+POST /joingame              controllers.DashboardController.joinGame()
+POST /observegame              controllers.GameController.observeGame()
+
+POST /snapshotDetails              controllers.GameController.getSnapshotDetails()
+
+POST /start                      controllers.GameController.startGame()
+
+POST /projectsteps           controllers.GameController.getProjectSteps()
+
+GET     /assets.javascript.ws.js        controllers.Application.wsJs()
+GET     /assets.javascript.hostjs.js        controllers.Application.hostJs()
+GET     /assets.javascript.gamejs.js        controllers.Application.gameJs()
+GET     /wsInterface                    controllers.Application.wsInterface()
+
+POST /hostgame       controllers.DashboardController.viewHostGame()
+GET /dashboard      controllers.DashboardController.viewDashboard()
+
+POST /performstep  controllers.GameController.performStep()
+POST /riskdashboard  controllers.GameController.getRiskCards()
+POST /risk  controllers.GameController.getMitigationSteps()
+
+
+
+
+
+    
