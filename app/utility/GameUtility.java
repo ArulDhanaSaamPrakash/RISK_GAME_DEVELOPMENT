@@ -279,34 +279,6 @@ public class GameUtility {
         }
     }
 
-    public static boolean timeOutUpdate(String gameId,String userName, String turnno) {
-
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try{
-            conn = DB.getConnection();
-            String gamePlayerId = userName.split("@")[0] + "-" +  gameId;
-            String query = "INSERT INTO GAME_MOVES_SNAPSHOT (game_player_id,turn_no,project_step_id,move_type) VALUES (?,?,?,?)";
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1,gamePlayerId);
-            stmt.setString(2,turnno);
-            stmt.setString(3,"TIMEOUT");
-            stmt.setString(4,"TIMEOUT");
-            int rs = stmt.executeUpdate();
-
-                //return rs > 0 ? gamePlayerId : null;
-
-                return true;
-
-        }catch (Exception e){
-            logger.log(Level.SEVERE, "error while inserting into game player:" + e);
-            return false;
-        }
-        finally {
-            cleanUp(stmt,conn);
-        }
-    }
-
     /**
      * Get the rules of the game
      * @param gameStat

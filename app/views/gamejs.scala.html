@@ -56,34 +56,7 @@ if(turnNo <= maxTurns){
 
     // startTimer();
 
-var onTimeout=function(){
-
-                    var obj = {
-                        'gameid':gameid,
-                        'turnno':parseInt($('#turnNo').html())
-                    };
-                
-
-                $.ajax({
-                    type: 'POST',
-                    url: '@routes.GameController.updateTimeOut()',
-                    // data : JSON.stringify(obj),
-                    data: JSON.stringify(obj),
-                    async: false,
-                    contentType: 'application/json',
-                    success: function (data) {
-                        
-                                            
-                    },
-
-                });
-            }
-
-
     var sendTimeoutMessage = function () {
-    console.log("reacghed time out");
-onTimeout();
-    console.log("called successfully");
         myTurn = "false";
         stopTimer();
         resetTimer();

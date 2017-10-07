@@ -775,30 +775,6 @@ var isRequirementPlanningDone=false;
                         'totalsteps':totalSteps
                     };
                 }
-                else if(id.indexOf("Timeout")!==-1)
-                {
-                    console.log("came gere");
-
-                    var obj = {
-                        'id': 'null',
-                        'riskid' : id,
-                        'gameid':@model.getGameId,
-                        'skipturn':'false',
-                        'isProduction':isProduction,
-                        'riskmitigatedcount': parseInt($('#txtRisk').val()),
-                        'oneturn':document.getElementById('oneTurn').innerHTML,
-                        'twoturn':document.getElementById('twoTurn').innerHTML,
-                        'type': 'risk',
-                        'budget': document.getElementById('budgetremaining').innerHTML,
-                        'capabilitybonus': document.getElementById('capabilitybonus').innerHTML,
-                        'capabilitypoints': document.getElementById('capabilitypoints').innerHTML,
-                        'personnel' :document.getElementById('personnelremaining').innerHTML,
-                        'turnno': document.getElementById('turnNo').innerHTML,
-                        'timetaken': 3,
-                        'performedsteps': stepsDone,
-                        'totalsteps':totalSteps
-                    };
-                }
 
                 else if(id.indexOf("CRM") !==-1){
 //                    alert(id);
@@ -1368,7 +1344,6 @@ isSurpriseCard=true;
                 }, 1000);
 
                 setTimeout(function () {
-                	console.log("TimeOut happened");
                     clearInterval(timer);
                 }, 50000000);
             }
