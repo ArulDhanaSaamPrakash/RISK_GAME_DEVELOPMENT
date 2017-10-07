@@ -11,3 +11,5 @@ libraryDependencies ++= Seq( javaJdbc ,  cache , javaWs, "mysql" % "mysql-connec
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"  
+
+fork in run := true

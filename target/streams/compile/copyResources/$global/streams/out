@@ -1,3 +1,3 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/nivas/IdeaProjects/Project_RiskGame/conf/application.conf,/home/nivas/IdeaProjects/Project_RiskGame/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/nivas/IdeaProjects/Project_RiskGame/conf/routes,/home/nivas/IdeaProjects/Project_RiskGame/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)[0m

@@ -1,0 +1,55 @@
+New log file opened at Thu Sep 28 19:39:38 EDT 2017 by 4144@Aruls-MacBook-Air.local
+Taking next connection to: 58078
+New client attempting to connect on port: 58079-58078
+  Address = /10.0.0.144:58078
+This client on port 58079 has uuid c976c27d-3a41-418b-8945-3dfaeb92f1f2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-c976c27d-3a41-418b-8945-3dfaeb92f1f2
+Taking next connection to: 58078
+New client attempting to connect on port: 58085-58078
+  Address = /10.0.0.144:58078
+Handshake exception on socket: 58085
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 58078
+New client attempting to connect on port: 58086-58078
+  Address = /10.0.0.144:58078
+This client on port 58086 has uuid bb809be6-4685-437b-abd3-8d635926d39b configName activator humanReadableName Activator protocolVersion unknown featureTags Vector()
+Connected Clients: play-fork-run-c976c27d-3a41-418b-8945-3dfaeb92f1f2, activator-bb809be6-4685-437b-abd3-8d635926d39b
+Taking next connection to: 58078
+New client attempting to connect on port: 58104-58078
+  Address = /10.0.0.144:58078
+Handshake exception on socket: 58104
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 58078
+New client attempting to connect on port: 58105-58078
+  Address = /10.0.0.144:58078
+This client on port 58105 has uuid 6bf3068e-b85f-4d50-9e04-feeca7b493ca configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-c976c27d-3a41-418b-8945-3dfaeb92f1f2, activator-bb809be6-4685-437b-abd3-8d635926d39b, play-fork-run-6bf3068e-b85f-4d50-9e04-feeca7b493ca
+Taking next connection to: 58078
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 58078
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 58078
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 4144@Aruls-MacBook-Air.local logs at Thu Sep 28 19:50:18 EDT 2017, goodbye.

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/nivas/IdeaProjects/Project_RiskGame/conf/routes
-// @DATE:Sat Dec 03 19:23:55 EST 2016
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Thu Sep 28 18:39:29 EDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -63,7 +63,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:44
+    // @LINE:45
     def getRiskCards: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getRiskCards",
       """
@@ -123,7 +123,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:46
     def getMitigationSteps: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getMitigationSteps",
       """
@@ -149,6 +149,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "leave"})
+        }
+      """
+    )
+  
+    // @LINE:44
+    def updateTimeOut: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.updateTimeOut",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "performTimeOut"})
         }
       """
     )

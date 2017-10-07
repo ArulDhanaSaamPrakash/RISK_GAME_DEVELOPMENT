@@ -87,12 +87,39 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
 
     """),format.raw/*57.5*/("""// startTimer();
 
-    var sendTimeoutMessage = function () """),format.raw/*59.42*/("""{"""),format.raw/*59.43*/("""
-        """),format.raw/*60.9*/("""myTurn = "false";
+var onTimeout=function()"""),format.raw/*59.25*/("""{"""),format.raw/*59.26*/("""
+
+                    """),format.raw/*61.21*/("""var obj = """),format.raw/*61.31*/("""{"""),format.raw/*61.32*/("""
+                        """),format.raw/*62.25*/("""'gameid':gameid,
+                        'turnno':parseInt($('#turnNo').html())
+                    """),format.raw/*64.21*/("""}"""),format.raw/*64.22*/(""";
+                
+
+                $.ajax("""),format.raw/*67.24*/("""{"""),format.raw/*67.25*/("""
+                    """),format.raw/*68.21*/("""type: 'POST',
+                    url: '"""),_display_(/*69.28*/routes/*69.34*/.GameController.updateTimeOut()),format.raw/*69.65*/("""',
+                    // data : JSON.stringify(obj),
+                    data: JSON.stringify(obj),
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (data) """),format.raw/*74.46*/("""{"""),format.raw/*74.47*/("""
+                        
+                                            
+                    """),format.raw/*77.21*/("""}"""),format.raw/*77.22*/(""",
+
+                """),format.raw/*79.17*/("""}"""),format.raw/*79.18*/(""");
+            """),format.raw/*80.13*/("""}"""),format.raw/*80.14*/("""
+
+
+    """),format.raw/*83.5*/("""var sendTimeoutMessage = function () """),format.raw/*83.42*/("""{"""),format.raw/*83.43*/("""
+    """),format.raw/*84.5*/("""console.log("reacghed time out");
+onTimeout();
+    console.log("called successfully");
+        myTurn = "false";
         stopTimer();
         resetTimer();
         timer.hide();
-        var data = JSON.stringify("""),format.raw/*64.35*/("""{"""),format.raw/*64.36*/(""""gameid": gameid, "type": "Timeout", "player": """),format.raw/*64.83*/("""{"""),format.raw/*64.84*/(""""username": username"""),format.raw/*64.104*/("""}"""),format.raw/*64.105*/("""}"""),format.raw/*64.106*/(""");
+        var data = JSON.stringify("""),format.raw/*91.35*/("""{"""),format.raw/*91.36*/(""""gameid": gameid, "type": "Timeout", "player": """),format.raw/*91.83*/("""{"""),format.raw/*91.84*/(""""username": username"""),format.raw/*91.104*/("""}"""),format.raw/*91.105*/("""}"""),format.raw/*91.106*/(""");
         socket.send(data);
 
         //updates turns completed count because missed turn is a lost turn
@@ -102,14 +129,14 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
 
         //capture screen after timeout once turn Number field is updated
         takeSnapshot();
-    """),format.raw/*74.5*/("""}"""),format.raw/*74.6*/("""
+    """),format.raw/*101.5*/("""}"""),format.raw/*101.6*/("""
 
-    """),format.raw/*76.5*/("""var sendSkipTurnMessage = function () """),format.raw/*76.43*/("""{"""),format.raw/*76.44*/("""
-        """),format.raw/*77.9*/("""myTurn = "false";
+    """),format.raw/*103.5*/("""var sendSkipTurnMessage = function () """),format.raw/*103.43*/("""{"""),format.raw/*103.44*/("""
+        """),format.raw/*104.9*/("""myTurn = "false";
         stopTimer();
         resetTimer();
         timer.hide();
-        var data = JSON.stringify("""),format.raw/*81.35*/("""{"""),format.raw/*81.36*/(""""gameid": gameid, "type": "SkipTurn", "player": """),format.raw/*81.84*/("""{"""),format.raw/*81.85*/(""""username": username"""),format.raw/*81.105*/("""}"""),format.raw/*81.106*/("""}"""),format.raw/*81.107*/(""");
+        var data = JSON.stringify("""),format.raw/*108.35*/("""{"""),format.raw/*108.36*/(""""gameid": gameid, "type": "SkipTurn", "player": """),format.raw/*108.84*/("""{"""),format.raw/*108.85*/(""""username": username"""),format.raw/*108.105*/("""}"""),format.raw/*108.106*/("""}"""),format.raw/*108.107*/(""");
         socket.send(data);
 
 //updates turns completed count because skipped turn is a lost turn
@@ -119,9 +146,9 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
 
 //capture screen after timeout once turn Number field is updated
         takeSnapshot();
-    """),format.raw/*91.5*/("""}"""),format.raw/*91.6*/("""
+    """),format.raw/*118.5*/("""}"""),format.raw/*118.6*/("""
 
-    """),format.raw/*93.5*/("""var username = $('#username').val();
+    """),format.raw/*120.5*/("""var username = $('#username').val();
     var gameid = $('#gameid').val();
     var activePlayersList = $('#activePlayersList');
     var timer = $('.mytimer');
@@ -131,35 +158,35 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
     var WS = window['MozWebSocket'] ? window['MozWebSocket'] : WebSocket;
 
     // open socket on page load
-    var socket = new WS('"""),_display_(/*103.27*/routes/*103.33*/.Application.wsInterface().webSocketURL()),format.raw/*103.74*/("""');
+    var socket = new WS('"""),_display_(/*130.27*/routes/*130.33*/.Application.wsInterface().webSocketURL()),format.raw/*130.74*/("""');
 
     //this list will be used to append joining players
     var userList = $('#list-active-players');
 
-    var writeMessages = function (event) """),format.raw/*108.42*/("""{"""),format.raw/*108.43*/("""
-        """),format.raw/*109.9*/("""var model = event.data;
+    var writeMessages = function (event) """),format.raw/*135.42*/("""{"""),format.raw/*135.43*/("""
+        """),format.raw/*136.9*/("""var model = event.data;
 
         //model is not coming as Json so have to use this jquery json parser
         model = jQuery.parseJSON(model);
 
-        if (model.type == "joined") """),format.raw/*114.37*/("""{"""),format.raw/*114.38*/("""
+        if (model.type == "joined") """),format.raw/*141.37*/("""{"""),format.raw/*141.38*/("""
 
-            """),format.raw/*116.13*/("""var tmp_username = username.split("@")[0];
+            """),format.raw/*143.13*/("""var tmp_username = username.split("@")[0];
 
             var users = model.joinedUsers;
             activePlayersList.html("");
             activePlayersList.append('<b>' + tmp_username + ' (you)' + '</b><br/>');
 
-            for (i = 0; i < users.length; i++) """),format.raw/*122.48*/("""{"""),format.raw/*122.49*/("""
-                """),format.raw/*123.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*123.61*/("""{"""),format.raw/*123.62*/("""
-                    """),format.raw/*124.21*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
-                """),format.raw/*125.17*/("""}"""),format.raw/*125.18*/("""//if
-            """),format.raw/*126.13*/("""}"""),format.raw/*126.14*/("""//for
-        """),format.raw/*127.9*/("""}"""),format.raw/*127.10*/("""//joined
+            for (i = 0; i < users.length; i++) """),format.raw/*149.48*/("""{"""),format.raw/*149.49*/("""
+                """),format.raw/*150.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*150.61*/("""{"""),format.raw/*150.62*/("""
+                    """),format.raw/*151.21*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
+                """),format.raw/*152.17*/("""}"""),format.raw/*152.18*/("""//if
+            """),format.raw/*153.13*/("""}"""),format.raw/*153.14*/("""//for
+        """),format.raw/*154.9*/("""}"""),format.raw/*154.10*/("""//joined
 
-        else if (model.type == "LeaveGame") """),format.raw/*129.45*/("""{"""),format.raw/*129.46*/("""
+        else if (model.type == "LeaveGame") """),format.raw/*156.45*/("""{"""),format.raw/*156.46*/("""
 
-            """),format.raw/*131.13*/("""var users = model.joinedUsers;
+            """),format.raw/*158.13*/("""var users = model.joinedUsers;
             var leavinguser = model.leavingUser;
             var activityLog = $('#activity-log');
             var txt = leavinguser + " left the game!";
@@ -170,46 +197,46 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
             var active = model.active;
             var turnNumber = parseInt(model.turnNumber);
 
-            if (tmp_username == leavinguser) """),format.raw/*142.46*/("""{"""),format.raw/*142.47*/("""
-                """),format.raw/*143.17*/("""$('#dashform').submit();
-            """),format.raw/*144.13*/("""}"""),format.raw/*144.14*/("""
+            if (tmp_username == leavinguser) """),format.raw/*169.46*/("""{"""),format.raw/*169.47*/("""
+                """),format.raw/*170.17*/("""$('#dashform').submit();
+            """),format.raw/*171.13*/("""}"""),format.raw/*171.14*/("""
 
-            """),format.raw/*146.13*/("""if (active && myTurn == turnNumber) """),format.raw/*146.49*/("""{"""),format.raw/*146.50*/("""
-                """),format.raw/*147.17*/("""enableMyTurn();
-            """),format.raw/*148.13*/("""}"""),format.raw/*148.14*/("""
+            """),format.raw/*173.13*/("""if (active && myTurn == turnNumber) """),format.raw/*173.49*/("""{"""),format.raw/*173.50*/("""
+                """),format.raw/*174.17*/("""enableMyTurn();
+            """),format.raw/*175.13*/("""}"""),format.raw/*175.14*/("""
 
-            """),format.raw/*150.13*/("""if (myTurn > deadTurn) """),format.raw/*150.36*/("""{"""),format.raw/*150.37*/("""
-                """),format.raw/*151.17*/("""myTurn = myTurn - 1;
+            """),format.raw/*177.13*/("""if (myTurn > deadTurn) """),format.raw/*177.36*/("""{"""),format.raw/*177.37*/("""
+                """),format.raw/*178.17*/("""myTurn = myTurn - 1;
                 $('#turn').val(myTurn);
-            """),format.raw/*153.13*/("""}"""),format.raw/*153.14*/("""
+            """),format.raw/*180.13*/("""}"""),format.raw/*180.14*/("""
 
-            """),format.raw/*155.13*/("""var users = model.joinedUsers;
+            """),format.raw/*182.13*/("""var users = model.joinedUsers;
             activePlayersList.html("");
             activePlayersList.append('<b>' + tmp_username + ' (you)' + '</b><br/>');
 
-            for (i = 0; i < users.length; i++) """),format.raw/*159.48*/("""{"""),format.raw/*159.49*/("""
-                """),format.raw/*160.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*160.61*/("""{"""),format.raw/*160.62*/("""
-                    """),format.raw/*161.21*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
-                """),format.raw/*162.17*/("""}"""),format.raw/*162.18*/("""//if
-            """),format.raw/*163.13*/("""}"""),format.raw/*163.14*/("""//for
-        """),format.raw/*164.9*/("""}"""),format.raw/*164.10*/("""
+            for (i = 0; i < users.length; i++) """),format.raw/*186.48*/("""{"""),format.raw/*186.49*/("""
+                """),format.raw/*187.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*187.61*/("""{"""),format.raw/*187.62*/("""
+                    """),format.raw/*188.21*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
+                """),format.raw/*189.17*/("""}"""),format.raw/*189.18*/("""//if
+            """),format.raw/*190.13*/("""}"""),format.raw/*190.14*/("""//for
+        """),format.raw/*191.9*/("""}"""),format.raw/*191.10*/("""
 
-        """),format.raw/*166.9*/("""else if (model.type == "redirect") """),format.raw/*166.44*/("""{"""),format.raw/*166.45*/("""
-            """),format.raw/*167.13*/("""$('#frmHidden').submit();
-        """),format.raw/*168.9*/("""}"""),format.raw/*168.10*/("""
+        """),format.raw/*193.9*/("""else if (model.type == "redirect") """),format.raw/*193.44*/("""{"""),format.raw/*193.45*/("""
+            """),format.raw/*194.13*/("""$('#frmHidden').submit();
+        """),format.raw/*195.9*/("""}"""),format.raw/*195.10*/("""
 
-        """),format.raw/*170.9*/("""else if (model.type == "UpdateActivityLog") """),format.raw/*170.53*/("""{"""),format.raw/*170.54*/("""
-            """),format.raw/*171.13*/("""var stepName = model.stepName,
+        """),format.raw/*197.9*/("""else if (model.type == "UpdateActivityLog") """),format.raw/*197.53*/("""{"""),format.raw/*197.54*/("""
+            """),format.raw/*198.13*/("""var stepName = model.stepName,
                 playerName = model.player.split("@")[0];
 
             var activityLog = $('#activity-log');
             var txt = playerName + " performed step: " + stepName;
 
             activityLog.prepend('<p>' + txt + '</p><hr/>');
-        """),format.raw/*178.9*/("""}"""),format.raw/*178.10*/("""//UpdateActivityLog
+        """),format.raw/*205.9*/("""}"""),format.raw/*205.10*/("""//UpdateActivityLog
 
-        else if (model.type == "UpdateActivityLogWithOopsSurprise") """),format.raw/*180.69*/("""{"""),format.raw/*180.70*/("""
-            """),format.raw/*181.13*/("""var stepName = model.stepName,
+        else if (model.type == "UpdateActivityLogWithOopsSurprise") """),format.raw/*207.69*/("""{"""),format.raw/*207.70*/("""
+            """),format.raw/*208.13*/("""var stepName = model.stepName,
                     playerName = model.player.split("@")[0];
 
             var activityLog = $('#activity-log');
@@ -219,31 +246,31 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
             activityLog.find('hr').first().remove();
 
             activityLog.prepend('<p>' + txt + '</p><hr/>');
-        """),format.raw/*191.9*/("""}"""),format.raw/*191.10*/("""//UpdateActivityLogWithOopsSurprise
+        """),format.raw/*218.9*/("""}"""),format.raw/*218.10*/("""//UpdateActivityLogWithOopsSurprise
 
-        else if (model.type == "Timeout") """),format.raw/*193.43*/("""{"""),format.raw/*193.44*/("""
-            """),format.raw/*194.13*/("""var playerName = model.player;
+        else if (model.type == "Timeout") """),format.raw/*220.43*/("""{"""),format.raw/*220.44*/("""
+            """),format.raw/*221.13*/("""var playerName = model.player;
 
             var activityLog = $('#activity-log');
 
             var txt = playerName + " missed their turn due to timeout!";
 
             activityLog.prepend('<p>' + txt + '</p><hr/>');
-        """),format.raw/*201.9*/("""}"""),format.raw/*201.10*/("""//Timeout
+        """),format.raw/*228.9*/("""}"""),format.raw/*228.10*/("""//Timeout
 
-        else if (model.type == "SkipTurn") """),format.raw/*203.44*/("""{"""),format.raw/*203.45*/("""
-            """),format.raw/*204.13*/("""var playerName = model.player;
+        else if (model.type == "SkipTurn") """),format.raw/*230.44*/("""{"""),format.raw/*230.45*/("""
+            """),format.raw/*231.13*/("""var playerName = model.player;
 
             var activityLog = $('#activity-log');
 
             var txt = playerName + " skipped their turn!";
 
             activityLog.prepend('<p>' + txt + '</p><hr/>');
-        """),format.raw/*211.9*/("""}"""),format.raw/*211.10*/("""//SkipTurn
+        """),format.raw/*238.9*/("""}"""),format.raw/*238.10*/("""//SkipTurn
 
 
-        else if (model.type == "Chat") """),format.raw/*214.40*/("""{"""),format.raw/*214.41*/("""
-            """),format.raw/*215.13*/("""var playerName = model.player.split("@")[0],
+        else if (model.type == "Chat") """),format.raw/*241.40*/("""{"""),format.raw/*241.41*/("""
+            """),format.raw/*242.13*/("""var playerName = model.player.split("@")[0],
                 message = model.message;
 
             var chatArea = $('#chatArea');
@@ -251,170 +278,170 @@ if(turnNo <= maxTurns)"""),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
             var txt = "<b>" + playerName + "</b>: " + message;
 
             chatArea.append('<p>' + txt + '</p>');
-        """),format.raw/*223.9*/("""}"""),format.raw/*223.10*/("""//Chat
+        """),format.raw/*250.9*/("""}"""),format.raw/*250.10*/("""//Chat
 
-        else if (model.type == "ChangeTurn") """),format.raw/*225.46*/("""{"""),format.raw/*225.47*/("""
-            """),format.raw/*226.13*/("""var turnNumber = model.turnNumber,
+        else if (model.type == "ChangeTurn") """),format.raw/*252.46*/("""{"""),format.raw/*252.47*/("""
+            """),format.raw/*253.13*/("""var turnNumber = model.turnNumber,
                 playerTurn = $('#turn').val();
 
             //alert("CTurn: " + turnNumber + ", PTurn: " + playerTurn + ", EStatus: " + (turnNumber == playerTurn));
-            if (turnNumber == playerTurn) """),format.raw/*230.43*/("""{"""),format.raw/*230.44*/("""
-"""),format.raw/*231.1*/("""var turnNo = parseInt($('#turnNo').html());
+            if (turnNumber == playerTurn) """),format.raw/*257.43*/("""{"""),format.raw/*257.44*/("""
+"""),format.raw/*258.1*/("""var turnNo = parseInt($('#turnNo').html());
 var maxTurns = document.getElementById('labelTurns').innerText;
-if( turnNo <= maxTurns)"""),format.raw/*233.24*/("""{"""),format.raw/*233.25*/("""
-"""),format.raw/*234.1*/("""swal("It's your turn!");
+if( turnNo <= maxTurns)"""),format.raw/*260.24*/("""{"""),format.raw/*260.25*/("""
+"""),format.raw/*261.1*/("""swal("It's your turn!");
                 enableMyTurn();
                 publishMyTurn();
 
-                if ($('#btnIsProduction').val() == "true") """),format.raw/*238.60*/("""{"""),format.raw/*238.61*/("""
-                    """),format.raw/*239.21*/("""$('#btnSkip').trigger('click');
-                """),format.raw/*240.17*/("""}"""),format.raw/*240.18*/("""
-"""),format.raw/*241.1*/("""}"""),format.raw/*241.2*/("""
-            """),format.raw/*242.13*/("""}"""),format.raw/*242.14*/("""else"""),format.raw/*242.18*/("""{"""),format.raw/*242.19*/("""
-"""),format.raw/*243.1*/("""$("#btnSkip").attr("disabled",true);
+                if ($('#btnIsProduction').val() == "true") """),format.raw/*265.60*/("""{"""),format.raw/*265.61*/("""
+                    """),format.raw/*266.21*/("""$('#btnSkip').trigger('click');
+                """),format.raw/*267.17*/("""}"""),format.raw/*267.18*/("""
+"""),format.raw/*268.1*/("""}"""),format.raw/*268.2*/("""
+            """),format.raw/*269.13*/("""}"""),format.raw/*269.14*/("""else"""),format.raw/*269.18*/("""{"""),format.raw/*269.19*/("""
+"""),format.raw/*270.1*/("""$("#btnSkip").attr("disabled",true);
 
             //publishMyTurn();
 
-        """),format.raw/*247.9*/("""}"""),format.raw/*247.10*/("""
-"""),format.raw/*248.1*/("""}"""),format.raw/*248.2*/("""//ChangeTurn
+        """),format.raw/*274.9*/("""}"""),format.raw/*274.10*/("""
+"""),format.raw/*275.1*/("""}"""),format.raw/*275.2*/("""//ChangeTurn
 
-        else if (model.type == "TurnUpdate") """),format.raw/*250.46*/("""{"""),format.raw/*250.47*/("""
-            """),format.raw/*251.13*/("""var currentPlayer = model.currentPlayer.split("@")[0];
+        else if (model.type == "TurnUpdate") """),format.raw/*277.46*/("""{"""),format.raw/*277.47*/("""
+            """),format.raw/*278.13*/("""var currentPlayer = model.currentPlayer.split("@")[0];
             var tmp_username = username.split("@")[0];
 
             var users = model.joinedUsers;
             activePlayersList.html("");
 
-            if (tmp_username == currentPlayer) """),format.raw/*257.48*/("""{"""),format.raw/*257.49*/("""
-                """),format.raw/*258.17*/("""activePlayersList.append('<b>' + tmp_username + ' (you)' + '</b><br/>');
-            """),format.raw/*259.13*/("""}"""),format.raw/*259.14*/("""
+            if (tmp_username == currentPlayer) """),format.raw/*284.48*/("""{"""),format.raw/*284.49*/("""
+                """),format.raw/*285.17*/("""activePlayersList.append('<b>' + tmp_username + ' (you)' + '</b><br/>');
+            """),format.raw/*286.13*/("""}"""),format.raw/*286.14*/("""
 
-            """),format.raw/*261.13*/("""else """),format.raw/*261.18*/("""{"""),format.raw/*261.19*/("""
-                """),format.raw/*262.17*/("""activePlayersList.append(tmp_username + ' (you)' + '<br/>');
-            """),format.raw/*263.13*/("""}"""),format.raw/*263.14*/("""
+            """),format.raw/*288.13*/("""else """),format.raw/*288.18*/("""{"""),format.raw/*288.19*/("""
+                """),format.raw/*289.17*/("""activePlayersList.append(tmp_username + ' (you)' + '<br/>');
+            """),format.raw/*290.13*/("""}"""),format.raw/*290.14*/("""
 
 
-            """),format.raw/*266.13*/("""for (i = 0; i < users.length; i++) """),format.raw/*266.48*/("""{"""),format.raw/*266.49*/("""
-                """),format.raw/*267.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*267.61*/("""{"""),format.raw/*267.62*/("""
-                    """),format.raw/*268.21*/("""if (users[i].split("-")[0] == currentPlayer) """),format.raw/*268.66*/("""{"""),format.raw/*268.67*/("""
-                        """),format.raw/*269.25*/("""activePlayersList.append('<b>' + users[i].split("-")[0] + '</b><br/>');
-                    """),format.raw/*270.21*/("""}"""),format.raw/*270.22*/("""
+            """),format.raw/*293.13*/("""for (i = 0; i < users.length; i++) """),format.raw/*293.48*/("""{"""),format.raw/*293.49*/("""
+                """),format.raw/*294.17*/("""if (users[i].split("-")[0] != tmp_username) """),format.raw/*294.61*/("""{"""),format.raw/*294.62*/("""
+                    """),format.raw/*295.21*/("""if (users[i].split("-")[0] == currentPlayer) """),format.raw/*295.66*/("""{"""),format.raw/*295.67*/("""
+                        """),format.raw/*296.25*/("""activePlayersList.append('<b>' + users[i].split("-")[0] + '</b><br/>');
+                    """),format.raw/*297.21*/("""}"""),format.raw/*297.22*/("""
 
-                    """),format.raw/*272.21*/("""else """),format.raw/*272.26*/("""{"""),format.raw/*272.27*/("""
-                        """),format.raw/*273.25*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
-                    """),format.raw/*274.21*/("""}"""),format.raw/*274.22*/("""
-                """),format.raw/*275.17*/("""}"""),format.raw/*275.18*/("""//if
-            """),format.raw/*276.13*/("""}"""),format.raw/*276.14*/("""//for
+                    """),format.raw/*299.21*/("""else """),format.raw/*299.26*/("""{"""),format.raw/*299.27*/("""
+                        """),format.raw/*300.25*/("""activePlayersList.append(users[i].split("-")[0] + '<br/>');
+                    """),format.raw/*301.21*/("""}"""),format.raw/*301.22*/("""
+                """),format.raw/*302.17*/("""}"""),format.raw/*302.18*/("""//if
+            """),format.raw/*303.13*/("""}"""),format.raw/*303.14*/("""//for
 
-        """),format.raw/*278.9*/("""}"""),format.raw/*278.10*/("""//TurnUpdate
+        """),format.raw/*305.9*/("""}"""),format.raw/*305.10*/("""//TurnUpdate
 
-        else """),format.raw/*280.14*/("""{"""),format.raw/*280.15*/("""
-            """),format.raw/*281.13*/("""var name = model.name;
+        else """),format.raw/*307.14*/("""{"""),format.raw/*307.15*/("""
+            """),format.raw/*308.13*/("""var name = model.name;
             $('#lblCount').text(count);
             $('#divJoined').prepend('<p>' + name + '</p>');
-        """),format.raw/*284.9*/("""}"""),format.raw/*284.10*/("""
-    """),format.raw/*285.5*/("""}"""),format.raw/*285.6*/("""
+        """),format.raw/*311.9*/("""}"""),format.raw/*311.10*/("""
+    """),format.raw/*312.5*/("""}"""),format.raw/*312.6*/("""
 
-    """),format.raw/*287.5*/("""$('#editTodoDialog').on('shown.bs.modal', function () """),format.raw/*287.59*/("""{"""),format.raw/*287.60*/("""
+    """),format.raw/*314.5*/("""$('#editTodoDialog').on('shown.bs.modal', function () """),format.raw/*314.59*/("""{"""),format.raw/*314.60*/("""
 
-        """),format.raw/*289.9*/("""if (myTurn == "true") """),format.raw/*289.31*/("""{"""),format.raw/*289.32*/("""
+        """),format.raw/*316.9*/("""if (myTurn == "true") """),format.raw/*316.31*/("""{"""),format.raw/*316.32*/("""
 
-            """),format.raw/*291.60*/("""
-            """),format.raw/*292.55*/("""
-            """),format.raw/*293.60*/("""
+            """),format.raw/*318.60*/("""
+            """),format.raw/*319.55*/("""
+            """),format.raw/*320.60*/("""
 
-        """),format.raw/*295.9*/("""}"""),format.raw/*295.10*/(""" """),format.raw/*295.11*/("""else """),format.raw/*295.16*/("""{"""),format.raw/*295.17*/("""
+        """),format.raw/*322.9*/("""}"""),format.raw/*322.10*/(""" """),format.raw/*322.11*/("""else """),format.raw/*322.16*/("""{"""),format.raw/*322.17*/("""
 
-            """),format.raw/*297.13*/("""$(".perform-step").attr("disabled", true);
-            """),format.raw/*298.54*/("""
-            """),format.raw/*299.59*/("""
-        """),format.raw/*300.9*/("""}"""),format.raw/*300.10*/("""
-
-
-    """),format.raw/*303.5*/("""}"""),format.raw/*303.6*/(""");
-
-$('#riskDialog').on('shown.bs.modal', function () """),format.raw/*305.51*/("""{"""),format.raw/*305.52*/("""
-
-"""),format.raw/*307.1*/("""if (myTurn == "true") """),format.raw/*307.23*/("""{"""),format.raw/*307.24*/("""
-
-"""),format.raw/*309.48*/("""
-"""),format.raw/*310.43*/("""
-"""),format.raw/*311.48*/("""
-
-"""),format.raw/*313.1*/("""}"""),format.raw/*313.2*/(""" """),format.raw/*313.3*/("""else """),format.raw/*313.8*/("""{"""),format.raw/*313.9*/("""
-
-"""),format.raw/*315.47*/("""
-"""),format.raw/*316.42*/("""
-"""),format.raw/*317.1*/("""$(".perform-risk").attr("disabled", true);
-"""),format.raw/*318.1*/("""}"""),format.raw/*318.2*/("""
+            """),format.raw/*324.13*/("""$(".perform-step").attr("disabled", true);
+            """),format.raw/*325.54*/("""
+            """),format.raw/*326.59*/("""
+        """),format.raw/*327.9*/("""}"""),format.raw/*327.10*/("""
 
 
-"""),format.raw/*321.1*/("""}"""),format.raw/*321.2*/(""");
+    """),format.raw/*330.5*/("""}"""),format.raw/*330.6*/(""");
 
-    var publishMyTurn = function (event) """),format.raw/*323.42*/("""{"""),format.raw/*323.43*/("""
-        """),format.raw/*324.9*/("""var data = JSON.stringify("""),format.raw/*324.35*/("""{"""),format.raw/*324.36*/("""
-            """),format.raw/*325.13*/(""""gameid": gameid,
+$('#riskDialog').on('shown.bs.modal', function () """),format.raw/*332.51*/("""{"""),format.raw/*332.52*/("""
+
+"""),format.raw/*334.1*/("""if (myTurn == "true") """),format.raw/*334.23*/("""{"""),format.raw/*334.24*/("""
+
+"""),format.raw/*336.48*/("""
+"""),format.raw/*337.43*/("""
+"""),format.raw/*338.48*/("""
+
+"""),format.raw/*340.1*/("""}"""),format.raw/*340.2*/(""" """),format.raw/*340.3*/("""else """),format.raw/*340.8*/("""{"""),format.raw/*340.9*/("""
+
+"""),format.raw/*342.47*/("""
+"""),format.raw/*343.42*/("""
+"""),format.raw/*344.1*/("""$(".perform-risk").attr("disabled", true);
+"""),format.raw/*345.1*/("""}"""),format.raw/*345.2*/("""
+
+
+"""),format.raw/*348.1*/("""}"""),format.raw/*348.2*/(""");
+
+    var publishMyTurn = function (event) """),format.raw/*350.42*/("""{"""),format.raw/*350.43*/("""
+        """),format.raw/*351.9*/("""var data = JSON.stringify("""),format.raw/*351.35*/("""{"""),format.raw/*351.36*/("""
+            """),format.raw/*352.13*/(""""gameid": gameid,
             "type": "TurnUpdate",
-            "player": """),format.raw/*327.23*/("""{"""),format.raw/*327.24*/(""""name": username, "team": "somecode""""),format.raw/*327.60*/("""}"""),format.raw/*327.61*/("""
-        """),format.raw/*328.9*/("""}"""),format.raw/*328.10*/(""");
+            "player": """),format.raw/*354.23*/("""{"""),format.raw/*354.24*/(""""name": username, "team": "somecode""""),format.raw/*354.60*/("""}"""),format.raw/*354.61*/("""
+        """),format.raw/*355.9*/("""}"""),format.raw/*355.10*/(""");
         socket.send(data);
-    """),format.raw/*330.5*/("""}"""),format.raw/*330.6*/("""
+    """),format.raw/*357.5*/("""}"""),format.raw/*357.6*/("""
 
-    """),format.raw/*332.5*/("""var initConnection = function (event) """),format.raw/*332.43*/("""{"""),format.raw/*332.44*/("""
-        """),format.raw/*333.9*/("""registerGameId();
+    """),format.raw/*359.5*/("""var initConnection = function (event) """),format.raw/*359.43*/("""{"""),format.raw/*359.44*/("""
+        """),format.raw/*360.9*/("""registerGameId();
         publishMyPresence();
         checkIfFirstTurn();
-    """),format.raw/*336.5*/("""}"""),format.raw/*336.6*/("""
+    """),format.raw/*363.5*/("""}"""),format.raw/*363.6*/("""
 
-    """),format.raw/*338.5*/("""var checkIfFirstTurn = function (event) """),format.raw/*338.45*/("""{"""),format.raw/*338.46*/("""
-        """),format.raw/*339.9*/("""if (turn == "1") """),format.raw/*339.26*/("""{"""),format.raw/*339.27*/("""
-            """),format.raw/*340.13*/("""enableMyTurn();
-        """),format.raw/*341.9*/("""}"""),format.raw/*341.10*/("""else"""),format.raw/*341.14*/("""{"""),format.raw/*341.15*/("""
-            """),format.raw/*342.13*/("""$("#btnSkip").attr("disabled",true);
+    """),format.raw/*365.5*/("""var checkIfFirstTurn = function (event) """),format.raw/*365.45*/("""{"""),format.raw/*365.46*/("""
+        """),format.raw/*366.9*/("""if (turn == "1") """),format.raw/*366.26*/("""{"""),format.raw/*366.27*/("""
+            """),format.raw/*367.13*/("""enableMyTurn();
+        """),format.raw/*368.9*/("""}"""),format.raw/*368.10*/("""else"""),format.raw/*368.14*/("""{"""),format.raw/*368.15*/("""
+            """),format.raw/*369.13*/("""$("#btnSkip").attr("disabled",true);
 
-        """),format.raw/*344.9*/("""}"""),format.raw/*344.10*/("""
-    """),format.raw/*345.5*/("""}"""),format.raw/*345.6*/("""
+        """),format.raw/*371.9*/("""}"""),format.raw/*371.10*/("""
+    """),format.raw/*372.5*/("""}"""),format.raw/*372.6*/("""
 
-    """),format.raw/*347.5*/("""//put all code inside this method to setup the stage for player who is having the current turn
-    var enableMyTurn = function (event) """),format.raw/*348.41*/("""{"""),format.raw/*348.42*/("""
-        """),format.raw/*349.9*/("""myTurn = "true";
+    """),format.raw/*374.5*/("""//put all code inside this method to setup the stage for player who is having the current turn
+    var enableMyTurn = function (event) """),format.raw/*375.41*/("""{"""),format.raw/*375.42*/("""
+        """),format.raw/*376.9*/("""myTurn = "true";
 $("#btnSkip").attr("disabled",false);
         timer.show();
         setTimer(timerTime);
         resetTimer();
         startTimer();
-    """),format.raw/*355.5*/("""}"""),format.raw/*355.6*/("""
+    """),format.raw/*382.5*/("""}"""),format.raw/*382.6*/("""
 
-    """),format.raw/*357.5*/("""var publishMyPresence = function (event) """),format.raw/*357.46*/("""{"""),format.raw/*357.47*/("""
-        """),format.raw/*358.9*/("""//push to socket on first page load of any user
-        var data = JSON.stringify("""),format.raw/*359.35*/("""{"""),format.raw/*359.36*/("""
-            """),format.raw/*360.13*/(""""gameid": gameid,
+    """),format.raw/*384.5*/("""var publishMyPresence = function (event) """),format.raw/*384.46*/("""{"""),format.raw/*384.47*/("""
+        """),format.raw/*385.9*/("""//push to socket on first page load of any user
+        var data = JSON.stringify("""),format.raw/*386.35*/("""{"""),format.raw/*386.36*/("""
+            """),format.raw/*387.13*/(""""gameid": gameid,
             "type": "joined",
-            "player": """),format.raw/*362.23*/("""{"""),format.raw/*362.24*/(""""name": username, "team": "somecode""""),format.raw/*362.60*/("""}"""),format.raw/*362.61*/("""
-        """),format.raw/*363.9*/("""}"""),format.raw/*363.10*/(""");
+            "player": """),format.raw/*389.23*/("""{"""),format.raw/*389.24*/(""""name": username, "team": "somecode""""),format.raw/*389.60*/("""}"""),format.raw/*389.61*/("""
+        """),format.raw/*390.9*/("""}"""),format.raw/*390.10*/(""");
         socket.send(data);
-    """),format.raw/*365.5*/("""}"""),format.raw/*365.6*/("""
+    """),format.raw/*392.5*/("""}"""),format.raw/*392.6*/("""
 
-    """),format.raw/*367.5*/("""var registerGameId = function (event) """),format.raw/*367.43*/("""{"""),format.raw/*367.44*/("""
-        """),format.raw/*368.9*/("""//push to socket on first page load of any user
-        var data = JSON.stringify("""),format.raw/*369.35*/("""{"""),format.raw/*369.36*/(""""gameid": gameid, "type": "RegisterGameId""""),format.raw/*369.78*/("""}"""),format.raw/*369.79*/(""");
+    """),format.raw/*394.5*/("""var registerGameId = function (event) """),format.raw/*394.43*/("""{"""),format.raw/*394.44*/("""
+        """),format.raw/*395.9*/("""//push to socket on first page load of any user
+        var data = JSON.stringify("""),format.raw/*396.35*/("""{"""),format.raw/*396.36*/(""""gameid": gameid, "type": "RegisterGameId""""),format.raw/*396.78*/("""}"""),format.raw/*396.79*/(""");
         socket.send(data);
-    """),format.raw/*371.5*/("""}"""),format.raw/*371.6*/("""
+    """),format.raw/*398.5*/("""}"""),format.raw/*398.6*/("""
 
-    """),format.raw/*373.5*/("""//read message from socket
+    """),format.raw/*400.5*/("""//read message from socket
     socket.onmessage = writeMessages;
 
     //without this I am getting exception that CONNECTION NOT ESTABLISHED
     socket.onopen = initConnection;
 
 
-    $('#btnJoin').click(function (event) """),format.raw/*380.42*/("""{"""),format.raw/*380.43*/("""
+    $('#btnJoin').click(function (event) """),format.raw/*407.42*/("""{"""),format.raw/*407.43*/("""
 
-        """),format.raw/*382.9*/("""var name = $('#txtName').val();
+        """),format.raw/*409.9*/("""var name = $('#txtName').val();
         var code = $('#txtCode').val();
 
 
-        var data = JSON.stringify("""),format.raw/*386.35*/("""{"""),format.raw/*386.36*/(""""name": name, "team": code"""),format.raw/*386.62*/("""}"""),format.raw/*386.63*/(""");
+        var data = JSON.stringify("""),format.raw/*413.35*/("""{"""),format.raw/*413.36*/(""""name": name, "team": code"""),format.raw/*413.62*/("""}"""),format.raw/*413.63*/(""");
 
         //push to socket
         socket.send(data);
@@ -427,25 +454,25 @@ $("#btnSkip").attr("disabled",false);
         $('#divPlayerStatus').attr('hidden', false);
         $('#btnLeave').attr('hidden', false);
         $('#btnJoin').attr('hidden', true);
-    """),format.raw/*399.5*/("""}"""),format.raw/*399.6*/(""");
+    """),format.raw/*426.5*/("""}"""),format.raw/*426.6*/(""");
 
 
     //Event handler for start game event
-    $('#btnStart').click(function (e) """),format.raw/*403.39*/("""{"""),format.raw/*403.40*/("""
+    $('#btnStart').click(function (e) """),format.raw/*430.39*/("""{"""),format.raw/*430.40*/("""
 
-        """),format.raw/*405.9*/("""var username = $('#username').val();
-        var data = JSON.stringify("""),format.raw/*406.35*/("""{"""),format.raw/*406.36*/(""""gameid": gameid, "type": "StartGame", "player": """),format.raw/*406.85*/("""{"""),format.raw/*406.86*/(""""username": username"""),format.raw/*406.106*/("""}"""),format.raw/*406.107*/("""}"""),format.raw/*406.108*/(""");
+        """),format.raw/*432.9*/("""var username = $('#username').val();
+        var data = JSON.stringify("""),format.raw/*433.35*/("""{"""),format.raw/*433.36*/(""""gameid": gameid, "type": "StartGame", "player": """),format.raw/*433.85*/("""{"""),format.raw/*433.86*/(""""username": username"""),format.raw/*433.106*/("""}"""),format.raw/*433.107*/("""}"""),format.raw/*433.108*/(""");
         socket.send(data);
-    """),format.raw/*408.5*/("""}"""),format.raw/*408.6*/(""");
+    """),format.raw/*435.5*/("""}"""),format.raw/*435.6*/(""");
 
     //take snapshot only when modal is closed
-    $('#editTodoDialog').on('hidden.bs.modal', function () """),format.raw/*411.60*/("""{"""),format.raw/*411.61*/("""
-        """),format.raw/*412.9*/("""takeSnapshot();
-    """),format.raw/*413.5*/("""}"""),format.raw/*413.6*/(""");
+    $('#editTodoDialog').on('hidden.bs.modal', function () """),format.raw/*438.60*/("""{"""),format.raw/*438.61*/("""
+        """),format.raw/*439.9*/("""takeSnapshot();
+    """),format.raw/*440.5*/("""}"""),format.raw/*440.6*/(""");
 
     //Perform step button event handler
-    $('.perform-step').on("click", function () """),format.raw/*416.48*/("""{"""),format.raw/*416.49*/("""
-        """),format.raw/*417.9*/("""myTurn = "false";
+    $('.perform-step').on("click", function () """),format.raw/*443.48*/("""{"""),format.raw/*443.49*/("""
+        """),format.raw/*444.9*/("""myTurn = "false";
         var topModal = $(this).closest('div.modal'),
             parentModal = topModal.find('div.modal-content'),
             header = parentModal.find('div.modal-header'),
@@ -461,20 +488,23 @@ $("#btnSkip").attr("disabled",false);
         setTimer(timerTime);
         resetTimer();
         timer.hide();
-    """),format.raw/*433.5*/("""}"""),format.raw/*433.6*/(""");
+    """),format.raw/*460.5*/("""}"""),format.raw/*460.6*/(""");
 
 
-$('#btnMitigateRisk').click(function()"""),format.raw/*436.39*/("""{"""),format.raw/*436.40*/("""
+$('#btnMitigateRisk').click(function()"""),format.raw/*463.39*/("""{"""),format.raw/*463.40*/("""
 
-    """),format.raw/*438.5*/("""var id = $('#btnMitigateRisk').val();
-    var title = "Risk with id " + title + " mitigated.";
-    funcChangeTurn(title);
+    """),format.raw/*465.5*/("""var id = $('#btnMitigateRisk').val();
+     var tempStatus="riskStatus"+id;
+        var status= document.getElementById('swalmessages').innerHTML;
+        var title = "("+id+") "+status;
+        document.getElementById('prevstep').innerHTML = id;
+        funcChangeTurn(title);
+"""),format.raw/*471.1*/("""}"""),format.raw/*471.2*/(""");
 
-"""),format.raw/*442.1*/("""}"""),format.raw/*442.2*/(""");
+    
+    var funcChangeTurn = function(title)"""),format.raw/*474.41*/("""{"""),format.raw/*474.42*/("""
 
-    var funcChangeTurn = function(title)"""),format.raw/*444.41*/("""{"""),format.raw/*444.42*/("""
-
-        """),format.raw/*446.9*/("""updateActivityLogs(title);
+        """),format.raw/*476.9*/("""updateActivityLogs(title);
         publishTurnNumber();
 
         takeSnapshot();
@@ -484,11 +514,11 @@ $('#btnMitigateRisk').click(function()"""),format.raw/*436.39*/("""{"""),format.
         setTimer(timerTime);
         resetTimer();
         timer.hide();
-    """),format.raw/*456.5*/("""}"""),format.raw/*456.6*/("""
+    """),format.raw/*486.5*/("""}"""),format.raw/*486.6*/("""
 
-    """),format.raw/*458.5*/("""$('#updateactivity').on("click", function () """),format.raw/*458.50*/("""{"""),format.raw/*458.51*/("""
+    """),format.raw/*488.5*/("""$('#updateactivity').on("click", function () """),format.raw/*488.50*/("""{"""),format.raw/*488.51*/("""
 
-        """),format.raw/*460.9*/("""var topModal = $(this).closest('div.modal'),
+        """),format.raw/*490.9*/("""var topModal = $(this).closest('div.modal'),
             parentModal = topModal.find('div.modal-content'),
             header = parentModal.find('div.modal-header'),
             title = header.find('.modal-title').html();
@@ -496,110 +526,110 @@ $('#btnMitigateRisk').click(function()"""),format.raw/*436.39*/("""{"""),format.
         var isoops = $('#isoops').val();
         var otitle = "";
         var oopsmsg = $('#oopsmsg').val();
-        if (isoops == "true") """),format.raw/*468.31*/("""{"""),format.raw/*468.32*/("""
-            """),format.raw/*469.13*/("""otitle = "You got an OOPS card." + oopsmsg;
-        """),format.raw/*470.9*/("""}"""),format.raw/*470.10*/("""
-        """),format.raw/*471.9*/("""else """),format.raw/*471.14*/("""{"""),format.raw/*471.15*/("""
-            """),format.raw/*472.13*/("""otitle = "You got an Surprise card" + oopsmsg;
-        """),format.raw/*473.9*/("""}"""),format.raw/*473.10*/("""
-        """),format.raw/*474.9*/("""updateActivityLogsWithSurpriseOrOops(otitle);
+        if (isoops == "true") """),format.raw/*498.31*/("""{"""),format.raw/*498.32*/("""
+            """),format.raw/*499.13*/("""otitle = "You got an OOPS card." + oopsmsg;
+        """),format.raw/*500.9*/("""}"""),format.raw/*500.10*/("""
+        """),format.raw/*501.9*/("""else """),format.raw/*501.14*/("""{"""),format.raw/*501.15*/("""
+            """),format.raw/*502.13*/("""otitle = "You got an Surprise card" + oopsmsg;
+        """),format.raw/*503.9*/("""}"""),format.raw/*503.10*/("""
+        """),format.raw/*504.9*/("""updateActivityLogsWithSurpriseOrOops(otitle);
 
-    """),format.raw/*476.5*/("""}"""),format.raw/*476.6*/(""");
+    """),format.raw/*506.5*/("""}"""),format.raw/*506.6*/(""");
 
-    var takeSnapshot = function () """),format.raw/*478.36*/("""{"""),format.raw/*478.37*/("""
-        """),format.raw/*479.9*/("""html2canvas(document.body, """),format.raw/*479.36*/("""{"""),format.raw/*479.37*/("""
-            """),format.raw/*480.13*/("""onrendered: function (canvas) """),format.raw/*480.43*/("""{"""),format.raw/*480.44*/("""
-                """),format.raw/*481.17*/("""//"""),format.raw/*481.57*/("""
-                """),format.raw/*482.17*/("""uploadImage(canvas.toDataURL());
-            """),format.raw/*483.13*/("""}"""),format.raw/*483.14*/("""
-        """),format.raw/*484.9*/("""}"""),format.raw/*484.10*/(""");
-    """),format.raw/*485.5*/("""}"""),format.raw/*485.6*/("""
+    var takeSnapshot = function () """),format.raw/*508.36*/("""{"""),format.raw/*508.37*/("""
+        """),format.raw/*509.9*/("""html2canvas(document.body, """),format.raw/*509.36*/("""{"""),format.raw/*509.37*/("""
+            """),format.raw/*510.13*/("""onrendered: function (canvas) """),format.raw/*510.43*/("""{"""),format.raw/*510.44*/("""
+                """),format.raw/*511.17*/("""//"""),format.raw/*511.57*/("""
+                """),format.raw/*512.17*/("""uploadImage(canvas.toDataURL());
+            """),format.raw/*513.13*/("""}"""),format.raw/*513.14*/("""
+        """),format.raw/*514.9*/("""}"""),format.raw/*514.10*/(""");
+    """),format.raw/*515.5*/("""}"""),format.raw/*515.6*/("""
 
-    """),format.raw/*487.5*/("""var uploadImage = function (url) """),format.raw/*487.38*/("""{"""),format.raw/*487.39*/("""
-        """),format.raw/*488.9*/("""var turnNo = parseInt($('#turnNo').html());
+    """),format.raw/*517.5*/("""var uploadImage = function (url) """),format.raw/*517.38*/("""{"""),format.raw/*517.39*/("""
+        """),format.raw/*518.9*/("""var turnNo = parseInt($('#turnNo').html());
         turnNo = turnNo - 1;
-        var obj = """),format.raw/*490.19*/("""{"""),format.raw/*490.20*/("""'image-data': url, 'username': username, 'gameid': gameid, 'turnNo': turnNo"""),format.raw/*490.95*/("""}"""),format.raw/*490.96*/(""";
-        $.ajax("""),format.raw/*491.16*/("""{"""),format.raw/*491.17*/("""
-            """),format.raw/*492.13*/("""type: 'POST',
-            url: '"""),_display_(/*493.20*/routes/*493.26*/.GameController.saveImageSnapshot()),format.raw/*493.61*/("""',
+        var obj = """),format.raw/*520.19*/("""{"""),format.raw/*520.20*/("""'image-data': url, 'username': username, 'gameid': gameid, 'turnNo': turnNo"""),format.raw/*520.95*/("""}"""),format.raw/*520.96*/(""";
+        $.ajax("""),format.raw/*521.16*/("""{"""),format.raw/*521.17*/("""
+            """),format.raw/*522.13*/("""type: 'POST',
+            url: '"""),_display_(/*523.20*/routes/*523.26*/.GameController.saveImageSnapshot()),format.raw/*523.61*/("""',
             data: JSON.stringify(obj),
             contentType: 'application/json',
-            success: function (data) """),format.raw/*496.38*/("""{"""),format.raw/*496.39*/("""
-                """),format.raw/*497.17*/("""//alert("Image uploaded");
-            """),format.raw/*498.13*/("""}"""),format.raw/*498.14*/("""
-        """),format.raw/*499.9*/("""}"""),format.raw/*499.10*/(""");//ajax call ends here
-    """),format.raw/*500.5*/("""}"""),format.raw/*500.6*/("""
+            success: function (data) """),format.raw/*526.38*/("""{"""),format.raw/*526.39*/("""
+                """),format.raw/*527.17*/("""//alert("Image uploaded");
+            """),format.raw/*528.13*/("""}"""),format.raw/*528.14*/("""
+        """),format.raw/*529.9*/("""}"""),format.raw/*529.10*/(""");//ajax call ends here
+    """),format.raw/*530.5*/("""}"""),format.raw/*530.6*/("""
 
-    """),format.raw/*502.5*/("""var publishTurnNumber = function () """),format.raw/*502.41*/("""{"""),format.raw/*502.42*/("""
-        """),format.raw/*503.9*/("""var turnNumber = $('#turn').val();
-        var data = JSON.stringify("""),format.raw/*504.35*/("""{"""),format.raw/*504.36*/(""""gameid": gameid, "turnNumber": turnNumber, "type": "ChangeTurn""""),format.raw/*504.100*/("""}"""),format.raw/*504.101*/(""");
+    """),format.raw/*532.5*/("""var publishTurnNumber = function () """),format.raw/*532.41*/("""{"""),format.raw/*532.42*/("""
+        """),format.raw/*533.9*/("""var turnNumber = $('#turn').val();
+        var data = JSON.stringify("""),format.raw/*534.35*/("""{"""),format.raw/*534.36*/(""""gameid": gameid, "turnNumber": turnNumber, "type": "ChangeTurn""""),format.raw/*534.100*/("""}"""),format.raw/*534.101*/(""");
         socket.send(data);
-    """),format.raw/*506.5*/("""}"""),format.raw/*506.6*/("""
+    """),format.raw/*536.5*/("""}"""),format.raw/*536.6*/("""
 
-    """),format.raw/*508.5*/("""var updateActivityLogs = function (title) """),format.raw/*508.47*/("""{"""),format.raw/*508.48*/("""
-        """),format.raw/*509.9*/("""var data = JSON.stringify("""),format.raw/*509.35*/("""{"""),format.raw/*509.36*/("""
-            """),format.raw/*510.13*/(""""gameid": gameid,
+    """),format.raw/*538.5*/("""var updateActivityLogs = function (title) """),format.raw/*538.47*/("""{"""),format.raw/*538.48*/("""
+        """),format.raw/*539.9*/("""var data = JSON.stringify("""),format.raw/*539.35*/("""{"""),format.raw/*539.36*/("""
+            """),format.raw/*540.13*/(""""gameid": gameid,
             "stepName": title,
             "type": "PerformStep",
-            "player": """),format.raw/*513.23*/("""{"""),format.raw/*513.24*/(""""username": username"""),format.raw/*513.44*/("""}"""),format.raw/*513.45*/("""
-        """),format.raw/*514.9*/("""}"""),format.raw/*514.10*/(""");
+            "player": """),format.raw/*543.23*/("""{"""),format.raw/*543.24*/(""""username": username"""),format.raw/*543.44*/("""}"""),format.raw/*543.45*/("""
+        """),format.raw/*544.9*/("""}"""),format.raw/*544.10*/(""");
         socket.send(data);
-    """),format.raw/*516.5*/("""}"""),format.raw/*516.6*/("""
+    """),format.raw/*546.5*/("""}"""),format.raw/*546.6*/("""
 
-    """),format.raw/*518.5*/("""var updateActivityLogsWithSurpriseOrOops = function (title) """),format.raw/*518.65*/("""{"""),format.raw/*518.66*/("""
-        """),format.raw/*519.9*/("""var data = JSON.stringify("""),format.raw/*519.35*/("""{"""),format.raw/*519.36*/("""
-            """),format.raw/*520.13*/(""""gameid": gameid,
+    """),format.raw/*548.5*/("""var updateActivityLogsWithSurpriseOrOops = function (title) """),format.raw/*548.65*/("""{"""),format.raw/*548.66*/("""
+        """),format.raw/*549.9*/("""var data = JSON.stringify("""),format.raw/*549.35*/("""{"""),format.raw/*549.36*/("""
+            """),format.raw/*550.13*/(""""gameid": gameid,
             "stepName": title,
             "type": "PerformStepWithOopsSurprise",
-            "player": """),format.raw/*523.23*/("""{"""),format.raw/*523.24*/(""""username": username"""),format.raw/*523.44*/("""}"""),format.raw/*523.45*/("""
-        """),format.raw/*524.9*/("""}"""),format.raw/*524.10*/(""");
+            "player": """),format.raw/*553.23*/("""{"""),format.raw/*553.24*/(""""username": username"""),format.raw/*553.44*/("""}"""),format.raw/*553.45*/("""
+        """),format.raw/*554.9*/("""}"""),format.raw/*554.10*/(""");
         socket.send(data);
-    """),format.raw/*526.5*/("""}"""),format.raw/*526.6*/("""
+    """),format.raw/*556.5*/("""}"""),format.raw/*556.6*/("""
 
-    """),format.raw/*528.5*/("""$('#btnSend').click(function () """),format.raw/*528.37*/("""{"""),format.raw/*528.38*/("""
-        """),format.raw/*529.9*/("""var message = $('#txtMessage').val();
+    """),format.raw/*558.5*/("""$('#btnSend').click(function () """),format.raw/*558.37*/("""{"""),format.raw/*558.38*/("""
+        """),format.raw/*559.9*/("""var message = $('#txtMessage').val();
         $('#txtMessage').val('');
-        if (message != "") """),format.raw/*531.28*/("""{"""),format.raw/*531.29*/("""
-            """),format.raw/*532.13*/("""var data = JSON.stringify("""),format.raw/*532.39*/("""{"""),format.raw/*532.40*/("""
-                """),format.raw/*533.17*/(""""gameid": gameid,
+        if (message != "") """),format.raw/*561.28*/("""{"""),format.raw/*561.29*/("""
+            """),format.raw/*562.13*/("""var data = JSON.stringify("""),format.raw/*562.39*/("""{"""),format.raw/*562.40*/("""
+                """),format.raw/*563.17*/(""""gameid": gameid,
                 "message": message,
                 "type": "Chat",
-                "player": """),format.raw/*536.27*/("""{"""),format.raw/*536.28*/(""""username": username"""),format.raw/*536.48*/("""}"""),format.raw/*536.49*/("""
-            """),format.raw/*537.13*/("""}"""),format.raw/*537.14*/(""");
+                "player": """),format.raw/*566.27*/("""{"""),format.raw/*566.28*/(""""username": username"""),format.raw/*566.48*/("""}"""),format.raw/*566.49*/("""
+            """),format.raw/*567.13*/("""}"""),format.raw/*567.14*/(""");
             socket.send(data);
-        """),format.raw/*539.9*/("""}"""),format.raw/*539.10*/("""
-    """),format.raw/*540.5*/("""}"""),format.raw/*540.6*/(""");
+        """),format.raw/*569.9*/("""}"""),format.raw/*569.10*/("""
+    """),format.raw/*570.5*/("""}"""),format.raw/*570.6*/(""");
 
-    var sendChatMessage = function (message) """),format.raw/*542.46*/("""{"""),format.raw/*542.47*/("""
-        """),format.raw/*543.9*/("""if (message != "") """),format.raw/*543.28*/("""{"""),format.raw/*543.29*/("""
-            """),format.raw/*544.13*/("""var data = JSON.stringify("""),format.raw/*544.39*/("""{"""),format.raw/*544.40*/("""
-                """),format.raw/*545.17*/(""""gameid": gameid,
+    var sendChatMessage = function (message) """),format.raw/*572.46*/("""{"""),format.raw/*572.47*/("""
+        """),format.raw/*573.9*/("""if (message != "") """),format.raw/*573.28*/("""{"""),format.raw/*573.29*/("""
+            """),format.raw/*574.13*/("""var data = JSON.stringify("""),format.raw/*574.39*/("""{"""),format.raw/*574.40*/("""
+                """),format.raw/*575.17*/(""""gameid": gameid,
                 "message": message,
                 "type": "Chat",
-                "player": """),format.raw/*548.27*/("""{"""),format.raw/*548.28*/(""""username": username"""),format.raw/*548.48*/("""}"""),format.raw/*548.49*/("""
-            """),format.raw/*549.13*/("""}"""),format.raw/*549.14*/(""");
+                "player": """),format.raw/*578.27*/("""{"""),format.raw/*578.28*/(""""username": username"""),format.raw/*578.48*/("""}"""),format.raw/*578.49*/("""
+            """),format.raw/*579.13*/("""}"""),format.raw/*579.14*/(""");
             socket.send(data);
-        """),format.raw/*551.9*/("""}"""),format.raw/*551.10*/("""
-    """),format.raw/*552.5*/("""}"""),format.raw/*552.6*/("""
+        """),format.raw/*581.9*/("""}"""),format.raw/*581.10*/("""
+    """),format.raw/*582.5*/("""}"""),format.raw/*582.6*/("""
 
-    """),format.raw/*554.5*/("""$('#btnLeave').click(function (e) """),format.raw/*554.39*/("""{"""),format.raw/*554.40*/("""
+    """),format.raw/*584.5*/("""$('#btnLeave').click(function (e) """),format.raw/*584.39*/("""{"""),format.raw/*584.40*/("""
 
-        """),format.raw/*556.9*/("""var data = JSON.stringify("""),format.raw/*556.35*/("""{"""),format.raw/*556.36*/(""""type": "leaving", "player": """),format.raw/*556.65*/("""{"""),format.raw/*556.66*/(""""username": username"""),format.raw/*556.86*/("""}"""),format.raw/*556.87*/("""}"""),format.raw/*556.88*/(""");
+        """),format.raw/*586.9*/("""var data = JSON.stringify("""),format.raw/*586.35*/("""{"""),format.raw/*586.36*/(""""type": "leaving", "player": """),format.raw/*586.65*/("""{"""),format.raw/*586.66*/(""""username": username"""),format.raw/*586.86*/("""}"""),format.raw/*586.87*/("""}"""),format.raw/*586.88*/(""");
         socket.send(data);
 
-        $.ajax("""),format.raw/*559.16*/("""{"""),format.raw/*559.17*/("""
-            """),format.raw/*560.13*/("""type: "GET",
+        $.ajax("""),format.raw/*589.16*/("""{"""),format.raw/*589.17*/("""
+            """),format.raw/*590.13*/("""type: "GET",
             url: '/leave',
-            data: """),format.raw/*562.19*/("""{"""),format.raw/*562.20*/("""'username': username"""),format.raw/*562.40*/("""}"""),format.raw/*562.41*/(""",
-            success: function (data) """),format.raw/*563.38*/("""{"""),format.raw/*563.39*/("""
-                """),format.raw/*564.17*/("""window.location.replace("/");
-            """),format.raw/*565.13*/("""}"""),format.raw/*565.14*/("""
-        """),format.raw/*566.9*/("""}"""),format.raw/*566.10*/(""");
-    """),format.raw/*567.5*/("""}"""),format.raw/*567.6*/(""");
+            data: """),format.raw/*592.19*/("""{"""),format.raw/*592.20*/("""'username': username"""),format.raw/*592.40*/("""}"""),format.raw/*592.41*/(""",
+            success: function (data) """),format.raw/*593.38*/("""{"""),format.raw/*593.39*/("""
+                """),format.raw/*594.17*/("""window.location.replace("/");
+            """),format.raw/*595.13*/("""}"""),format.raw/*595.14*/("""
+        """),format.raw/*596.9*/("""}"""),format.raw/*596.10*/(""");
+    """),format.raw/*597.5*/("""}"""),format.raw/*597.6*/(""");
 
 
-    $('#btnSkip').click(function () """),format.raw/*570.37*/("""{"""),format.raw/*570.38*/("""
-        """),format.raw/*571.9*/("""timeout = true;
+    $('#btnSkip').click(function () """),format.raw/*600.37*/("""{"""),format.raw/*600.38*/("""
+        """),format.raw/*601.9*/("""timeout = true;
         sendSkipTurnMessage();
 
         setTimer(timerTime);
@@ -607,63 +637,64 @@ $('#btnMitigateRisk').click(function()"""),format.raw/*436.39*/("""{"""),format.
         timer.hide();
         //In case of timeout, next player should get his turn
         publishTurnNumber();
-    """),format.raw/*579.5*/("""}"""),format.raw/*579.6*/(""");
+    """),format.raw/*609.5*/("""}"""),format.raw/*609.6*/(""");
 
-    $('#txtMessage').keyup(function (event) """),format.raw/*581.45*/("""{"""),format.raw/*581.46*/("""
+    $('#txtMessage').keyup(function (event) """),format.raw/*611.45*/("""{"""),format.raw/*611.46*/("""
 
-        """),format.raw/*583.9*/("""if (event.keyCode == 13) """),format.raw/*583.34*/("""{"""),format.raw/*583.35*/("""
+        """),format.raw/*613.9*/("""if (event.keyCode == 13) """),format.raw/*613.34*/("""{"""),format.raw/*613.35*/("""
 
-            """),format.raw/*585.13*/("""//check if length is more than 150
-            if ($(this).val().length <= 150) """),format.raw/*586.46*/("""{"""),format.raw/*586.47*/("""
-                """),format.raw/*587.17*/("""sendChatMessage($(this).val());
+            """),format.raw/*615.13*/("""//check if length is more than 150
+            if ($(this).val().length <= 150) """),format.raw/*616.46*/("""{"""),format.raw/*616.47*/("""
+                """),format.raw/*617.17*/("""sendChatMessage($(this).val());
                 $('#txtMessage').val('');
                 return;
-            """),format.raw/*590.13*/("""}"""),format.raw/*590.14*/("""
-        """),format.raw/*591.9*/("""}"""),format.raw/*591.10*/("""
+            """),format.raw/*620.13*/("""}"""),format.raw/*620.14*/("""
+        """),format.raw/*621.9*/("""}"""),format.raw/*621.10*/("""
 
-        """),format.raw/*593.9*/("""var length = $(this).val().length;
-        if (length > 150) """),format.raw/*594.27*/("""{"""),format.raw/*594.28*/("""
-            """),format.raw/*595.13*/("""$(this).css('color', 'red');
-        """),format.raw/*596.9*/("""}"""),format.raw/*596.10*/("""
-        """),format.raw/*597.9*/("""else """),format.raw/*597.14*/("""{"""),format.raw/*597.15*/("""
-            """),format.raw/*598.13*/("""$(this).css('color', 'black');
-        """),format.raw/*599.9*/("""}"""),format.raw/*599.10*/("""
-    """),format.raw/*600.5*/("""}"""),format.raw/*600.6*/(""");
+        """),format.raw/*623.9*/("""var length = $(this).val().length;
+        if (length > 150) """),format.raw/*624.27*/("""{"""),format.raw/*624.28*/("""
+            """),format.raw/*625.13*/("""$(this).css('color', 'red');
+        """),format.raw/*626.9*/("""}"""),format.raw/*626.10*/("""
+        """),format.raw/*627.9*/("""else """),format.raw/*627.14*/("""{"""),format.raw/*627.15*/("""
+            """),format.raw/*628.13*/("""$(this).css('color', 'black');
+        """),format.raw/*629.9*/("""}"""),format.raw/*629.10*/("""
+    """),format.raw/*630.5*/("""}"""),format.raw/*630.6*/(""");
 
 
-    $('#lnkLeave').click(function () """),format.raw/*603.38*/("""{"""),format.raw/*603.39*/("""
-       """),format.raw/*604.8*/("""// alert("her2");
-        // var obj = """),format.raw/*605.22*/("""{"""),format.raw/*605.23*/("""'username' : username, 'gameid' : gameid"""),format.raw/*605.63*/("""}"""),format.raw/*605.64*/(""";
-        // $.ajax("""),format.raw/*606.19*/("""{"""),format.raw/*606.20*/("""
-        """),format.raw/*607.9*/("""//     type: 'POST',
+    $('#lnkLeave').click(function () """),format.raw/*633.38*/("""{"""),format.raw/*633.39*/("""
+       """),format.raw/*634.8*/("""// alert("her2");
+        // var obj = """),format.raw/*635.22*/("""{"""),format.raw/*635.23*/("""'username' : username, 'gameid' : gameid"""),format.raw/*635.63*/("""}"""),format.raw/*635.64*/(""";
+        // $.ajax("""),format.raw/*636.19*/("""{"""),format.raw/*636.20*/("""
+        """),format.raw/*637.9*/("""//     type: 'POST',
         //     url: '/leave',
         //     data: JSON.stringify(obj),
         //     contentType: 'application/json',
-        //     success: function (data) """),format.raw/*611.41*/("""{"""),format.raw/*611.42*/("""
-        """),format.raw/*612.9*/("""//         if(data=="success")"""),format.raw/*612.39*/("""{"""),format.raw/*612.40*/("""
-        """),format.raw/*613.9*/("""//             notifyOthers();
+        //     success: function (data) """),format.raw/*641.41*/("""{"""),format.raw/*641.42*/("""
+        """),format.raw/*642.9*/("""//         if(data=="success")"""),format.raw/*642.39*/("""{"""),format.raw/*642.40*/("""
+        """),format.raw/*643.9*/("""//             notifyOthers();
         //             $('#dashform').submit();
-        //         """),format.raw/*615.20*/("""}"""),format.raw/*615.21*/("""
-        """),format.raw/*616.9*/("""//     """),format.raw/*616.16*/("""}"""),format.raw/*616.17*/("""
-        """),format.raw/*617.9*/("""// """),format.raw/*617.12*/("""}"""),format.raw/*617.13*/(""");//ajax call ends here
+        //         """),format.raw/*645.20*/("""}"""),format.raw/*645.21*/("""
+        """),format.raw/*646.9*/("""//     """),format.raw/*646.16*/("""}"""),format.raw/*646.17*/("""
+        """),format.raw/*647.9*/("""// """),format.raw/*647.12*/("""}"""),format.raw/*647.13*/(""");//ajax call ends here
         notifyOthers();
-    """),format.raw/*619.5*/("""}"""),format.raw/*619.6*/(""");
+    """),format.raw/*649.5*/("""}"""),format.raw/*649.6*/(""");
 
-    var notifyOthers = function () """),format.raw/*621.36*/("""{"""),format.raw/*621.37*/("""
-        """),format.raw/*622.9*/("""var turn = $('#turn').val();
+    var notifyOthers = function () """),format.raw/*651.36*/("""{"""),format.raw/*651.37*/("""
+        """),format.raw/*652.9*/("""var turn = $('#turn').val();
 
         var isActivePlayer = myTurn == "true" ? true : false;
 
-        var data = JSON.stringify("""),format.raw/*626.35*/("""{"""),format.raw/*626.36*/("""
-            """),format.raw/*627.13*/(""""gameid": gameid,
+        var data = JSON.stringify("""),format.raw/*656.35*/("""{"""),format.raw/*656.36*/("""
+            """),format.raw/*657.13*/(""""gameid": gameid,
             "type": "LeaveGame",
             "active": isActivePlayer,
             "turnNumber": turn,
-            "player": """),format.raw/*631.23*/("""{"""),format.raw/*631.24*/(""""username": username"""),format.raw/*631.44*/("""}"""),format.raw/*631.45*/("""
-        """),format.raw/*632.9*/("""}"""),format.raw/*632.10*/(""");
+            "player": """),format.raw/*661.23*/("""{"""),format.raw/*661.24*/(""""username": username"""),format.raw/*661.44*/("""}"""),format.raw/*661.45*/("""
+        """),format.raw/*662.9*/("""}"""),format.raw/*662.10*/(""");
         socket.send(data);
-    """),format.raw/*634.5*/("""}"""),format.raw/*634.6*/("""
-"""),format.raw/*635.1*/("""}"""),format.raw/*635.2*/(""");"""))
+    """),format.raw/*664.5*/("""}"""),format.raw/*664.6*/("""
+"""),format.raw/*665.1*/("""}"""),format.raw/*665.2*/(""");
+"""))
       }
     }
   }
@@ -683,11 +714,11 @@ $('#btnMitigateRisk').click(function()"""),format.raw/*436.39*/("""{"""),format.
 object gamejs extends gamejs_Scope0.gamejs
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 19 10:59:04 EST 2016
-                  SOURCE: /home/nivas/IdeaProjects/Project_RiskGame/app/views/gamejs.scala.html
-                  HASH: ad52da37c8b17300aa48eae7008b24f0aa000c81
-                  MATRIX: 829->0|870->14|898->15|930->21|1308->371|1337->372|1373->381|1480->460|1509->461|1551->475|1605->501|1634->502|1662->503|1820->633|1849->634|1894->651|2244->974|2273->975|2314->988|2343->989|2379->998|2408->999|2440->1004|2468->1005|2610->1119|2639->1120|2675->1129|2755->1182|2783->1183|2816->1189|2875->1220|2904->1221|2940->1230|2992->1255|3020->1256|3053->1262|3109->1290|3138->1291|3174->1300|3243->1342|3271->1343|3304->1349|3361->1378|3390->1379|3426->1388|3499->1434|3527->1435|3560->1441|3647->1500|3676->1501|3712->1510|3857->1627|3886->1628|3961->1675|3990->1676|4039->1696|4069->1697|4099->1698|4451->2023|4479->2024|4512->2030|4578->2068|4607->2069|4643->2078|4788->2195|4817->2196|4893->2244|4922->2245|4971->2265|5001->2266|5031->2267|5369->2578|5397->2579|5430->2585|5849->2976|5865->2982|5928->3023|6105->3171|6135->3172|6172->3181|6381->3361|6411->3362|6454->3376|6743->3637|6773->3638|6819->3655|6892->3699|6922->3700|6972->3721|7077->3797|7107->3798|7153->3815|7183->3816|7225->3830|7255->3831|7338->3885|7368->3886|7411->3900|7990->4451|8020->4452|8066->4469|8132->4506|8162->4507|8205->4521|8270->4557|8300->4558|8346->4575|8403->4603|8433->4604|8476->4618|8528->4641|8558->4642|8604->4659|8706->4732|8736->4733|8779->4747|9012->4951|9042->4952|9088->4969|9161->5013|9191->5014|9241->5035|9346->5111|9376->5112|9422->5129|9452->5130|9494->5144|9524->5145|9562->5155|9626->5190|9656->5191|9698->5204|9760->5238|9790->5239|9828->5249|9901->5293|9931->5294|9973->5307|10276->5583|10306->5584|10424->5673|10454->5674|10496->5687|10909->6073|10939->6074|11047->6153|11077->6154|11119->6167|11372->6392|11402->6393|11485->6447|11515->6448|11557->6461|11796->6672|11826->6673|11907->6725|11937->6726|11979->6739|12261->6994|12291->6995|12373->7048|12403->7049|12445->7062|12716->7304|12746->7305|12775->7306|12935->7437|12965->7438|12994->7439|13173->7589|13203->7590|13253->7611|13330->7659|13360->7660|13389->7661|13418->7662|13460->7675|13490->7676|13523->7680|13553->7681|13582->7682|13688->7760|13718->7761|13747->7762|13776->7763|13864->7822|13894->7823|13936->7836|14207->8080|14237->8081|14283->8098|14397->8183|14427->8184|14470->8198|14504->8203|14534->8204|14580->8221|14682->8294|14712->8295|14756->8310|14820->8345|14850->8346|14896->8363|14969->8407|14999->8408|15049->8429|15123->8474|15153->8475|15207->8500|15328->8592|15358->8593|15409->8615|15443->8620|15473->8621|15527->8646|15636->8726|15666->8727|15712->8744|15742->8745|15788->8762|15818->8763|15861->8778|15891->8779|15947->8806|15977->8807|16019->8820|16178->8951|16208->8952|16241->8957|16270->8958|16304->8964|16387->9018|16417->9019|16455->9029|16506->9051|16536->9052|16579->9113|16621->9168|16663->9228|16701->9238|16731->9239|16761->9240|16795->9245|16825->9246|16868->9260|16952->9356|16994->9415|17031->9424|17061->9425|17096->9432|17125->9433|17208->9487|17238->9488|17268->9490|17319->9512|17349->9513|17380->9562|17410->9605|17440->9653|17470->9655|17499->9656|17528->9657|17561->9662|17590->9663|17621->9711|17651->9753|17680->9754|17751->9797|17780->9798|17811->9801|17840->9802|17914->9847|17944->9848|17981->9857|18036->9883|18066->9884|18108->9897|18211->9971|18241->9972|18306->10008|18336->10009|18373->10018|18403->10019|18465->10053|18494->10054|18528->10060|18595->10098|18625->10099|18662->10108|18769->10187|18798->10188|18832->10194|18901->10234|18931->10235|18968->10244|19014->10261|19044->10262|19086->10275|19138->10299|19168->10300|19201->10304|19231->10305|19273->10318|19347->10364|19377->10365|19410->10370|19439->10371|19473->10377|19637->10512|19667->10513|19704->10522|19886->10676|19915->10677|19949->10683|20019->10724|20049->10725|20086->10734|20197->10816|20227->10817|20269->10830|20368->10900|20398->10901|20463->10937|20493->10938|20530->10947|20560->10948|20622->10982|20651->10983|20685->10989|20752->11027|20782->11028|20819->11037|20930->11119|20960->11120|21031->11162|21061->11163|21123->11197|21152->11198|21186->11204|21434->11423|21464->11424|21502->11434|21639->11542|21669->11543|21724->11569|21754->11570|22137->11925|22166->11926|22279->12010|22309->12011|22347->12021|22447->12092|22477->12093|22555->12142|22585->12143|22635->12163|22666->12164|22697->12165|22759->12199|22788->12200|22926->12309|22956->12310|22993->12319|23041->12339|23070->12340|23190->12431|23220->12432|23257->12441|23767->12923|23796->12924|23868->12967|23898->12968|23932->12974|24083->13097|24112->13098|24185->13142|24215->13143|24253->13153|24462->13334|24491->13335|24525->13341|24599->13386|24629->13387|24667->13397|25058->13759|25088->13760|25130->13773|25210->13825|25240->13826|25277->13835|25311->13840|25341->13841|25383->13854|25466->13909|25496->13910|25533->13919|25612->13970|25641->13971|25709->14010|25739->14011|25776->14020|25832->14047|25862->14048|25904->14061|25963->14091|25993->14092|26039->14109|26070->14149|26116->14166|26190->14211|26220->14212|26257->14221|26287->14222|26322->14229|26351->14230|26385->14236|26447->14269|26477->14270|26514->14279|26634->14370|26664->14371|26768->14446|26798->14447|26844->14464|26874->14465|26916->14478|26977->14511|26993->14517|27050->14552|27203->14676|27233->14677|27279->14694|27347->14733|27377->14734|27414->14743|27444->14744|27500->14772|27529->14773|27563->14779|27628->14815|27658->14816|27695->14825|27793->14894|27823->14895|27917->14959|27948->14960|28010->14994|28039->14995|28073->15001|28144->15043|28174->15044|28211->15053|28266->15079|28296->15080|28338->15093|28473->15199|28503->15200|28552->15220|28582->15221|28619->15230|28649->15231|28711->15265|28740->15266|28774->15272|28863->15332|28893->15333|28930->15342|28985->15368|29015->15369|29057->15382|29208->15504|29238->15505|29287->15525|29317->15526|29354->15535|29384->15536|29446->15570|29475->15571|29509->15577|29570->15609|29600->15610|29637->15619|29765->15718|29795->15719|29837->15732|29892->15758|29922->15759|29968->15776|30109->15888|30139->15889|30188->15909|30218->15910|30260->15923|30290->15924|30360->15966|30390->15967|30423->15972|30452->15973|30530->16022|30560->16023|30597->16032|30645->16051|30675->16052|30717->16065|30772->16091|30802->16092|30848->16109|30989->16221|31019->16222|31068->16242|31098->16243|31140->16256|31170->16257|31240->16299|31270->16300|31303->16305|31332->16306|31366->16312|31429->16346|31459->16347|31497->16357|31552->16383|31582->16384|31640->16413|31670->16414|31719->16434|31749->16435|31779->16436|31854->16482|31884->16483|31926->16496|32013->16554|32043->16555|32092->16575|32122->16576|32190->16615|32220->16616|32266->16633|32337->16675|32367->16676|32404->16685|32434->16686|32469->16693|32498->16694|32568->16735|32598->16736|32635->16745|32879->16961|32908->16962|32985->17010|33015->17011|33053->17021|33107->17046|33137->17047|33180->17061|33289->17141|33319->17142|33365->17159|33504->17269|33534->17270|33571->17279|33601->17280|33639->17290|33729->17351|33759->17352|33801->17365|33866->17402|33896->17403|33933->17412|33967->17417|33997->17418|34039->17431|34106->17470|34136->17471|34169->17476|34198->17477|34269->17519|34299->17520|34335->17528|34403->17567|34433->17568|34502->17608|34532->17609|34581->17629|34611->17630|34648->17639|34858->17820|34888->17821|34925->17830|34984->17860|35014->17861|35051->17870|35178->17968|35208->17969|35245->17978|35281->17985|35311->17986|35348->17995|35380->17998|35410->17999|35490->18051|35519->18052|35587->18091|35617->18092|35654->18101|35810->18228|35840->18229|35882->18242|36054->18385|36084->18386|36133->18406|36163->18407|36200->18416|36230->18417|36292->18451|36321->18452|36350->18453|36379->18454
-                  LINES: 32->1|32->1|32->1|34->3|43->12|43->12|44->13|46->15|46->15|48->17|48->17|48->17|49->18|51->20|51->20|52->21|62->31|62->31|63->32|63->32|64->33|64->33|65->34|65->34|69->38|69->38|70->39|72->41|72->41|74->43|74->43|74->43|75->44|76->45|76->45|78->47|78->47|78->47|79->48|81->50|81->50|83->52|83->52|83->52|84->53|86->55|86->55|88->57|90->59|90->59|91->60|95->64|95->64|95->64|95->64|95->64|95->64|95->64|105->74|105->74|107->76|107->76|107->76|108->77|112->81|112->81|112->81|112->81|112->81|112->81|112->81|122->91|122->91|124->93|134->103|134->103|134->103|139->108|139->108|140->109|145->114|145->114|147->116|153->122|153->122|154->123|154->123|154->123|155->124|156->125|156->125|157->126|157->126|158->127|158->127|160->129|160->129|162->131|173->142|173->142|174->143|175->144|175->144|177->146|177->146|177->146|178->147|179->148|179->148|181->150|181->150|181->150|182->151|184->153|184->153|186->155|190->159|190->159|191->160|191->160|191->160|192->161|193->162|193->162|194->163|194->163|195->164|195->164|197->166|197->166|197->166|198->167|199->168|199->168|201->170|201->170|201->170|202->171|209->178|209->178|211->180|211->180|212->181|222->191|222->191|224->193|224->193|225->194|232->201|232->201|234->203|234->203|235->204|242->211|242->211|245->214|245->214|246->215|254->223|254->223|256->225|256->225|257->226|261->230|261->230|262->231|264->233|264->233|265->234|269->238|269->238|270->239|271->240|271->240|272->241|272->241|273->242|273->242|273->242|273->242|274->243|278->247|278->247|279->248|279->248|281->250|281->250|282->251|288->257|288->257|289->258|290->259|290->259|292->261|292->261|292->261|293->262|294->263|294->263|297->266|297->266|297->266|298->267|298->267|298->267|299->268|299->268|299->268|300->269|301->270|301->270|303->272|303->272|303->272|304->273|305->274|305->274|306->275|306->275|307->276|307->276|309->278|309->278|311->280|311->280|312->281|315->284|315->284|316->285|316->285|318->287|318->287|318->287|320->289|320->289|320->289|322->291|323->292|324->293|326->295|326->295|326->295|326->295|326->295|328->297|329->298|330->299|331->300|331->300|334->303|334->303|336->305|336->305|338->307|338->307|338->307|340->309|341->310|342->311|344->313|344->313|344->313|344->313|344->313|346->315|347->316|348->317|349->318|349->318|352->321|352->321|354->323|354->323|355->324|355->324|355->324|356->325|358->327|358->327|358->327|358->327|359->328|359->328|361->330|361->330|363->332|363->332|363->332|364->333|367->336|367->336|369->338|369->338|369->338|370->339|370->339|370->339|371->340|372->341|372->341|372->341|372->341|373->342|375->344|375->344|376->345|376->345|378->347|379->348|379->348|380->349|386->355|386->355|388->357|388->357|388->357|389->358|390->359|390->359|391->360|393->362|393->362|393->362|393->362|394->363|394->363|396->365|396->365|398->367|398->367|398->367|399->368|400->369|400->369|400->369|400->369|402->371|402->371|404->373|411->380|411->380|413->382|417->386|417->386|417->386|417->386|430->399|430->399|434->403|434->403|436->405|437->406|437->406|437->406|437->406|437->406|437->406|437->406|439->408|439->408|442->411|442->411|443->412|444->413|444->413|447->416|447->416|448->417|464->433|464->433|467->436|467->436|469->438|473->442|473->442|475->444|475->444|477->446|487->456|487->456|489->458|489->458|489->458|491->460|499->468|499->468|500->469|501->470|501->470|502->471|502->471|502->471|503->472|504->473|504->473|505->474|507->476|507->476|509->478|509->478|510->479|510->479|510->479|511->480|511->480|511->480|512->481|512->481|513->482|514->483|514->483|515->484|515->484|516->485|516->485|518->487|518->487|518->487|519->488|521->490|521->490|521->490|521->490|522->491|522->491|523->492|524->493|524->493|524->493|527->496|527->496|528->497|529->498|529->498|530->499|530->499|531->500|531->500|533->502|533->502|533->502|534->503|535->504|535->504|535->504|535->504|537->506|537->506|539->508|539->508|539->508|540->509|540->509|540->509|541->510|544->513|544->513|544->513|544->513|545->514|545->514|547->516|547->516|549->518|549->518|549->518|550->519|550->519|550->519|551->520|554->523|554->523|554->523|554->523|555->524|555->524|557->526|557->526|559->528|559->528|559->528|560->529|562->531|562->531|563->532|563->532|563->532|564->533|567->536|567->536|567->536|567->536|568->537|568->537|570->539|570->539|571->540|571->540|573->542|573->542|574->543|574->543|574->543|575->544|575->544|575->544|576->545|579->548|579->548|579->548|579->548|580->549|580->549|582->551|582->551|583->552|583->552|585->554|585->554|585->554|587->556|587->556|587->556|587->556|587->556|587->556|587->556|587->556|590->559|590->559|591->560|593->562|593->562|593->562|593->562|594->563|594->563|595->564|596->565|596->565|597->566|597->566|598->567|598->567|601->570|601->570|602->571|610->579|610->579|612->581|612->581|614->583|614->583|614->583|616->585|617->586|617->586|618->587|621->590|621->590|622->591|622->591|624->593|625->594|625->594|626->595|627->596|627->596|628->597|628->597|628->597|629->598|630->599|630->599|631->600|631->600|634->603|634->603|635->604|636->605|636->605|636->605|636->605|637->606|637->606|638->607|642->611|642->611|643->612|643->612|643->612|644->613|646->615|646->615|647->616|647->616|647->616|648->617|648->617|648->617|650->619|650->619|652->621|652->621|653->622|657->626|657->626|658->627|662->631|662->631|662->631|662->631|663->632|663->632|665->634|665->634|666->635|666->635
+                  DATE: Thu Sep 28 18:36:41 EDT 2017
+                  SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/gamejs.scala.html
+                  HASH: f8c56aa1efdf0a999ad932ab1b216a3576272af4
+                  MATRIX: 829->0|870->14|898->15|930->21|1308->371|1337->372|1373->381|1480->460|1509->461|1551->475|1605->501|1634->502|1662->503|1820->633|1849->634|1894->651|2244->974|2273->975|2314->988|2343->989|2379->998|2408->999|2440->1004|2468->1005|2610->1119|2639->1120|2675->1129|2755->1182|2783->1183|2816->1189|2875->1220|2904->1221|2940->1230|2992->1255|3020->1256|3053->1262|3109->1290|3138->1291|3174->1300|3243->1342|3271->1343|3304->1349|3361->1378|3390->1379|3426->1388|3499->1434|3527->1435|3560->1441|3630->1483|3659->1484|3709->1506|3747->1516|3776->1517|3829->1542|3957->1642|3986->1643|4057->1686|4086->1687|4135->1708|4203->1749|4218->1755|4270->1786|4531->2019|4560->2020|4679->2111|4708->2112|4755->2131|4784->2132|4827->2147|4856->2148|4890->2155|4955->2192|4984->2193|5016->2198|5256->2410|5285->2411|5360->2458|5389->2459|5438->2479|5468->2480|5498->2481|5851->2806|5880->2807|5914->2813|5981->2851|6011->2852|6048->2861|6194->2978|6224->2979|6301->3027|6331->3028|6381->3048|6412->3049|6443->3050|6782->3361|6811->3362|6845->3368|7264->3759|7280->3765|7343->3806|7520->3954|7550->3955|7587->3964|7796->4144|7826->4145|7869->4159|8158->4420|8188->4421|8234->4438|8307->4482|8337->4483|8387->4504|8492->4580|8522->4581|8568->4598|8598->4599|8640->4613|8670->4614|8753->4668|8783->4669|8826->4683|9405->5234|9435->5235|9481->5252|9547->5289|9577->5290|9620->5304|9685->5340|9715->5341|9761->5358|9818->5386|9848->5387|9891->5401|9943->5424|9973->5425|10019->5442|10121->5515|10151->5516|10194->5530|10427->5734|10457->5735|10503->5752|10576->5796|10606->5797|10656->5818|10761->5894|10791->5895|10837->5912|10867->5913|10909->5927|10939->5928|10977->5938|11041->5973|11071->5974|11113->5987|11175->6021|11205->6022|11243->6032|11316->6076|11346->6077|11388->6090|11691->6366|11721->6367|11839->6456|11869->6457|11911->6470|12324->6856|12354->6857|12462->6936|12492->6937|12534->6950|12787->7175|12817->7176|12900->7230|12930->7231|12972->7244|13211->7455|13241->7456|13322->7508|13352->7509|13394->7522|13676->7777|13706->7778|13788->7831|13818->7832|13860->7845|14131->8087|14161->8088|14190->8089|14350->8220|14380->8221|14409->8222|14588->8372|14618->8373|14668->8394|14745->8442|14775->8443|14804->8444|14833->8445|14875->8458|14905->8459|14938->8463|14968->8464|14997->8465|15103->8543|15133->8544|15162->8545|15191->8546|15279->8605|15309->8606|15351->8619|15622->8863|15652->8864|15698->8881|15812->8966|15842->8967|15885->8981|15919->8986|15949->8987|15995->9004|16097->9077|16127->9078|16171->9093|16235->9128|16265->9129|16311->9146|16384->9190|16414->9191|16464->9212|16538->9257|16568->9258|16622->9283|16743->9375|16773->9376|16824->9398|16858->9403|16888->9404|16942->9429|17051->9509|17081->9510|17127->9527|17157->9528|17203->9545|17233->9546|17276->9561|17306->9562|17362->9589|17392->9590|17434->9603|17593->9734|17623->9735|17656->9740|17685->9741|17719->9747|17802->9801|17832->9802|17870->9812|17921->9834|17951->9835|17994->9896|18036->9951|18078->10011|18116->10021|18146->10022|18176->10023|18210->10028|18240->10029|18283->10043|18367->10139|18409->10198|18446->10207|18476->10208|18511->10215|18540->10216|18623->10270|18653->10271|18683->10273|18734->10295|18764->10296|18795->10345|18825->10388|18855->10436|18885->10438|18914->10439|18943->10440|18976->10445|19005->10446|19036->10494|19066->10536|19095->10537|19166->10580|19195->10581|19226->10584|19255->10585|19329->10630|19359->10631|19396->10640|19451->10666|19481->10667|19523->10680|19626->10754|19656->10755|19721->10791|19751->10792|19788->10801|19818->10802|19880->10836|19909->10837|19943->10843|20010->10881|20040->10882|20077->10891|20184->10970|20213->10971|20247->10977|20316->11017|20346->11018|20383->11027|20429->11044|20459->11045|20501->11058|20553->11082|20583->11083|20616->11087|20646->11088|20688->11101|20762->11147|20792->11148|20825->11153|20854->11154|20888->11160|21052->11295|21082->11296|21119->11305|21301->11459|21330->11460|21364->11466|21434->11507|21464->11508|21501->11517|21612->11599|21642->11600|21684->11613|21783->11683|21813->11684|21878->11720|21908->11721|21945->11730|21975->11731|22037->11765|22066->11766|22100->11772|22167->11810|22197->11811|22234->11820|22345->11902|22375->11903|22446->11945|22476->11946|22538->11980|22567->11981|22601->11987|22849->12206|22879->12207|22917->12217|23054->12325|23084->12326|23139->12352|23169->12353|23552->12708|23581->12709|23694->12793|23724->12794|23762->12804|23862->12875|23892->12876|23970->12925|24000->12926|24050->12946|24081->12947|24112->12948|24174->12982|24203->12983|24341->13092|24371->13093|24408->13102|24456->13122|24485->13123|24605->13214|24635->13215|24672->13224|25182->13706|25211->13707|25283->13750|25313->13751|25347->13757|25652->14034|25681->14035|25759->14084|25789->14085|25827->14095|26036->14276|26065->14277|26099->14283|26173->14328|26203->14329|26241->14339|26632->14701|26662->14702|26704->14715|26784->14767|26814->14768|26851->14777|26885->14782|26915->14783|26957->14796|27040->14851|27070->14852|27107->14861|27186->14912|27215->14913|27283->14952|27313->14953|27350->14962|27406->14989|27436->14990|27478->15003|27537->15033|27567->15034|27613->15051|27644->15091|27690->15108|27764->15153|27794->15154|27831->15163|27861->15164|27896->15171|27925->15172|27959->15178|28021->15211|28051->15212|28088->15221|28208->15312|28238->15313|28342->15388|28372->15389|28418->15406|28448->15407|28490->15420|28551->15453|28567->15459|28624->15494|28777->15618|28807->15619|28853->15636|28921->15675|28951->15676|28988->15685|29018->15686|29074->15714|29103->15715|29137->15721|29202->15757|29232->15758|29269->15767|29367->15836|29397->15837|29491->15901|29522->15902|29584->15936|29613->15937|29647->15943|29718->15985|29748->15986|29785->15995|29840->16021|29870->16022|29912->16035|30047->16141|30077->16142|30126->16162|30156->16163|30193->16172|30223->16173|30285->16207|30314->16208|30348->16214|30437->16274|30467->16275|30504->16284|30559->16310|30589->16311|30631->16324|30782->16446|30812->16447|30861->16467|30891->16468|30928->16477|30958->16478|31020->16512|31049->16513|31083->16519|31144->16551|31174->16552|31211->16561|31339->16660|31369->16661|31411->16674|31466->16700|31496->16701|31542->16718|31683->16830|31713->16831|31762->16851|31792->16852|31834->16865|31864->16866|31934->16908|31964->16909|31997->16914|32026->16915|32104->16964|32134->16965|32171->16974|32219->16993|32249->16994|32291->17007|32346->17033|32376->17034|32422->17051|32563->17163|32593->17164|32642->17184|32672->17185|32714->17198|32744->17199|32814->17241|32844->17242|32877->17247|32906->17248|32940->17254|33003->17288|33033->17289|33071->17299|33126->17325|33156->17326|33214->17355|33244->17356|33293->17376|33323->17377|33353->17378|33428->17424|33458->17425|33500->17438|33587->17496|33617->17497|33666->17517|33696->17518|33764->17557|33794->17558|33840->17575|33911->17617|33941->17618|33978->17627|34008->17628|34043->17635|34072->17636|34142->17677|34172->17678|34209->17687|34453->17903|34482->17904|34559->17952|34589->17953|34627->17963|34681->17988|34711->17989|34754->18003|34863->18083|34893->18084|34939->18101|35078->18211|35108->18212|35145->18221|35175->18222|35213->18232|35303->18293|35333->18294|35375->18307|35440->18344|35470->18345|35507->18354|35541->18359|35571->18360|35613->18373|35680->18412|35710->18413|35743->18418|35772->18419|35843->18461|35873->18462|35909->18470|35977->18509|36007->18510|36076->18550|36106->18551|36155->18571|36185->18572|36222->18581|36432->18762|36462->18763|36499->18772|36558->18802|36588->18803|36625->18812|36752->18910|36782->18911|36819->18920|36855->18927|36885->18928|36922->18937|36954->18940|36984->18941|37064->18993|37093->18994|37161->19033|37191->19034|37228->19043|37384->19170|37414->19171|37456->19184|37628->19327|37658->19328|37707->19348|37737->19349|37774->19358|37804->19359|37866->19393|37895->19394|37924->19395|37953->19396
+                  LINES: 32->1|32->1|32->1|34->3|43->12|43->12|44->13|46->15|46->15|48->17|48->17|48->17|49->18|51->20|51->20|52->21|62->31|62->31|63->32|63->32|64->33|64->33|65->34|65->34|69->38|69->38|70->39|72->41|72->41|74->43|74->43|74->43|75->44|76->45|76->45|78->47|78->47|78->47|79->48|81->50|81->50|83->52|83->52|83->52|84->53|86->55|86->55|88->57|90->59|90->59|92->61|92->61|92->61|93->62|95->64|95->64|98->67|98->67|99->68|100->69|100->69|100->69|105->74|105->74|108->77|108->77|110->79|110->79|111->80|111->80|114->83|114->83|114->83|115->84|122->91|122->91|122->91|122->91|122->91|122->91|122->91|132->101|132->101|134->103|134->103|134->103|135->104|139->108|139->108|139->108|139->108|139->108|139->108|139->108|149->118|149->118|151->120|161->130|161->130|161->130|166->135|166->135|167->136|172->141|172->141|174->143|180->149|180->149|181->150|181->150|181->150|182->151|183->152|183->152|184->153|184->153|185->154|185->154|187->156|187->156|189->158|200->169|200->169|201->170|202->171|202->171|204->173|204->173|204->173|205->174|206->175|206->175|208->177|208->177|208->177|209->178|211->180|211->180|213->182|217->186|217->186|218->187|218->187|218->187|219->188|220->189|220->189|221->190|221->190|222->191|222->191|224->193|224->193|224->193|225->194|226->195|226->195|228->197|228->197|228->197|229->198|236->205|236->205|238->207|238->207|239->208|249->218|249->218|251->220|251->220|252->221|259->228|259->228|261->230|261->230|262->231|269->238|269->238|272->241|272->241|273->242|281->250|281->250|283->252|283->252|284->253|288->257|288->257|289->258|291->260|291->260|292->261|296->265|296->265|297->266|298->267|298->267|299->268|299->268|300->269|300->269|300->269|300->269|301->270|305->274|305->274|306->275|306->275|308->277|308->277|309->278|315->284|315->284|316->285|317->286|317->286|319->288|319->288|319->288|320->289|321->290|321->290|324->293|324->293|324->293|325->294|325->294|325->294|326->295|326->295|326->295|327->296|328->297|328->297|330->299|330->299|330->299|331->300|332->301|332->301|333->302|333->302|334->303|334->303|336->305|336->305|338->307|338->307|339->308|342->311|342->311|343->312|343->312|345->314|345->314|345->314|347->316|347->316|347->316|349->318|350->319|351->320|353->322|353->322|353->322|353->322|353->322|355->324|356->325|357->326|358->327|358->327|361->330|361->330|363->332|363->332|365->334|365->334|365->334|367->336|368->337|369->338|371->340|371->340|371->340|371->340|371->340|373->342|374->343|375->344|376->345|376->345|379->348|379->348|381->350|381->350|382->351|382->351|382->351|383->352|385->354|385->354|385->354|385->354|386->355|386->355|388->357|388->357|390->359|390->359|390->359|391->360|394->363|394->363|396->365|396->365|396->365|397->366|397->366|397->366|398->367|399->368|399->368|399->368|399->368|400->369|402->371|402->371|403->372|403->372|405->374|406->375|406->375|407->376|413->382|413->382|415->384|415->384|415->384|416->385|417->386|417->386|418->387|420->389|420->389|420->389|420->389|421->390|421->390|423->392|423->392|425->394|425->394|425->394|426->395|427->396|427->396|427->396|427->396|429->398|429->398|431->400|438->407|438->407|440->409|444->413|444->413|444->413|444->413|457->426|457->426|461->430|461->430|463->432|464->433|464->433|464->433|464->433|464->433|464->433|464->433|466->435|466->435|469->438|469->438|470->439|471->440|471->440|474->443|474->443|475->444|491->460|491->460|494->463|494->463|496->465|502->471|502->471|505->474|505->474|507->476|517->486|517->486|519->488|519->488|519->488|521->490|529->498|529->498|530->499|531->500|531->500|532->501|532->501|532->501|533->502|534->503|534->503|535->504|537->506|537->506|539->508|539->508|540->509|540->509|540->509|541->510|541->510|541->510|542->511|542->511|543->512|544->513|544->513|545->514|545->514|546->515|546->515|548->517|548->517|548->517|549->518|551->520|551->520|551->520|551->520|552->521|552->521|553->522|554->523|554->523|554->523|557->526|557->526|558->527|559->528|559->528|560->529|560->529|561->530|561->530|563->532|563->532|563->532|564->533|565->534|565->534|565->534|565->534|567->536|567->536|569->538|569->538|569->538|570->539|570->539|570->539|571->540|574->543|574->543|574->543|574->543|575->544|575->544|577->546|577->546|579->548|579->548|579->548|580->549|580->549|580->549|581->550|584->553|584->553|584->553|584->553|585->554|585->554|587->556|587->556|589->558|589->558|589->558|590->559|592->561|592->561|593->562|593->562|593->562|594->563|597->566|597->566|597->566|597->566|598->567|598->567|600->569|600->569|601->570|601->570|603->572|603->572|604->573|604->573|604->573|605->574|605->574|605->574|606->575|609->578|609->578|609->578|609->578|610->579|610->579|612->581|612->581|613->582|613->582|615->584|615->584|615->584|617->586|617->586|617->586|617->586|617->586|617->586|617->586|617->586|620->589|620->589|621->590|623->592|623->592|623->592|623->592|624->593|624->593|625->594|626->595|626->595|627->596|627->596|628->597|628->597|631->600|631->600|632->601|640->609|640->609|642->611|642->611|644->613|644->613|644->613|646->615|647->616|647->616|648->617|651->620|651->620|652->621|652->621|654->623|655->624|655->624|656->625|657->626|657->626|658->627|658->627|658->627|659->628|660->629|660->629|661->630|661->630|664->633|664->633|665->634|666->635|666->635|666->635|666->635|667->636|667->636|668->637|672->641|672->641|673->642|673->642|673->642|674->643|676->645|676->645|677->646|677->646|677->646|678->647|678->647|678->647|680->649|680->649|682->651|682->651|683->652|687->656|687->656|688->657|692->661|692->661|692->661|692->661|693->662|693->662|695->664|695->664|696->665|696->665
                   -- GENERATED --
               */
           

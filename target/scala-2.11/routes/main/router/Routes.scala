@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/nivas/IdeaProjects/Project_RiskGame/conf/routes
-// @DATE:Sat Dec 03 19:23:55 EST 2016
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Thu Sep 28 18:39:29 EDT 2017
 
 package router
 
@@ -63,6 +63,7 @@ class Routes extends GeneratedRouter {
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """hostgame""", """controllers.DashboardController.viewHostGame()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.DashboardController.viewDashboard()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """performstep""", """controllers.GameController.performStep()"""),
+    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """performTimeOut""", """controllers.GameController.updateTimeOut()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """riskdashboard""", """controllers.GameController.getRiskCards()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """risk""", """controllers.GameController.getMitigationSteps()"""),
     Nil
@@ -498,10 +499,27 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:44
-  private[this] lazy val controllers_GameController_getRiskCards25_route: Route.ParamsExtractor = Route("POST",
+  private[this] lazy val controllers_GameController_updateTimeOut25_route: Route.ParamsExtractor = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("performTimeOut")))
+  )
+  private[this] lazy val controllers_GameController_updateTimeOut25_invoker = createInvoker(
+    controllers.GameController.updateTimeOut(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.GameController",
+      "updateTimeOut",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """performTimeOut"""
+    )
+  )
+
+  // @LINE:45
+  private[this] lazy val controllers_GameController_getRiskCards26_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("riskdashboard")))
   )
-  private[this] lazy val controllers_GameController_getRiskCards25_invoker = createInvoker(
+  private[this] lazy val controllers_GameController_getRiskCards26_invoker = createInvoker(
     controllers.GameController.getRiskCards(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -514,11 +532,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:45
-  private[this] lazy val controllers_GameController_getMitigationSteps26_route: Route.ParamsExtractor = Route("POST",
+  // @LINE:46
+  private[this] lazy val controllers_GameController_getMitigationSteps27_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("risk")))
   )
-  private[this] lazy val controllers_GameController_getMitigationSteps26_invoker = createInvoker(
+  private[this] lazy val controllers_GameController_getMitigationSteps27_invoker = createInvoker(
     controllers.GameController.getMitigationSteps(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -685,15 +703,21 @@ class Routes extends GeneratedRouter {
       }
   
     // @LINE:44
-    case controllers_GameController_getRiskCards25_route(params) =>
+    case controllers_GameController_updateTimeOut25_route(params) =>
       call { 
-        controllers_GameController_getRiskCards25_invoker.call(controllers.GameController.getRiskCards())
+        controllers_GameController_updateTimeOut25_invoker.call(controllers.GameController.updateTimeOut())
       }
   
     // @LINE:45
-    case controllers_GameController_getMitigationSteps26_route(params) =>
+    case controllers_GameController_getRiskCards26_route(params) =>
       call { 
-        controllers_GameController_getMitigationSteps26_invoker.call(controllers.GameController.getMitigationSteps())
+        controllers_GameController_getRiskCards26_invoker.call(controllers.GameController.getRiskCards())
+      }
+  
+    // @LINE:46
+    case controllers_GameController_getMitigationSteps27_route(params) =>
+      call { 
+        controllers_GameController_getMitigationSteps27_invoker.call(controllers.GameController.getMitigationSteps())
       }
   }
 }

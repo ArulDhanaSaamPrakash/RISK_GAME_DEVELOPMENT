@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/nivas/IdeaProjects/Project_RiskGame/conf/routes
-// @DATE:Sat Dec 03 19:23:55 EST 2016
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Thu Sep 28 18:39:29 EDT 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -50,7 +50,7 @@ package controllers {
     }
 
   
-    // @LINE:44
+    // @LINE:45
     def getRiskCards(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "riskdashboard")
@@ -86,7 +86,7 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "join")
     }
   
-    // @LINE:45
+    // @LINE:46
     def getMitigationSteps(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "risk")
@@ -102,6 +102,12 @@ package controllers {
     def leaveGame(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "leave")
+    }
+  
+    // @LINE:44
+    def updateTimeOut(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "performTimeOut")
     }
   
     // @LINE:43

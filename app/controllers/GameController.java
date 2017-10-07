@@ -632,6 +632,27 @@ public class GameController extends Controller {
         return ok(play.libs.Json.toJson(mitigationCards));
     }
 
+@BodyParser.Of(BodyParser.Json.class)
+    public static Result updateTimeOut(){
+        if(!validateSession())
+            return ok(views.html.index.render());
+       // String gamePlayerId = session().get(Constants.GAMEPLAYERID);
+        JsonNode body = request().body().asJson();
+        String gameId = body.get(Constants.GAMEID).asText();
+        String gamePlayerId = session().get(Constants.GAMEPLAYERID);
+        String turnNo=request().body().asJson().get("turnno").asText();//body.get(Constants.TURNNO).asText();
+
+        if(GameUtility.timeOutUpdate(gameId,gamePlayerId,turnNo)) {
+                return ok("success");
+            }else
+            {
+                return ok("successFAILED");
+            }
+
+
+
+
+    }
     @BodyParser.Of(BodyParser.Json.class)
     public static Result leaveGame() {
         String username = request().body().asJson().get(Constants.USERNAME).asText();

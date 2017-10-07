@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/nivas/IdeaProjects/Project_RiskGame/conf/routes
-// @DATE:Sat Dec 03 19:23:55 EST 2016
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Thu Sep 28 18:39:29 EDT 2017
 
 package controllers;
 
