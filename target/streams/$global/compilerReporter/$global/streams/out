@@ -1,6 +1,3 @@
-[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/utility/GameUtility.java:297:  bad type in conditional expression[0m
-[0m[[31merror[0m] [0m    java.lang.String cannot be converted to boolean[0m
-[0m[[31merror[0m] [0mgamePlayerId[0m
-[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/utility/GameUtility.java:297:  bad type in conditional expression[0m
-[0m[[31merror[0m] [0m    <nulltype> cannot be converted to boolean[0m
-[0m[[31merror[0m] [0mnull[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT_MAIN/conf/routes:44: value updateTimeOut is not a member of object controllers.GameController[0m
+[0m[[31merror[0m] [0mPOST /performTimeOut  controllers.GameController.updateTimeOut()[0m
+[0m[[31merror[0m] [0mone error found[0m
