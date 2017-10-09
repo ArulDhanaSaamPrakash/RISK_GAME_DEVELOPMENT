@@ -443,17 +443,28 @@ public class GameController extends Controller {
 
             if(performAction == Constants.PerformStep.OOPS)
             {
-                GameUtility.performOOPS(currentStep,currentOOPS);
+
+                boolean isAvoided=GameUtility.performOOPS(currentStep,currentOOPS,gamePlayerId);
+                
                 if (!GameUtility.performStep(gamePlayerId, currentStep,performAction)) {
                     logger.log(Level.SEVERE,"Error while updating oops status");
                     return ok(views.html.error.render());
 
                 }
-
-                result.put("oops_resource",currentOOPS.getResources());
+                if(!isAvoided)//Means he is avoided
+                {
+                   result.put("oops_resource",0);
+                result.put("oops_budget",0);
+                result.put("oops_points",0);
+                result.put("oops_bonus",0); 
+            }else
+            {
+                    result.put("oops_resource",currentOOPS.getResources());
                 result.put("oops_budget",currentOOPS.getBudget());
                 result.put("oops_points",currentOOPS.getCapabilityPoints());
                 result.put("oops_bonus",currentOOPS.getCapabilityBonus());
+            }
+                
 
                 GameUtility.addReturningResources(currentStep);
                 currentStep.setTwoTurn(currentStep.getCurrentStepResource());

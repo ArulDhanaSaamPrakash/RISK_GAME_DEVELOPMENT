@@ -856,6 +856,11 @@ var isRequirementPlanningDone=false;
                            console.log(isOOPSCard+"   hello am as ");
                             var alertmsg = "You lost ";
 
+                           console.log(data.oops_resource);
+
+                           console.log(document.getElementById('budgetremaining').innerHTML);
+
+
                             if(data.oops_resource !=0) {
                                 alertmsg = alertmsg + data.oops_resource + " resource, ";
                             }
@@ -865,10 +870,24 @@ var isRequirementPlanningDone=false;
                             if(data.oops_bonus !=0) {
                                 alertmsg = alertmsg + data.oops_bonus + " capability bonus, ";
                             }
+                            
                             if(data.oops_budget !=0) {
                                 alertmsg = alertmsg + data.oops_budget + " dollars, ";
                             }
+
+                            
+                            if(data.oops_resource ==0 && data.oops_points ==0 && data.oops_bonus ==0 && data.oops_budget ==0)
+                            {
+                            	alertmsg="But the problem has been avoided since you mitigated a RISK!.    ";
+                            }
+
+
                             alertmsg = alertmsg.substring(0, alertmsg.length - 2);
+
+
+                            
+
+
 
                            // swal({   title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" });
                             document.getElementById('swalmessages').innerHTML = "You got an OOPS card!"+alertmsg;
@@ -894,6 +913,7 @@ var isRequirementPlanningDone=false;
                             if(data.surprise_budget !=0) {
                                 alertmsg = alertmsg + data.surprise_budget + " dollars, ";
                             }
+
                             alertmsg = alertmsg.substring(0, alertmsg.length - 2);
 
                             //swal({   title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" });

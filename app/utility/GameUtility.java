@@ -441,7 +441,7 @@ public class GameUtility {
      * @param currentOOPS
      * @return
      */
-    public static boolean performOOPS(Snapshot currentStep,OOPS currentOOPS) {
+    public static boolean performOOPS(Snapshot currentStep,OOPS currentOOPS,String gamePlayerId) {
 
         OOPS oops = new OOPS();
         List<OOPS> oopsList ;
@@ -461,8 +461,90 @@ public class GameUtility {
             break;
         }
 
+        //OOPS.GET ID
 
-        currentStep.setCapabilityBonus(currentStep.getCapabilityBonus() - oops.getCapabilityBonus());
+        boolean isAvoided=false;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try{
+            conn = DB.getConnection();
+            String query = "SELECT oops_id FROM RISK_GAME_DB.GAME_PLAYER_RISK_STATUS AS GAME_PLAYER_RISK_STATUS INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING AS CONFIG_RISK_MAPPING ON GAME_PLAYER_RISK_STATUS.RISK_ID=CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID INNER JOIN RISK_GAME_DB.RISK_OOPS_MAPPING AS RISK_OOPS_MAPPING ON RISK_OOPS_MAPPING.RISK_ID=CONFIG_RISK_MAPPING.RISK_ID WHERE STATUS =1 AND game_player_id=?";
+
+           // select P.project_step_id,CPM.config_phase_mapping_id, project_step_name, `level`, pre_requisite,budget, personnel, capability_points, capability_bonus from PROJECT_STEPS P JOIN CONFIG_PHASE_PROJECTSTEPS_MAPPING CPM on P.project_step_id = CPM.project_step_id and config_project_step_mapping_id= ?";
+            stmt = conn.prepareStatement(query);
+
+            //String gamePlayerId = userName.split("@")[0] + "-" +  gameId;
+            stmt.setString(1,gamePlayerId);
+            ResultSet rs = stmt.executeQuery();
+          //  ProjectStep ps = null;
+            while(rs.next()){
+                 String oops_got = rs.getString("oops_id");
+                 if(oops.getId().equalsIgnoreCase(oops_got))
+                 {
+                    isAvoided=true;
+                 }
+
+            }
+           // return ps;
+
+        }
+        catch(Exception e){
+            logger.log(Level.SEVERE, "Exception while retrieving project step:" + e);
+          //  return null;
+        }finally {
+            cleanUp(stmt,conn);
+        }
+
+if(isAvoided)
+{
+
+
+
+        try{
+            conn = DB.getConnection();
+            String query = "insert into AVOIDED_RISKS values (?,?,?);";
+
+            stmt = conn.prepareStatement(query);
+
+            //String gamePlayerId = userName.split("@")[0] + "-" +  gameId;
+            String stepNo=""+currentStep.getTurnNo()+"";
+            stmt.setString(1,gamePlayerId);
+            stmt.setString(2,stepNo);
+            stmt.setString(3,oops.getId());
+            int rs = stmt.executeUpdate();
+
+                //return rs > 0 ? gamePlayerId : null;
+            
+           // return ps;
+
+        }
+        catch(Exception e){
+            logger.log(Level.SEVERE, "Exception while retrieving project step:" + e);
+          //  return null;
+        }finally {
+            cleanUp(stmt,conn);
+        }
+
+
+
+
+        currentStep.setCapabilityBonus(currentStep.getCapabilityBonus() );//- oops.getCapabilityBonus());
+        currentStep.setBudget(currentStep.getBudget());// - oops.getBudget());
+        currentStep.setCapabilityPoints(currentStep.getCapabilityPoints() );//- oops.getCapabilityPoints());
+        currentStep.setPersonnel(currentStep.getPersonnel());// - oops.getResources());
+        currentStep.setCurrentStepResource(oops.getResources());
+        currentStep.setMoveType("OOPS");
+        currentStep.setOopsId(oops.getId());
+        currentOOPS.setResources(oops.getResources());
+        currentOOPS.setBudget(oops.getBudget());
+        currentOOPS.setCapabilityPoints(oops.getCapabilityPoints());
+        currentOOPS.setCapabilityBonus(oops.getCapabilityBonus());
+        return false;
+
+
+}else
+{
+    currentStep.setCapabilityBonus(currentStep.getCapabilityBonus() - oops.getCapabilityBonus());
         currentStep.setBudget(currentStep.getBudget() - oops.getBudget());
         currentStep.setCapabilityPoints(currentStep.getCapabilityPoints() - oops.getCapabilityPoints());
         currentStep.setPersonnel(currentStep.getPersonnel() - oops.getResources());
@@ -473,6 +555,12 @@ public class GameUtility {
         currentOOPS.setBudget(oops.getBudget());
         currentOOPS.setCapabilityPoints(oops.getCapabilityPoints());
         currentOOPS.setCapabilityBonus(oops.getCapabilityBonus());
+}
+
+
+
+
+        
         //Add pre-requisite step here
         return true;
     }
