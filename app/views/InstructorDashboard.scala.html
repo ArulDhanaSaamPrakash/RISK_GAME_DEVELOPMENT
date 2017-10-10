@@ -226,6 +226,18 @@
       <h3>
                Welcome @Http.Context.current().args.get("firstname").asInstanceOf[String]
               </h3>
+    <form method="GET" action="/exportReports">
+      <label>Game Statistics Report </label> <br>
+      <input type="text" id="exportReportInput" name="exportReportInput" placeholder="Enter gameID">
+      <input type="submit" name="Export" value="Export" style="height: 30px; width: 100px;">
+  </form>
+  
+  <form>
+      <label>Risk vs Problem Report </label> <br>
+      <input type="text" id="exportReportInput2" name="exportReportInput2" placeholder="Enter gameID">
+      <input type="submit" name="Export" value="Export" style="height: 30px; width: 100px;">
+  </form>
+  
       <form style="display: hidden" action="/hostgame" method="POST" id="hostgameform">
         <input type="hidden" id = "hgameid" name ="hgameid" value="0"  />
       </form>

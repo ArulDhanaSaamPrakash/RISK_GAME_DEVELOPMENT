@@ -39,13 +39,15 @@ public class DownloadExcelController extends Controller {
     public static final Logger logger = Logger.getLogger(GameController.class.getName());
     public static File data = new File("Data.xls");
     
-    public static Result exportReports()
+    public static Result exportReports(String exportReportInput)
     {
         try
             {
+                  String input=exportReportInput;
+                  System.out.println(input);
                   Controller.response().setContentType("application/vnd.ms-excel");
                   Controller.response().setHeader("Content-Disposition","attachment;filename=Data.xls");
-                  //downloadExcel(out);
+                  downloadExcel(input);
             }catch (Exception e)
             {
                   e.getMessage();
@@ -56,7 +58,7 @@ public class DownloadExcelController extends Controller {
          return ok(data);
     }
     
-    public static String downloadExcel(){
+    public static String downloadExcel(String input){
            
             String strQuery = null;
             Connection con = null;
@@ -70,7 +72,7 @@ public class DownloadExcelController extends Controller {
                   System.out.println("After connection");
                   
                   /* Database Query */               
-                  strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%631551\" ";
+                  strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
                   System.out.println(strQuery);
                   Statement st=con.createStatement();
                   ResultSet rs=st.executeQuery(strQuery);

@@ -43,7 +43,7 @@ GET /dashboard      controllers.DashboardController.viewDashboard()
 POST /performstep  controllers.GameController.performStep()
 POST /riskdashboard  controllers.GameController.getRiskCards()
 POST /risk  controllers.GameController.getMitigationSteps()
-POST /exportReports  controllers.DownloadExcelController.exportReports()
+GET /exportReports  controllers.DownloadExcelController.exportReports(exportReportInput)
 
 
 
