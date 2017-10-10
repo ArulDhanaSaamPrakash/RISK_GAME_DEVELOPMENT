@@ -654,4 +654,26 @@ public class GameController extends Controller {
 
         return ok("success");
     }
+    
+    /* public static Result exportReports()
+    {
+        try
+            {
+                  response.reset();
+                  response.setContentType("application/vnd.ms-excel");
+                  response.setHeader("Content-Disposition",
+                   "attachment;filename=Data.xls");
+                  ExcelCreator objEDH=new ExcelCreator();
+                  
+                  System.out.println("Before");
+                  strMessage=objEDH.downloadExcel(response.getOutputStream());
+                  System.out.println("After");
+                  request.setAttribute("Message",strMessage);
+            }catch (Exception e)
+            {
+                  e.getMessage();
+            }
+            
+        return ok("success");
+    }*/
 }
