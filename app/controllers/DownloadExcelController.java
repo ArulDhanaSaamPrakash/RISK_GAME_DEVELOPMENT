@@ -249,7 +249,7 @@ public class DownloadExcelController extends Controller {
                                "GROUP BY GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.RISK_ID " +
                                ") AS B ON A.RISK_ID=B.RISK_ID " +
                                "LEFT JOIN ( " +
-                               "SELECT RISK_OOPS_MAPPING.RISK_ID,COUNT(tur_no) AS 'OOPS_AVOIDED' " +
+                               "SELECT RISK_OOPS_MAPPING.RISK_ID,COUNT(turn_no) AS 'OOPS_AVOIDED' " +
                                "FROM RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS " +
                                "RIGHT JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING " +
                                "ON RISK_OOPS_MAPPING.OOPS_ID = AVOIDED_RISKS.OOPS_ID " +
