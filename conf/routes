@@ -44,8 +44,4 @@ POST /performstep  controllers.GameController.performStep()
 POST /riskdashboard  controllers.GameController.getRiskCards()
 POST /risk  controllers.GameController.getMitigationSteps()
 GET /exportReports  controllers.DownloadExcelController.exportReports(exportReportInput)
-
-
-
-
-    
+GET /exportRiskProblemReport  controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport)
