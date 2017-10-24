@@ -83,7 +83,7 @@ Seq[Any](format.raw/*1.18*/("""
         <div class="col-md-12">
           <div class="col-md-12">
             <h3>
-              <a class="glyphicon glyphicon-info-sign" href="#" style=";color: blue; text-decoration: underline;font-size: 18px !important;;" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');">Click here to read instructions!</a>
+              <a class="glyphicon glyphicon-info-sign" href="#" style=";color: blue; text-decoration: underline;font-size: 18px !important;" onclick="window.open('/assets/images/Players_manual.pdf', '_blank', 'toolbar=0,location=0,menubar=0');"> Click here to read instructions!</a>
             </h3>
           </div>
           <div style="height: 50px"></div>
@@ -138,9 +138,9 @@ Seq[Any](format.raw/*1.18*/("""
 object HostGame extends HostGame_Scope0.HostGame
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 28 13:17:48 EDT 2017
+                  DATE: Fri Oct 20 18:34:30 EDT 2017
                   SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/HostGame.scala.html
-                  HASH: c19ffe779bee24bda2492d28c221ba3f7a7a1779
+                  HASH: e5201062713e5e1ee01668d18fa3e6ffc602eaa7
                   MATRIX: 751->1|862->17|889->18|1457->559|1472->565|1527->599|1609->654|1624->660|1680->695|1762->750|1777->756|1843->800|1925->855|1940->861|2001->901|2051->924|2066->930|2132->975|2212->1028|2227->1034|2291->1077|2371->1130|2386->1136|2443->1172|2761->1463|2776->1469|2818->1490|2906->1550|2935->1551|2967->1556|2995->1557|3067->1601|3096->1602|3130->1609|3332->1784|3360->1785|3393->1791|3453->1825|3483->1834|3642->1966|3669->1972|4273->2550|4300->2556|4332->2561|4774->3017|4813->3028|4890->3079|4919->3087|4949->3090
                   LINES: 27->1|32->1|33->2|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|48->17|48->17|48->17|49->18|49->18|49->18|52->21|52->21|52->21|56->25|56->25|57->26|57->26|61->30|61->30|62->31|70->39|70->39|72->41|76->45|76->45|78->47|78->47|93->62|93->62|94->63|113->82|114->83|119->88|119->88|120->89
                   -- GENERATED --

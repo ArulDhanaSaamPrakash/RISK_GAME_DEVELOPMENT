@@ -33,6 +33,7 @@ public class PlayerSocket{
                 int count = connections.size();
 
                 Data data = Json.fromJson(event, Data.class);
+
                 WebSocketData wsdata = null;
 
                 if(data.type.equals("RegisterGameId")) {
@@ -191,10 +192,12 @@ public class PlayerSocket{
                     PlayerSocket.notifyAll(Json.toJson(wsdata), data.gameid);
                 }
             }
+           // wsdata.close();
         });
 
         in.onClose(new Callback0(){
             public void invoke(){
+               // wsdata.close();
 
             }
         });

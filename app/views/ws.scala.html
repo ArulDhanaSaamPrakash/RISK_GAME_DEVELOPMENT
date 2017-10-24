@@ -122,30 +122,14 @@ socket.send(data);
     });
 
 
+
     $('#btnLeave').click(function (e) {
-        var username = $('#username').val();
 
         var data = JSON.stringify({"type": "leaving", "player": {"username": username}});
         socket.send(data);
-
-        //ajax call to logout of session
-        // @*$.ajax({*@
-        //     @*type: "POST",*@
-        //     @*url: '/leave',*@
-        //     @*data: JSON.stringify({username:username}),*@
-        //     @*success: function(data){},*@
-        //     @*contentType: 'application/json',*@
-        //     @*dataType: 'json'*@
-        // @*});*@
-
-        $.ajax({
-            type: "GET",
-            url: '/leave',
-            data: {'username': username},
-            success:function(data)
-            {
-                window.location.replace("/");
-            }
-        });
+        window.location.replace("/dashboard");
+        
     });
+
+
 });

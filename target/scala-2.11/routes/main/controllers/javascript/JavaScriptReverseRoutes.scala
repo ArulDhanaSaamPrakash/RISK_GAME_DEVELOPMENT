@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT_MAIN/conf/routes
-// @DATE:Sat Oct 07 20:20:08 EDT 2017
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Fri Oct 20 13:05:29 EDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -63,7 +63,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:45
+    // @LINE:44
     def getRiskCards: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getRiskCards",
       """
@@ -123,7 +123,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:46
+    // @LINE:45
     def getMitigationSteps: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getMitigationSteps",
       """
@@ -149,16 +149,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "leave"})
-        }
-      """
-    )
-  
-    // @LINE:44
-    def updateTimeOut: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.updateTimeOut",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "performTimeOut"})
         }
       """
     )
@@ -343,6 +333,36 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:46
+  class ReverseDownloadExcelController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:47
+    def exportRiskProblemReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DownloadExcelController.exportRiskProblemReport",
+      """
+        function(exportRiskProblemReport) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "exportRiskProblemReport" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("exportRiskProblemReport", exportRiskProblemReport)])})
+        }
+      """
+    )
+  
+    // @LINE:46
+    def exportReports: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DownloadExcelController.exportReports",
+      """
+        function(exportReportInput) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "exportReports" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("exportReportInput", exportReportInput)])})
         }
       """
     )

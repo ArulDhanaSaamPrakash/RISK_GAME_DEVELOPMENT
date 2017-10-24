@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT_MAIN/conf/routes
-// @DATE:Sat Oct 07 20:20:08 EDT 2017
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Fri Oct 20 13:05:29 EDT 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -50,7 +50,7 @@ package controllers {
     }
 
   
-    // @LINE:45
+    // @LINE:44
     def getRiskCards(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "riskdashboard")
@@ -86,7 +86,7 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "join")
     }
   
-    // @LINE:46
+    // @LINE:45
     def getMitigationSteps(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "risk")
@@ -102,12 +102,6 @@ package controllers {
     def leaveGame(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "leave")
-    }
-  
-    // @LINE:44
-    def updateTimeOut(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "performTimeOut")
     }
   
     // @LINE:43
@@ -233,6 +227,27 @@ package controllers {
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix)
+    }
+  
+  }
+
+  // @LINE:46
+  class ReverseDownloadExcelController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:47
+    def exportRiskProblemReport(exportRiskProblemReport:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "exportRiskProblemReport" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("exportRiskProblemReport", exportRiskProblemReport)))))
+    }
+  
+    // @LINE:46
+    def exportReports(exportReportInput:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "exportReports" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("exportReportInput", exportReportInput)))))
     }
   
   }

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT_MAIN/conf/routes
-// @DATE:Sat Oct 07 20:20:08 EDT 2017
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Fri Oct 20 13:05:29 EDT 2017
 
 package router
 
@@ -63,9 +63,10 @@ class Routes extends GeneratedRouter {
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """hostgame""", """controllers.DashboardController.viewHostGame()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.DashboardController.viewDashboard()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """performstep""", """controllers.GameController.performStep()"""),
-    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """performTimeOut""", """controllers.GameController.updateTimeOut()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """riskdashboard""", """controllers.GameController.getRiskCards()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """risk""", """controllers.GameController.getMitigationSteps()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """exportReports""", """controllers.DownloadExcelController.exportReports(exportReportInput:String)"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """exportRiskProblemReport""", """controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -499,27 +500,10 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:44
-  private[this] lazy val controllers_GameController_updateTimeOut25_route: Route.ParamsExtractor = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("performTimeOut")))
-  )
-  private[this] lazy val controllers_GameController_updateTimeOut25_invoker = createInvoker(
-    controllers.GameController.updateTimeOut(),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.GameController",
-      "updateTimeOut",
-      Nil,
-      "POST",
-      """""",
-      this.prefix + """performTimeOut"""
-    )
-  )
-
-  // @LINE:45
-  private[this] lazy val controllers_GameController_getRiskCards26_route: Route.ParamsExtractor = Route("POST",
+  private[this] lazy val controllers_GameController_getRiskCards25_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("riskdashboard")))
   )
-  private[this] lazy val controllers_GameController_getRiskCards26_invoker = createInvoker(
+  private[this] lazy val controllers_GameController_getRiskCards25_invoker = createInvoker(
     controllers.GameController.getRiskCards(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -532,11 +516,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:46
-  private[this] lazy val controllers_GameController_getMitigationSteps27_route: Route.ParamsExtractor = Route("POST",
+  // @LINE:45
+  private[this] lazy val controllers_GameController_getMitigationSteps26_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("risk")))
   )
-  private[this] lazy val controllers_GameController_getMitigationSteps27_invoker = createInvoker(
+  private[this] lazy val controllers_GameController_getMitigationSteps26_invoker = createInvoker(
     controllers.GameController.getMitigationSteps(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -546,6 +530,40 @@ class Routes extends GeneratedRouter {
       "POST",
       """""",
       this.prefix + """risk"""
+    )
+  )
+
+  // @LINE:46
+  private[this] lazy val controllers_DownloadExcelController_exportReports27_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("exportReports")))
+  )
+  private[this] lazy val controllers_DownloadExcelController_exportReports27_invoker = createInvoker(
+    controllers.DownloadExcelController.exportReports(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DownloadExcelController",
+      "exportReports",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """exportReports"""
+    )
+  )
+
+  // @LINE:47
+  private[this] lazy val controllers_DownloadExcelController_exportRiskProblemReport28_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("exportRiskProblemReport")))
+  )
+  private[this] lazy val controllers_DownloadExcelController_exportRiskProblemReport28_invoker = createInvoker(
+    controllers.DownloadExcelController.exportRiskProblemReport(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DownloadExcelController",
+      "exportRiskProblemReport",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """exportRiskProblemReport"""
     )
   )
 
@@ -703,21 +721,27 @@ class Routes extends GeneratedRouter {
       }
   
     // @LINE:44
-    case controllers_GameController_updateTimeOut25_route(params) =>
+    case controllers_GameController_getRiskCards25_route(params) =>
       call { 
-        controllers_GameController_updateTimeOut25_invoker.call(controllers.GameController.updateTimeOut())
+        controllers_GameController_getRiskCards25_invoker.call(controllers.GameController.getRiskCards())
       }
   
     // @LINE:45
-    case controllers_GameController_getRiskCards26_route(params) =>
+    case controllers_GameController_getMitigationSteps26_route(params) =>
       call { 
-        controllers_GameController_getRiskCards26_invoker.call(controllers.GameController.getRiskCards())
+        controllers_GameController_getMitigationSteps26_invoker.call(controllers.GameController.getMitigationSteps())
       }
   
     // @LINE:46
-    case controllers_GameController_getMitigationSteps27_route(params) =>
-      call { 
-        controllers_GameController_getMitigationSteps27_invoker.call(controllers.GameController.getMitigationSteps())
+    case controllers_DownloadExcelController_exportReports27_route(params) =>
+      call(params.fromQuery[String]("exportReportInput", None)) { (exportReportInput) =>
+        controllers_DownloadExcelController_exportReports27_invoker.call(controllers.DownloadExcelController.exportReports(exportReportInput))
+      }
+  
+    // @LINE:47
+    case controllers_DownloadExcelController_exportRiskProblemReport28_route(params) =>
+      call(params.fromQuery[String]("exportRiskProblemReport", None)) { (exportRiskProblemReport) =>
+        controllers_DownloadExcelController_exportRiskProblemReport28_invoker.call(controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport))
       }
   }
 }

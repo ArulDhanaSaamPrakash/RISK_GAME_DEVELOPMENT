@@ -41,6 +41,7 @@ POST /hostgame       controllers.DashboardController.viewHostGame()
 GET /dashboard      controllers.DashboardController.viewDashboard()
 
 POST /performstep  controllers.GameController.performStep()
-POST /performTimeOut  controllers.GameController.updateTimeOut()
 POST /riskdashboard  controllers.GameController.getRiskCards()
 POST /risk  controllers.GameController.getMitigationSteps()
+GET /exportReports  controllers.DownloadExcelController.exportReports(exportReportInput)
+GET /exportRiskProblemReport  controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport)

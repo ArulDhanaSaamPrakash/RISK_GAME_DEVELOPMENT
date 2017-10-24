@@ -118,15 +118,7 @@ socket.send(data);
         //     @*dataType: 'json'*@
         // @*});*@
 
-        $.ajax({
-            type: "GET",
-            url: '/leave',
-            data: {'username': username},
-            success:function(data)
-            {
-                window.location.replace("/");
-            }
-
-        });
+window.location.replace("/");
+        
     });
 });

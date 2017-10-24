@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT_MAIN/conf/routes
-// @DATE:Sat Oct 07 20:20:08 EDT 2017
+// @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
+// @DATE:Fri Oct 20 13:05:29 EDT 2017
 
 package controllers;
 
@@ -15,6 +15,7 @@ public class routes {
   public static final controllers.ReverseDashboardController DashboardController = new controllers.ReverseDashboardController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLoginController LoginController = new controllers.ReverseLoginController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseDownloadExcelController DownloadExcelController = new controllers.ReverseDownloadExcelController(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
     
@@ -24,6 +25,7 @@ public class routes {
     public static final controllers.javascript.ReverseDashboardController DashboardController = new controllers.javascript.ReverseDashboardController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLoginController LoginController = new controllers.javascript.ReverseLoginController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseDownloadExcelController DownloadExcelController = new controllers.javascript.ReverseDownloadExcelController(RoutesPrefix.byNamePrefix());
   }
 
 }
