@@ -41,9 +41,9 @@ public class DownloadExcelController extends Controller {
         /* Takes gameid as input and calls the function which would download the report*/
         try{
                   String input=exportReportInput;
-                  GameStatsReport = new File("GameStatsReport.xls");
+                  String filename="GameStatsReport-"+input+".xls";
                   Controller.response().setContentType("application/vnd.ms-excel");
-                  Controller.response().setHeader("Content-Disposition","attachment;filename=GameStatsReport.xls");
+                  Controller.response().setHeader("Content-Disposition","attachment;filename="+filename);
                   downloadExcel(input);
         }catch (Exception e){
                 e.getMessage();
@@ -217,8 +217,9 @@ public class DownloadExcelController extends Controller {
             /* Takes gameid as input and calls the function which would download the report*/
             try{
                   String input=exportRiskProblemReport;
+                  String filename="RiskVsProblemReport-"+input+".xls";
                   Controller.response().setContentType("application/vnd.ms-excel");
-                  Controller.response().setHeader("Content-Disposition","attachment;filename=RiskVsProblemReport.xls");
+                  Controller.response().setHeader("Content-Disposition","attachment;filename="+filename);
                   downloadExcelForRiskProblem(input);
             }catch (Exception e){
                   e.getMessage();
