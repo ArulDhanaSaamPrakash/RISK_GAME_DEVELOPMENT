@@ -182,96 +182,155 @@ public class DownloadExcelController extends Controller {
        
        public static String downloadExcelForRiskProblem(String input){
            
-            String strQuery = null;
-            Connection con = null;
+            String strQuery;
+            Connection con;
             try {
       
             	    ArrayList<String> players = new ArrayList<String>();
-                	con = DB.getConnection();
-              
-                      /* Database Query */               
-                    strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
-                    System.out.println(strQuery);
-                    Statement st=con.createStatement();
-                    ResultSet rs=st.executeQuery(strQuery);
-                	
+            	    con = DB.getConnection();
+            	    Statement st;
+                    ResultSet rs;
+            	    int index = 1;
+            	    
                     HSSFWorkbook wb = new HSSFWorkbook();
-                    HSSFSheet sheet = wb.createSheet("Game Report");
+                    HSSFSheet sheet = wb.createSheet("RiskVsProblemReport");
                     HSSFRow rowhead = sheet.createRow((short) 0);
-                    rowhead.createCell((short) 0).setCellValue("PlayerId");
-                    rowhead.createCell((short) 1).setCellValue("Risk_ID");
-                    rowhead.createCell((short) 2).setCellValue("Status");
-                    rowhead.createCell((short) 3).setCellValue("OOPS_Generated");
-                    rowhead.createCell((short) 4).setCellValue("OOPS_Avoided");
+                    rowhead.createCell((short) 0).setCellValue("Game_Id");
+                    rowhead.createCell((short) 1).setCellValue("Start_Time");
+                    rowhead.createCell((short) 2).setCellValue("End_Time");
+                    rowhead.createCell((short) 3).setCellValue("Max_Time");
+                    rowhead.createCell((short) 4).setCellValue("Steps_For_Each_Player");
+                    rowhead.createCell((short) 5).setCellValue("Number_Of_Players");
                     
-                    int index = 1;
-                    while (rs.next()) {
-                    	players.add(rs.getString(1));
-                    }
-                    
-                    st.close();
-                    rs.close();
-                    System.out.println(players);
-                    
-                    for(int i=0;i<players.size();i++){
-                	   
-                    strQuery = "SELECT A.GAME_PLAYER_ID,A.RISK_ID,A.STATUS " +
-                               ", CASE WHEN B.OOPS_GENERATED IS NULL THEN 0 ELSE B.OOPS_GENERATED END AS OOPS_GENERATED " +
-                               ", CASE WHEN C.OOPS_AVOIDED IS NULL THEN 0 ELSE C.OOPS_AVOIDED END AS OOPS_AVOIDED " +
-
-                               "FROM ( " +
-                               "SELECT GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.RISK_ID " +
-                               ", CASE WHEN GAME_PLAYER_RISK_STATUS.STATUS =1 THEN \"MITIGATED\" ELSE \"NOT MITIGATED\"  END AS STATUS " +
-                               "FROM  RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING " +
-                               "INNER JOIN RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS " +
-                               "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID " +
-                               "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
-                               " ) AS A " +
-                               "LEFT JOIN ( " +
-                               "SELECT GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.RISK_ID, " +
-                               "COUNT(GAME_MOVES_SNAPSHOT.OOPS_ID) AS 'OOPS_GENERATED' " +
-                               "FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT GAME_MOVES_SNAPSHOT " +
-                               "INNER JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING " +
-                               "ON RISK_OOPS_MAPPING.OOPS_ID = GAME_MOVES_SNAPSHOT.OOPS_ID " +
-                               "INNER JOIN RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS " +
-                               "ON GAME_MOVES_SNAPSHOT.GAME_PLAYER_ID =GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID " +
-                               "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING " +
-                               "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID " +
-                               "AND CONFIG_RISK_MAPPING.RISK_ID=RISK_OOPS_MAPPING.RISK_ID " +
-                               "WHERE GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
-                               "AND MOVE_TYPE='OOPS' " +
-                               "GROUP BY GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.RISK_ID " +
-                               ") AS B ON A.RISK_ID=B.RISK_ID " +
-                               "LEFT JOIN ( " +
-                               "SELECT RISK_OOPS_MAPPING.RISK_ID,COUNT(turn_no) AS 'OOPS_AVOIDED' " +
-                               "FROM RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS " +
-                               "RIGHT JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING " +
-                               "ON RISK_OOPS_MAPPING.OOPS_ID = AVOIDED_RISKS.OOPS_ID " +
-                               "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
-                               "GROUP BY RISK_OOPS_MAPPING.RISK_ID ) AS C " +
-                               "ON A.RISK_ID=C.RISK_ID " +
-                               "AND A.STATUS=\"MITIGATED\" ";
-                    		
-                    System.out.println(strQuery);
+                    /* Database query for fetching the game configurations */
+                    strQuery="SELECT GAME.game_id,GAME.start_time,max(turn_end_time) as end_time, "+
+                             "time_for_each_move*60 AS max_time,steps_for_each_player, "+
+                             "count(distinct game_player_id) num_of_players "+
+                             "FROM RISK_GAME_DB.GAME GAME INNER JOIN RISK_GAME_DB.GAME_STATS_V GAME_STATS_V "+
+                             "on GAME.GAME_ID LIKE \"%"+input+"\" "+
+                             " and GAME.GAME_ID=GAME_STATS_V.GAME_ID "+
+                             "GROUP BY 1,2,time_for_each_move,4";
+                             
                     st=con.createStatement();
                     rs=st.executeQuery(strQuery);
-                 
-                    //HSSFRow row = sheet.createRow((short) index);
-                    //index=1;
+                    
+                    /* Retrive the data related to Game configuration*/
+                    HSSFRow row = sheet.createRow((short) index);
                     while (rs.next()) {
-
-                    	    HSSFRow row = sheet.createRow((short) index);
                     	    row.createCell((short) 0).setCellValue(rs.getString(1));
                             row.createCell((short) 1).setCellValue(rs.getString(2));
                             row.createCell((short) 2).setCellValue(rs.getString(3));
                             row.createCell((short) 3).setCellValue(rs.getString(4));
                             row.createCell((short) 4).setCellValue(rs.getString(5));
-                            
-                            System.out.println(rs.getString(1));
-                            System.out.println(rs.getString(2));
-                            System.out.println(rs.getString(3));
-                            System.out.println(rs.getString(4));
-                            System.out.println(rs.getString(5));
+                            row.createCell((short) 5).setCellValue(rs.getString(6));
+                            index=index+3;
+                    }
+                    /* Database query for fetching all the game player id's associated with the gameid*/               
+                    strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT "+
+                               "WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
+                    rs=st.executeQuery(strQuery);
+                    
+                    /* Retrive all the game player ids and add it to the players list*/
+                    while (rs.next()) {
+                    	players.add(rs.getString(1));
+                    }
+                    
+                	/* Setting the headings for the report*/
+                    rowhead = sheet.createRow((short) index);
+                    rowhead.createCell((short) 0).setCellValue("Game_Player_Id");
+                    rowhead.createCell((short) 1).setCellValue("Risk_ID");
+                    rowhead.createCell((short) 2).setCellValue("Status");
+                    rowhead.createCell((short) 3).setCellValue("Mitigation_Turn_No");
+                    rowhead.createCell((short) 4).setCellValue("OOPS_Generated");
+                    rowhead.createCell((short) 5).setCellValue("OOPS_Generated_Turn_No");
+                    rowhead.createCell((short) 6).setCellValue("OOPS_Avoided");
+                    rowhead.createCell((short) 7).setCellValue("OOPS_Avoided_Turn_No");
+                    index++;
+                    
+                    for(int i=0;i<players.size();i++){
+                	
+                	/* Database query to retrieve the results of risk vs problem*/
+                    strQuery = "SELECT  GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.risk_id, "+
+                               "CASE "+
+                               "WHEN RISK_MITIGATION_TURN.MITIGATION_TURN_NO< GAME_MOVES_SNAPSHOT.TURN_NO THEN \"MITIGATED\" "+
+                               "ELSE \"NOT MITIGATED\" END AS STATUS, "+
+                               "NULL AS 'MITIGATION TURN NO',"+
+                               "(select count(turn_no) from RISK_GAME_DB.GAME_MOVES_SNAPSHOT temp "+
+                               "LEFT JOIN RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS "+
+                               "ON  AVOIDED_RISKS.game_player_id=temp.game_player_id "+
+                               "AND AVOIDED_RISKS.tur_no!=temp.turn_no "+
+                               "WHERE temp.GAME_PLAYER_ID= GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID "+
+                               "and GAME_MOVES_SNAPSHOT.turn_no>= temp.turn_no "+
+                               "AND MOVE_TYPE='OOPS' "+
+                               ") as 'OOPS GENERATED',"+
+                               "GAME_MOVES_SNAPSHOT.turn_no as 'OOPS GENERATED TURN NO', "+
+                               "null AS 'OOPS AVOIDED', "+
+                               "null AS 'OOPS AVOIDED TURN NO' "+
+                               "from risk_game_db.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
+                               "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING "+
+                               "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID "+
+                               "AND GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
+                               "INNER JOIN RISK_GAME_DB.GAME_MOVES_SNAPSHOT GAME_MOVES_SNAPSHOT "+
+                               "ON GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID=GAME_MOVES_SNAPSHOT.game_player_id "+
+                               "AND MOVE_TYPE='OOPS' "+
+                               "INNER JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING "+
+                               "ON RISK_OOPS_MAPPING.OOPS_ID = GAME_MOVES_SNAPSHOT.OOPS_ID "+
+                               "AND RISK_OOPS_MAPPING.risk_id=CONFIG_RISK_MAPPING.RISK_ID "+
+                               "LEFT OUTER JOIN RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS "+
+                               "ON  GAME_MOVES_SNAPSHOT.game_player_id=AVOIDED_RISKS.game_player_id "+
+                               "AND AVOIDED_RISKS.tur_no!=GAME_MOVES_SNAPSHOT.turn_no "+
+                               "LEFT OUTER JOIN RISK_GAME_DB.RISK_MITIGATION_TURN RISK_MITIGATION_TURN "+
+                               "ON GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID=RISK_MITIGATION_TURN.GAME_PLAYER_ID "+
+                               "AND RISK_OOPS_MAPPING.risk_id=RISK_MITIGATION_TURN.risk_id "+
+                               "UNION "+
+                               "SELECT  GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.risk_id, "+
+                               "CASE "+
+                               "WHEN RISK_MITIGATION_TURN.MITIGATION_TURN_NO< GAME_MOVES_SNAPSHOT.TURN_NO THEN \"MITIGATED\" "+
+                               "ELSE \"NOT MITIGATED\" END AS STATUS, "+
+                               "NULL AS 'MITIGATION TURN NO',"+
+                               "null AS 'OOPS GENERATED', "+
+                               "null AS 'OOPS GENERATED TURN NO', "+
+                               "(select count(tur_no) from RISK_GAME_DB.AVOIDED_RISKS temp "+
+                               "where temp.GAME_PLAYER_ID= GAME_MOVES_SNAPSHOT.GAME_PLAYER_ID "+
+                               "and GAME_MOVES_SNAPSHOT.turn_no>= temp.tur_no ) as 'OOPS AVOIDED', "+
+                               "AVOIDED_RISKS.tur_no AS 'OOPS AVOIDED TURN NO' "+
+                               "from risk_game_db.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
+                               "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING "+
+                               "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID "+
+                               "AND GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
+                               "INNER JOIN RISK_GAME_DB.GAME_MOVES_SNAPSHOT GAME_MOVES_SNAPSHOT "+
+                               "ON GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID=GAME_MOVES_SNAPSHOT.game_player_id "+
+                               "AND MOVE_TYPE='OOPS' "+
+                               "INNER JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING "+
+                               "ON RISK_OOPS_MAPPING.OOPS_ID = GAME_MOVES_SNAPSHOT.OOPS_ID "+
+                               "AND RISK_OOPS_MAPPING.risk_id=CONFIG_RISK_MAPPING.RISK_ID "+
+                               "INNER JOIN RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS "+
+                               "ON AVOIDED_RISKS.oops_id=GAME_MOVES_SNAPSHOT.oops_id "+
+                               "and AVOIDED_RISKS.game_player_id=GAME_MOVES_SNAPSHOT.game_player_id "+
+                               "and AVOIDED_RISKS.tur_no=GAME_MOVES_SNAPSHOT.turn_no "+
+                               "LEFT OUTER JOIN RISK_GAME_DB.RISK_MITIGATION_TURN RISK_MITIGATION_TURN "+
+                               "ON GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID=RISK_MITIGATION_TURN.GAME_PLAYER_ID "+
+                               "AND RISK_OOPS_MAPPING.risk_id=RISK_MITIGATION_TURN.risk_id "+
+                               "UNION "+
+                               "SELECT  GAME_PLAYER_ID,risk_id,\"MITIGATED\" AS STATUS,MITIGATION_TURN_NO,null as 'OOPS GENERATED',"+
+                               "null as 'OOPS GENERATED TURN NO',null AS 'OOPS AVOIDED',null AS 'OOPS AVOIDED TURN NO' "+
+                               "from RISK_GAME_DB.RISK_MITIGATION_TURN "+
+                               "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" ";
+                    		
+                   rs=st.executeQuery(strQuery);
+                 
+                    /* Retrieve all the metrics like Mitigation_Turn_No,OOPS_Generated.OOPS_Generated_Turn_No,OOPS_Avoided, OOPS_Avoided_Turn_No */
+                    while (rs.next()) {
+
+                    	    row = sheet.createRow((short) index);
+                    	    row.createCell((short) 0).setCellValue(rs.getString(1));
+                            row.createCell((short) 1).setCellValue(rs.getString(2));
+                            row.createCell((short) 2).setCellValue(rs.getString(3));
+                            row.createCell((short) 3).setCellValue(rs.getString(4));
+                            row.createCell((short) 4).setCellValue(rs.getString(5));
+                            row.createCell((short) 5).setCellValue(rs.getString(6));
+                            row.createCell((short) 6).setCellValue(rs.getString(7));
+                            row.createCell((short) 7).setCellValue(rs.getString(8));
                             index++;
                     }
                     
