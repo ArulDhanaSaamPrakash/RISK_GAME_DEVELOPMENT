@@ -1,7 +1,5 @@
 package controllers;
 
-
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.*;
@@ -25,62 +23,80 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletOutputStream;
 
-
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-
 /**
- * All game related routes implemented in this class
+ * Two reports would be generated in this controller. One is GameStatsReport.xls and the other is RiskVsProblemReport.xls
  */
 public class DownloadExcelController extends Controller {
 
     public static final Logger logger = Logger.getLogger(GameController.class.getName());
-    public static File data = new File("Data.xls");
+    public static File GameStatsReport = new File("GameStatsReport.xls");
+    public static File RiskVsProblemReport = new File("RiskVsProblemReport.xls");
     
     public static Result exportReports(String exportReportInput)
     {
-        try
-            {
+        /* Takes gameid as input and calls the function which would download the report*/
+        try{
                   String input=exportReportInput;
-                  System.out.println(input);
                   Controller.response().setContentType("application/vnd.ms-excel");
-                  Controller.response().setHeader("Content-Disposition","attachment;filename=Data.xls");
+                  Controller.response().setHeader("Content-Disposition","attachment;filename=GameStatsReport.xls");
                   downloadExcel(input);
-            }catch (Exception e)
-            {
-                  e.getMessage();
-            }
-           //return ok(new java.io.File("Data.xls"));
-         //return Ok.sendFile(new File("abc.csv"), inline=true).withHeaders(CACHE_CONTROL->"max-age=3600",CONTENT_DISPOSITION->"attachment; filename=abc.csv", CONTENT_TYPE->"application/x-download");
-         //return ok(downloadExcel(new java.io.File("Data.xls")));
-         return ok(data);
+        }catch (Exception e){
+                e.getMessage();
+        }
+        return ok(GameStatsReport);
     }
     
     public static String downloadExcel(String input){
            
-            String strQuery = null;
-            Connection con = null;
+            String strQuery;
+            Connection con;
             try {
       
-            	  ArrayList<String> players = new ArrayList<String>();
-            	  System.out.println("Before connection");
-            	  con = DB.getConnection();
-                  //Class.forName("com.mysql.jdbc.Driver");
-                  //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/risk_game_db","root","root");
-                  System.out.println("After connection");
-                  
-                  /* Database Query */               
-                  strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
-                  System.out.println(strQuery);
-                  Statement st=con.createStatement();
-                  ResultSet rs=st.executeQuery(strQuery);
-               
-                	
+            	    ArrayList<String> players = new ArrayList<String>();
+            	    con = DB.getConnection();
+            	    Statement st;
+                    ResultSet rs;
+            	    int index = 1;
+            	    
                     HSSFWorkbook wb = new HSSFWorkbook();
-                    HSSFSheet sheet = wb.createSheet("Game Report");
+                    HSSFSheet sheet = wb.createSheet("GameStatsReport");
                     HSSFRow rowhead = sheet.createRow((short) 0);
+                    rowhead.createCell((short) 0).setCellValue("Game_Id");
+                    rowhead.createCell((short) 1).setCellValue("Start_Time");
+                    rowhead.createCell((short) 2).setCellValue("End_Time");
+                    rowhead.createCell((short) 3).setCellValue("Max_Time");
+                    rowhead.createCell((short) 4).setCellValue("Steps_For_Each_Player");
+                    rowhead.createCell((short) 5).setCellValue("Number_Of_Players");
+                    
+                    /* Database query for fetching the game configurations */
+                    strQuery="SELECT GAME.game_id,GAME.start_time,max(turn_end_time) as end_time, "+
+                             "time_for_each_move*60 AS max_time,steps_for_each_player, "+
+                             "count(distinct game_player_id) num_of_players "+
+                             "FROM RISK_GAME_DB.GAME GAME INNER JOIN RISK_GAME_DB.GAME_STATS_V GAME_STATS_V "+
+                             "on GAME.GAME_ID LIKE \"%"+input+"\" "+
+                             " and GAME.GAME_ID=GAME_STATS_V.GAME_ID "+
+                             "GROUP BY 1,2,time_for_each_move,4";
+                             
+                    st=con.createStatement();
+                    rs=st.executeQuery(strQuery);
+                    
+                    /* Retrive the data related to Game configuration*/
+                    HSSFRow row = sheet.createRow((short) index);
+                    while (rs.next()) {
+                    	    row.createCell((short) 0).setCellValue(rs.getString(1));
+                            row.createCell((short) 1).setCellValue(rs.getString(2));
+                            row.createCell((short) 2).setCellValue(rs.getString(3));
+                            row.createCell((short) 3).setCellValue(rs.getString(4));
+                            row.createCell((short) 4).setCellValue(rs.getString(5));
+                            row.createCell((short) 5).setCellValue(rs.getString(6));
+                            index=index+3;
+                    }
+                    
+                    rowhead = sheet.createRow((short) index);
                     rowhead.createCell((short) 0).setCellValue("PlayerId");
                     rowhead.createCell((short) 1).setCellValue("Avg_Time");
                     rowhead.createCell((short) 2).setCellValue("Max_Time");
@@ -88,18 +104,22 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 4).setCellValue("Total_Time");
                     rowhead.createCell((short) 5).setCellValue("Skipped_Turn");
                     rowhead.createCell((short) 6).setCellValue("Timeouts");
-
-                    int index = 1;
+                    index++;
+                    
+                    /* Database query for fetching all the game player id's associated with the gameid*/               
+                    strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT " + 
+                               "WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
+                    
+                    rs=st.executeQuery(strQuery);
+               
+                    /* Retrive all the game player ids and add it to the players list*/
                     while (rs.next()) {
                     	players.add(rs.getString(1));
                     }
                     
-                    st.close();
-                    rs.close();
-                    System.out.println(players);
-                    
-                   for(int i=0;i<players.size();i++){
+                    for(int i=0;i<players.size();i++){
                 	   
+                	/* Database query to get all the metrics like average, minimum, maximum, total time and skip turns*/
                     strQuery = "SELECT " +
                     		   "avg (TIMESTAMPDIFF(SECOND , turn_start_time,turn_end_time)) as avg_time " +
                     		   ",max(TIMESTAMPDIFF(SECOND , turn_start_time,turn_end_time)) as max_time " +
@@ -109,56 +129,38 @@ public class DownloadExcelController extends Controller {
                     		   "FROM RISK_GAME_DB.GAME_STATS_V GAME_STATS_V " +
                     		   "WHERE GAME_PLAYER_ID like \"%" + players.get(i) + "\"";
                     		
-                    System.out.println(strQuery);
-                    st=con.createStatement();
                     rs=st.executeQuery(strQuery);
                  
-                    HSSFRow row = sheet.createRow((short) index);
+                    /* Retrieve all the metrics like average, minimum, maximum, total time and skip turns*/
+                    row = sheet.createRow((short) index);
                     while (rs.next()) {
-
                     	    row.createCell((short) 0).setCellValue(players.get(i));
                             row.createCell((short) 1).setCellValue(rs.getString(1));
                             row.createCell((short) 2).setCellValue(rs.getString(2));
                             row.createCell((short) 3).setCellValue(rs.getString(3));
                             row.createCell((short) 4).setCellValue(rs.getString(4));
                             row.createCell((short) 5).setCellValue(rs.getString(5));
-                            
-                            System.out.println(rs.getString(1));
-                            System.out.println(rs.getString(2));
-                            System.out.println(rs.getString(3));
-                            System.out.println(rs.getString(4));
-                            System.out.println(rs.getString(5));
                             index++;
                     }
                     
-                    st.close();
-                    rs.close();
-                    
+                    /* Database query to get the timeouts*/
                     strQuery = "SELECT COUNT(*) AS TIMEOUTS " +
                     		   "FROM RISK_GAME_DB.GAME_STATS_V V1 " +
                     		   "INNER JOIN RISK_GAME_DB.GAME AS GAME ON GAME.GAME_ID=V1.GAME_ID " +
                     		   "WHERE TIMESTAMPDIFF(SECOND , turn_start_time,turn_end_time)>GAME.TIME_FOR_EACH_MOVE*60-2 " +
                     		   "AND GAME_PLAYER_ID like \"%" + players.get(i) + "\"";
                     		
-                    System.out.println(strQuery);
-                    st=con.createStatement();
                     rs=st.executeQuery(strQuery);
                  
-                   
+                    /* Retrieve timeouts information*/
                     while (rs.next()) {
-
                             row.createCell((short) 6).setCellValue(rs.getString(1));
-                            System.out.println(rs.getString(1));
-                            // index++;
                     }
-                    
             }
-                    
-                    wb.write(DownloadExcelController.data);
-                    wb.close();
-                    return "File downloaded successfully";
-            }
-            catch (Exception e) {
+                wb.write(DownloadExcelController.GameStatsReport);
+                wb.close();
+                return "File downloaded successfully";
+            }catch (Exception e) {
                   e.printStackTrace();
                  return "File not downloaded successfully";
             }
@@ -166,19 +168,16 @@ public class DownloadExcelController extends Controller {
       
       public static Result exportRiskProblemReport(String exportRiskProblemReport)
       {
-        try
-            {
+            /* Takes gameid as input and calls the function which would download the report*/
+            try{
                   String input=exportRiskProblemReport;
-                  System.out.println(input);
                   Controller.response().setContentType("application/vnd.ms-excel");
-                  Controller.response().setHeader("Content-Disposition","attachment;filename=Data.xls");
+                  Controller.response().setHeader("Content-Disposition","attachment;filename=RiskVsProblemReport.xls");
                   downloadExcelForRiskProblem(input);
-            }catch (Exception e)
-            {
+            }catch (Exception e){
                   e.getMessage();
             }
-          
-         return ok(data);
+          return ok(RiskVsProblemReport);
        }
        
        public static String downloadExcelForRiskProblem(String input){
@@ -187,19 +186,14 @@ public class DownloadExcelController extends Controller {
             Connection con = null;
             try {
       
-            	  ArrayList<String> players = new ArrayList<String>();
-            	  System.out.println("Before connection");
-            	  con = DB.getConnection();
-                  //Class.forName("com.mysql.jdbc.Driver");
-                  //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/risk_game_db","root","root");
-                  System.out.println("After connection");
-                  
-                  /* Database Query */               
-                  strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
-                  System.out.println(strQuery);
-                  Statement st=con.createStatement();
-                  ResultSet rs=st.executeQuery(strQuery);
-               
+            	    ArrayList<String> players = new ArrayList<String>();
+                	con = DB.getConnection();
+              
+                      /* Database Query */               
+                    strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
+                    System.out.println(strQuery);
+                    Statement st=con.createStatement();
+                    ResultSet rs=st.executeQuery(strQuery);
                 	
                     HSSFWorkbook wb = new HSSFWorkbook();
                     HSSFSheet sheet = wb.createSheet("Game Report");
@@ -219,7 +213,7 @@ public class DownloadExcelController extends Controller {
                     rs.close();
                     System.out.println(players);
                     
-                   for(int i=0;i<players.size();i++){
+                    for(int i=0;i<players.size();i++){
                 	   
                     strQuery = "SELECT A.GAME_PLAYER_ID,A.RISK_ID,A.STATUS " +
                                ", CASE WHEN B.OOPS_GENERATED IS NULL THEN 0 ELSE B.OOPS_GENERATED END AS OOPS_GENERATED " +
@@ -249,7 +243,7 @@ public class DownloadExcelController extends Controller {
                                "GROUP BY GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.RISK_ID " +
                                ") AS B ON A.RISK_ID=B.RISK_ID " +
                                "LEFT JOIN ( " +
-                               "SELECT RISK_OOPS_MAPPING.RISK_ID,COUNT(tur_no) AS 'OOPS_AVOIDED' " +
+                               "SELECT RISK_OOPS_MAPPING.RISK_ID,COUNT(turn_no) AS 'OOPS_AVOIDED' " +
                                "FROM RISK_GAME_DB.AVOIDED_RISKS AVOIDED_RISKS " +
                                "RIGHT JOIN RISK_GAME_DB.RISK_OOPS_MAPPING RISK_OOPS_MAPPING " +
                                "ON RISK_OOPS_MAPPING.OOPS_ID = AVOIDED_RISKS.OOPS_ID " +
@@ -284,13 +278,11 @@ public class DownloadExcelController extends Controller {
                     st.close();
                     rs.close();
                     
-            }
-                    
-                    wb.write(DownloadExcelController.data);
+            }       
+                    wb.write(DownloadExcelController.RiskVsProblemReport);
                     wb.close();
                     return "File downloaded successfully";
-            }
-            catch (Exception e) {
+            }catch (Exception e) {
                   e.printStackTrace();
                  return "File not downloaded successfully";
             }
