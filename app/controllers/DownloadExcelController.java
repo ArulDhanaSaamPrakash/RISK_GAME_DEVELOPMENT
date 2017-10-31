@@ -41,6 +41,7 @@ public class DownloadExcelController extends Controller {
         /* Takes gameid as input and calls the function which would download the report*/
         try{
                   String input=exportReportInput;
+                  GameStatsReport = new File("GameStatsReport.xls");
                   Controller.response().setContentType("application/vnd.ms-excel");
                   Controller.response().setHeader("Content-Disposition","attachment;filename=GameStatsReport.xls");
                   downloadExcel(input);
@@ -61,6 +62,7 @@ public class DownloadExcelController extends Controller {
             	    Statement st;
                     ResultSet rs;
             	    int index = 1;
+            	    int indexDesc = 0;
             	    
                     HSSFWorkbook wb = new HSSFWorkbook();
                     HSSFSheet sheet = wb.createSheet("GameStatsReport");
@@ -71,6 +73,47 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 3).setCellValue("Max_Time");
                     rowhead.createCell((short) 4).setCellValue("Steps_For_Each_Player");
                     rowhead.createCell((short) 5).setCellValue("Number_Of_Players");
+                    
+                    HSSFSheet sheetDesc = wb.createSheet("GameStatsDescription");
+                    HSSFRow rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Game_Id");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the unique id that represents every game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Start_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the time at which the game has started");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("End_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the time at which the game has ended");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Max_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the duration of the game that was set by the host before starting the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Steps_For_Each_Player");
+                    rowheadDesc.createCell((short) 1).setCellValue("Maximum number of steps that can be played by a player. This would have been set by the host before starting the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Number_Of_Players");
+                    rowheadDesc.createCell((short) 1).setCellValue("Total number of players playing the game");
+                    indexDesc++;
+                    
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Avg_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("Average amount of time taken per step");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Max_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the maximum amount of time taken for any move for that player in the entire game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Min_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the minumum amount of time taken for any move for that player in the entire game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Total_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the total duration of the time the player has played in the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Skipped_Turn");
+                    rowheadDesc.createCell((short) 1).setCellValue("");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Timeouts");
+                    rowheadDesc.createCell((short) 1).setCellValue("Total number of time outs in the game");
+                    
                     
                     /* Database query for fetching the game configurations */
                     strQuery="SELECT GAME.game_id,GAME.start_time,max(turn_end_time) as end_time, "+
