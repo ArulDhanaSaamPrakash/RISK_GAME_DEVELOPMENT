@@ -96,6 +96,9 @@ public class DownloadExcelController extends Controller {
                     indexDesc++;
                     
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("PlayerId");
+                    rowheadDesc.createCell((short) 1).setCellValue("Unique Id for each player in the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc.createCell((short) 0).setCellValue("Avg_Time");
                     rowheadDesc.createCell((short) 1).setCellValue("Average amount of time taken per step");
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
@@ -234,6 +237,7 @@ public class DownloadExcelController extends Controller {
             	    Statement st;
                     ResultSet rs;
             	    int index = 1;
+            	    int indexDesc=0;
             	    
                     HSSFWorkbook wb = new HSSFWorkbook();
                     HSSFSheet sheet = wb.createSheet("RiskVsProblemReport");
@@ -244,6 +248,53 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 3).setCellValue("Max_Time");
                     rowhead.createCell((short) 4).setCellValue("Steps_For_Each_Player");
                     rowhead.createCell((short) 5).setCellValue("Number_Of_Players");
+                    
+                    HSSFSheet sheetDesc = wb.createSheet("RiskVsProblemDescription");
+                    HSSFRow rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Game_Id");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the unique id that represents every game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Start_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the time at which the game has started");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("End_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the time at which the game has ended");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Max_Time");
+                    rowheadDesc.createCell((short) 1).setCellValue("This is the duration of the game that was set by the host before starting the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Steps_For_Each_Player");
+                    rowheadDesc.createCell((short) 1).setCellValue("Maximum number of steps that can be played by a player. This would have been set by the host before starting the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Number_Of_Players");
+                    rowheadDesc.createCell((short) 1).setCellValue("Total number of players playing the game");
+                    indexDesc++;
+                    
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Game_Player_Id");
+                    rowheadDesc.createCell((short) 1).setCellValue("Unique Id for each player in the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Risk_ID");
+                    rowheadDesc.createCell((short) 1).setCellValue("Unique ID of the risk");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Status");
+                    rowheadDesc.createCell((short) 1).setCellValue("This represents whether a risk is mitigated or not mitigated");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Mitigation_Turn_No");
+                    rowheadDesc.createCell((short) 1).setCellValue("If the risk is mitigated, this field would let us know at what turn_no of the player, the risk was mitigated");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("OOPS_Generated");
+                    rowheadDesc.createCell((short) 1).setCellValue("The total number of OOPS that were generated including and before the OOPS_Generated_Turn_No");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("OOPS_Generated_Turn_No");
+                    rowheadDesc.createCell((short) 1).setCellValue("The turn number when the OOPS was generated");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("OOPS_Avoided");
+                    rowheadDesc.createCell((short) 1).setCellValue("The total number of OOPS that were avoided including and before the OOPS_Avoided_Turn_No");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("OOPS_Avoided_Turn_No");
+                    rowheadDesc.createCell((short) 1).setCellValue("The turn number when the OOPS was avoided");
+                    
                     
                     /* Database query for fetching the game configurations */
                     strQuery="SELECT GAME.game_id,GAME.start_time,max(turn_end_time) as end_time, "+
