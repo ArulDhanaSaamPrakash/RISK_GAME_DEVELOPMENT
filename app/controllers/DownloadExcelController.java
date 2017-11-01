@@ -112,7 +112,7 @@ public class DownloadExcelController extends Controller {
                     rowheadDesc.createCell((short) 1).setCellValue("This is the total duration of the time the player has played in the game");
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc.createCell((short) 0).setCellValue("Skipped_Turn");
-                    rowheadDesc.createCell((short) 1).setCellValue("");
+                    rowheadDesc.createCell((short) 1).setCellValue("Total number of skip turns including timeouts");
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc.createCell((short) 0).setCellValue("Timeouts");
                     rowheadDesc.createCell((short) 1).setCellValue("Total number of time outs in the game");
