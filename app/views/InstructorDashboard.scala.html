@@ -215,7 +215,19 @@
         @*});*@
       }
 
+       
+       function validateForm()
+       {
+        var a=document.forms["GameReportForm"]["exportReportInput"].value;
+        if (a==null || a=="")
+        {
+             alert("Please enter a valid gameID");
+             return false;
+            
+        }
 
+    }
+    
   </script>
 
   </head>
@@ -226,15 +238,9 @@
       <h3>
                Welcome @Http.Context.current().args.get("firstname").asInstanceOf[String]
               </h3>
-    <form method="GET" action="/exportReports">
+    <form name="GameReportForm" method="GET" onsubmit="return validateForm()" action="/exportReports">
       <label>Game Statistics Report </label> <br>
       <input type="text" id="exportReportInput" name="exportReportInput" placeholder="Enter gameID">
-      <input type="submit" name="Export" value="Export" style="height: 30px; width: 100px;">
-  </form>
-  
-  <form method="GET" action="/exportRiskProblemReport">
-      <label>Risk vs Problem Report </label> <br>
-      <input type="text" id="exportRiskProblemReport" name="exportRiskProblemReport" placeholder="Enter gameID">
       <input type="submit" name="Export" value="Export" style="height: 30px; width: 100px;">
   </form>
   
