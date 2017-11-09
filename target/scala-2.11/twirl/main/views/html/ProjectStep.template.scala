@@ -281,7 +281,7 @@ var isRequirementPlanningDone=false;
                             var tempStatus="riskStatus"+obj.riskId;
 
                             appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td id="+tempStatus+">" + isCompleted + "</td>" +
-                                    "<td><button "+isDisabled+"" +
+                                    "<td><button style='float:right;background-color: #4CAF50;border-color: #4CAF50;'"+isDisabled+"" +
                                     "  class='open-riskDialog btn btn-warning' href='#riskDialog'" +
                                     "data-toggle='modal' "+
                                     " data-buttondisable='"+buttonDisable+"'" +
@@ -414,7 +414,7 @@ var isRequirementPlanningDone=false;
                                 """),format.raw/*384.33*/("""if(obj.phaseName=="PLANNING")"""),format.raw/*384.62*/("""{"""),format.raw/*384.63*/("""
                                     """),format.raw/*385.37*/("""result = result + "<button " +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal;height:55px; ' " +
+                                            " style='white-space: normal;height:70px; ' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -435,7 +435,8 @@ var isRequirementPlanningDone=false;
                                 """),format.raw/*405.33*/("""}"""),format.raw/*405.34*/("""else"""),format.raw/*405.38*/("""{"""),format.raw/*405.39*/("""
                                     """),format.raw/*406.37*/("""result = result + "<button disabled" +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal;height:55px; ' " +
+                                 
+                                            " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -448,21 +449,21 @@ var isRequirementPlanningDone=false;
                                             "'data-level='Level:' data-levelvalue='" + obj.level +
                                             "'data-id='" + obj.projectStepId +
                                             "'" +
-//                                            "data-todo='"""),format.raw/*421.59*/("""{"""),format.raw/*421.60*/("""'id':12,'todo':'xyz'"""),format.raw/*421.80*/("""}"""),format.raw/*421.81*/("""'"+
+//                                            "data-todo='"""),format.raw/*422.59*/("""{"""),format.raw/*422.60*/("""'id':12,'todo':'xyz'"""),format.raw/*422.80*/("""}"""),format.raw/*422.81*/("""'"+
                                             "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                             "  id='todolink'>" + obj.projectStepName +
                                             "</button>";
 //
-                                """),format.raw/*426.33*/("""}"""),format.raw/*426.34*/("""
+                                """),format.raw/*427.33*/("""}"""),format.raw/*427.34*/("""
 
 
-                            """),format.raw/*429.29*/("""}"""),format.raw/*429.30*/("""
-                            """),format.raw/*430.29*/("""else """),format.raw/*430.34*/("""{"""),format.raw/*430.35*/("""
+                            """),format.raw/*430.29*/("""}"""),format.raw/*430.30*/("""
+                            """),format.raw/*431.29*/("""else """),format.raw/*431.34*/("""{"""),format.raw/*431.35*/("""
 
-                              """),format.raw/*432.31*/("""if(obj.phaseName=="PLANNING")"""),format.raw/*432.60*/("""{"""),format.raw/*432.61*/("""
-                                  """),format.raw/*433.35*/("""result = result + "<button " +
+                              """),format.raw/*433.31*/("""if(obj.phaseName=="PLANNING")"""),format.raw/*433.60*/("""{"""),format.raw/*433.61*/("""
+                                  """),format.raw/*434.35*/("""result = result + "<button " +
                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                          " style='white-space: normal;height:55px; ' " +
+                                          " style='white-space: normal;height:70px; ' " +
                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                           " data-toggle='modal' " +obj.status+
                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -475,20 +476,20 @@ var isRequirementPlanningDone=false;
                                           "'data-level='Level:' data-levelvalue='" + obj.level +
                                           "'data-id='" + obj.projectStepId +
                                           "'" +
-                            //                                            "data-todo='"""),format.raw/*448.87*/("""{"""),format.raw/*448.88*/("""'id':12,'todo':'xyz'"""),format.raw/*448.108*/("""}"""),format.raw/*448.109*/("""'"+
+                            //                                            "data-todo='"""),format.raw/*449.87*/("""{"""),format.raw/*449.88*/("""'id':12,'todo':'xyz'"""),format.raw/*449.108*/("""}"""),format.raw/*449.109*/("""'"+
                                           "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                           "  id='todolink'>" + obj.projectStepName +
                                           "</button>";
                             //
-                              """),format.raw/*453.31*/("""}"""),format.raw/*453.32*/("""
-                              """),format.raw/*454.31*/("""else """),format.raw/*454.36*/("""{"""),format.raw/*454.37*/("""
-                                      """),format.raw/*455.39*/("""if(isImplementationPlanningDone||isDesignPlanningDone||isTestingPlanningDone||isRequirementPlanningDone||isProductionPlanningDone)
-                                        """),format.raw/*456.41*/("""{"""),format.raw/*456.42*/("""
-                                                """),format.raw/*457.49*/("""if(isImplementationPlanningDone && obj.phaseName=="IMPLEMENTATION")
-                                                      """),format.raw/*458.55*/("""{"""),format.raw/*458.56*/("""
-                                                                    """),format.raw/*459.69*/("""result = result + "<button " +
+                              """),format.raw/*454.31*/("""}"""),format.raw/*454.32*/("""
+                              """),format.raw/*455.31*/("""else """),format.raw/*455.36*/("""{"""),format.raw/*455.37*/("""
+                                      """),format.raw/*456.39*/("""if(isImplementationPlanningDone||isDesignPlanningDone||isTestingPlanningDone||isRequirementPlanningDone||isProductionPlanningDone)
+                                        """),format.raw/*457.41*/("""{"""),format.raw/*457.42*/("""
+                                                """),format.raw/*458.49*/("""if(isImplementationPlanningDone && obj.phaseName=="IMPLEMENTATION")
+                                                      """),format.raw/*459.55*/("""{"""),format.raw/*459.56*/("""
+                                                                    """),format.raw/*460.69*/("""result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -501,16 +502,16 @@ var isRequirementPlanningDone=false;
                                                                               "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                               "'data-id='" + obj.projectStepId +
                                                                               "'" +
-                                                                //                                            "data-todo='"""),format.raw/*474.123*/("""{"""),format.raw/*474.124*/("""'id':12,'todo':'xyz'"""),format.raw/*474.144*/("""}"""),format.raw/*474.145*/("""'"+
+                                                                //                                            "data-todo='"""),format.raw/*475.123*/("""{"""),format.raw/*475.124*/("""'id':12,'todo':'xyz'"""),format.raw/*475.144*/("""}"""),format.raw/*475.145*/("""'"+
                                                                               "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                               "  id='todolink'>" + obj.projectStepName +
                                                                               "</button>";
 
-                                                                """),format.raw/*479.65*/("""}"""),format.raw/*479.66*/("""
-                                                      """),format.raw/*480.55*/("""else if(obj.phaseName=="IMPLEMENTATION")"""),format.raw/*480.95*/("""{"""),format.raw/*480.96*/("""
-                                                        """),format.raw/*481.57*/("""result = result + "<button disabled" +
+                                                                """),format.raw/*480.65*/("""}"""),format.raw/*480.66*/("""
+                                                      """),format.raw/*481.55*/("""else if(obj.phaseName=="IMPLEMENTATION")"""),format.raw/*481.95*/("""{"""),format.raw/*481.96*/("""
+                                                        """),format.raw/*482.57*/("""result = result + "<button disabled" +
                                                                   " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                  " style='white-space: normal;height:55px; ' " +
+                                                                  " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                   " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                   " data-toggle='modal' " +obj.status+
                                                                   " data-buttondisable='"+buttonDisable+"'" +
@@ -523,19 +524,19 @@ var isRequirementPlanningDone=false;
                                                                   "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                   "'data-id='" + obj.projectStepId +
                                                                   "'" +
-                                                    //                                            "data-todo='"""),format.raw/*496.111*/("""{"""),format.raw/*496.112*/("""'id':12,'todo':'xyz'"""),format.raw/*496.132*/("""}"""),format.raw/*496.133*/("""'"+
+                                                    //                                            "data-todo='"""),format.raw/*497.111*/("""{"""),format.raw/*497.112*/("""'id':12,'todo':'xyz'"""),format.raw/*497.132*/("""}"""),format.raw/*497.133*/("""'"+
                                                                   "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                   "  id='todolink'>" + obj.projectStepName +
                                                                   "</button>";
-                                                      """),format.raw/*500.55*/("""}"""),format.raw/*500.56*/("""
+                                                      """),format.raw/*501.55*/("""}"""),format.raw/*501.56*/("""
 
 
-                                                                """),format.raw/*503.65*/("""if(isDesignPlanningDone && obj.phaseName=="DESIGN")
-                                                                """),format.raw/*504.65*/("""{"""),format.raw/*504.66*/("""
+                                                                """),format.raw/*504.65*/("""if(isDesignPlanningDone && obj.phaseName=="DESIGN")
+                                                                """),format.raw/*505.65*/("""{"""),format.raw/*505.66*/("""
 
-                                                                      """),format.raw/*506.71*/("""result = result + "<button " +
+                                                                      """),format.raw/*507.71*/("""result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -548,18 +549,18 @@ var isRequirementPlanningDone=false;
                                                                               "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                               "'data-id='" + obj.projectStepId +
                                                                               "'" +
-                                                                //                                            "data-todo='"""),format.raw/*521.123*/("""{"""),format.raw/*521.124*/("""'id':12,'todo':'xyz'"""),format.raw/*521.144*/("""}"""),format.raw/*521.145*/("""'"+
+                                                                //                                            "data-todo='"""),format.raw/*522.123*/("""{"""),format.raw/*522.124*/("""'id':12,'todo':'xyz'"""),format.raw/*522.144*/("""}"""),format.raw/*522.145*/("""'"+
                                                                               "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                               "  id='todolink'>" + obj.projectStepName +
                                                                               "</button>";
                                                                 //
 
-                                                                """),format.raw/*527.65*/("""}"""),format.raw/*527.66*/("""
-                                                                """),format.raw/*528.65*/("""else if(obj.phaseName=="DESIGN")
-                                                                """),format.raw/*529.65*/("""{"""),format.raw/*529.66*/("""
-                                                                  """),format.raw/*530.67*/("""result = result + "<button disabled" +
+                                                                """),format.raw/*528.65*/("""}"""),format.raw/*528.66*/("""
+                                                                """),format.raw/*529.65*/("""else if(obj.phaseName=="DESIGN")
+                                                                """),format.raw/*530.65*/("""{"""),format.raw/*530.66*/("""
+                                                                  """),format.raw/*531.67*/("""result = result + "<button disabled" +
                                                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                          " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                           " data-toggle='modal' " +obj.status+
                                                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -572,22 +573,22 @@ var isRequirementPlanningDone=false;
                                                                           "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                           "'data-id='" + obj.projectStepId +
                                                                           "'" +
-                                                            //                                            "data-todo='"""),format.raw/*545.119*/("""{"""),format.raw/*545.120*/("""'id':12,'todo':'xyz'"""),format.raw/*545.140*/("""}"""),format.raw/*545.141*/("""'"+
+                                                            //                                            "data-todo='"""),format.raw/*546.119*/("""{"""),format.raw/*546.120*/("""'id':12,'todo':'xyz'"""),format.raw/*546.140*/("""}"""),format.raw/*546.141*/("""'"+
                                                                           "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                           "  id='todolink'>" + obj.projectStepName +
                                                                           "</button>";
-                                                                """),format.raw/*549.65*/("""}"""),format.raw/*549.66*/("""
+                                                                """),format.raw/*550.65*/("""}"""),format.raw/*550.66*/("""
 
 
 
-                                                                """),format.raw/*553.65*/("""//next one
+                                                                """),format.raw/*554.65*/("""//next one
 
                                                                 if(isTestingPlanningDone && obj.phaseName=="TESTING")
-                                                                """),format.raw/*556.65*/("""{"""),format.raw/*556.66*/("""
+                                                                """),format.raw/*557.65*/("""{"""),format.raw/*557.66*/("""
 
-                                                                      """),format.raw/*558.71*/("""result = result + "<button " +
+                                                                      """),format.raw/*559.71*/("""result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -600,18 +601,18 @@ var isRequirementPlanningDone=false;
                                                                               "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                               "'data-id='" + obj.projectStepId +
                                                                               "'" +
-                                                                //                                            "data-todo='"""),format.raw/*573.123*/("""{"""),format.raw/*573.124*/("""'id':12,'todo':'xyz'"""),format.raw/*573.144*/("""}"""),format.raw/*573.145*/("""'"+
+                                                                //                                            "data-todo='"""),format.raw/*574.123*/("""{"""),format.raw/*574.124*/("""'id':12,'todo':'xyz'"""),format.raw/*574.144*/("""}"""),format.raw/*574.145*/("""'"+
                                                                               "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                               "  id='todolink'>" + obj.projectStepName +
                                                                               "</button>";
                                                                 //
 
-                                                                """),format.raw/*579.65*/("""}"""),format.raw/*579.66*/("""
-                                                                """),format.raw/*580.65*/("""else if(obj.phaseName=="TESTING")
-                                                                """),format.raw/*581.65*/("""{"""),format.raw/*581.66*/("""
-                                                                  """),format.raw/*582.67*/("""result = result + "<button disabled" +
+                                                                """),format.raw/*580.65*/("""}"""),format.raw/*580.66*/("""
+                                                                """),format.raw/*581.65*/("""else if(obj.phaseName=="TESTING")
+                                                                """),format.raw/*582.65*/("""{"""),format.raw/*582.66*/("""
+                                                                  """),format.raw/*583.67*/("""result = result + "<button disabled" +
                                                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                         " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                           " data-toggle='modal' " +obj.status+
                                                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -624,18 +625,18 @@ var isRequirementPlanningDone=false;
                                                                           "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                           "'data-id='" + obj.projectStepId +
                                                                           "'" +
-                                                            //                                            "data-todo='"""),format.raw/*597.119*/("""{"""),format.raw/*597.120*/("""'id':12,'todo':'xyz'"""),format.raw/*597.140*/("""}"""),format.raw/*597.141*/("""'"+
+                                                            //                                            "data-todo='"""),format.raw/*598.119*/("""{"""),format.raw/*598.120*/("""'id':12,'todo':'xyz'"""),format.raw/*598.140*/("""}"""),format.raw/*598.141*/("""'"+
                                                                           "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                           "  id='todolink'>" + obj.projectStepName +
                                                                           "</button>";
-                                                                """),format.raw/*601.65*/("""}"""),format.raw/*601.66*/("""
+                                                                """),format.raw/*602.65*/("""}"""),format.raw/*602.66*/("""
 
-                                                                """),format.raw/*603.65*/("""if(isRequirementPlanningDone && obj.phaseName=="REQUIREMENTS")
-                                                                                """),format.raw/*604.81*/("""{"""),format.raw/*604.82*/("""
+                                                                """),format.raw/*604.65*/("""if(isRequirementPlanningDone && obj.phaseName=="REQUIREMENTS")
+                                                                                """),format.raw/*605.81*/("""{"""),format.raw/*605.82*/("""
 
-                                                                                          """),format.raw/*606.91*/("""result = result + "<button " +
+                                                                                          """),format.raw/*607.91*/("""result = result + "<button " +
                                                                                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                                                        " style='white-space: normal;height:55px; ' " +
+                                                                                                        " style='white-space: normal;height:70px; ' " +
                                                                                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                                                         " data-toggle='modal' " +obj.status+
                                                                                                         " data-buttondisable='"+buttonDisable+"'" +
@@ -648,18 +649,18 @@ var isRequirementPlanningDone=false;
                                                                                                             "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                                                             "'data-id='" + obj.projectStepId +
                                                                                                             "'" +
-                                                                                              //                                            "data-todo='"""),format.raw/*621.153*/("""{"""),format.raw/*621.154*/("""'id':12,'todo':'xyz'"""),format.raw/*621.174*/("""}"""),format.raw/*621.175*/("""'"+
+                                                                                              //                                            "data-todo='"""),format.raw/*622.153*/("""{"""),format.raw/*622.154*/("""'id':12,'todo':'xyz'"""),format.raw/*622.174*/("""}"""),format.raw/*622.175*/("""'"+
                                                                                                             "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                                                             "  id='todolink'>" + obj.projectStepName +
                                                                                                             "</button>";
                                                                                               //
 
-                                                                              """),format.raw/*627.79*/("""}"""),format.raw/*627.80*/("""
-                                                                              """),format.raw/*628.79*/("""else if(obj.phaseName=="REQUIREMENTS")
-                                                                              """),format.raw/*629.79*/("""{"""),format.raw/*629.80*/("""
-                                                                                """),format.raw/*630.81*/("""result = result + "<button disabled" +
+                                                                              """),format.raw/*628.79*/("""}"""),format.raw/*628.80*/("""
+                                                                              """),format.raw/*629.79*/("""else if(obj.phaseName=="REQUIREMENTS")
+                                                                              """),format.raw/*630.79*/("""{"""),format.raw/*630.80*/("""
+                                                                                """),format.raw/*631.81*/("""result = result + "<button disabled" +
                                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                                              " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                                                   " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                                               " data-toggle='modal' " +obj.status+
                                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -672,23 +673,23 @@ var isRequirementPlanningDone=false;
                                                                                                   "'data-level='Level:' data-levelvalue='" + obj.level +
                                                                                                   "'data-id='" + obj.projectStepId +
                                                                                                   "'" +
-                                                                                    //                                            "data-todo='"""),format.raw/*645.143*/("""{"""),format.raw/*645.144*/("""'id':12,'todo':'xyz'"""),format.raw/*645.164*/("""}"""),format.raw/*645.165*/("""'"+
+                                                                                    //                                            "data-todo='"""),format.raw/*646.143*/("""{"""),format.raw/*646.144*/("""'id':12,'todo':'xyz'"""),format.raw/*646.164*/("""}"""),format.raw/*646.165*/("""'"+
                                                                                                   "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
                                                                                                   "  id='todolink'>" + obj.projectStepName +
                                                                                                   "</button>";
-                                                                              """),format.raw/*649.79*/("""}"""),format.raw/*649.80*/("""
-                                                                """),format.raw/*650.65*/("""//next oneTurn
+                                                                              """),format.raw/*650.79*/("""}"""),format.raw/*650.80*/("""
+                                                                """),format.raw/*651.65*/("""//next oneTurn
 
 
-                                                              """),format.raw/*653.63*/("""}"""),format.raw/*653.64*/("""
-                                                              """),format.raw/*654.63*/("""else """),format.raw/*654.68*/("""{"""),format.raw/*654.69*/("""
+                                                              """),format.raw/*654.63*/("""}"""),format.raw/*654.64*/("""
+                                                              """),format.raw/*655.63*/("""else """),format.raw/*655.68*/("""{"""),format.raw/*655.69*/("""
 
 
 
-  """),format.raw/*658.3*/("""//This is else part
+  """),format.raw/*659.3*/("""//This is else part
   result = result + "<button disabled" +
           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-          " style='white-space: normal;height:55px; ' " +
+         " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
           " data-toggle='modal' " +obj.status+
           " data-buttondisable='"+buttonDisable+"'" +
@@ -701,31 +702,17 @@ var isRequirementPlanningDone=false;
           "'data-level='Level:' data-levelvalue='" + obj.level +
           "'data-id='" + obj.projectStepId +
           "'" +
-  //                                            "data-todo='"""),format.raw/*674.61*/("""{"""),format.raw/*674.62*/("""'id':12,'todo':'xyz'"""),format.raw/*674.82*/("""}"""),format.raw/*674.83*/("""'"+
+  //                                            "data-todo='"""),format.raw/*675.61*/("""{"""),format.raw/*675.62*/("""'id':12,'todo':'xyz'"""),format.raw/*675.82*/("""}"""),format.raw/*675.83*/("""'"+
           "title='Budget :" + obj.budget + "  Level: " + obj.level +"  Personnel: " + obj.personnel + "'" +
           "  id='todolink'>" + obj.projectStepName +
           "</button>";
 
 
-                                                              """),format.raw/*680.63*/("""}"""),format.raw/*680.64*/("""
+                                                              """),format.raw/*681.63*/("""}"""),format.raw/*681.64*/("""
 
 
 
-                              """),format.raw/*684.31*/("""}"""),format.raw/*684.32*/("""
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            """),format.raw/*698.29*/("""}"""),format.raw/*698.30*/("""
+                              """),format.raw/*685.31*/("""}"""),format.raw/*685.32*/("""
 
 
 
@@ -739,33 +726,47 @@ var isRequirementPlanningDone=false;
 
 
 
+                            """),format.raw/*699.29*/("""}"""),format.raw/*699.30*/("""
 
-                        """),format.raw/*713.25*/("""}"""),format.raw/*713.26*/("""
-"""),format.raw/*714.1*/("""//                        alert(stepsDone+"/"+totalSteps);
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        """),format.raw/*714.25*/("""}"""),format.raw/*714.26*/("""
+"""),format.raw/*715.1*/("""//                        alert(stepsDone+"/"+totalSteps);
 
                         document.getElementById('risksteps').innerHTML = result;
                         document.getElementById('stepForRisk').innerHTML='Steps that are needed to be performed for '+id;
-                    """),format.raw/*718.21*/("""}"""),format.raw/*718.22*/(""",
-                    error: function (data) """),format.raw/*719.44*/("""{"""),format.raw/*719.45*/("""
-                        """),format.raw/*720.25*/("""alert("error in risk click");
+                    """),format.raw/*719.21*/("""}"""),format.raw/*719.22*/(""",
+                    error: function (data) """),format.raw/*720.44*/("""{"""),format.raw/*720.45*/("""
+                        """),format.raw/*721.25*/("""alert("error in risk click");
                         //setError('Make call failed');
-                    """),format.raw/*722.21*/("""}"""),format.raw/*722.22*/("""
-                """),format.raw/*723.17*/("""}"""),format.raw/*723.18*/(""");
+                    """),format.raw/*723.21*/("""}"""),format.raw/*723.22*/("""
+                """),format.raw/*724.17*/("""}"""),format.raw/*724.18*/(""");
 
-            """),format.raw/*725.13*/("""}"""),format.raw/*725.14*/("""
+            """),format.raw/*726.13*/("""}"""),format.raw/*726.14*/("""
 
 
-            """),format.raw/*728.13*/("""function onPerformStep(id)"""),format.raw/*728.39*/("""{"""),format.raw/*728.40*/("""
+            """),format.raw/*729.13*/("""function onPerformStep(id)"""),format.raw/*729.39*/("""{"""),format.raw/*729.40*/("""
 
-"""),format.raw/*730.1*/("""//                var isEligibleToPerformStep=true;
+"""),format.raw/*731.1*/("""//                var isEligibleToPerformStep=true;
                 var performedStep=document.getElementById(id).innerHTML;
                 var isProduction = $('#btnIsProduction').val();
                // alert("in project skip..turn no is " + document.getElementById('turnNo').innerHTML);
-                if(isProduction == "true")"""),format.raw/*734.43*/("""{"""),format.raw/*734.44*/("""
-                    """),format.raw/*735.21*/("""var obj = """),format.raw/*735.31*/("""{"""),format.raw/*735.32*/("""
-                        """),format.raw/*736.25*/("""'id': 'null',
+                if(isProduction == "true")"""),format.raw/*735.43*/("""{"""),format.raw/*735.44*/("""
+                    """),format.raw/*736.21*/("""var obj = """),format.raw/*736.31*/("""{"""),format.raw/*736.32*/("""
+                        """),format.raw/*737.25*/("""'id': 'null',
                         'riskid' : 'null',
-                        'gameid':"""),_display_(/*738.35*/model/*738.40*/.getGameId),format.raw/*738.50*/(""",
+                        'gameid':"""),_display_(/*739.35*/model/*739.40*/.getGameId),format.raw/*739.50*/(""",
                         'skipturn':'false',
                         'isProduction':isProduction,
                         'riskmitigatedcount': parseInt($('#txtRisk').val()),
@@ -780,15 +781,15 @@ var isRequirementPlanningDone=false;
                         'timetaken': 3,
                         'performedsteps': 0,
                         'totalsteps':totalSteps
-                    """),format.raw/*753.21*/("""}"""),format.raw/*753.22*/(""";
-                """),format.raw/*754.17*/("""}"""),format.raw/*754.18*/("""
+                    """),format.raw/*754.21*/("""}"""),format.raw/*754.22*/(""";
+                """),format.raw/*755.17*/("""}"""),format.raw/*755.18*/("""
 
-                """),format.raw/*756.17*/("""else if(id.indexOf("Skip") !==-1 && isProduction == "false")"""),format.raw/*756.77*/("""{"""),format.raw/*756.78*/("""
-"""),format.raw/*757.1*/("""//                    alert(id);
-                    var obj = """),format.raw/*758.31*/("""{"""),format.raw/*758.32*/("""
-                        """),format.raw/*759.25*/("""'id': 'null',
+                """),format.raw/*757.17*/("""else if(id.indexOf("Skip") !==-1 && isProduction == "false")"""),format.raw/*757.77*/("""{"""),format.raw/*757.78*/("""
+"""),format.raw/*758.1*/("""//                    alert(id);
+                    var obj = """),format.raw/*759.31*/("""{"""),format.raw/*759.32*/("""
+                        """),format.raw/*760.25*/("""'id': 'null',
                         'riskid' : 'null',
-                        'gameid':"""),_display_(/*761.35*/model/*761.40*/.getGameId),format.raw/*761.50*/(""",
+                        'gameid':"""),_display_(/*762.35*/model/*762.40*/.getGameId),format.raw/*762.50*/(""",
                         'skipturn':'true',
                         'isProduction':isProduction,
                         'riskmitigatedcount': parseInt($('#txtRisk').val()),
@@ -803,15 +804,15 @@ var isRequirementPlanningDone=false;
                         'timetaken': 3,
                         'performedsteps': 0,
                         'totalsteps':totalSteps
-                    """),format.raw/*776.21*/("""}"""),format.raw/*776.22*/(""";
-                """),format.raw/*777.17*/("""}"""),format.raw/*777.18*/("""
+                    """),format.raw/*777.21*/("""}"""),format.raw/*777.22*/(""";
+                """),format.raw/*778.17*/("""}"""),format.raw/*778.18*/("""
 
-                """),format.raw/*779.17*/("""else if(id.indexOf("CRM") !==-1)"""),format.raw/*779.49*/("""{"""),format.raw/*779.50*/("""
-"""),format.raw/*780.1*/("""//                    alert(id);
-                    var obj = """),format.raw/*781.31*/("""{"""),format.raw/*781.32*/("""
-                        """),format.raw/*782.25*/("""'id': 'null',
+                """),format.raw/*780.17*/("""else if(id.indexOf("CRM") !==-1)"""),format.raw/*780.49*/("""{"""),format.raw/*780.50*/("""
+"""),format.raw/*781.1*/("""//                    alert(id);
+                    var obj = """),format.raw/*782.31*/("""{"""),format.raw/*782.32*/("""
+                        """),format.raw/*783.25*/("""'id': 'null',
                         'riskid' : id,
-                        'gameid':"""),_display_(/*784.35*/model/*784.40*/.getGameId),format.raw/*784.50*/(""",
+                        'gameid':"""),_display_(/*785.35*/model/*785.40*/.getGameId),format.raw/*785.50*/(""",
                         'skipturn':'false',
                         'isProduction':isProduction,
                         'riskmitigatedcount': parseInt($('#txtRisk').val()),
@@ -826,12 +827,12 @@ var isRequirementPlanningDone=false;
                         'timetaken': 3,
                         'performedsteps': stepsDone,
                         'totalsteps':totalSteps
-                    """),format.raw/*799.21*/("""}"""),format.raw/*799.22*/(""";
-                """),format.raw/*800.17*/("""}"""),format.raw/*800.18*/(""" """),format.raw/*800.19*/("""else"""),format.raw/*800.23*/("""{"""),format.raw/*800.24*/("""
-                    """),format.raw/*801.21*/("""var obj = """),format.raw/*801.31*/("""{"""),format.raw/*801.32*/("""
-                        """),format.raw/*802.25*/("""'id': id,
+                    """),format.raw/*800.21*/("""}"""),format.raw/*800.22*/(""";
+                """),format.raw/*801.17*/("""}"""),format.raw/*801.18*/(""" """),format.raw/*801.19*/("""else"""),format.raw/*801.23*/("""{"""),format.raw/*801.24*/("""
+                    """),format.raw/*802.21*/("""var obj = """),format.raw/*802.31*/("""{"""),format.raw/*802.32*/("""
+                        """),format.raw/*803.25*/("""'id': id,
                         'riskid' : 'null',
-                        'gameid':"""),_display_(/*804.35*/model/*804.40*/.getGameId),format.raw/*804.50*/(""",
+                        'gameid':"""),_display_(/*805.35*/model/*805.40*/.getGameId),format.raw/*805.50*/(""",
                         'skipturn':'false',
                         'isProduction':isProduction,
                         'riskmitigatedcount': parseInt($('#txtRisk').val()),
@@ -846,42 +847,42 @@ var isRequirementPlanningDone=false;
                         'timetaken': 3,
                         'performedsteps': 0,
                         'totalsteps':1
-                    """),format.raw/*819.21*/("""}"""),format.raw/*819.22*/(""";
-                """),format.raw/*820.17*/("""}"""),format.raw/*820.18*/("""
+                    """),format.raw/*820.21*/("""}"""),format.raw/*820.22*/(""";
+                """),format.raw/*821.17*/("""}"""),format.raw/*821.18*/("""
 
-                """),format.raw/*822.17*/("""$.ajax("""),format.raw/*822.24*/("""{"""),format.raw/*822.25*/("""
-                    """),format.raw/*823.21*/("""type: 'POST',
-                    url: '"""),_display_(/*824.28*/routes/*824.34*/.GameController.performStep()),format.raw/*824.63*/("""',
+                """),format.raw/*823.17*/("""$.ajax("""),format.raw/*823.24*/("""{"""),format.raw/*823.25*/("""
+                    """),format.raw/*824.21*/("""type: 'POST',
+                    url: '"""),_display_(/*825.28*/routes/*825.34*/.GameController.performStep()),format.raw/*825.63*/("""',
                     // data : JSON.stringify(obj),
                     data: JSON.stringify(obj),
                     async: false,
                     contentType: 'application/json',
-                    success: function (data) """),format.raw/*829.46*/("""{"""),format.raw/*829.47*/("""
-                        """),format.raw/*830.25*/("""onlyPlanning=false;
+                    success: function (data) """),format.raw/*830.46*/("""{"""),format.raw/*830.47*/("""
+                        """),format.raw/*831.25*/("""onlyPlanning=false;
                         document.getElementById('myCurrentTurn').innerHTML = performedStep;
                         document.getElementById('prevstep').innerHTML = performedStep;
-                        if(data.complete=="true")"""),format.raw/*833.50*/("""{"""),format.raw/*833.51*/("""
-"""),format.raw/*834.1*/("""//                            alert(data.complete);
-                            swal("""),format.raw/*835.34*/("""{"""),format.raw/*835.35*/("""
-                                        """),format.raw/*836.41*/("""title: "",
+                        if(data.complete=="true")"""),format.raw/*834.50*/("""{"""),format.raw/*834.51*/("""
+"""),format.raw/*835.1*/("""//                            alert(data.complete);
+                            swal("""),format.raw/*836.34*/("""{"""),format.raw/*836.35*/("""
+                                        """),format.raw/*837.41*/("""title: "",
                                         text: "You ended the game with budget "+data.budget,
                                         confirmButtonColor: "#DD6B55",
                                         confirmButtonText: "QuitGame",
                                         closeOnConfirm: true,
-                                    """),format.raw/*841.37*/("""}"""),format.raw/*841.38*/(""",
-                                    function(isConfirm)"""),format.raw/*842.56*/("""{"""),format.raw/*842.57*/("""
-                                        """),format.raw/*843.41*/("""if (isConfirm) """),format.raw/*843.56*/("""{"""),format.raw/*843.57*/("""
-"""),format.raw/*844.1*/("""//                                            alert("here");
+                                    """),format.raw/*842.37*/("""}"""),format.raw/*842.38*/(""",
+                                    function(isConfirm)"""),format.raw/*843.56*/("""{"""),format.raw/*843.57*/("""
+                                        """),format.raw/*844.41*/("""if (isConfirm) """),format.raw/*844.56*/("""{"""),format.raw/*844.57*/("""
+"""),format.raw/*845.1*/("""//                                            alert("here");
                                             $('#lnkLeave').trigger('click');
 
-                                        """),format.raw/*847.41*/("""}"""),format.raw/*847.42*/("""
-                                    """),format.raw/*848.37*/("""}"""),format.raw/*848.38*/(""");
-                        """),format.raw/*849.25*/("""}"""),format.raw/*849.26*/("""
+                                        """),format.raw/*848.41*/("""}"""),format.raw/*848.42*/("""
+                                    """),format.raw/*849.37*/("""}"""),format.raw/*849.38*/(""");
+                        """),format.raw/*850.25*/("""}"""),format.raw/*850.26*/("""
 
 
-                       """),format.raw/*852.24*/("""else if(data.steptype == "OOPS")
-                        """),format.raw/*853.25*/("""{"""),format.raw/*853.26*/("""
-                           """),format.raw/*854.28*/("""// $('#updateactivity').trigger('click');
+                       """),format.raw/*853.24*/("""else if(data.steptype == "OOPS")
+                        """),format.raw/*854.25*/("""{"""),format.raw/*854.26*/("""
+                           """),format.raw/*855.28*/("""// $('#updateactivity').trigger('click');
                            isOOPSCard=true;
                            console.log(isOOPSCard+"   hello am as ");
                             var alertmsg = "You lost ";
@@ -891,62 +892,62 @@ var isRequirementPlanningDone=false;
                            console.log(document.getElementById('budgetremaining').innerHTML);
 
 
-                            if(data.oops_resource !=0) """),format.raw/*864.56*/("""{"""),format.raw/*864.57*/("""
-                                """),format.raw/*865.33*/("""alertmsg = alertmsg + data.oops_resource + " resource, ";
-                            """),format.raw/*866.29*/("""}"""),format.raw/*866.30*/("""
-                            """),format.raw/*867.29*/("""if(data.oops_points !=0) """),format.raw/*867.54*/("""{"""),format.raw/*867.55*/("""
-                                """),format.raw/*868.33*/("""alertmsg = alertmsg + data.oops_points + " capability points, ";
-                            """),format.raw/*869.29*/("""}"""),format.raw/*869.30*/("""
-                            """),format.raw/*870.29*/("""if(data.oops_bonus !=0) """),format.raw/*870.53*/("""{"""),format.raw/*870.54*/("""
-                                """),format.raw/*871.33*/("""alertmsg = alertmsg + data.oops_bonus + " capability bonus, ";
-                            """),format.raw/*872.29*/("""}"""),format.raw/*872.30*/("""
+                            if(data.oops_resource !=0) """),format.raw/*865.56*/("""{"""),format.raw/*865.57*/("""
+                                """),format.raw/*866.33*/("""alertmsg = alertmsg + data.oops_resource + " resource, ";
+                            """),format.raw/*867.29*/("""}"""),format.raw/*867.30*/("""
+                            """),format.raw/*868.29*/("""if(data.oops_points !=0) """),format.raw/*868.54*/("""{"""),format.raw/*868.55*/("""
+                                """),format.raw/*869.33*/("""alertmsg = alertmsg + data.oops_points + " capability points, ";
+                            """),format.raw/*870.29*/("""}"""),format.raw/*870.30*/("""
+                            """),format.raw/*871.29*/("""if(data.oops_bonus !=0) """),format.raw/*871.53*/("""{"""),format.raw/*871.54*/("""
+                                """),format.raw/*872.33*/("""alertmsg = alertmsg + data.oops_bonus + " capability bonus, ";
+                            """),format.raw/*873.29*/("""}"""),format.raw/*873.30*/("""
                             
-                            """),format.raw/*874.29*/("""if(data.oops_budget !=0) """),format.raw/*874.54*/("""{"""),format.raw/*874.55*/("""
-                                """),format.raw/*875.33*/("""alertmsg = alertmsg + data.oops_budget + " dollars, ";
-                            """),format.raw/*876.29*/("""}"""),format.raw/*876.30*/("""
-
-                            
-                            """),format.raw/*879.29*/("""if(data.oops_resource ==0 && data.oops_points ==0 && data.oops_bonus ==0 && data.oops_budget ==0)
-                            """),format.raw/*880.29*/("""{"""),format.raw/*880.30*/("""
-                            	"""),format.raw/*881.30*/("""alertmsg="But the problem has been avoided since you mitigated a RISK!.    ";
-                            """),format.raw/*882.29*/("""}"""),format.raw/*882.30*/("""
-
-
-                            """),format.raw/*885.29*/("""alertmsg = alertmsg.substring(0, alertmsg.length - 2);
-
+                            """),format.raw/*875.29*/("""if(data.oops_budget !=0) """),format.raw/*875.54*/("""{"""),format.raw/*875.55*/("""
+                                """),format.raw/*876.33*/("""alertmsg = alertmsg + data.oops_budget + " dollars, ";
+                            """),format.raw/*877.29*/("""}"""),format.raw/*877.30*/("""
 
                             
+                            """),format.raw/*880.29*/("""if(data.oops_resource ==0 && data.oops_points ==0 && data.oops_bonus ==0 && data.oops_budget ==0)
+                            """),format.raw/*881.29*/("""{"""),format.raw/*881.30*/("""
+                            	"""),format.raw/*882.30*/("""alertmsg="But the problem has been avoided since you mitigated a RISK!.    ";
+                            """),format.raw/*883.29*/("""}"""),format.raw/*883.30*/("""
+
+
+                            """),format.raw/*886.29*/("""alertmsg = alertmsg.substring(0, alertmsg.length - 2);
+
+
+                            
 
 
 
-                           // swal("""),format.raw/*892.36*/("""{"""),format.raw/*892.37*/("""   """),format.raw/*892.40*/("""title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" """),format.raw/*892.128*/("""}"""),format.raw/*892.129*/(""");
+                           // swal("""),format.raw/*893.36*/("""{"""),format.raw/*893.37*/("""   """),format.raw/*893.40*/("""title: "YOU GOT AN OOPS CARD!",   text: alertmsg,   imageUrl: "/assets/images/oops.png" """),format.raw/*893.128*/("""}"""),format.raw/*893.129*/(""");
                             document.getElementById('swalmessages').innerHTML = "You got an OOPS card!"+alertmsg;
                             $("#oopsmsg").val(alertmsg);
                             $("#isoops").val("true");
                             $('#updateactivity').trigger('click');
                           //  swal("YOU GOT AN OOPS CARD!",alertmsg, "error");
                             document.getElementById('myCurrentTurn').innerHTML = "You got an OOPS card!";
-                        """),format.raw/*899.25*/("""}"""),format.raw/*899.26*/("""
-                        """),format.raw/*900.25*/("""else if(data.steptype == "SURPRISE")"""),format.raw/*900.61*/("""{"""),format.raw/*900.62*/("""
-                            """),format.raw/*901.29*/("""isSurpriseCard=true;
+                        """),format.raw/*900.25*/("""}"""),format.raw/*900.26*/("""
+                        """),format.raw/*901.25*/("""else if(data.steptype == "SURPRISE")"""),format.raw/*901.61*/("""{"""),format.raw/*901.62*/("""
+                            """),format.raw/*902.29*/("""isSurpriseCard=true;
                             var alertmsg = "You gained ";
 
-                            if(data.surprise_resource !=0) """),format.raw/*904.60*/("""{"""),format.raw/*904.61*/("""
-                                """),format.raw/*905.33*/("""alertmsg = alertmsg + data.surprise_resource + " resource, ";
-                            """),format.raw/*906.29*/("""}"""),format.raw/*906.30*/("""
-                            """),format.raw/*907.29*/("""if(data.surprise_points !=0) """),format.raw/*907.58*/("""{"""),format.raw/*907.59*/("""
-                                """),format.raw/*908.33*/("""alertmsg = alertmsg + data.surprise_points + " capability points, ";
-                            """),format.raw/*909.29*/("""}"""),format.raw/*909.30*/("""
-                            """),format.raw/*910.29*/("""if(data.surprise_bonus !=0) """),format.raw/*910.57*/("""{"""),format.raw/*910.58*/("""
-                                """),format.raw/*911.33*/("""alertmsg = alertmsg + data.surprise_bonus + " capability bonus, ";
-                            """),format.raw/*912.29*/("""}"""),format.raw/*912.30*/("""
-                            """),format.raw/*913.29*/("""if(data.surprise_budget !=0) """),format.raw/*913.58*/("""{"""),format.raw/*913.59*/("""
-                                """),format.raw/*914.33*/("""alertmsg = alertmsg + data.surprise_budget + " dollars, ";
-                            """),format.raw/*915.29*/("""}"""),format.raw/*915.30*/("""
+                            if(data.surprise_resource !=0) """),format.raw/*905.60*/("""{"""),format.raw/*905.61*/("""
+                                """),format.raw/*906.33*/("""alertmsg = alertmsg + data.surprise_resource + " resource, ";
+                            """),format.raw/*907.29*/("""}"""),format.raw/*907.30*/("""
+                            """),format.raw/*908.29*/("""if(data.surprise_points !=0) """),format.raw/*908.58*/("""{"""),format.raw/*908.59*/("""
+                                """),format.raw/*909.33*/("""alertmsg = alertmsg + data.surprise_points + " capability points, ";
+                            """),format.raw/*910.29*/("""}"""),format.raw/*910.30*/("""
+                            """),format.raw/*911.29*/("""if(data.surprise_bonus !=0) """),format.raw/*911.57*/("""{"""),format.raw/*911.58*/("""
+                                """),format.raw/*912.33*/("""alertmsg = alertmsg + data.surprise_bonus + " capability bonus, ";
+                            """),format.raw/*913.29*/("""}"""),format.raw/*913.30*/("""
+                            """),format.raw/*914.29*/("""if(data.surprise_budget !=0) """),format.raw/*914.58*/("""{"""),format.raw/*914.59*/("""
+                                """),format.raw/*915.33*/("""alertmsg = alertmsg + data.surprise_budget + " dollars, ";
+                            """),format.raw/*916.29*/("""}"""),format.raw/*916.30*/("""
 
-                            """),format.raw/*917.29*/("""alertmsg = alertmsg.substring(0, alertmsg.length - 2);
+                            """),format.raw/*918.29*/("""alertmsg = alertmsg.substring(0, alertmsg.length - 2);
 
-                            //swal("""),format.raw/*919.36*/("""{"""),format.raw/*919.37*/("""   """),format.raw/*919.40*/("""title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" """),format.raw/*919.135*/("""}"""),format.raw/*919.136*/(""");
+                            //swal("""),format.raw/*920.36*/("""{"""),format.raw/*920.37*/("""   """),format.raw/*920.40*/("""title: "YOU GOT A SURPRISE CARD!",   text: alertmsg,   imageUrl: "/assets/images/surprise.png" """),format.raw/*920.135*/("""}"""),format.raw/*920.136*/(""");
                             //var temp="Got a Suprise card";
                             document.getElementById('swalmessages').innerHTML = "You got a Surprise card!"+alertmsg;
                             $("#isoops").val("false");
@@ -954,47 +955,47 @@ var isRequirementPlanningDone=false;
                             $('#updateactivity').trigger('click');
                            // swal("YOU GOT A SURPRISE CARD!",alertmsg, "error");
                             document.getElementById('myCurrentTurn').innerHTML = "You got a Surprise card!";
-                        """),format.raw/*927.25*/("""}"""),format.raw/*927.26*/("""
-                        """),format.raw/*928.25*/("""else if(data.steptype == "production")"""),format.raw/*928.63*/("""{"""),format.raw/*928.64*/("""
-                            """),format.raw/*929.29*/("""var alertmsg = "";
-                            if(data.prod_money < 0)"""),format.raw/*930.52*/("""{"""),format.raw/*930.53*/("""
-                                """),format.raw/*931.33*/("""alertmsg = "Your product is not doing well. You lost " + Math.abs(data.prod_money) + " dollars in Production.";
-                            """),format.raw/*932.29*/("""}"""),format.raw/*932.30*/("""
-                            """),format.raw/*933.29*/("""else"""),format.raw/*933.33*/("""{"""),format.raw/*933.34*/("""
-                                """),format.raw/*934.33*/("""alertmsg = "Your product is doing well. You won " + Math.abs(data.prod_money) + " dollars in Production.";
-                            """),format.raw/*935.29*/("""}"""),format.raw/*935.30*/("""
+                        """),format.raw/*928.25*/("""}"""),format.raw/*928.26*/("""
+                        """),format.raw/*929.25*/("""else if(data.steptype == "production")"""),format.raw/*929.63*/("""{"""),format.raw/*929.64*/("""
+                            """),format.raw/*930.29*/("""var alertmsg = "";
+                            if(data.prod_money < 0)"""),format.raw/*931.52*/("""{"""),format.raw/*931.53*/("""
+                                """),format.raw/*932.33*/("""alertmsg = "Your product is not doing well. You lost " + Math.abs(data.prod_money) + " dollars in Production.";
+                            """),format.raw/*933.29*/("""}"""),format.raw/*933.30*/("""
+                            """),format.raw/*934.29*/("""else"""),format.raw/*934.33*/("""{"""),format.raw/*934.34*/("""
+                                """),format.raw/*935.33*/("""alertmsg = "Your product is doing well. You won " + Math.abs(data.prod_money) + " dollars in Production.";
+                            """),format.raw/*936.29*/("""}"""),format.raw/*936.30*/("""
 
-                            """),format.raw/*937.29*/("""//swal(alertmsg);
+                            """),format.raw/*938.29*/("""//swal(alertmsg);
                                 document.getElementById('swalmessages').innerHTML = alertmsg;
-                        """),format.raw/*939.25*/("""}"""),format.raw/*939.26*/("""
-                        """),format.raw/*940.25*/("""else if(data.steptype == "skipstep")"""),format.raw/*940.61*/("""{"""),format.raw/*940.62*/("""
-                          """),format.raw/*941.27*/("""isSkipped=true;
-                            if($('#btnIsProduction').val() != "true")"""),format.raw/*942.70*/("""{"""),format.raw/*942.71*/("""
-                                """),format.raw/*943.33*/("""//swal("""),format.raw/*943.40*/("""{"""),format.raw/*943.41*/("""   """),format.raw/*943.44*/("""title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" """),format.raw/*943.118*/("""}"""),format.raw/*943.119*/(""");
+                        """),format.raw/*940.25*/("""}"""),format.raw/*940.26*/("""
+                        """),format.raw/*941.25*/("""else if(data.steptype == "skipstep")"""),format.raw/*941.61*/("""{"""),format.raw/*941.62*/("""
+                          """),format.raw/*942.27*/("""isSkipped=true;
+                            if($('#btnIsProduction').val() != "true")"""),format.raw/*943.70*/("""{"""),format.raw/*943.71*/("""
+                                """),format.raw/*944.33*/("""//swal("""),format.raw/*944.40*/("""{"""),format.raw/*944.41*/("""   """),format.raw/*944.44*/("""title: "YOU SKIPPED YOUR TURN!",  imageUrl: "/assets/images/skipturn.png" """),format.raw/*944.118*/("""}"""),format.raw/*944.119*/(""");
                                 var temp1="Skipped turn";
                                 document.getElementById('swalmessages').innerHTML = temp1;
-                            """),format.raw/*946.29*/("""}"""),format.raw/*946.30*/("""
+                            """),format.raw/*947.29*/("""}"""),format.raw/*947.30*/("""
 
-                        """),format.raw/*948.25*/("""}"""),format.raw/*948.26*/("""
-                        """),format.raw/*949.25*/("""else if(data.steptype == "risk")"""),format.raw/*949.57*/("""{"""),format.raw/*949.58*/("""
-                            """),format.raw/*950.29*/("""if(data.risk_status == "success")"""),format.raw/*950.62*/("""{"""),format.raw/*950.63*/("""
-                                """),format.raw/*951.33*/("""//swal("""),format.raw/*951.40*/("""{"""),format.raw/*951.41*/("""   """),format.raw/*951.44*/("""title: "SUCCESS!",   text: "RISK SUCCESSFULLY MITIGATED",   imageUrl: "/assets/images/rockon.png" """),format.raw/*951.142*/("""}"""),format.raw/*951.143*/(""");
+                        """),format.raw/*949.25*/("""}"""),format.raw/*949.26*/("""
+                        """),format.raw/*950.25*/("""else if(data.steptype == "risk")"""),format.raw/*950.57*/("""{"""),format.raw/*950.58*/("""
+                            """),format.raw/*951.29*/("""if(data.risk_status == "success")"""),format.raw/*951.62*/("""{"""),format.raw/*951.63*/("""
+                                """),format.raw/*952.33*/("""//swal("""),format.raw/*952.40*/("""{"""),format.raw/*952.41*/("""   """),format.raw/*952.44*/("""title: "SUCCESS!",   text: "RISK SUCCESSFULLY MITIGATED",   imageUrl: "/assets/images/rockon.png" """),format.raw/*952.142*/("""}"""),format.raw/*952.143*/(""");
                                 var temp2="Risk was mitigated";
                                 document.getElementById('swalmessages').innerHTML = temp2;
-                            """),format.raw/*954.29*/("""}"""),format.raw/*954.30*/("""
-                            """),format.raw/*955.29*/("""else"""),format.raw/*955.33*/("""{"""),format.raw/*955.34*/("""
-                                """),format.raw/*956.33*/("""//swal("""),format.raw/*956.40*/("""{"""),format.raw/*956.41*/("""   """),format.raw/*956.44*/("""title: "OOPS",   text: "RISK NOT MITIGATED",   imageUrl: "/assets/images/oops.png" """),format.raw/*956.127*/("""}"""),format.raw/*956.128*/(""");
+                            """),format.raw/*955.29*/("""}"""),format.raw/*955.30*/("""
+                            """),format.raw/*956.29*/("""else"""),format.raw/*956.33*/("""{"""),format.raw/*956.34*/("""
+                                """),format.raw/*957.33*/("""//swal("""),format.raw/*957.40*/("""{"""),format.raw/*957.41*/("""   """),format.raw/*957.44*/("""title: "OOPS",   text: "RISK NOT MITIGATED",   imageUrl: "/assets/images/oops.png" """),format.raw/*957.127*/("""}"""),format.raw/*957.128*/(""");
                                 var temp3="Risk not mitigated";
                                 document.getElementById('swalmessages').innerHTML = temp3;
-                            """),format.raw/*959.29*/("""}"""),format.raw/*959.30*/("""
-                        """),format.raw/*960.25*/("""}"""),format.raw/*960.26*/("""
-                        """),format.raw/*961.25*/("""else
-                        """),format.raw/*962.25*/("""{"""),format.raw/*962.26*/("""
-                            """),format.raw/*963.29*/("""//swal("""),format.raw/*963.36*/("""{"""),format.raw/*963.37*/("""   """),format.raw/*963.40*/("""title: "SUCCESS!",   text: "PROJECT STEP SUCCESSFUL",   imageUrl: "/assets/images/rockon.png" """),format.raw/*963.134*/("""}"""),format.raw/*963.135*/(""");
+                            """),format.raw/*960.29*/("""}"""),format.raw/*960.30*/("""
+                        """),format.raw/*961.25*/("""}"""),format.raw/*961.26*/("""
+                        """),format.raw/*962.25*/("""else
+                        """),format.raw/*963.25*/("""{"""),format.raw/*963.26*/("""
+                            """),format.raw/*964.29*/("""//swal("""),format.raw/*964.36*/("""{"""),format.raw/*964.37*/("""   """),format.raw/*964.40*/("""title: "SUCCESS!",   text: "PROJECT STEP SUCCESSFUL",   imageUrl: "/assets/images/rockon.png" """),format.raw/*964.134*/("""}"""),format.raw/*964.135*/(""");
                             var temp4="Project Step Successful";
                             document.getElementById('swalmessages').innerHTML = temp4;
-                        """),format.raw/*966.25*/("""}"""),format.raw/*966.26*/("""
-                        """),format.raw/*967.25*/("""document.getElementById('budgetremaining').innerHTML = data.budget;
+                        """),format.raw/*967.25*/("""}"""),format.raw/*967.26*/("""
+                        """),format.raw/*968.25*/("""document.getElementById('budgetremaining').innerHTML = data.budget;
                         document.getElementById('capabilitypoints').innerHTML = data.capabilitypoints;
                         document.getElementById('capabilitybonus').innerHTML = data.capabilitybonus;
                         document.getElementById('personnelremaining').innerHTML = data.personnel;
@@ -1005,93 +1006,93 @@ var isRequirementPlanningDone=false;
 
                         onRiskClick(riskClicked);
 
-                        if(id.indexOf("CRM") !==-1 || lastclickedTab.indexOf("risk")!==-1)"""),format.raw/*978.91*/("""{"""),format.raw/*978.92*/("""
+                        if(id.indexOf("CRM") !==-1 || lastclickedTab.indexOf("risk")!==-1)"""),format.raw/*979.91*/("""{"""),format.raw/*979.92*/("""
 
-                            """),format.raw/*980.29*/("""onRiskDashboardClick();
+                            """),format.raw/*981.29*/("""onRiskDashboardClick();
                             $('#riskDialog').modal('hide');
-                        """),format.raw/*982.25*/("""}"""),format.raw/*982.26*/("""
-                    """),format.raw/*983.21*/("""//    refreshProjectSteps();
+                        """),format.raw/*983.25*/("""}"""),format.raw/*983.26*/("""
+                    """),format.raw/*984.21*/("""//    refreshProjectSteps();
 
 
-                    """),format.raw/*986.21*/("""}"""),format.raw/*986.22*/(""",
-                    error: function (data) """),format.raw/*987.44*/("""{"""),format.raw/*987.45*/("""
-                      """),format.raw/*988.23*/("""//  alert("error in perform project step");
+                    """),format.raw/*987.21*/("""}"""),format.raw/*987.22*/(""",
+                    error: function (data) """),format.raw/*988.44*/("""{"""),format.raw/*988.45*/("""
+                      """),format.raw/*989.23*/("""//  alert("error in perform project step");
                         alert(data);
                         //setError('Make call failed');
-                    """),format.raw/*991.21*/("""}"""),format.raw/*991.22*/("""
-                """),format.raw/*992.17*/("""}"""),format.raw/*992.18*/(""");
-            """),format.raw/*993.13*/("""}"""),format.raw/*993.14*/("""
+                    """),format.raw/*992.21*/("""}"""),format.raw/*992.22*/("""
+                """),format.raw/*993.17*/("""}"""),format.raw/*993.18*/(""");
+            """),format.raw/*994.13*/("""}"""),format.raw/*994.14*/("""
 
-            """),format.raw/*995.13*/("""var currentPhase="";
+            """),format.raw/*996.13*/("""var currentPhase="";
             var stepsDoneInPlanning=0;
-            function onPhaseClick(clicked_id) """),format.raw/*997.47*/("""{"""),format.raw/*997.48*/("""
+            function onPhaseClick(clicked_id) """),format.raw/*998.47*/("""{"""),format.raw/*998.48*/("""
 
-                 """),format.raw/*999.18*/("""//  alert(clicked_id);
+                 """),format.raw/*1000.18*/("""//  alert(clicked_id);
                 currentPhase=clicked_id;
                 var test = 'abc';
 //                    var test = $.('#id').val();
 //                    alert(clicked_id);
-                var obj = """),format.raw/*1004.27*/("""{"""),format.raw/*1004.28*/("""
-                    """),format.raw/*1005.21*/("""'phaseId': clicked_id
-                """),format.raw/*1006.17*/("""}"""),format.raw/*1006.18*/(""";
+                var obj = """),format.raw/*1005.27*/("""{"""),format.raw/*1005.28*/("""
+                    """),format.raw/*1006.21*/("""'phaseId': clicked_id
+                """),format.raw/*1007.17*/("""}"""),format.raw/*1007.18*/(""";
 
-                if(currentPhase == "CPM6")"""),format.raw/*1008.43*/("""{"""),format.raw/*1008.44*/("""
-                    """),format.raw/*1009.21*/("""swal("""),format.raw/*1009.26*/("""{"""),format.raw/*1009.27*/("""   """),format.raw/*1009.30*/("""title: "Are you sure!!!",   text: "Do you want to move to Production?",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes",   closeOnConfirm: false """),format.raw/*1009.232*/("""}"""),format.raw/*1009.233*/(""", function()"""),format.raw/*1009.245*/("""{"""),format.raw/*1009.246*/("""
+                if(currentPhase == "CPM6")"""),format.raw/*1009.43*/("""{"""),format.raw/*1009.44*/("""
+                    """),format.raw/*1010.21*/("""swal("""),format.raw/*1010.26*/("""{"""),format.raw/*1010.27*/("""   """),format.raw/*1010.30*/("""title: "Are you sure!!!",   text: "Do you want to move to Production?",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes",   closeOnConfirm: false """),format.raw/*1010.232*/("""}"""),format.raw/*1010.233*/(""", function()"""),format.raw/*1010.245*/("""{"""),format.raw/*1010.246*/("""
 
-               """),format.raw/*1011.16*/("""var maxTurns = document.getElementById('labelTurns').innerText;
+               """),format.raw/*1012.16*/("""var maxTurns = document.getElementById('labelTurns').innerText;
                var currentTurn =  document.getElementById('turnNo').innerHTML;
-                     /*   $('#grid-basic > tbody  > tr').each(function() """),format.raw/*1013.74*/("""{"""),format.raw/*1013.75*/("""
-                            """),format.raw/*1014.29*/("""var status = $(this).find("input.name").val();
+                     /*   $('#grid-basic > tbody  > tr').each(function() """),format.raw/*1014.74*/("""{"""),format.raw/*1014.75*/("""
+                            """),format.raw/*1015.29*/("""var status = $(this).find("input.name").val();
 
 
-                        """),format.raw/*1017.25*/("""}"""),format.raw/*1017.26*/(""");*/
+                        """),format.raw/*1018.25*/("""}"""),format.raw/*1018.26*/(""");*/
                         var riskcount = 0;
-                        $('#grid-basic tr').each(function() """),format.raw/*1019.61*/("""{"""),format.raw/*1019.62*/("""
-                            """),format.raw/*1020.29*/("""var status = $(this).find("td").eq(2).html();
+                        $('#grid-basic tr').each(function() """),format.raw/*1020.61*/("""{"""),format.raw/*1020.62*/("""
+                            """),format.raw/*1021.29*/("""var status = $(this).find("td").eq(2).html();
 
-                            if(status == "COMPLETED")"""),format.raw/*1022.54*/("""{"""),format.raw/*1022.55*/("""
-                                """),format.raw/*1023.33*/("""riskcount++;
-                            """),format.raw/*1024.29*/("""}"""),format.raw/*1024.30*/("""
-                        """),format.raw/*1025.25*/("""}"""),format.raw/*1025.26*/(""");
+                            if(status == "COMPLETED")"""),format.raw/*1023.54*/("""{"""),format.raw/*1023.55*/("""
+                                """),format.raw/*1024.33*/("""riskcount++;
+                            """),format.raw/*1025.29*/("""}"""),format.raw/*1025.30*/("""
+                        """),format.raw/*1026.25*/("""}"""),format.raw/*1026.26*/(""");
                         $('#txtRiskCount').val(riskcount.toString());
                         //alert(riskcount);
                         currentPhase = "CPM1";
                         $('#btnIsProduction').val("true");
                         $('#btnSkip').trigger('click');
-                    if(currentTurn < maxTurns) """),format.raw/*1031.48*/("""{"""),format.raw/*1031.49*/("""
-                        """),format.raw/*1032.25*/("""swal("Your product is LIVE!", "You have successfully deployed your software to production.", "success");
-                    """),format.raw/*1033.21*/("""}"""),format.raw/*1033.22*/("""
-                        """),format.raw/*1034.25*/("""}"""),format.raw/*1034.26*/(""");
-                """),format.raw/*1035.17*/("""}"""),format.raw/*1035.18*/("""
+                    if(currentTurn < maxTurns) """),format.raw/*1032.48*/("""{"""),format.raw/*1032.49*/("""
+                        """),format.raw/*1033.25*/("""swal("Your product is LIVE!", "You have successfully deployed your software to production.", "success");
+                    """),format.raw/*1034.21*/("""}"""),format.raw/*1034.22*/("""
+                        """),format.raw/*1035.25*/("""}"""),format.raw/*1035.26*/(""");
+                """),format.raw/*1036.17*/("""}"""),format.raw/*1036.18*/("""
 
-                """),format.raw/*1037.17*/("""else """),format.raw/*1037.22*/("""{"""),format.raw/*1037.23*/("""
+                """),format.raw/*1038.17*/("""else """),format.raw/*1038.22*/("""{"""),format.raw/*1038.23*/("""
 
-                    """),format.raw/*1039.21*/("""$.ajax("""),format.raw/*1039.28*/("""{"""),format.raw/*1039.29*/("""
-                        """),format.raw/*1040.25*/("""type: 'POST',
-                        url: '"""),_display_(/*1041.32*/routes/*1041.38*/.GameController.getProjectSteps()),format.raw/*1041.71*/("""',
+                    """),format.raw/*1040.21*/("""$.ajax("""),format.raw/*1040.28*/("""{"""),format.raw/*1040.29*/("""
+                        """),format.raw/*1041.25*/("""type: 'POST',
+                        url: '"""),_display_(/*1042.32*/routes/*1042.38*/.GameController.getProjectSteps()),format.raw/*1042.71*/("""',
                         // data : JSON.stringify(obj),
                         data: JSON.stringify(obj),
                         // dataType: 'json',
                         contentType: 'application/json',
-                        success: function (data) """),format.raw/*1046.50*/("""{"""),format.raw/*1046.51*/("""
-"""),format.raw/*1047.1*/("""//                            alert(Object.prototype.toString.call(data));
+                        success: function (data) """),format.raw/*1047.50*/("""{"""),format.raw/*1047.51*/("""
+"""),format.raw/*1048.1*/("""//                            alert(Object.prototype.toString.call(data));
 //                        alert('im here');
                             var result = "";
-                            for (i = 0; i < data.length; i++) """),format.raw/*1050.63*/("""{"""),format.raw/*1050.64*/("""
-                                """),format.raw/*1051.33*/("""var obj = data[i];
-                                if (currentPhase == "CPM1") """),format.raw/*1052.61*/("""{"""),format.raw/*1052.62*/("""
-                                    """),format.raw/*1053.37*/("""if (obj.status) """),format.raw/*1053.53*/("""{"""),format.raw/*1053.54*/("""
-                                        """),format.raw/*1054.41*/("""stepsDoneInPlanning++;
-                                    """),format.raw/*1055.37*/("""}"""),format.raw/*1055.38*/("""
-                                """),format.raw/*1056.33*/("""}"""),format.raw/*1056.34*/("""
-"""),format.raw/*1057.1*/("""//                                alert(obj.status);
+                            for (i = 0; i < data.length; i++) """),format.raw/*1051.63*/("""{"""),format.raw/*1051.64*/("""
+                                """),format.raw/*1052.33*/("""var obj = data[i];
+                                if (currentPhase == "CPM1") """),format.raw/*1053.61*/("""{"""),format.raw/*1053.62*/("""
+                                    """),format.raw/*1054.37*/("""if (obj.status) """),format.raw/*1054.53*/("""{"""),format.raw/*1054.54*/("""
+                                        """),format.raw/*1055.41*/("""stepsDoneInPlanning++;
+                                    """),format.raw/*1056.37*/("""}"""),format.raw/*1056.38*/("""
+                                """),format.raw/*1057.33*/("""}"""),format.raw/*1057.34*/("""
+"""),format.raw/*1058.1*/("""//                                alert(obj.status);
                                 var status;
-                                if (obj.status) """),format.raw/*1059.49*/("""{"""),format.raw/*1059.50*/("""
-                                    """),format.raw/*1060.37*/("""obj.status = "disabled='true'"
-                                """),format.raw/*1061.33*/("""}"""),format.raw/*1061.34*/("""
+                                if (obj.status) """),format.raw/*1060.49*/("""{"""),format.raw/*1060.50*/("""
+                                    """),format.raw/*1061.37*/("""obj.status = "disabled='true'"
+                                """),format.raw/*1062.33*/("""}"""),format.raw/*1062.34*/("""
 
 
-                                """),format.raw/*1064.33*/("""var eligibleBudget = 0;
+                                """),format.raw/*1065.33*/("""var eligibleBudget = 0;
                                 var eligibleCapabilityBonus = 0;
                                 var eligibleCapabilityPoints = 0;
                                 var eligiblePersonnelRemaining = 0;
@@ -1105,84 +1106,84 @@ var isRequirementPlanningDone=false;
 ////
                                 var setClassColor;
                                 var buttonDisable;
-                                if (eligibleBudget < 0 || eligiblePersonnelRemaining < 0) """),format.raw/*1078.91*/("""{"""),format.raw/*1078.92*/("""
-                                    """),format.raw/*1079.37*/("""setClassColor = "ProjectStepStyle";
+                                if (eligibleBudget < 0 || eligiblePersonnelRemaining < 0) """),format.raw/*1079.91*/("""{"""),format.raw/*1079.92*/("""
+                                    """),format.raw/*1080.37*/("""setClassColor = "ProjectStepStyle";
                                     buttonDisable = "true";
 //                                alert("you cannot perform this step "+obj.projectStepName );
-                                """),format.raw/*1082.33*/("""}"""),format.raw/*1082.34*/(""" """),format.raw/*1082.35*/("""else """),format.raw/*1082.40*/("""{"""),format.raw/*1082.41*/("""
-                                    """),format.raw/*1083.37*/("""setClassColor = " ";
+                                """),format.raw/*1083.33*/("""}"""),format.raw/*1083.34*/(""" """),format.raw/*1083.35*/("""else """),format.raw/*1083.40*/("""{"""),format.raw/*1083.41*/("""
+                                    """),format.raw/*1084.37*/("""setClassColor = " ";
                                     buttonDisable = "false"
-                                """),format.raw/*1085.33*/("""}"""),format.raw/*1085.34*/("""
-"""),format.raw/*1086.1*/("""//                              alert(document.getElementById('budgetremaining').innerHTML);
+                                """),format.raw/*1086.33*/("""}"""),format.raw/*1086.34*/("""
+"""),format.raw/*1087.1*/("""//                              alert(document.getElementById('budgetremaining').innerHTML);
 //                            alert("elig"+setColor);
 
 //                            alert(eligibleBudget+" "+eligibleCapabilityBonus+" "+eligibleCapabilityPoints+" "+eligiblePersonnelRemaining);
 
 if(isOOPSCard)
-"""),format.raw/*1092.1*/("""{"""),format.raw/*1092.2*/("""
-  """),format.raw/*1093.3*/("""isOOPSCard=false;
-"""),format.raw/*1094.1*/("""}"""),format.raw/*1094.2*/("""
-"""),format.raw/*1095.1*/("""if(isSurpriseCard)
-"""),format.raw/*1096.1*/("""{"""),format.raw/*1096.2*/("""
-  """),format.raw/*1097.3*/("""isSurpriseCard=false;
-"""),format.raw/*1098.1*/("""}"""),format.raw/*1098.2*/("""
+"""),format.raw/*1093.1*/("""{"""),format.raw/*1093.2*/("""
+  """),format.raw/*1094.3*/("""isOOPSCard=false;
+"""),format.raw/*1095.1*/("""}"""),format.raw/*1095.2*/("""
+"""),format.raw/*1096.1*/("""if(isSurpriseCard)
+"""),format.raw/*1097.1*/("""{"""),format.raw/*1097.2*/("""
+  """),format.raw/*1098.3*/("""isSurpriseCard=false;
+"""),format.raw/*1099.1*/("""}"""),format.raw/*1099.2*/("""
 
-"""),format.raw/*1100.1*/("""if(isSkipped)
-"""),format.raw/*1101.1*/("""{"""),format.raw/*1101.2*/("""
-  """),format.raw/*1102.3*/("""isSkipped=false;
-"""),format.raw/*1103.1*/("""}"""),format.raw/*1103.2*/("""
+"""),format.raw/*1101.1*/("""if(isSkipped)
+"""),format.raw/*1102.1*/("""{"""),format.raw/*1102.2*/("""
+  """),format.raw/*1103.3*/("""isSkipped=false;
+"""),format.raw/*1104.1*/("""}"""),format.raw/*1104.2*/("""
 
-"""),format.raw/*1105.1*/("""if((obj.projectStepId == 'CPSM25' || obj.projectStepId == 'CPSM26' ||obj.projectStepId == 'CPSM27' ||obj.projectStepId == 'CPSM28' ||obj.projectStepId == 'CPSM29' ||obj.projectStepId == 'CPSM30' ||obj.projectStepId == 'CPSM31' ||obj.projectStepId == 'CPSM32' ||obj.projectStepId == 'CPSM33'
+"""),format.raw/*1106.1*/("""if((obj.projectStepId == 'CPSM25' || obj.projectStepId == 'CPSM26' ||obj.projectStepId == 'CPSM27' ||obj.projectStepId == 'CPSM28' ||obj.projectStepId == 'CPSM29' ||obj.projectStepId == 'CPSM30' ||obj.projectStepId == 'CPSM31' ||obj.projectStepId == 'CPSM32' ||obj.projectStepId == 'CPSM33'
   || obj.projectStepId == 'CPSM34' ||obj.projectStepId == 'CPSM35'
    ||obj.projectStepId == 'CPSM36')&&(obj.status == "disabled='true'")
    &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(c==1))
-"""),format.raw/*1109.1*/("""{"""),format.raw/*1109.2*/("""
-"""),format.raw/*1110.1*/("""isImplementedBeforeProduction=true;
+"""),format.raw/*1110.1*/("""{"""),format.raw/*1110.2*/("""
+"""),format.raw/*1111.1*/("""isImplementedBeforeProduction=true;
 c=2;
 console.log(isImplementedBeforeProduction+" i am inside if condition");
-"""),format.raw/*1113.1*/("""}"""),format.raw/*1113.2*/("""
+"""),format.raw/*1114.1*/("""}"""),format.raw/*1114.2*/("""
 
-"""),format.raw/*1115.1*/("""if((obj.projectStepId == 'CPSM16')&&(obj.status == "disabled='true'")
+"""),format.raw/*1116.1*/("""if((obj.projectStepId == 'CPSM16')&&(obj.status == "disabled='true'")
 &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cr==1))
-"""),format.raw/*1117.1*/("""{"""),format.raw/*1117.2*/("""
-"""),format.raw/*1118.1*/("""cr=2;
+"""),format.raw/*1118.1*/("""{"""),format.raw/*1118.2*/("""
+"""),format.raw/*1119.1*/("""cr=2;
 isRequirementPlanningDone=true;
-"""),format.raw/*1120.1*/("""}"""),format.raw/*1120.2*/("""
-"""),format.raw/*1121.1*/("""if((obj.projectStepId == 'CPSM17')&&(obj.status == "disabled='true'")
+"""),format.raw/*1121.1*/("""}"""),format.raw/*1121.2*/("""
+"""),format.raw/*1122.1*/("""if((obj.projectStepId == 'CPSM17')&&(obj.status == "disabled='true'")
 &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(ct==1))
-"""),format.raw/*1123.1*/("""{"""),format.raw/*1123.2*/("""
-"""),format.raw/*1124.1*/("""ct=2;
+"""),format.raw/*1124.1*/("""{"""),format.raw/*1124.2*/("""
+"""),format.raw/*1125.1*/("""ct=2;
 isTestingPlanningDone=true;
-"""),format.raw/*1126.1*/("""}"""),format.raw/*1126.2*/("""
-"""),format.raw/*1127.1*/("""if((obj.projectStepId == 'CPSM18')&&(obj.status == "disabled='true'")
+"""),format.raw/*1127.1*/("""}"""),format.raw/*1127.2*/("""
+"""),format.raw/*1128.1*/("""if((obj.projectStepId == 'CPSM18')&&(obj.status == "disabled='true'")
 &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(ci==1))
-"""),format.raw/*1129.1*/("""{"""),format.raw/*1129.2*/("""
-"""),format.raw/*1130.1*/("""ci=2;
+"""),format.raw/*1130.1*/("""{"""),format.raw/*1130.2*/("""
+"""),format.raw/*1131.1*/("""ci=2;
 isImplementationPlanningDone=true;
-"""),format.raw/*1132.1*/("""}"""),format.raw/*1132.2*/("""
-"""),format.raw/*1133.1*/("""if((obj.projectStepId == 'CPSM19')&&(obj.status == "disabled='true'")
+"""),format.raw/*1133.1*/("""}"""),format.raw/*1133.2*/("""
+"""),format.raw/*1134.1*/("""if((obj.projectStepId == 'CPSM19')&&(obj.status == "disabled='true'")
 &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cd==1))
-"""),format.raw/*1135.1*/("""{"""),format.raw/*1135.2*/("""
-"""),format.raw/*1136.1*/("""cd=2;
+"""),format.raw/*1136.1*/("""{"""),format.raw/*1136.2*/("""
+"""),format.raw/*1137.1*/("""cd=2;
 isDesignPlanningDone=true;
-"""),format.raw/*1138.1*/("""}"""),format.raw/*1138.2*/("""
-"""),format.raw/*1139.1*/("""if((obj.projectStepId == 'CPSM20')&&(obj.status == "disabled='true'")
+"""),format.raw/*1139.1*/("""}"""),format.raw/*1139.2*/("""
+"""),format.raw/*1140.1*/("""if((obj.projectStepId == 'CPSM20')&&(obj.status == "disabled='true'")
 &&(!isOOPSCard)&&(!isSurpriseCard)&&(!isSkipped)&&(cp==1))
-"""),format.raw/*1141.1*/("""{"""),format.raw/*1141.2*/("""
-"""),format.raw/*1142.1*/("""cp=2;
+"""),format.raw/*1142.1*/("""{"""),format.raw/*1142.2*/("""
+"""),format.raw/*1143.1*/("""cp=2;
 isProductionPlanningDone=true;
-"""),format.raw/*1144.1*/("""}"""),format.raw/*1144.2*/("""
+"""),format.raw/*1145.1*/("""}"""),format.raw/*1145.2*/("""
 
 
 
-"""),format.raw/*1148.1*/("""isSkipped=true;
+"""),format.raw/*1149.1*/("""isSkipped=true;
 isOOPSCard=true;
 isSurpriseCard=true;
 
 
                                 result = result + "<button " +
                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                        " style='white-space: normal;height:55px ' " +
+                                        " style='white-space: normal;height:70px;padding-bottom: 10px; ' " +
                                         " class='open-EditTodo col-md-3 btn btn-success " + setClassColor + "'" +
                                         " data-toggle='modal' " + obj.status +
                                         " data-buttondisable='" + buttonDisable + "'" +
@@ -1195,123 +1196,123 @@ isSurpriseCard=true;
                                         "'data-level='Level:' data-levelvalue='" + obj.level +
                                         "'data-id='" + obj.projectStepId +
                                         "'" +
-//                                            "data-todo='"""),format.raw/*1168.59*/("""{"""),format.raw/*1168.60*/("""'id':12,'todo':'xyz'"""),format.raw/*1168.80*/("""}"""),format.raw/*1168.81*/("""'"+
+//                                            "data-todo='"""),format.raw/*1169.59*/("""{"""),format.raw/*1169.60*/("""'id':12,'todo':'xyz'"""),format.raw/*1169.80*/("""}"""),format.raw/*1169.81*/("""'"+
                                         "title='Budget :" + obj.budget + "  Level: " + obj.level + "  Personnel: " + obj.personnel + "'" +
                                         "  id='todolink'>" + obj.projectStepName +
-                                        "</button><div class='col-md-1' style='height:65px;'></div>";
+                                        "</button><div class='col-md-1' style='height:70px;padding-bottom: 80px; '></div>";
 //                                    "</button><div class='col-md-1' style='height:90px;"+setColor+"'"></div>";
 
-                            """),format.raw/*1174.29*/("""}"""),format.raw/*1174.30*/("""
+                            """),format.raw/*1175.29*/("""}"""),format.raw/*1175.30*/("""
 
-"""),format.raw/*1176.1*/("""//                            alert("*********"+stepsDoneInPlanning);
+"""),format.raw/*1177.1*/("""//                            alert("*********"+stepsDoneInPlanning);
                             document.getElementById('desc').innerHTML = "Steps in " + document.getElementById(currentPhase).innerHTML ;
 
                             document.getElementById('results').innerHTML = result;
 
 
-                            """),format.raw/*1182.77*/("""
-                            """),format.raw/*1183.29*/("""var result="";
+                            """),format.raw/*1183.77*/("""
+                            """),format.raw/*1184.29*/("""var result="";
                             var count=0;
-                        """),_display_(/*1185.26*/for(phases <- model.getPhases()) yield /*1185.58*/ {_display_(Seq[Any](format.raw/*1185.60*/("""
+                        """),_display_(/*1186.26*/for(phases <- model.getPhases()) yield /*1186.58*/ {_display_(Seq[Any](format.raw/*1186.60*/("""
 
-                  """),format.raw/*1187.19*/("""count++;
+                  """),format.raw/*1188.19*/("""count++;
                   if(count==1)
-                  """),format.raw/*1189.19*/("""{"""),format.raw/*1189.20*/("""
-                  """),format.raw/*1190.19*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                      "style='background-color: #DB8B00 !important;'" +
+                  """),format.raw/*1190.19*/("""{"""),format.raw/*1190.20*/("""
+                  """),format.raw/*1191.19*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                      "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                       "onclick='onPhaseClick(id)' " +
-                      "id='"""),_display_(/*1193.29*/phases/*1193.35*/.getPhaseId),format.raw/*1193.46*/("""'>"""),_display_(/*1193.49*/phases/*1193.55*/.getPhaseName),format.raw/*1193.68*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                  """),format.raw/*1194.19*/("""}"""),format.raw/*1194.20*/("""
-                  """),format.raw/*1195.19*/("""else if(count==2)
-                  """),format.raw/*1196.19*/("""{"""),format.raw/*1196.20*/("""
-                    """),format.raw/*1197.21*/("""if(isRequirementPlanningDone)
-                    """),format.raw/*1198.21*/("""{"""),format.raw/*1198.22*/("""
-                      """),format.raw/*1199.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                      "id='"""),_display_(/*1194.29*/phases/*1194.35*/.getPhaseId),format.raw/*1194.46*/("""'>"""),_display_(/*1194.49*/phases/*1194.55*/.getPhaseName),format.raw/*1194.68*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                  """),format.raw/*1195.19*/("""}"""),format.raw/*1195.20*/("""
+                  """),format.raw/*1196.19*/("""else if(count==2)
+                  """),format.raw/*1197.19*/("""{"""),format.raw/*1197.20*/("""
+                    """),format.raw/*1198.21*/("""if(isRequirementPlanningDone)
+                    """),format.raw/*1199.21*/("""{"""),format.raw/*1199.22*/("""
+                      """),format.raw/*1200.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1202.33*/phases/*1202.39*/.getPhaseId),format.raw/*1202.50*/("""'>"""),_display_(/*1202.53*/phases/*1202.59*/.getPhaseName),format.raw/*1202.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                    """),format.raw/*1203.21*/("""}"""),format.raw/*1203.22*/("""
-                    """),format.raw/*1204.21*/("""else """),format.raw/*1204.26*/("""{"""),format.raw/*1204.27*/("""
-                      """),format.raw/*1205.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                          "id='"""),_display_(/*1203.33*/phases/*1203.39*/.getPhaseId),format.raw/*1203.50*/("""'>"""),_display_(/*1203.53*/phases/*1203.59*/.getPhaseName),format.raw/*1203.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    """),format.raw/*1204.21*/("""}"""),format.raw/*1204.22*/("""
+                    """),format.raw/*1205.21*/("""else """),format.raw/*1205.26*/("""{"""),format.raw/*1205.27*/("""
+                      """),format.raw/*1206.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
-                            "id='"""),_display_(/*1208.35*/phases/*1208.41*/.getPhaseId),format.raw/*1208.52*/("""'>"""),_display_(/*1208.55*/phases/*1208.61*/.getPhaseName),format.raw/*1208.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                            "id='"""),_display_(/*1209.35*/phases/*1209.41*/.getPhaseId),format.raw/*1209.52*/("""'>"""),_display_(/*1209.55*/phases/*1209.61*/.getPhaseName),format.raw/*1209.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-                    """),format.raw/*1210.21*/("""}"""),format.raw/*1210.22*/("""
-                  """),format.raw/*1211.19*/("""}"""),format.raw/*1211.20*/("""
-                  """),format.raw/*1212.19*/("""else if(count==3)
-                  """),format.raw/*1213.19*/("""{"""),format.raw/*1213.20*/("""
-                    """),format.raw/*1214.21*/("""if(isDesignPlanningDone)
-                    """),format.raw/*1215.21*/("""{"""),format.raw/*1215.22*/("""
-                      """),format.raw/*1216.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                    """),format.raw/*1211.21*/("""}"""),format.raw/*1211.22*/("""
+                  """),format.raw/*1212.19*/("""}"""),format.raw/*1212.20*/("""
+                  """),format.raw/*1213.19*/("""else if(count==3)
+                  """),format.raw/*1214.19*/("""{"""),format.raw/*1214.20*/("""
+                    """),format.raw/*1215.21*/("""if(isDesignPlanningDone)
+                    """),format.raw/*1216.21*/("""{"""),format.raw/*1216.22*/("""
+                      """),format.raw/*1217.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1219.33*/phases/*1219.39*/.getPhaseId),format.raw/*1219.50*/("""'>"""),_display_(/*1219.53*/phases/*1219.59*/.getPhaseName),format.raw/*1219.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                    """),format.raw/*1220.21*/("""}"""),format.raw/*1220.22*/("""
-                    """),format.raw/*1221.21*/("""else """),format.raw/*1221.26*/("""{"""),format.raw/*1221.27*/("""
-                      """),format.raw/*1222.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                          "id='"""),_display_(/*1220.33*/phases/*1220.39*/.getPhaseId),format.raw/*1220.50*/("""'>"""),_display_(/*1220.53*/phases/*1220.59*/.getPhaseName),format.raw/*1220.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    """),format.raw/*1221.21*/("""}"""),format.raw/*1221.22*/("""
+                    """),format.raw/*1222.21*/("""else """),format.raw/*1222.26*/("""{"""),format.raw/*1222.27*/("""
+                      """),format.raw/*1223.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
-                            "id='"""),_display_(/*1225.35*/phases/*1225.41*/.getPhaseId),format.raw/*1225.52*/("""'>"""),_display_(/*1225.55*/phases/*1225.61*/.getPhaseName),format.raw/*1225.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                            "id='"""),_display_(/*1226.35*/phases/*1226.41*/.getPhaseId),format.raw/*1226.52*/("""'>"""),_display_(/*1226.55*/phases/*1226.61*/.getPhaseName),format.raw/*1226.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-                    """),format.raw/*1227.21*/("""}"""),format.raw/*1227.22*/("""
-                  """),format.raw/*1228.19*/("""}"""),format.raw/*1228.20*/("""
-                  """),format.raw/*1229.19*/("""else if(count==4)
-                  """),format.raw/*1230.19*/("""{"""),format.raw/*1230.20*/("""
-                    """),format.raw/*1231.21*/("""if(isImplementationPlanningDone)
-                    """),format.raw/*1232.21*/("""{"""),format.raw/*1232.22*/("""
-                      """),format.raw/*1233.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                    """),format.raw/*1228.21*/("""}"""),format.raw/*1228.22*/("""
+                  """),format.raw/*1229.19*/("""}"""),format.raw/*1229.20*/("""
+                  """),format.raw/*1230.19*/("""else if(count==4)
+                  """),format.raw/*1231.19*/("""{"""),format.raw/*1231.20*/("""
+                    """),format.raw/*1232.21*/("""if(isImplementationPlanningDone)
+                    """),format.raw/*1233.21*/("""{"""),format.raw/*1233.22*/("""
+                      """),format.raw/*1234.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1236.33*/phases/*1236.39*/.getPhaseId),format.raw/*1236.50*/("""'>"""),_display_(/*1236.53*/phases/*1236.59*/.getPhaseName),format.raw/*1236.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                    """),format.raw/*1237.21*/("""}"""),format.raw/*1237.22*/("""
-                    """),format.raw/*1238.21*/("""else """),format.raw/*1238.26*/("""{"""),format.raw/*1238.27*/("""
-                      """),format.raw/*1239.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                          "id='"""),_display_(/*1237.33*/phases/*1237.39*/.getPhaseId),format.raw/*1237.50*/("""'>"""),_display_(/*1237.53*/phases/*1237.59*/.getPhaseName),format.raw/*1237.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    """),format.raw/*1238.21*/("""}"""),format.raw/*1238.22*/("""
+                    """),format.raw/*1239.21*/("""else """),format.raw/*1239.26*/("""{"""),format.raw/*1239.27*/("""
+                      """),format.raw/*1240.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
-                            "id='"""),_display_(/*1242.35*/phases/*1242.41*/.getPhaseId),format.raw/*1242.52*/("""'>"""),_display_(/*1242.55*/phases/*1242.61*/.getPhaseName),format.raw/*1242.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                            "id='"""),_display_(/*1243.35*/phases/*1243.41*/.getPhaseId),format.raw/*1243.52*/("""'>"""),_display_(/*1243.55*/phases/*1243.61*/.getPhaseName),format.raw/*1243.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-                    """),format.raw/*1244.21*/("""}"""),format.raw/*1244.22*/("""
-                  """),format.raw/*1245.19*/("""}"""),format.raw/*1245.20*/("""
-                  """),format.raw/*1246.19*/("""else if(count==5)
-                  """),format.raw/*1247.19*/("""{"""),format.raw/*1247.20*/("""
-                    """),format.raw/*1248.21*/("""if(isTestingPlanningDone)
-                    """),format.raw/*1249.21*/("""{"""),format.raw/*1249.22*/("""
-                      """),format.raw/*1250.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                    """),format.raw/*1245.21*/("""}"""),format.raw/*1245.22*/("""
+                  """),format.raw/*1246.19*/("""}"""),format.raw/*1246.20*/("""
+                  """),format.raw/*1247.19*/("""else if(count==5)
+                  """),format.raw/*1248.19*/("""{"""),format.raw/*1248.20*/("""
+                    """),format.raw/*1249.21*/("""if(isTestingPlanningDone)
+                    """),format.raw/*1250.21*/("""{"""),format.raw/*1250.22*/("""
+                      """),format.raw/*1251.23*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1253.33*/phases/*1253.39*/.getPhaseId),format.raw/*1253.50*/("""'>"""),_display_(/*1253.53*/phases/*1253.59*/.getPhaseName),format.raw/*1253.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                    """),format.raw/*1254.21*/("""}"""),format.raw/*1254.22*/("""
-                    """),format.raw/*1255.21*/("""else """),format.raw/*1255.26*/("""{"""),format.raw/*1255.27*/("""
-                      """),format.raw/*1256.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                          "id='"""),_display_(/*1254.33*/phases/*1254.39*/.getPhaseId),format.raw/*1254.50*/("""'>"""),_display_(/*1254.53*/phases/*1254.59*/.getPhaseName),format.raw/*1254.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    """),format.raw/*1255.21*/("""}"""),format.raw/*1255.22*/("""
+                    """),format.raw/*1256.21*/("""else """),format.raw/*1256.26*/("""{"""),format.raw/*1256.27*/("""
+                      """),format.raw/*1257.23*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
-                            "id='"""),_display_(/*1259.35*/phases/*1259.41*/.getPhaseId),format.raw/*1259.52*/("""'>"""),_display_(/*1259.55*/phases/*1259.61*/.getPhaseName),format.raw/*1259.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                            "id='"""),_display_(/*1260.35*/phases/*1260.41*/.getPhaseId),format.raw/*1260.52*/("""'>"""),_display_(/*1260.55*/phases/*1260.61*/.getPhaseName),format.raw/*1260.74*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-                    """),format.raw/*1261.21*/("""}"""),format.raw/*1261.22*/("""
-                  """),format.raw/*1262.19*/("""}"""),format.raw/*1262.20*/("""
-                  """),format.raw/*1263.19*/("""else if(count==6)
-                  """),format.raw/*1264.19*/("""{"""),format.raw/*1264.20*/("""
-                    """),format.raw/*1265.21*/("""console.log(isProductionPlanningDone+" i am is production planning"+isImplementedBeforeProduction+" i am before guy");
+                    """),format.raw/*1262.21*/("""}"""),format.raw/*1262.22*/("""
+                  """),format.raw/*1263.19*/("""}"""),format.raw/*1263.20*/("""
+                  """),format.raw/*1264.19*/("""else if(count==6)
+                  """),format.raw/*1265.19*/("""{"""),format.raw/*1265.20*/("""
+                    """),format.raw/*1266.21*/("""console.log(isProductionPlanningDone+" i am is production planning"+isImplementedBeforeProduction+" i am before guy");
                     if(isImplementedBeforeProduction && isProductionPlanningDone)
-                    """),format.raw/*1267.21*/("""{"""),format.raw/*1267.22*/("""
-                    """),format.raw/*1268.21*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                    """),format.raw/*1268.21*/("""{"""),format.raw/*1268.22*/("""
+                    """),format.raw/*1269.21*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1271.33*/phases/*1271.39*/.getPhaseId),format.raw/*1271.50*/("""'>"""),_display_(/*1271.53*/phases/*1271.59*/.getPhaseName),format.raw/*1271.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-                    """),format.raw/*1272.21*/("""}"""),format.raw/*1272.22*/("""
-                    """),format.raw/*1273.21*/("""else """),format.raw/*1273.26*/("""{"""),format.raw/*1273.27*/("""
-                    """),format.raw/*1274.21*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "id='"""),_display_(/*1272.33*/phases/*1272.39*/.getPhaseId),format.raw/*1272.50*/("""'>"""),_display_(/*1272.53*/phases/*1272.59*/.getPhaseName),format.raw/*1272.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                    """),format.raw/*1273.21*/("""}"""),format.raw/*1273.22*/("""
+                    """),format.raw/*1274.21*/("""else """),format.raw/*1274.26*/("""{"""),format.raw/*1274.27*/("""
+                    """),format.raw/*1275.21*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+                          "style='background-color: #4CAF50 !important;'" +
                           "onclick='onPhaseClick(id)' " +
-                          "id='"""),_display_(/*1277.33*/phases/*1277.39*/.getPhaseId),format.raw/*1277.50*/("""'>"""),_display_(/*1277.53*/phases/*1277.59*/.getPhaseName),format.raw/*1277.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+                          "id='"""),_display_(/*1278.33*/phases/*1278.39*/.getPhaseId),format.raw/*1278.50*/("""'>"""),_display_(/*1278.53*/phases/*1278.59*/.getPhaseName),format.raw/*1278.72*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-                    """),format.raw/*1279.21*/("""}"""),format.raw/*1279.22*/("""
-                  """),format.raw/*1280.19*/("""}"""),format.raw/*1280.20*/("""
+                    """),format.raw/*1280.21*/("""}"""),format.raw/*1280.22*/("""
+                  """),format.raw/*1281.19*/("""}"""),format.raw/*1281.20*/("""
 
-                            """)))}),format.raw/*1282.30*/("""
+                            """)))}),format.raw/*1283.30*/("""
 
-                            """),format.raw/*1284.29*/("""document.getElementById('listOfProjectSteps').innerHTML = result;
+                            """),format.raw/*1285.29*/("""document.getElementById('listOfProjectSteps').innerHTML = result;
                   //                alert(result);
 
 
@@ -1320,22 +1321,22 @@ isSurpriseCard=true;
 
 
 
-                        """),format.raw/*1293.25*/("""}"""),format.raw/*1293.26*/(""",
-                        error: function (data) """),format.raw/*1294.48*/("""{"""),format.raw/*1294.49*/("""
-                            """),format.raw/*1295.29*/("""alert("error");
+                        """),format.raw/*1294.25*/("""}"""),format.raw/*1294.26*/(""",
+                        error: function (data) """),format.raw/*1295.48*/("""{"""),format.raw/*1295.49*/("""
+                            """),format.raw/*1296.29*/("""alert("error");
                             //setError('Make call failed');
-                        """),format.raw/*1297.25*/("""}"""),format.raw/*1297.26*/("""
-                    """),format.raw/*1298.21*/("""}"""),format.raw/*1298.22*/(""");
-                """),format.raw/*1299.17*/("""}"""),format.raw/*1299.18*/("""
+                        """),format.raw/*1298.25*/("""}"""),format.raw/*1298.26*/("""
+                    """),format.raw/*1299.21*/("""}"""),format.raw/*1299.22*/(""");
+                """),format.raw/*1300.17*/("""}"""),format.raw/*1300.18*/("""
 
 
 
 
 
-            """),format.raw/*1305.13*/("""}"""),format.raw/*1305.14*/("""
+            """),format.raw/*1306.13*/("""}"""),format.raw/*1306.14*/("""
 
-            """),format.raw/*1307.13*/("""$(document).on("click", ".open-EditTodo", function () """),format.raw/*1307.67*/("""{"""),format.raw/*1307.68*/("""
-"""),format.raw/*1308.1*/("""//                alert($(this).data('title'));
+            """),format.raw/*1308.13*/("""$(document).on("click", ".open-EditTodo", function () """),format.raw/*1308.67*/("""{"""),format.raw/*1308.68*/("""
+"""),format.raw/*1309.1*/("""//                alert($(this).data('title'));
 
                 var title = $(this).data('title');
                 var budget = $(this).data('budget');
@@ -1351,12 +1352,12 @@ isSurpriseCard=true;
                 var personnelValue = $(this).data('personnelvalue');
 //                alert(buttonDisabled);
                 var buttonDisabled= $(this).data('buttondisable');
-                if(buttonDisabled===true)"""),format.raw/*1324.42*/("""{"""),format.raw/*1324.43*/("""
-                    """),format.raw/*1325.21*/("""document.getElementById("isDisabled").innerHTML="Oops! You don't have enough resources to perform this step!";
-                """),format.raw/*1326.17*/("""}"""),format.raw/*1326.18*/("""else"""),format.raw/*1326.22*/("""{"""),format.raw/*1326.23*/("""
-                    """),format.raw/*1327.21*/("""document.getElementById("isDisabled").innerHTML="";
-                """),format.raw/*1328.17*/("""}"""),format.raw/*1328.18*/("""
-                """),format.raw/*1329.17*/("""var projectStepId = $(this).data('id');
+                if(buttonDisabled===true)"""),format.raw/*1325.42*/("""{"""),format.raw/*1325.43*/("""
+                    """),format.raw/*1326.21*/("""document.getElementById("isDisabled").innerHTML="Oops! You don't have enough resources to perform this step!";
+                """),format.raw/*1327.17*/("""}"""),format.raw/*1327.18*/("""else"""),format.raw/*1327.22*/("""{"""),format.raw/*1327.23*/("""
+                    """),format.raw/*1328.21*/("""document.getElementById("isDisabled").innerHTML="";
+                """),format.raw/*1329.17*/("""}"""),format.raw/*1329.18*/("""
+                """),format.raw/*1330.17*/("""var projectStepId = $(this).data('id');
                 $(".perform-step").attr("id",projectStepId);
                 $(".perform-step").attr("disabled",buttonDisabled);
                 $("#windowtitle").text(title);
@@ -1375,92 +1376,92 @@ isSurpriseCard=true;
 //
 
 
-            """),format.raw/*1348.13*/("""}"""),format.raw/*1348.14*/(""");
+            """),format.raw/*1349.13*/("""}"""),format.raw/*1349.14*/(""");
 
 
 
 
-            function totalGameTimer() """),format.raw/*1353.39*/("""{"""),format.raw/*1353.40*/("""
+            function totalGameTimer() """),format.raw/*1354.39*/("""{"""),format.raw/*1354.40*/("""
 
-                """),format.raw/*1355.17*/("""var sec = 0;
+                """),format.raw/*1356.17*/("""var sec = 0;
 
-                function pad(val) """),format.raw/*1357.35*/("""{"""),format.raw/*1357.36*/("""
-                    """),format.raw/*1358.21*/("""return val > 9 ? val : "0" + val;
-                """),format.raw/*1359.17*/("""}"""),format.raw/*1359.18*/("""
+                function pad(val) """),format.raw/*1358.35*/("""{"""),format.raw/*1358.36*/("""
+                    """),format.raw/*1359.21*/("""return val > 9 ? val : "0" + val;
+                """),format.raw/*1360.17*/("""}"""),format.raw/*1360.18*/("""
 
-                """),format.raw/*1361.17*/("""var timer = setInterval(function () """),format.raw/*1361.53*/("""{"""),format.raw/*1361.54*/("""
-                    """),format.raw/*1362.21*/("""document.getElementById("seconds").innerHTML = pad(++sec % 60);
+                """),format.raw/*1362.17*/("""var timer = setInterval(function () """),format.raw/*1362.53*/("""{"""),format.raw/*1362.54*/("""
+                    """),format.raw/*1363.21*/("""document.getElementById("seconds").innerHTML = pad(++sec % 60);
                     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
-                """),format.raw/*1364.17*/("""}"""),format.raw/*1364.18*/(""", 1000);
+                """),format.raw/*1365.17*/("""}"""),format.raw/*1365.18*/(""", 1000);
 
-                setTimeout(function () """),format.raw/*1366.40*/("""{"""),format.raw/*1366.41*/("""
-                    """),format.raw/*1367.21*/("""clearInterval(timer);
-                """),format.raw/*1368.17*/("""}"""),format.raw/*1368.18*/(""", 50000000);
-            """),format.raw/*1369.13*/("""}"""),format.raw/*1369.14*/("""
-            """),format.raw/*1370.13*/("""function refreshProjectSteps()"""),format.raw/*1370.43*/("""{"""),format.raw/*1370.44*/("""
-                """),format.raw/*1371.65*/("""
-                """),format.raw/*1372.17*/("""var result="";
+                setTimeout(function () """),format.raw/*1367.40*/("""{"""),format.raw/*1367.41*/("""
+                    """),format.raw/*1368.21*/("""clearInterval(timer);
+                """),format.raw/*1369.17*/("""}"""),format.raw/*1369.18*/(""", 50000000);
+            """),format.raw/*1370.13*/("""}"""),format.raw/*1370.14*/("""
+            """),format.raw/*1371.13*/("""function refreshProjectSteps()"""),format.raw/*1371.43*/("""{"""),format.raw/*1371.44*/("""
+                """),format.raw/*1372.65*/("""
+                """),format.raw/*1373.17*/("""var result="";
                 var count=0;
-            """),_display_(/*1374.14*/for(phases <- model.getPhases()) yield /*1374.46*/ {_display_(Seq[Any](format.raw/*1374.48*/("""
+            """),_display_(/*1375.14*/for(phases <- model.getPhases()) yield /*1375.46*/ {_display_(Seq[Any](format.raw/*1375.48*/("""
 
-"""),format.raw/*1376.1*/("""count++;
+"""),format.raw/*1377.1*/("""count++;
 if(count<6)
-"""),format.raw/*1378.1*/("""{"""),format.raw/*1378.2*/("""
-  """),format.raw/*1379.3*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+"""),format.raw/*1379.1*/("""{"""),format.raw/*1379.2*/("""
+  """),format.raw/*1380.3*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
           "style='background-color: #DB8B00 !important;'" +
           "onclick='onPhaseClick(id)' " +
-          "id='"""),_display_(/*1382.17*/phases/*1382.23*/.getPhaseId),format.raw/*1382.34*/("""'>"""),_display_(/*1382.37*/phases/*1382.43*/.getPhaseName),format.raw/*1382.56*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-"""),format.raw/*1383.1*/("""}"""),format.raw/*1383.2*/("""
-"""),format.raw/*1384.1*/("""else """),format.raw/*1384.6*/("""{"""),format.raw/*1384.7*/("""
-  """),format.raw/*1385.3*/("""console.log(isImplementedBeforeProduction);
+          "id='"""),_display_(/*1383.17*/phases/*1383.23*/.getPhaseId),format.raw/*1383.34*/("""'>"""),_display_(/*1383.37*/phases/*1383.43*/.getPhaseName),format.raw/*1383.56*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+"""),format.raw/*1384.1*/("""}"""),format.raw/*1384.2*/("""
+"""),format.raw/*1385.1*/("""else """),format.raw/*1385.6*/("""{"""),format.raw/*1385.7*/("""
+  """),format.raw/*1386.3*/("""console.log(isImplementedBeforeProduction);
   console.log("i am here in");
   if(isImplementedBeforeProduction)
-  """),format.raw/*1388.3*/("""{"""),format.raw/*1388.4*/("""
-    """),format.raw/*1389.5*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
+  """),format.raw/*1389.3*/("""{"""),format.raw/*1389.4*/("""
+    """),format.raw/*1390.5*/("""result = result+ "<button class='col-md-3 btn btn-warning' " +
             "style='background-color: #DB8B00 !important;'" +
             "onclick='onPhaseClick(id)' " +
-            "id='"""),_display_(/*1392.19*/phases/*1392.25*/.getPhaseId),format.raw/*1392.36*/("""'>"""),_display_(/*1392.39*/phases/*1392.45*/.getPhaseName),format.raw/*1392.58*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
-  """),format.raw/*1393.3*/("""}"""),format.raw/*1393.4*/("""
-  """),format.raw/*1394.3*/("""else """),format.raw/*1394.8*/("""{"""),format.raw/*1394.9*/("""
-    """),format.raw/*1395.5*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
+            "id='"""),_display_(/*1393.19*/phases/*1393.25*/.getPhaseId),format.raw/*1393.36*/("""'>"""),_display_(/*1393.39*/phases/*1393.45*/.getPhaseName),format.raw/*1393.58*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+  """),format.raw/*1394.3*/("""}"""),format.raw/*1394.4*/("""
+  """),format.raw/*1395.3*/("""else """),format.raw/*1395.8*/("""{"""),format.raw/*1395.9*/("""
+    """),format.raw/*1396.5*/("""result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
             "style='background-color: #DB8B00 !important;'" +
             "onclick='onPhaseClick(id)' " +
-            "id='"""),_display_(/*1398.19*/phases/*1398.25*/.getPhaseId),format.raw/*1398.36*/("""'>"""),_display_(/*1398.39*/phases/*1398.45*/.getPhaseName),format.raw/*1398.58*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
+            "id='"""),_display_(/*1399.19*/phases/*1399.25*/.getPhaseId),format.raw/*1399.36*/("""'>"""),_display_(/*1399.39*/phases/*1399.45*/.getPhaseName),format.raw/*1399.58*/("""</button><div class='col-md-1' style='height: 40px;'> </div>";
 
-  """),format.raw/*1400.3*/("""}"""),format.raw/*1400.4*/("""
-"""),format.raw/*1401.1*/("""}"""),format.raw/*1401.2*/("""
-
-
+  """),format.raw/*1401.3*/("""}"""),format.raw/*1401.4*/("""
+"""),format.raw/*1402.1*/("""}"""),format.raw/*1402.2*/("""
 
 
 
 
 
 
-                """)))}),format.raw/*1410.18*/("""
 
-                """),format.raw/*1412.17*/("""document.getElementById('listOfProjectSteps').innerHTML = result;
+
+                """)))}),format.raw/*1411.18*/("""
+
+                """),format.raw/*1413.17*/("""document.getElementById('listOfProjectSteps').innerHTML = result;
 //                alert(result);
 
-            """),format.raw/*1415.13*/("""}"""),format.raw/*1415.14*/("""
+            """),format.raw/*1416.13*/("""}"""),format.raw/*1416.14*/("""
 
-            """),format.raw/*1417.13*/("""function newfunc()"""),format.raw/*1417.31*/("""{"""),format.raw/*1417.32*/("""
-                """),format.raw/*1418.17*/("""swal("", "Do not refresh the screen");
+            """),format.raw/*1418.13*/("""function newfunc()"""),format.raw/*1418.31*/("""{"""),format.raw/*1418.32*/("""
+                """),format.raw/*1419.17*/("""swal("", "Do not refresh the screen");
 
-            """),format.raw/*1420.13*/("""}"""),format.raw/*1420.14*/("""
-    """),format.raw/*1421.5*/("""</script>
-    <body style="background-image: url("""),_display_(/*1422.41*/routes/*1422.47*/.Assets.at("images/bg.jpg")),format.raw/*1422.74*/(""");" onload="onProjectStepTabClick();newfunc();onPhaseClick('CPM1');
+            """),format.raw/*1421.13*/("""}"""),format.raw/*1421.14*/("""
+    """),format.raw/*1422.5*/("""</script>
+    <body style="background-image: url("""),_display_(/*1423.41*/routes/*1423.47*/.Assets.at("images/bg.jpg")),format.raw/*1423.74*/(""");" onload="onProjectStepTabClick();newfunc();onPhaseClick('CPM1');
     totalGameTimer()">
         <input type="hidden" name="phase" id="phase" value="plan"/>
-        <input type="hidden" name="username" id="username" value='"""),_display_(/*1425.68*/model/*1425.73*/.getUserName()),format.raw/*1425.87*/("""'/>
-        <input type="hidden" name="gameid" id="gameid" value='"""),_display_(/*1426.64*/model/*1426.69*/.getGameId()),format.raw/*1426.81*/("""'/>
-        <input type="hidden" name="turn" id="turn" value='"""),_display_(/*1427.60*/model/*1427.65*/.getTurnNo()),format.raw/*1427.77*/("""'/>
-        <input type="hidden" name="moveTime" id="moveTime" value='"""),_display_(/*1428.68*/model/*1428.73*/.getTimeForEachMove()),format.raw/*1428.94*/("""'/>
+        <input type="hidden" name="username" id="username" value='"""),_display_(/*1426.68*/model/*1426.73*/.getUserName()),format.raw/*1426.87*/("""'/>
+        <input type="hidden" name="gameid" id="gameid" value='"""),_display_(/*1427.64*/model/*1427.69*/.getGameId()),format.raw/*1427.81*/("""'/>
+        <input type="hidden" name="turn" id="turn" value='"""),_display_(/*1428.60*/model/*1428.65*/.getTurnNo()),format.raw/*1428.77*/("""'/>
+        <input type="hidden" name="moveTime" id="moveTime" value='"""),_display_(/*1429.68*/model/*1429.73*/.getTimeForEachMove()),format.raw/*1429.94*/("""'/>
         <input type="hidden" id="notmymove" value=''/>
 
         <div class="container" style="padding: 0px 0px 0px 0px !important;">
 
-            <form  id="dashform" hidden method ="GET" action=""""),_display_(/*1433.64*/routes/*1433.70*/.DashboardController.viewDashboard()),format.raw/*1433.106*/("""">
+            <form  id="dashform" hidden method ="GET" action=""""),_display_(/*1434.64*/routes/*1434.70*/.DashboardController.viewDashboard()),format.raw/*1434.106*/("""">
             </form>
 
             <button hidden id="btnMitigateRisk" value=""></button>
@@ -1468,11 +1469,11 @@ if(count<6)
             <header style="" >
 
                 <div class="col-md-2" style="background-color: #CED4BD">RISK-GAME</div>
-                """),format.raw/*1441.51*/("""
-                """),format.raw/*1442.17*/("""<div class="col-md-2" style="background-color: #CED4BD" id="gameid">Game ID: """),_display_(/*1442.95*/model/*1442.100*/.getGameId()),format.raw/*1442.112*/("""</div>
+                """),format.raw/*1442.51*/("""
+                """),format.raw/*1443.17*/("""<div class="col-md-2" style="background-color: #CED4BD" id="gameid">Game ID: """),_display_(/*1443.95*/model/*1443.100*/.getGameId()),format.raw/*1443.112*/("""</div>
                 <div class="col-md-3" style="background-color: #CED4BD">
                     Total no. of turns:
-                    <span id="labelTurns">"""),_display_(/*1445.44*/model/*1445.49*/.getStepsForEachPlayer()),format.raw/*1445.73*/("""</span>
+                    <span id="labelTurns">"""),_display_(/*1446.44*/model/*1446.49*/.getStepsForEachPlayer()),format.raw/*1446.73*/("""</span>
                 </div>
                 <div class="col-md-3" style="background-color: #CED4BD">
                     Total Game time
@@ -1495,7 +1496,7 @@ if(count<6)
                           <li><a href="/logout" >Logout</a></li>
                       </ul>
                   </div>
-                        <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome """),_display_(/*1468.126*/model/*1468.131*/.getUserName().split("@")/*1468.156*/(0)),format.raw/*1468.159*/("""!</div>
+                        <!-- Single button --><div style=" display: inline-block;" class="glyphicon glyphicon-user">Welcome """),_display_(/*1469.126*/model/*1469.131*/.getUserName().split("@")/*1469.156*/(0)),format.raw/*1469.159*/("""!</div>
 
                 </div>
             </header>
@@ -1565,8 +1566,8 @@ if(count<6)
 
                         </textarea>
                         <div>
-                            """),format.raw/*1538.105*/("""
-                        """),format.raw/*1539.25*/("""</div>
+                            """),format.raw/*1539.105*/("""
+                        """),format.raw/*1540.25*/("""</div>
 
 
 
@@ -1583,16 +1584,16 @@ if(count<6)
                                           <div style="text-align:center;">
 
                                               <div style="border:1px solid #000; display:inline-block;position:absolute;top:0;left:0;">
-                                                  Budget:<div style=" display: inline; float: right " id="budgetremaining"> """),_display_(/*1556.126*/model/*1556.131*/.getBudget()),format.raw/*1556.143*/("""</div>
+                                                  Budget:<div style=" display: inline; float: right " id="budgetremaining"> """),_display_(/*1557.126*/model/*1557.131*/.getBudget()),format.raw/*1557.143*/("""</div>
                                                     <br>
-                                                      Capability Points:<div style=" display: inline; float: right" id="capabilitypoints"> """),_display_(/*1558.141*/model/*1558.146*/.getCapabilityPoints()),format.raw/*1558.168*/("""</div>
+                                                      Capability Points:<div style=" display: inline; float: right" id="capabilitypoints"> """),_display_(/*1559.141*/model/*1559.146*/.getCapabilityPoints()),format.raw/*1559.168*/("""</div>
                                                     <br>
-                                                      Capability Bonus:<div style=" display: inline; float: right" id="capabilitybonus"> """),_display_(/*1560.139*/model/*1560.144*/.getCapabilityBonus()),format.raw/*1560.165*/("""</div>
+                                                      Capability Bonus:<div style=" display: inline; float: right" id="capabilitybonus"> """),_display_(/*1561.139*/model/*1561.144*/.getCapabilityBonus()),format.raw/*1561.165*/("""</div>
                                                     <br>
                                                 </div>
 
                                                 <div style="border:1px solid #000; display:inline-block;">
-                                                  <div style=" display: inline-block;">Personnel:</div><div style=" display: inline-block; float: right" id="personnelremaining"> """),_display_(/*1565.180*/model/*1565.185*/.getResources),format.raw/*1565.198*/("""</div>
+                                                  <div style=" display: inline-block;">Personnel:</div><div style=" display: inline-block; float: right" id="personnelremaining"> """),_display_(/*1566.180*/model/*1566.185*/.getResources),format.raw/*1566.198*/("""</div>
                                                   <div>No. of resources who will return after </div>
                                                   <div style=" display: inline-block;">One Turn:</div><div style=" display: inline-block; float: right" id="oneTurn">0</div><br/>
                                                   <div style=" display: inline-block;">Two Turns:</div><div style=" display: inline-block; float: right" id="twoTurn">0</div>
@@ -1615,10 +1616,10 @@ if(count<6)
 <div></div>
 
 
-                                              """),format.raw/*1588.138*/("""
+                                              """),format.raw/*1589.138*/("""
 
 
-                                          """),format.raw/*1591.43*/("""<div class="modal fade" id="myAssetModal" role="dialog">
+                                          """),format.raw/*1592.43*/("""<div class="modal fade" id="myAssetModal" role="dialog">
                                               <div class="modal-dialog">
 
                                                       <!-- Modal content-->
@@ -1628,9 +1629,9 @@ if(count<6)
                                                           <h4 class="modal-title">Status</h4>
                                                       </div>
                                                       <div class="modal-body" style="text-align: left">
-                                                          <div>Budget Remaining: """),_display_(/*1601.83*/model/*1601.88*/.getBudget()),format.raw/*1601.100*/("""</div>
-                                                          <div>Capability Points: """),_display_(/*1602.84*/model/*1602.89*/.getCapabilityPoints()),format.raw/*1602.111*/("""</div>
-                                                          <div>Capability Bonus: """),_display_(/*1603.83*/model/*1603.88*/.getCapabilityBonus()),format.raw/*1603.109*/("""</div>
+                                                          <div>Budget Remaining: """),_display_(/*1602.83*/model/*1602.88*/.getBudget()),format.raw/*1602.100*/("""</div>
+                                                          <div>Capability Points: """),_display_(/*1603.84*/model/*1603.89*/.getCapabilityPoints()),format.raw/*1603.111*/("""</div>
+                                                          <div>Capability Bonus: """),_display_(/*1604.83*/model/*1604.88*/.getCapabilityBonus()),format.raw/*1604.109*/("""</div>
                                                           <div>Risks Mitigated</div>
 
                                                           <div style="height: 30px;"></div>
@@ -1655,7 +1656,7 @@ if(count<6)
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" onclick="onProjectStepTabClick()" href="#projectSteps">Project Steps</a></li>
                         <li><a data-toggle="tab" href="#riskDashboard" onclick="onRiskDashboardClick()">Risk Dashboard</a></li>
-                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)" style="float:right">Skip Turn</button>
+                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)" style="float:right;background-color: #4CAF50;border-color: #4CAF50;">Skip Turn</button>
                         <button style="display: none" class="btn btn-danger" id="btnSkipTimeout" onclick="onPerformStep(id)">Timeout button</button>
 
                     </ul>
@@ -1668,26 +1669,26 @@ if(count<6)
                                 <div id="listOfProjectSteps">
 
 
-                                    """),_display_(/*1641.38*/for(phase <- model.getPhases()) yield /*1641.69*/ {_display_(Seq[Any](format.raw/*1641.71*/("""
-                                        """),_display_(/*1642.42*/if(phase.getPhaseName().equalsIgnoreCase("PLANNING"))/*1642.95*/{_display_(Seq[Any](format.raw/*1642.96*/("""
+                                    """),_display_(/*1642.38*/for(phase <- model.getPhases()) yield /*1642.69*/ {_display_(Seq[Any](format.raw/*1642.71*/("""
+                                        """),_display_(/*1643.42*/if(phase.getPhaseName().equalsIgnoreCase("PLANNING"))/*1643.95*/{_display_(Seq[Any](format.raw/*1643.96*/("""
 
-                                            """),format.raw/*1644.45*/("""<button  class="col-md-3 btn btn-warning"
+                                            """),format.raw/*1645.45*/("""<button  class="col-md-3 btn btn-warning"
                                             style="background-color: #DB8B00 !important;"
                                             onclick="onPhaseClick(id)"
-                                            id="""),_display_(/*1647.49*/phase/*1647.54*/.getPhaseId),format.raw/*1647.65*/(""">"""),_display_(/*1647.67*/phase/*1647.72*/.getPhaseName()),format.raw/*1647.87*/("""</button>
+                                            id="""),_display_(/*1648.49*/phase/*1648.54*/.getPhaseId),format.raw/*1648.65*/(""">"""),_display_(/*1648.67*/phase/*1648.72*/.getPhaseName()),format.raw/*1648.87*/("""</button>
                                             <div class="col-md-1" style="height: 40px;"> </div>
-                                        """)))}/*1649.42*/else/*1649.46*/{_display_(Seq[Any](format.raw/*1649.47*/("""
-                                            """),format.raw/*1650.45*/("""<button disabled="true" class="col-md-3 btn btn-warning"
+                                        """)))}/*1650.42*/else/*1650.46*/{_display_(Seq[Any](format.raw/*1650.47*/("""
+                                            """),format.raw/*1651.45*/("""<button disabled="true" class="col-md-3 btn btn-warning"
                                             style="background-color: #DB8B00 !important;"
                                             onclick="onPhaseClick(id)"
-                                            id="""),_display_(/*1653.49*/phase/*1653.54*/.getPhaseId),format.raw/*1653.65*/(""">"""),_display_(/*1653.67*/phase/*1653.72*/.getPhaseName()),format.raw/*1653.87*/("""</button>
+                                            id="""),_display_(/*1654.49*/phase/*1654.54*/.getPhaseId),format.raw/*1654.65*/(""">"""),_display_(/*1654.67*/phase/*1654.72*/.getPhaseName()),format.raw/*1654.87*/("""</button>
                                             <div class="col-md-1" style="height: 40px;"> </div>
-                                        """)))}),format.raw/*1655.42*/("""
+                                        """)))}),format.raw/*1656.42*/("""
 
-                                    """)))}),format.raw/*1657.38*/("""
+                                    """)))}),format.raw/*1658.38*/("""
 
 
-                                """),format.raw/*1660.33*/("""</div>
+                                """),format.raw/*1661.33*/("""</div>
 
 
 
@@ -1729,10 +1730,10 @@ if(count<6)
                                 </tbody>
                             </table>
 
-                            <br/>
+                            
                             <div id="stepForRisk"></div>
 
-                            <br/><br/>
+                            <br/>
                             <div id="risksteps"></div>
 
                         </div>
@@ -1758,15 +1759,15 @@ if(count<6)
                             user2<br/>
                         </div>
                     </div>
-                    """),format.raw/*1731.51*/("""
-                    """),format.raw/*1732.55*/("""
-                    """),format.raw/*1733.52*/("""
-                    """),format.raw/*1734.105*/("""
+                    """),format.raw/*1732.51*/("""
+                    """),format.raw/*1733.55*/("""
+                    """),format.raw/*1734.52*/("""
+                    """),format.raw/*1735.105*/("""
 
 
 
 
-                    """),format.raw/*1739.21*/("""<div class="panel panel-default" >
+                    """),format.raw/*1740.21*/("""<div class="panel panel-default" >
                         <div class="panel-heading" style="background-color: #A8A2A3">
                             <h4 class="panel-title">Action Log </h4>
                         </div>
@@ -1903,11 +1904,11 @@ if(count<6)
 object ProjectStep extends ProjectStep_Scope0.ProjectStep
               /*
                   -- GENERATED --
-                  DATE: Fri Oct 20 13:05:33 EDT 2017
+                  DATE: Thu Nov 09 03:34:00 EST 2017
                   SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/ProjectStep.scala.html
-                  HASH: c5ab029462ec18eed0495db0a4da880dd87fb778
-                  MATRIX: 822->55|948->86|975->87|1462->650|1498->659|1768->902|1783->908|1845->948|1899->975|1914->981|1978->1024|2094->1113|2109->1119|2164->1153|2250->1212|2265->1218|2321->1253|2407->1312|2422->1318|2488->1362|2574->1421|2589->1427|2650->1466|2736->1525|2751->1531|2813->1571|2855->1687|2891->1696|2932->1710|2947->1716|3011->1759|3095->1816|3110->1822|3169->1860|3230->1894|3245->1900|3306->1940|3367->1974|3382->1980|3447->2024|3547->2097|3562->2103|3604->2124|3653->2252|3691->2363|3727->2372|3808->2425|3837->2426|3878->2439|3951->2485|3980->2486|4017->2496|4048->2499|4077->2500|4118->2513|4208->2576|4237->2577|4274->2587|4319->2604|4348->2605|4389->2618|4479->2681|4508->2682|4545->2692|4586->2705|4615->2706|4656->2719|4802->2837|4831->2838|4868->2848|5021->2973|5050->2974|5091->2987|5203->3072|5232->3073|5268->3082|5355->3141|5384->3142|5425->3155|5537->3240|5566->3241|5603->3251|5694->3314|5723->3315|5764->3328|5876->3413|5905->3414|5942->3424|5980->3434|6009->3435|6050->3448|6162->3533|6191->3534|6227->3543|6258->3546|6287->3547|6317->3550|6429->3635|6457->3636|6497->3649|6535->3659|6564->3660|6605->3673|6999->4040|7028->4041|7064->4050|7108->4066|7137->4067|7178->4080|7371->4245|7401->4246|7438->4255|7511->4299|7541->4300|7583->4313|7853->4555|7883->4556|7921->4566|8030->4647|8060->4648|8102->4661|8326->4857|8356->4858|8394->4868|8434->4879|8464->4880|8506->4893|9078->5437|9108->5438|9145->5447|9185->5458|9215->5459|9257->5472|9620->5807|9650->5808|9688->5818|9734->5835|9764->5836|9806->5849|10027->6042|10057->6043|10094->6052|10135->6064|10165->6065|10207->6078|10477->6320|10507->6321|10548->6334|10995->6752|11025->6753|11072->6771|11132->6802|11162->6803|11204->6816|11298->6881|11328->6882|11375->6900|11446->6942|11476->6943|11518->6956|11610->7019|11640->7020|11686->7037|11770->7092|11800->7093|11850->7114|11919->7155|11935->7161|11987->7191|12238->7413|12268->7414|12297->7415|12576->7665|12606->7666|12665->7696|12979->7981|13009->7982|13038->7983|13271->8187|13301->8188|13334->8192|13364->8193|13426->8226|13505->8276|13535->8277|13596->8309|14682->9366|14712->9367|14774->9400|15014->9611|15044->9612|15077->9616|15107->9617|15169->9650|15299->9751|15329->9752|15358->9753|16999->11365|17029->11366|17083->11391|17233->11512|17263->11513|17337->11558|17367->11559|17421->11584|17542->11676|17572->11677|17618->11694|17648->11695|17693->11711|17723->11712|17766->11726|17851->11782|17881->11783|17924->11797|18443->12287|18473->12288|18523->12309|18678->12435|18708->12436|18741->12440|18771->12441|18821->12462|18922->12534|18952->12535|18998->12552|19848->13373|19878->13374|19950->13417|19980->13418|20009->13419|20251->13632|20281->13633|20325->13648|20504->13798|20534->13799|20563->13800|20688->13896|20718->13897|20768->13918|20826->13947|20856->13948|20902->13965|20938->13972|20968->13973|21018->13994|21087->14035|21103->14041|21161->14077|21372->14259|21402->14260|21457->14286|21646->14446|21676->14447|21734->14476|21865->14578|21895->14579|21957->14612|22089->14715|22119->14716|22149->14718|23389->15929|23419->15930|23481->15963|23721->16174|23751->16175|23784->16179|23814->16180|23876->16213|24006->16314|24036->16315|24065->16316|24427->16649|24457->16650|24519->16683|24577->16712|24607->16713|24673->16750|26162->18210|26192->18211|26241->18231|26271->18232|26625->18557|26655->18558|26688->18562|26718->18563|26784->18600|28281->20068|28311->20069|28360->20089|28390->20090|28744->20415|28774->20416|28834->20447|28864->20448|28922->20477|28956->20482|28986->20483|29047->20515|29105->20544|29135->20545|29199->20580|30688->22040|30718->22041|30768->22061|30799->22062|31173->22407|31203->22408|31263->22439|31297->22444|31327->22445|31395->22484|31595->22655|31625->22656|31703->22705|31854->22827|31884->22828|31982->22897|34012->24897|34043->24898|34093->24918|34124->24919|34610->25376|34640->25377|34724->25432|34793->25472|34823->25473|34909->25530|36767->27358|36798->27359|36848->27379|36879->27380|37318->27790|37348->27791|37444->27858|37589->27974|37619->27975|37720->28047|39750->30047|39781->30048|39831->30068|39862->30069|40415->30593|40445->30594|40539->30659|40665->30756|40695->30757|40791->30824|42769->32772|42800->32773|42850->32793|42881->32794|43354->33238|43384->33239|43481->33307|43704->33501|43734->33502|43835->33574|45865->35574|45896->35575|45946->35595|45977->35596|46530->36120|46560->36121|46654->36186|46781->36284|46811->36285|46907->36352|48885->38300|48916->38301|48966->38321|48997->38322|49470->38766|49500->38767|49595->38833|49767->38976|49797->38977|49918->39069|52362->41483|52393->41484|52443->41504|52474->41505|53161->42163|53191->42164|53299->42243|53445->42360|53475->42361|53585->42442|55887->44714|55918->44715|55968->44735|55999->44736|56558->45266|56588->45267|56682->45332|56790->45411|56820->45412|56912->45475|56946->45480|56976->45481|57010->45487|58055->46503|58085->46504|58134->46524|58164->46525|58445->46777|58475->46778|58538->46812|58568->46813|58639->46855|58669->46856|58737->46895|58767->46896|58796->46897|59108->47180|59138->47181|59212->47226|59242->47227|59296->47252|59431->47358|59461->47359|59507->47376|59537->47377|59582->47393|59612->47394|59656->47409|59711->47435|59741->47436|59771->47438|60134->47772|60164->47773|60214->47794|60253->47804|60283->47805|60337->47830|60456->47921|60471->47926|60503->47936|61524->48928|61554->48929|61601->48947|61631->48948|61678->48966|61767->49026|61797->49027|61826->49028|61918->49091|61948->49092|62002->49117|62121->49208|62136->49213|62168->49223|63186->50212|63216->50213|63263->50231|63293->50232|63340->50250|63401->50282|63431->50283|63460->50284|63552->50347|63582->50348|63636->50373|63751->50460|63766->50465|63798->50475|64821->51469|64851->51470|64898->51488|64928->51489|64958->51490|64991->51494|65021->51495|65071->51516|65110->51526|65140->51527|65194->51552|65309->51639|65324->51644|65356->51654|66369->52638|66399->52639|66446->52657|66476->52658|66523->52676|66559->52683|66589->52684|66639->52705|66708->52746|66724->52752|66775->52781|67037->53014|67067->53015|67121->53040|67398->53288|67428->53289|67457->53290|67571->53375|67601->53376|67671->53417|68044->53761|68074->53762|68160->53819|68190->53820|68260->53861|68304->53876|68334->53877|68363->53878|68571->54057|68601->54058|68667->54095|68697->54096|68753->54123|68783->54124|68838->54150|68924->54207|68954->54208|69011->54236|69465->54661|69495->54662|69557->54695|69672->54781|69702->54782|69760->54811|69814->54836|69844->54837|69906->54870|70028->54963|70058->54964|70116->54993|70169->55017|70199->55018|70261->55051|70381->55142|70411->55143|70498->55201|70552->55226|70582->55227|70644->55260|70756->55343|70786->55344|70874->55403|71029->55529|71059->55530|71118->55560|71253->55666|71283->55667|71343->55698|71496->55822|71526->55823|71558->55826|71676->55914|71707->55915|72240->56419|72270->56420|72324->56445|72389->56481|72419->56482|72477->56511|72645->56650|72675->56651|72737->56684|72856->56774|72886->56775|72944->56804|73002->56833|73032->56834|73094->56867|73220->56964|73250->56965|73308->56994|73365->57022|73395->57023|73457->57056|73581->57151|73611->57152|73669->57181|73727->57210|73757->57211|73819->57244|73935->57331|73965->57332|74024->57362|74144->57453|74174->57454|74206->57457|74331->57552|74362->57553|74966->58128|74996->58129|75050->58154|75117->58192|75147->58193|75205->58222|75304->58292|75334->58293|75396->58326|75565->58466|75595->58467|75653->58496|75686->58500|75716->58501|75778->58534|75942->58669|75972->58670|76031->58700|76196->58836|76226->58837|76280->58862|76345->58898|76375->58899|76431->58926|76545->59011|76575->59012|76637->59045|76673->59052|76703->59053|76735->59056|76839->59130|76870->59131|77079->59311|77109->59312|77164->59338|77194->59339|77248->59364|77309->59396|77339->59397|77397->59426|77459->59459|77489->59460|77551->59493|77587->59500|77617->59501|77649->59504|77777->59602|77808->59603|78023->59789|78053->59790|78111->59819|78144->59823|78174->59824|78236->59857|78272->59864|78302->59865|78334->59868|78447->59951|78478->59952|78693->60138|78723->60139|78777->60164|78807->60165|78861->60190|78919->60219|78949->60220|79007->60249|79043->60256|79073->60257|79105->60260|79229->60354|79260->60355|79468->60534|79498->60535|79552->60560|80403->61382|80433->61383|80492->61413|80629->61521|80659->61522|80709->61543|80789->61594|80819->61595|80893->61640|80923->61641|80975->61664|81161->61821|81191->61822|81237->61839|81267->61840|81311->61855|81341->61856|81384->61870|81519->61976|81549->61977|81597->61996|81842->62211|81873->62212|81924->62233|81992->62271|82023->62272|82098->62317|82129->62318|82180->62339|82215->62344|82246->62345|82279->62348|82512->62550|82544->62551|82587->62563|82619->62564|82666->62581|82912->62797|82943->62798|83002->62827|83105->62900|83136->62901|83274->63009|83305->63010|83364->63039|83494->63139|83525->63140|83588->63173|83659->63214|83690->63215|83745->63240|83776->63241|84132->63567|84163->63568|84218->63593|84373->63718|84404->63719|84459->63744|84490->63745|84539->63764|84570->63765|84618->63783|84653->63788|84684->63789|84736->63811|84773->63818|84804->63819|84859->63844|84933->63889|84950->63895|85006->63928|85296->64188|85327->64189|85357->64190|85613->64416|85644->64417|85707->64450|85816->64529|85847->64530|85914->64567|85960->64583|85991->64584|86062->64625|86151->64684|86182->64685|86245->64718|86276->64719|86306->64720|86481->64865|86512->64866|86579->64903|86672->64966|86703->64967|86768->65002|87913->66117|87944->66118|88011->66155|88264->66378|88295->66379|88326->66380|88361->66385|88392->66386|88459->66423|88602->66536|88633->66537|88663->66538|88997->66843|89027->66844|89059->66847|89106->66865|89136->66866|89166->66867|89214->66886|89244->66887|89276->66890|89327->66912|89357->66913|89388->66915|89431->66929|89461->66930|89493->66933|89539->66950|89569->66951|89600->66953|90119->67443|90149->67444|90179->67445|90321->67558|90351->67559|90382->67561|90540->67690|90570->67691|90600->67692|90667->67730|90697->67731|90727->67732|90885->67861|90915->67862|90945->67863|91008->67897|91038->67898|91068->67899|91226->68028|91256->68029|91286->68030|91356->68071|91386->68072|91416->68073|91574->68202|91604->68203|91634->68204|91696->68237|91726->68238|91756->68239|91914->68368|91944->68369|91974->68370|92040->68407|92070->68408|92103->68412|93634->69913|93665->69914|93715->69934|93746->69935|94246->70405|94277->70406|94308->70408|94658->70776|94717->70805|94827->70886|94877->70918|94919->70920|94969->70940|95057->70998|95088->70999|95137->71018|95383->71235|95400->71241|95434->71252|95466->71255|95483->71261|95519->71274|95630->71355|95661->71356|95710->71375|95776->71411|95807->71412|95858->71433|95938->71483|95969->71484|96022->71507|96280->71736|96297->71742|96331->71753|96363->71756|96380->71762|96416->71775|96529->71858|96560->71859|96611->71880|96646->71885|96677->71886|96730->71909|97010->72160|97027->72166|97061->72177|97093->72180|97110->72186|97146->72199|97260->72283|97291->72284|97340->72303|97371->72304|97420->72323|97486->72359|97517->72360|97568->72381|97643->72426|97674->72427|97727->72450|97985->72679|98002->72685|98036->72696|98068->72699|98085->72705|98121->72718|98234->72801|98265->72802|98316->72823|98351->72828|98382->72829|98435->72852|98715->73103|98732->73109|98766->73120|98798->73123|98815->73129|98851->73142|98965->73226|98996->73227|99045->73246|99076->73247|99125->73266|99191->73302|99222->73303|99273->73324|99356->73377|99387->73378|99440->73401|99698->73630|99715->73636|99749->73647|99781->73650|99798->73656|99834->73669|99947->73752|99978->73753|100029->73774|100064->73779|100095->73780|100148->73803|100428->74054|100445->74060|100479->74071|100511->74074|100528->74080|100564->74093|100678->74177|100709->74178|100758->74197|100789->74198|100838->74217|100904->74253|100935->74254|100986->74275|101062->74321|101093->74322|101146->74345|101404->74574|101421->74580|101455->74591|101487->74594|101504->74600|101540->74613|101653->74696|101684->74697|101735->74718|101770->74723|101801->74724|101854->74747|102134->74998|102151->75004|102185->75015|102217->75018|102234->75024|102270->75037|102384->75121|102415->75122|102464->75141|102495->75142|102544->75161|102610->75197|102641->75198|102692->75219|102943->75440|102974->75441|103025->75462|103283->75691|103300->75697|103334->75708|103366->75711|103383->75717|103419->75730|103532->75813|103563->75814|103614->75835|103649->75840|103680->75841|103731->75862|104005->76107|104022->76113|104056->76124|104088->76127|104105->76133|104141->76146|104255->76230|104286->76231|104335->76250|104366->76251|104430->76282|104490->76312|104668->76460|104699->76461|104778->76510|104809->76511|104868->76540|104998->76640|105029->76641|105080->76662|105111->76663|105160->76682|105191->76683|105239->76701|105270->76702|105314->76716|105398->76770|105429->76771|105459->76772|106403->77686|106434->77687|106485->77708|106642->77835|106673->77836|106707->77840|106738->77841|106789->77862|106887->77930|106918->77931|106965->77948|108054->79007|108085->79008|108160->79053|108191->79054|108239->79072|108317->79120|108348->79121|108399->79142|108479->79192|108510->79193|108558->79211|108624->79247|108655->79248|108706->79269|108912->79445|108943->79446|109022->79495|109053->79496|109104->79517|109172->79555|109203->79556|109258->79581|109289->79582|109332->79595|109392->79625|109423->79626|109470->79691|109517->79708|109603->79765|109653->79797|109695->79799|109726->79801|109776->79822|109806->79823|109838->79826|110048->80007|110065->80013|110099->80024|110131->80027|110148->80033|110184->80046|110276->80109|110306->80110|110336->80111|110370->80116|110400->80117|110432->80120|110574->80233|110604->80234|110638->80239|110854->80426|110871->80432|110905->80443|110937->80446|110954->80452|110990->80465|111084->80530|111114->80531|111146->80534|111180->80539|111210->80540|111244->80545|111476->80748|111493->80754|111527->80765|111559->80768|111576->80774|111612->80787|111707->80853|111737->80854|111767->80855|111797->80856|111856->80882|111904->80900|112046->81012|112077->81013|112121->81027|112169->81045|112200->81046|112247->81063|112329->81115|112360->81116|112394->81121|112473->81171|112490->81177|112540->81204|112795->81430|112811->81435|112848->81449|112944->81516|112960->81521|112995->81533|113087->81596|113103->81601|113138->81613|113238->81684|113254->81689|113298->81710|113528->81911|113545->81917|113605->81953|113863->82215|113910->82232|114017->82310|114034->82315|114070->82327|114262->82490|114278->82495|114325->82519|115878->84042|115895->84047|115932->84072|115959->84075|118918->87079|118973->87104|119642->87743|119659->87748|119695->87760|119929->87964|119946->87969|119992->87991|120224->88193|120241->88198|120286->88219|120722->88625|120739->88630|120776->88643|121898->89825|121973->89870|122841->90709|122857->90714|122893->90726|123012->90816|123028->90821|123074->90843|123192->90932|123208->90937|123253->90958|125565->93241|125614->93272|125656->93274|125727->93316|125791->93369|125832->93370|125908->93416|126188->93667|126204->93672|126238->93683|126269->93685|126285->93690|126323->93705|126491->93852|126506->93856|126547->93857|126622->93902|126917->94168|126933->94173|126967->94184|126998->94186|127014->94191|127052->94206|127232->94353|127304->94392|127369->94427|130295->97353|130346->97408|130397->97460|130449->97565|130504->97590
-                  LINES: 27->2|32->2|33->3|42->12|43->13|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18|48->18|49->19|49->19|49->19|50->20|50->20|50->20|51->21|51->21|51->21|52->22|53->23|53->23|53->23|53->23|54->24|54->24|54->24|55->25|55->25|55->25|56->26|56->26|56->26|57->27|57->27|57->27|58->28|59->29|60->30|62->32|62->32|63->33|65->35|65->35|67->37|67->37|67->37|68->38|70->40|70->40|72->42|72->42|72->42|73->43|75->45|75->45|77->47|77->47|77->47|78->48|82->52|82->52|84->54|87->57|87->57|88->58|90->60|90->60|91->61|92->62|92->62|93->63|95->65|95->65|97->67|98->68|98->68|99->69|101->71|101->71|103->73|103->73|103->73|104->74|106->76|106->76|107->77|107->77|107->77|108->78|112->82|112->82|117->87|117->87|117->87|118->88|127->97|127->97|128->98|128->98|128->98|129->99|131->101|131->101|132->102|133->103|133->103|134->104|136->106|136->106|138->108|141->111|141->111|142->112|146->116|146->116|148->118|148->118|148->118|149->119|157->127|157->127|158->128|158->128|158->128|159->129|168->138|168->138|170->140|170->140|170->140|171->141|174->144|174->144|175->145|175->145|175->145|176->146|178->148|178->148|183->153|208->178|208->178|210->180|211->181|211->181|212->182|214->184|214->184|216->186|217->187|217->187|218->188|219->189|219->189|220->190|221->191|221->191|222->192|223->193|223->193|223->193|228->198|228->198|229->199|233->203|233->203|235->205|240->210|240->210|241->211|244->214|244->214|244->214|244->214|245->215|246->216|246->216|250->220|264->234|264->234|265->235|268->238|268->238|268->238|268->238|269->239|271->241|271->241|272->242|296->266|296->266|297->267|299->269|299->269|300->270|300->270|301->271|303->273|303->273|304->274|304->274|306->276|306->276|308->278|308->278|308->278|309->279|319->289|319->289|320->290|321->291|321->291|321->291|321->291|322->292|323->293|323->293|324->294|341->311|341->311|343->313|343->313|344->314|350->320|350->320|353->323|357->327|357->327|358->328|360->330|360->330|361->331|362->332|362->332|363->333|363->333|363->333|364->334|365->335|365->335|365->335|369->339|369->339|371->341|374->344|374->344|375->345|378->348|378->348|379->349|381->351|381->351|383->353|401->371|401->371|402->372|405->375|405->375|405->375|405->375|406->376|408->378|408->378|409->379|413->383|413->383|414->384|414->384|414->384|415->385|430->400|430->400|430->400|430->400|435->405|435->405|435->405|435->405|436->406|451->421|451->421|451->421|451->421|456->426|456->426|459->429|459->429|460->430|460->430|460->430|462->432|462->432|462->432|463->433|478->448|478->448|478->448|478->448|483->453|483->453|484->454|484->454|484->454|485->455|486->456|486->456|487->457|488->458|488->458|489->459|504->474|504->474|504->474|504->474|509->479|509->479|510->480|510->480|510->480|511->481|526->496|526->496|526->496|526->496|530->500|530->500|533->503|534->504|534->504|536->506|551->521|551->521|551->521|551->521|557->527|557->527|558->528|559->529|559->529|560->530|575->545|575->545|575->545|575->545|579->549|579->549|583->553|586->556|586->556|588->558|603->573|603->573|603->573|603->573|609->579|609->579|610->580|611->581|611->581|612->582|627->597|627->597|627->597|627->597|631->601|631->601|633->603|634->604|634->604|636->606|651->621|651->621|651->621|651->621|657->627|657->627|658->628|659->629|659->629|660->630|675->645|675->645|675->645|675->645|679->649|679->649|680->650|683->653|683->653|684->654|684->654|684->654|688->658|704->674|704->674|704->674|704->674|710->680|710->680|714->684|714->684|728->698|728->698|743->713|743->713|744->714|748->718|748->718|749->719|749->719|750->720|752->722|752->722|753->723|753->723|755->725|755->725|758->728|758->728|758->728|760->730|764->734|764->734|765->735|765->735|765->735|766->736|768->738|768->738|768->738|783->753|783->753|784->754|784->754|786->756|786->756|786->756|787->757|788->758|788->758|789->759|791->761|791->761|791->761|806->776|806->776|807->777|807->777|809->779|809->779|809->779|810->780|811->781|811->781|812->782|814->784|814->784|814->784|829->799|829->799|830->800|830->800|830->800|830->800|830->800|831->801|831->801|831->801|832->802|834->804|834->804|834->804|849->819|849->819|850->820|850->820|852->822|852->822|852->822|853->823|854->824|854->824|854->824|859->829|859->829|860->830|863->833|863->833|864->834|865->835|865->835|866->836|871->841|871->841|872->842|872->842|873->843|873->843|873->843|874->844|877->847|877->847|878->848|878->848|879->849|879->849|882->852|883->853|883->853|884->854|894->864|894->864|895->865|896->866|896->866|897->867|897->867|897->867|898->868|899->869|899->869|900->870|900->870|900->870|901->871|902->872|902->872|904->874|904->874|904->874|905->875|906->876|906->876|909->879|910->880|910->880|911->881|912->882|912->882|915->885|922->892|922->892|922->892|922->892|922->892|929->899|929->899|930->900|930->900|930->900|931->901|934->904|934->904|935->905|936->906|936->906|937->907|937->907|937->907|938->908|939->909|939->909|940->910|940->910|940->910|941->911|942->912|942->912|943->913|943->913|943->913|944->914|945->915|945->915|947->917|949->919|949->919|949->919|949->919|949->919|957->927|957->927|958->928|958->928|958->928|959->929|960->930|960->930|961->931|962->932|962->932|963->933|963->933|963->933|964->934|965->935|965->935|967->937|969->939|969->939|970->940|970->940|970->940|971->941|972->942|972->942|973->943|973->943|973->943|973->943|973->943|973->943|976->946|976->946|978->948|978->948|979->949|979->949|979->949|980->950|980->950|980->950|981->951|981->951|981->951|981->951|981->951|981->951|984->954|984->954|985->955|985->955|985->955|986->956|986->956|986->956|986->956|986->956|986->956|989->959|989->959|990->960|990->960|991->961|992->962|992->962|993->963|993->963|993->963|993->963|993->963|993->963|996->966|996->966|997->967|1008->978|1008->978|1010->980|1012->982|1012->982|1013->983|1016->986|1016->986|1017->987|1017->987|1018->988|1021->991|1021->991|1022->992|1022->992|1023->993|1023->993|1025->995|1027->997|1027->997|1029->999|1034->1004|1034->1004|1035->1005|1036->1006|1036->1006|1038->1008|1038->1008|1039->1009|1039->1009|1039->1009|1039->1009|1039->1009|1039->1009|1039->1009|1039->1009|1041->1011|1043->1013|1043->1013|1044->1014|1047->1017|1047->1017|1049->1019|1049->1019|1050->1020|1052->1022|1052->1022|1053->1023|1054->1024|1054->1024|1055->1025|1055->1025|1061->1031|1061->1031|1062->1032|1063->1033|1063->1033|1064->1034|1064->1034|1065->1035|1065->1035|1067->1037|1067->1037|1067->1037|1069->1039|1069->1039|1069->1039|1070->1040|1071->1041|1071->1041|1071->1041|1076->1046|1076->1046|1077->1047|1080->1050|1080->1050|1081->1051|1082->1052|1082->1052|1083->1053|1083->1053|1083->1053|1084->1054|1085->1055|1085->1055|1086->1056|1086->1056|1087->1057|1089->1059|1089->1059|1090->1060|1091->1061|1091->1061|1094->1064|1108->1078|1108->1078|1109->1079|1112->1082|1112->1082|1112->1082|1112->1082|1112->1082|1113->1083|1115->1085|1115->1085|1116->1086|1122->1092|1122->1092|1123->1093|1124->1094|1124->1094|1125->1095|1126->1096|1126->1096|1127->1097|1128->1098|1128->1098|1130->1100|1131->1101|1131->1101|1132->1102|1133->1103|1133->1103|1135->1105|1139->1109|1139->1109|1140->1110|1143->1113|1143->1113|1145->1115|1147->1117|1147->1117|1148->1118|1150->1120|1150->1120|1151->1121|1153->1123|1153->1123|1154->1124|1156->1126|1156->1126|1157->1127|1159->1129|1159->1129|1160->1130|1162->1132|1162->1132|1163->1133|1165->1135|1165->1135|1166->1136|1168->1138|1168->1138|1169->1139|1171->1141|1171->1141|1172->1142|1174->1144|1174->1144|1178->1148|1198->1168|1198->1168|1198->1168|1198->1168|1204->1174|1204->1174|1206->1176|1212->1182|1213->1183|1215->1185|1215->1185|1215->1185|1217->1187|1219->1189|1219->1189|1220->1190|1223->1193|1223->1193|1223->1193|1223->1193|1223->1193|1223->1193|1224->1194|1224->1194|1225->1195|1226->1196|1226->1196|1227->1197|1228->1198|1228->1198|1229->1199|1232->1202|1232->1202|1232->1202|1232->1202|1232->1202|1232->1202|1233->1203|1233->1203|1234->1204|1234->1204|1234->1204|1235->1205|1238->1208|1238->1208|1238->1208|1238->1208|1238->1208|1238->1208|1240->1210|1240->1210|1241->1211|1241->1211|1242->1212|1243->1213|1243->1213|1244->1214|1245->1215|1245->1215|1246->1216|1249->1219|1249->1219|1249->1219|1249->1219|1249->1219|1249->1219|1250->1220|1250->1220|1251->1221|1251->1221|1251->1221|1252->1222|1255->1225|1255->1225|1255->1225|1255->1225|1255->1225|1255->1225|1257->1227|1257->1227|1258->1228|1258->1228|1259->1229|1260->1230|1260->1230|1261->1231|1262->1232|1262->1232|1263->1233|1266->1236|1266->1236|1266->1236|1266->1236|1266->1236|1266->1236|1267->1237|1267->1237|1268->1238|1268->1238|1268->1238|1269->1239|1272->1242|1272->1242|1272->1242|1272->1242|1272->1242|1272->1242|1274->1244|1274->1244|1275->1245|1275->1245|1276->1246|1277->1247|1277->1247|1278->1248|1279->1249|1279->1249|1280->1250|1283->1253|1283->1253|1283->1253|1283->1253|1283->1253|1283->1253|1284->1254|1284->1254|1285->1255|1285->1255|1285->1255|1286->1256|1289->1259|1289->1259|1289->1259|1289->1259|1289->1259|1289->1259|1291->1261|1291->1261|1292->1262|1292->1262|1293->1263|1294->1264|1294->1264|1295->1265|1297->1267|1297->1267|1298->1268|1301->1271|1301->1271|1301->1271|1301->1271|1301->1271|1301->1271|1302->1272|1302->1272|1303->1273|1303->1273|1303->1273|1304->1274|1307->1277|1307->1277|1307->1277|1307->1277|1307->1277|1307->1277|1309->1279|1309->1279|1310->1280|1310->1280|1312->1282|1314->1284|1323->1293|1323->1293|1324->1294|1324->1294|1325->1295|1327->1297|1327->1297|1328->1298|1328->1298|1329->1299|1329->1299|1335->1305|1335->1305|1337->1307|1337->1307|1337->1307|1338->1308|1354->1324|1354->1324|1355->1325|1356->1326|1356->1326|1356->1326|1356->1326|1357->1327|1358->1328|1358->1328|1359->1329|1378->1348|1378->1348|1383->1353|1383->1353|1385->1355|1387->1357|1387->1357|1388->1358|1389->1359|1389->1359|1391->1361|1391->1361|1391->1361|1392->1362|1394->1364|1394->1364|1396->1366|1396->1366|1397->1367|1398->1368|1398->1368|1399->1369|1399->1369|1400->1370|1400->1370|1400->1370|1401->1371|1402->1372|1404->1374|1404->1374|1404->1374|1406->1376|1408->1378|1408->1378|1409->1379|1412->1382|1412->1382|1412->1382|1412->1382|1412->1382|1412->1382|1413->1383|1413->1383|1414->1384|1414->1384|1414->1384|1415->1385|1418->1388|1418->1388|1419->1389|1422->1392|1422->1392|1422->1392|1422->1392|1422->1392|1422->1392|1423->1393|1423->1393|1424->1394|1424->1394|1424->1394|1425->1395|1428->1398|1428->1398|1428->1398|1428->1398|1428->1398|1428->1398|1430->1400|1430->1400|1431->1401|1431->1401|1440->1410|1442->1412|1445->1415|1445->1415|1447->1417|1447->1417|1447->1417|1448->1418|1450->1420|1450->1420|1451->1421|1452->1422|1452->1422|1452->1422|1455->1425|1455->1425|1455->1425|1456->1426|1456->1426|1456->1426|1457->1427|1457->1427|1457->1427|1458->1428|1458->1428|1458->1428|1463->1433|1463->1433|1463->1433|1471->1441|1472->1442|1472->1442|1472->1442|1472->1442|1475->1445|1475->1445|1475->1445|1498->1468|1498->1468|1498->1468|1498->1468|1568->1538|1569->1539|1586->1556|1586->1556|1586->1556|1588->1558|1588->1558|1588->1558|1590->1560|1590->1560|1590->1560|1595->1565|1595->1565|1595->1565|1618->1588|1621->1591|1631->1601|1631->1601|1631->1601|1632->1602|1632->1602|1632->1602|1633->1603|1633->1603|1633->1603|1671->1641|1671->1641|1671->1641|1672->1642|1672->1642|1672->1642|1674->1644|1677->1647|1677->1647|1677->1647|1677->1647|1677->1647|1677->1647|1679->1649|1679->1649|1679->1649|1680->1650|1683->1653|1683->1653|1683->1653|1683->1653|1683->1653|1683->1653|1685->1655|1687->1657|1690->1660|1761->1731|1762->1732|1763->1733|1764->1734|1769->1739
+                  HASH: 51bdda55ac56383b0d6c33389ab5ce1a23d7135b
+                  MATRIX: 822->55|948->86|975->87|1462->650|1498->659|1768->902|1783->908|1845->948|1899->975|1914->981|1978->1024|2094->1113|2109->1119|2164->1153|2250->1212|2265->1218|2321->1253|2407->1312|2422->1318|2488->1362|2574->1421|2589->1427|2650->1466|2736->1525|2751->1531|2813->1571|2855->1687|2891->1696|2932->1710|2947->1716|3011->1759|3095->1816|3110->1822|3169->1860|3230->1894|3245->1900|3306->1940|3367->1974|3382->1980|3447->2024|3547->2097|3562->2103|3604->2124|3653->2252|3691->2363|3727->2372|3808->2425|3837->2426|3878->2439|3951->2485|3980->2486|4017->2496|4048->2499|4077->2500|4118->2513|4208->2576|4237->2577|4274->2587|4319->2604|4348->2605|4389->2618|4479->2681|4508->2682|4545->2692|4586->2705|4615->2706|4656->2719|4802->2837|4831->2838|4868->2848|5021->2973|5050->2974|5091->2987|5203->3072|5232->3073|5268->3082|5355->3141|5384->3142|5425->3155|5537->3240|5566->3241|5603->3251|5694->3314|5723->3315|5764->3328|5876->3413|5905->3414|5942->3424|5980->3434|6009->3435|6050->3448|6162->3533|6191->3534|6227->3543|6258->3546|6287->3547|6317->3550|6429->3635|6457->3636|6497->3649|6535->3659|6564->3660|6605->3673|6999->4040|7028->4041|7064->4050|7108->4066|7137->4067|7178->4080|7371->4245|7401->4246|7438->4255|7511->4299|7541->4300|7583->4313|7853->4555|7883->4556|7921->4566|8030->4647|8060->4648|8102->4661|8326->4857|8356->4858|8394->4868|8434->4879|8464->4880|8506->4893|9078->5437|9108->5438|9145->5447|9185->5458|9215->5459|9257->5472|9620->5807|9650->5808|9688->5818|9734->5835|9764->5836|9806->5849|10027->6042|10057->6043|10094->6052|10135->6064|10165->6065|10207->6078|10477->6320|10507->6321|10548->6334|10995->6752|11025->6753|11072->6771|11132->6802|11162->6803|11204->6816|11298->6881|11328->6882|11375->6900|11446->6942|11476->6943|11518->6956|11610->7019|11640->7020|11686->7037|11770->7092|11800->7093|11850->7114|11919->7155|11935->7161|11987->7191|12238->7413|12268->7414|12297->7415|12576->7665|12606->7666|12665->7696|12979->7981|13009->7982|13038->7983|13271->8187|13301->8188|13334->8192|13364->8193|13426->8226|13505->8276|13535->8277|13596->8309|14682->9366|14712->9367|14774->9400|15014->9611|15044->9612|15077->9616|15107->9617|15169->9650|15299->9751|15329->9752|15358->9753|17067->11433|17097->11434|17151->11459|17301->11580|17331->11581|17405->11626|17435->11627|17489->11652|17610->11744|17640->11745|17686->11762|17716->11763|17761->11779|17791->11780|17834->11794|17919->11850|17949->11851|17992->11865|18511->12355|18541->12356|18591->12377|18746->12503|18776->12504|18809->12508|18839->12509|18889->12530|18990->12602|19020->12603|19066->12620|19916->13441|19946->13442|20018->13485|20048->13486|20077->13487|20319->13700|20349->13701|20393->13716|20572->13866|20602->13867|20631->13868|20756->13964|20786->13965|20836->13986|20894->14015|20924->14016|20970->14033|21006->14040|21036->14041|21086->14062|21155->14103|21171->14109|21229->14145|21440->14327|21470->14328|21525->14354|21714->14514|21744->14515|21802->14544|21933->14646|21963->14647|22025->14680|22157->14783|22187->14784|22217->14786|23457->15997|23487->15998|23549->16031|23789->16242|23819->16243|23852->16247|23882->16248|23944->16281|24074->16382|24104->16383|24133->16384|24495->16717|24525->16718|24587->16751|24645->16780|24675->16781|24741->16818|26230->18278|26260->18279|26309->18299|26339->18300|26693->18625|26723->18626|26756->18630|26786->18631|26852->18668|28420->20207|28450->20208|28499->20228|28529->20229|28883->20554|28913->20555|28973->20586|29003->20587|29061->20616|29095->20621|29125->20622|29186->20654|29244->20683|29274->20684|29338->20719|30827->22179|30857->22180|30907->22200|30938->22201|31312->22546|31342->22547|31402->22578|31436->22583|31466->22584|31534->22623|31734->22794|31764->22795|31842->22844|31993->22966|32023->22967|32121->23036|34151->25036|34182->25037|34232->25057|34263->25058|34749->25515|34779->25516|34863->25571|34932->25611|34962->25612|35048->25669|36943->27534|36974->27535|37024->27555|37055->27556|37494->27966|37524->27967|37620->28034|37765->28150|37795->28151|37896->28223|39926->30223|39957->30224|40007->30244|40038->30245|40591->30769|40621->30770|40715->30835|40841->30932|40871->30933|40967->31000|42982->32985|43013->32986|43063->33006|43094->33007|43567->33451|43597->33452|43694->33520|43917->33714|43947->33715|44048->33787|46078->35787|46109->35788|46159->35808|46190->35809|46743->36333|46773->36334|46867->36399|46994->36497|47024->36498|47120->36565|49134->38549|49165->38550|49215->38570|49246->38571|49719->39015|49749->39016|49844->39082|50016->39225|50046->39226|50167->39318|52611->41732|52642->41733|52692->41753|52723->41754|53410->42412|53440->42413|53548->42492|53694->42609|53724->42610|53834->42691|56173->45000|56204->45001|56254->45021|56285->45022|56844->45552|56874->45553|56968->45618|57076->45697|57106->45698|57198->45761|57232->45766|57262->45767|57296->45773|58377->46825|58407->46826|58456->46846|58486->46847|58767->47099|58797->47100|58860->47134|58890->47135|58961->47177|58991->47178|59059->47217|59089->47218|59118->47219|59430->47502|59460->47503|59534->47548|59564->47549|59618->47574|59753->47680|59783->47681|59829->47698|59859->47699|59904->47715|59934->47716|59978->47731|60033->47757|60063->47758|60093->47760|60456->48094|60486->48095|60536->48116|60575->48126|60605->48127|60659->48152|60778->48243|60793->48248|60825->48258|61846->49250|61876->49251|61923->49269|61953->49270|62000->49288|62089->49348|62119->49349|62148->49350|62240->49413|62270->49414|62324->49439|62443->49530|62458->49535|62490->49545|63508->50534|63538->50535|63585->50553|63615->50554|63662->50572|63723->50604|63753->50605|63782->50606|63874->50669|63904->50670|63958->50695|64073->50782|64088->50787|64120->50797|65143->51791|65173->51792|65220->51810|65250->51811|65280->51812|65313->51816|65343->51817|65393->51838|65432->51848|65462->51849|65516->51874|65631->51961|65646->51966|65678->51976|66691->52960|66721->52961|66768->52979|66798->52980|66845->52998|66881->53005|66911->53006|66961->53027|67030->53068|67046->53074|67097->53103|67359->53336|67389->53337|67443->53362|67720->53610|67750->53611|67779->53612|67893->53697|67923->53698|67993->53739|68366->54083|68396->54084|68482->54141|68512->54142|68582->54183|68626->54198|68656->54199|68685->54200|68893->54379|68923->54380|68989->54417|69019->54418|69075->54445|69105->54446|69160->54472|69246->54529|69276->54530|69333->54558|69787->54983|69817->54984|69879->55017|69994->55103|70024->55104|70082->55133|70136->55158|70166->55159|70228->55192|70350->55285|70380->55286|70438->55315|70491->55339|70521->55340|70583->55373|70703->55464|70733->55465|70820->55523|70874->55548|70904->55549|70966->55582|71078->55665|71108->55666|71196->55725|71351->55851|71381->55852|71440->55882|71575->55988|71605->55989|71665->56020|71818->56144|71848->56145|71880->56148|71998->56236|72029->56237|72562->56741|72592->56742|72646->56767|72711->56803|72741->56804|72799->56833|72967->56972|72997->56973|73059->57006|73178->57096|73208->57097|73266->57126|73324->57155|73354->57156|73416->57189|73542->57286|73572->57287|73630->57316|73687->57344|73717->57345|73779->57378|73903->57473|73933->57474|73991->57503|74049->57532|74079->57533|74141->57566|74257->57653|74287->57654|74346->57684|74466->57775|74496->57776|74528->57779|74653->57874|74684->57875|75288->58450|75318->58451|75372->58476|75439->58514|75469->58515|75527->58544|75626->58614|75656->58615|75718->58648|75887->58788|75917->58789|75975->58818|76008->58822|76038->58823|76100->58856|76264->58991|76294->58992|76353->59022|76518->59158|76548->59159|76602->59184|76667->59220|76697->59221|76753->59248|76867->59333|76897->59334|76959->59367|76995->59374|77025->59375|77057->59378|77161->59452|77192->59453|77401->59633|77431->59634|77486->59660|77516->59661|77570->59686|77631->59718|77661->59719|77719->59748|77781->59781|77811->59782|77873->59815|77909->59822|77939->59823|77971->59826|78099->59924|78130->59925|78345->60111|78375->60112|78433->60141|78466->60145|78496->60146|78558->60179|78594->60186|78624->60187|78656->60190|78769->60273|78800->60274|79015->60460|79045->60461|79099->60486|79129->60487|79183->60512|79241->60541|79271->60542|79329->60571|79365->60578|79395->60579|79427->60582|79551->60676|79582->60677|79790->60856|79820->60857|79874->60882|80725->61704|80755->61705|80814->61735|80951->61843|80981->61844|81031->61865|81111->61916|81141->61917|81215->61962|81245->61963|81297->61986|81483->62143|81513->62144|81559->62161|81589->62162|81633->62177|81663->62178|81706->62192|81841->62298|81871->62299|81920->62318|82165->62533|82196->62534|82247->62555|82315->62593|82346->62594|82421->62639|82452->62640|82503->62661|82538->62666|82569->62667|82602->62670|82835->62872|82867->62873|82910->62885|82942->62886|82989->62903|83235->63119|83266->63120|83325->63149|83428->63222|83459->63223|83597->63331|83628->63332|83687->63361|83817->63461|83848->63462|83911->63495|83982->63536|84013->63537|84068->63562|84099->63563|84455->63889|84486->63890|84541->63915|84696->64040|84727->64041|84782->64066|84813->64067|84862->64086|84893->64087|84941->64105|84976->64110|85007->64111|85059->64133|85096->64140|85127->64141|85182->64166|85256->64211|85273->64217|85329->64250|85619->64510|85650->64511|85680->64512|85936->64738|85967->64739|86030->64772|86139->64851|86170->64852|86237->64889|86283->64905|86314->64906|86385->64947|86474->65006|86505->65007|86568->65040|86599->65041|86629->65042|86804->65187|86835->65188|86902->65225|86995->65288|87026->65289|87091->65324|88236->66439|88267->66440|88334->66477|88587->66700|88618->66701|88649->66702|88684->66707|88715->66708|88782->66745|88925->66858|88956->66859|88986->66860|89320->67165|89350->67166|89382->67169|89429->67187|89459->67188|89489->67189|89537->67208|89567->67209|89599->67212|89650->67234|89680->67235|89711->67237|89754->67251|89784->67252|89816->67255|89862->67272|89892->67273|89923->67275|90442->67765|90472->67766|90502->67767|90644->67880|90674->67881|90705->67883|90863->68012|90893->68013|90923->68014|90990->68052|91020->68053|91050->68054|91208->68183|91238->68184|91268->68185|91331->68219|91361->68220|91391->68221|91549->68350|91579->68351|91609->68352|91679->68393|91709->68394|91739->68395|91897->68524|91927->68525|91957->68526|92019->68559|92049->68560|92079->68561|92237->68690|92267->68691|92297->68692|92363->68729|92393->68730|92426->68734|93979->70257|94010->70258|94060->70278|94091->70279|94613->70771|94644->70772|94675->70774|95025->71142|95084->71171|95194->71252|95244->71284|95286->71286|95336->71306|95424->71364|95455->71365|95504->71384|95761->71612|95778->71618|95812->71629|95844->71632|95861->71638|95897->71651|96008->71732|96039->71733|96088->71752|96154->71788|96185->71789|96236->71810|96316->71860|96347->71861|96400->71884|96669->72124|96686->72130|96720->72141|96752->72144|96769->72150|96805->72163|96918->72246|96949->72247|97000->72268|97035->72273|97066->72274|97119->72297|97399->72548|97416->72554|97450->72565|97482->72568|97499->72574|97535->72587|97649->72671|97680->72672|97729->72691|97760->72692|97809->72711|97875->72747|97906->72748|97957->72769|98032->72814|98063->72815|98116->72838|98385->73078|98402->73084|98436->73095|98468->73098|98485->73104|98521->73117|98634->73200|98665->73201|98716->73222|98751->73227|98782->73228|98835->73251|99115->73502|99132->73508|99166->73519|99198->73522|99215->73528|99251->73541|99365->73625|99396->73626|99445->73645|99476->73646|99525->73665|99591->73701|99622->73702|99673->73723|99756->73776|99787->73777|99840->73800|100109->74040|100126->74046|100160->74057|100192->74060|100209->74066|100245->74079|100358->74162|100389->74163|100440->74184|100475->74189|100506->74190|100559->74213|100839->74464|100856->74470|100890->74481|100922->74484|100939->74490|100975->74503|101089->74587|101120->74588|101169->74607|101200->74608|101249->74627|101315->74663|101346->74664|101397->74685|101473->74731|101504->74732|101557->74755|101826->74995|101843->75001|101877->75012|101909->75015|101926->75021|101962->75034|102075->75117|102106->75118|102157->75139|102192->75144|102223->75145|102276->75168|102556->75419|102573->75425|102607->75436|102639->75439|102656->75445|102692->75458|102806->75542|102837->75543|102886->75562|102917->75563|102966->75582|103032->75618|103063->75619|103114->75640|103365->75861|103396->75862|103447->75883|103716->76123|103733->76129|103767->76140|103799->76143|103816->76149|103852->76162|103965->76245|103996->76246|104047->76267|104082->76272|104113->76273|104164->76294|104438->76539|104455->76545|104489->76556|104521->76559|104538->76565|104574->76578|104688->76662|104719->76663|104768->76682|104799->76683|104863->76714|104923->76744|105101->76892|105132->76893|105211->76942|105242->76943|105301->76972|105431->77072|105462->77073|105513->77094|105544->77095|105593->77114|105624->77115|105672->77133|105703->77134|105747->77148|105831->77202|105862->77203|105892->77204|106836->78118|106867->78119|106918->78140|107075->78267|107106->78268|107140->78272|107171->78273|107222->78294|107320->78362|107351->78363|107398->78380|108487->79439|108518->79440|108593->79485|108624->79486|108672->79504|108750->79552|108781->79553|108832->79574|108912->79624|108943->79625|108991->79643|109057->79679|109088->79680|109139->79701|109345->79877|109376->79878|109455->79927|109486->79928|109537->79949|109605->79987|109636->79988|109691->80013|109722->80014|109765->80027|109825->80057|109856->80058|109903->80123|109950->80140|110036->80197|110086->80229|110128->80231|110159->80233|110209->80254|110239->80255|110271->80258|110481->80439|110498->80445|110532->80456|110564->80459|110581->80465|110617->80478|110709->80541|110739->80542|110769->80543|110803->80548|110833->80549|110865->80552|111007->80665|111037->80666|111071->80671|111287->80858|111304->80864|111338->80875|111370->80878|111387->80884|111423->80897|111517->80962|111547->80963|111579->80966|111613->80971|111643->80972|111677->80977|111909->81180|111926->81186|111960->81197|111992->81200|112009->81206|112045->81219|112140->81285|112170->81286|112200->81287|112230->81288|112289->81314|112337->81332|112479->81444|112510->81445|112554->81459|112602->81477|112633->81478|112680->81495|112762->81547|112793->81548|112827->81553|112906->81603|112923->81609|112973->81636|113228->81862|113244->81867|113281->81881|113377->81948|113393->81953|113428->81965|113520->82028|113536->82033|113571->82045|113671->82116|113687->82121|113731->82142|113961->82343|113978->82349|114038->82385|114296->82647|114343->82664|114450->82742|114467->82747|114503->82759|114695->82922|114711->82927|114758->82951|116311->84474|116328->84479|116365->84504|116392->84507|119351->87511|119406->87536|120075->88175|120092->88180|120128->88192|120362->88396|120379->88401|120425->88423|120657->88625|120674->88630|120719->88651|121155->89057|121172->89062|121209->89075|122331->90257|122406->90302|123274->91141|123290->91146|123326->91158|123445->91248|123461->91253|123507->91275|123625->91364|123641->91369|123686->91390|126047->93722|126096->93753|126138->93755|126209->93797|126273->93850|126314->93851|126390->93897|126670->94148|126686->94153|126720->94164|126751->94166|126767->94171|126805->94186|126973->94333|126988->94337|127029->94338|127104->94383|127399->94649|127415->94654|127449->94665|127480->94667|127496->94672|127534->94687|127714->94834|127786->94873|127851->94908|130767->97824|130818->97879|130869->97931|130921->98036|130976->98061
+                  LINES: 27->2|32->2|33->3|42->12|43->13|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18|48->18|49->19|49->19|49->19|50->20|50->20|50->20|51->21|51->21|51->21|52->22|53->23|53->23|53->23|53->23|54->24|54->24|54->24|55->25|55->25|55->25|56->26|56->26|56->26|57->27|57->27|57->27|58->28|59->29|60->30|62->32|62->32|63->33|65->35|65->35|67->37|67->37|67->37|68->38|70->40|70->40|72->42|72->42|72->42|73->43|75->45|75->45|77->47|77->47|77->47|78->48|82->52|82->52|84->54|87->57|87->57|88->58|90->60|90->60|91->61|92->62|92->62|93->63|95->65|95->65|97->67|98->68|98->68|99->69|101->71|101->71|103->73|103->73|103->73|104->74|106->76|106->76|107->77|107->77|107->77|108->78|112->82|112->82|117->87|117->87|117->87|118->88|127->97|127->97|128->98|128->98|128->98|129->99|131->101|131->101|132->102|133->103|133->103|134->104|136->106|136->106|138->108|141->111|141->111|142->112|146->116|146->116|148->118|148->118|148->118|149->119|157->127|157->127|158->128|158->128|158->128|159->129|168->138|168->138|170->140|170->140|170->140|171->141|174->144|174->144|175->145|175->145|175->145|176->146|178->148|178->148|183->153|208->178|208->178|210->180|211->181|211->181|212->182|214->184|214->184|216->186|217->187|217->187|218->188|219->189|219->189|220->190|221->191|221->191|222->192|223->193|223->193|223->193|228->198|228->198|229->199|233->203|233->203|235->205|240->210|240->210|241->211|244->214|244->214|244->214|244->214|245->215|246->216|246->216|250->220|264->234|264->234|265->235|268->238|268->238|268->238|268->238|269->239|271->241|271->241|272->242|296->266|296->266|297->267|299->269|299->269|300->270|300->270|301->271|303->273|303->273|304->274|304->274|306->276|306->276|308->278|308->278|308->278|309->279|319->289|319->289|320->290|321->291|321->291|321->291|321->291|322->292|323->293|323->293|324->294|341->311|341->311|343->313|343->313|344->314|350->320|350->320|353->323|357->327|357->327|358->328|360->330|360->330|361->331|362->332|362->332|363->333|363->333|363->333|364->334|365->335|365->335|365->335|369->339|369->339|371->341|374->344|374->344|375->345|378->348|378->348|379->349|381->351|381->351|383->353|401->371|401->371|402->372|405->375|405->375|405->375|405->375|406->376|408->378|408->378|409->379|413->383|413->383|414->384|414->384|414->384|415->385|430->400|430->400|430->400|430->400|435->405|435->405|435->405|435->405|436->406|452->422|452->422|452->422|452->422|457->427|457->427|460->430|460->430|461->431|461->431|461->431|463->433|463->433|463->433|464->434|479->449|479->449|479->449|479->449|484->454|484->454|485->455|485->455|485->455|486->456|487->457|487->457|488->458|489->459|489->459|490->460|505->475|505->475|505->475|505->475|510->480|510->480|511->481|511->481|511->481|512->482|527->497|527->497|527->497|527->497|531->501|531->501|534->504|535->505|535->505|537->507|552->522|552->522|552->522|552->522|558->528|558->528|559->529|560->530|560->530|561->531|576->546|576->546|576->546|576->546|580->550|580->550|584->554|587->557|587->557|589->559|604->574|604->574|604->574|604->574|610->580|610->580|611->581|612->582|612->582|613->583|628->598|628->598|628->598|628->598|632->602|632->602|634->604|635->605|635->605|637->607|652->622|652->622|652->622|652->622|658->628|658->628|659->629|660->630|660->630|661->631|676->646|676->646|676->646|676->646|680->650|680->650|681->651|684->654|684->654|685->655|685->655|685->655|689->659|705->675|705->675|705->675|705->675|711->681|711->681|715->685|715->685|729->699|729->699|744->714|744->714|745->715|749->719|749->719|750->720|750->720|751->721|753->723|753->723|754->724|754->724|756->726|756->726|759->729|759->729|759->729|761->731|765->735|765->735|766->736|766->736|766->736|767->737|769->739|769->739|769->739|784->754|784->754|785->755|785->755|787->757|787->757|787->757|788->758|789->759|789->759|790->760|792->762|792->762|792->762|807->777|807->777|808->778|808->778|810->780|810->780|810->780|811->781|812->782|812->782|813->783|815->785|815->785|815->785|830->800|830->800|831->801|831->801|831->801|831->801|831->801|832->802|832->802|832->802|833->803|835->805|835->805|835->805|850->820|850->820|851->821|851->821|853->823|853->823|853->823|854->824|855->825|855->825|855->825|860->830|860->830|861->831|864->834|864->834|865->835|866->836|866->836|867->837|872->842|872->842|873->843|873->843|874->844|874->844|874->844|875->845|878->848|878->848|879->849|879->849|880->850|880->850|883->853|884->854|884->854|885->855|895->865|895->865|896->866|897->867|897->867|898->868|898->868|898->868|899->869|900->870|900->870|901->871|901->871|901->871|902->872|903->873|903->873|905->875|905->875|905->875|906->876|907->877|907->877|910->880|911->881|911->881|912->882|913->883|913->883|916->886|923->893|923->893|923->893|923->893|923->893|930->900|930->900|931->901|931->901|931->901|932->902|935->905|935->905|936->906|937->907|937->907|938->908|938->908|938->908|939->909|940->910|940->910|941->911|941->911|941->911|942->912|943->913|943->913|944->914|944->914|944->914|945->915|946->916|946->916|948->918|950->920|950->920|950->920|950->920|950->920|958->928|958->928|959->929|959->929|959->929|960->930|961->931|961->931|962->932|963->933|963->933|964->934|964->934|964->934|965->935|966->936|966->936|968->938|970->940|970->940|971->941|971->941|971->941|972->942|973->943|973->943|974->944|974->944|974->944|974->944|974->944|974->944|977->947|977->947|979->949|979->949|980->950|980->950|980->950|981->951|981->951|981->951|982->952|982->952|982->952|982->952|982->952|982->952|985->955|985->955|986->956|986->956|986->956|987->957|987->957|987->957|987->957|987->957|987->957|990->960|990->960|991->961|991->961|992->962|993->963|993->963|994->964|994->964|994->964|994->964|994->964|994->964|997->967|997->967|998->968|1009->979|1009->979|1011->981|1013->983|1013->983|1014->984|1017->987|1017->987|1018->988|1018->988|1019->989|1022->992|1022->992|1023->993|1023->993|1024->994|1024->994|1026->996|1028->998|1028->998|1030->1000|1035->1005|1035->1005|1036->1006|1037->1007|1037->1007|1039->1009|1039->1009|1040->1010|1040->1010|1040->1010|1040->1010|1040->1010|1040->1010|1040->1010|1040->1010|1042->1012|1044->1014|1044->1014|1045->1015|1048->1018|1048->1018|1050->1020|1050->1020|1051->1021|1053->1023|1053->1023|1054->1024|1055->1025|1055->1025|1056->1026|1056->1026|1062->1032|1062->1032|1063->1033|1064->1034|1064->1034|1065->1035|1065->1035|1066->1036|1066->1036|1068->1038|1068->1038|1068->1038|1070->1040|1070->1040|1070->1040|1071->1041|1072->1042|1072->1042|1072->1042|1077->1047|1077->1047|1078->1048|1081->1051|1081->1051|1082->1052|1083->1053|1083->1053|1084->1054|1084->1054|1084->1054|1085->1055|1086->1056|1086->1056|1087->1057|1087->1057|1088->1058|1090->1060|1090->1060|1091->1061|1092->1062|1092->1062|1095->1065|1109->1079|1109->1079|1110->1080|1113->1083|1113->1083|1113->1083|1113->1083|1113->1083|1114->1084|1116->1086|1116->1086|1117->1087|1123->1093|1123->1093|1124->1094|1125->1095|1125->1095|1126->1096|1127->1097|1127->1097|1128->1098|1129->1099|1129->1099|1131->1101|1132->1102|1132->1102|1133->1103|1134->1104|1134->1104|1136->1106|1140->1110|1140->1110|1141->1111|1144->1114|1144->1114|1146->1116|1148->1118|1148->1118|1149->1119|1151->1121|1151->1121|1152->1122|1154->1124|1154->1124|1155->1125|1157->1127|1157->1127|1158->1128|1160->1130|1160->1130|1161->1131|1163->1133|1163->1133|1164->1134|1166->1136|1166->1136|1167->1137|1169->1139|1169->1139|1170->1140|1172->1142|1172->1142|1173->1143|1175->1145|1175->1145|1179->1149|1199->1169|1199->1169|1199->1169|1199->1169|1205->1175|1205->1175|1207->1177|1213->1183|1214->1184|1216->1186|1216->1186|1216->1186|1218->1188|1220->1190|1220->1190|1221->1191|1224->1194|1224->1194|1224->1194|1224->1194|1224->1194|1224->1194|1225->1195|1225->1195|1226->1196|1227->1197|1227->1197|1228->1198|1229->1199|1229->1199|1230->1200|1233->1203|1233->1203|1233->1203|1233->1203|1233->1203|1233->1203|1234->1204|1234->1204|1235->1205|1235->1205|1235->1205|1236->1206|1239->1209|1239->1209|1239->1209|1239->1209|1239->1209|1239->1209|1241->1211|1241->1211|1242->1212|1242->1212|1243->1213|1244->1214|1244->1214|1245->1215|1246->1216|1246->1216|1247->1217|1250->1220|1250->1220|1250->1220|1250->1220|1250->1220|1250->1220|1251->1221|1251->1221|1252->1222|1252->1222|1252->1222|1253->1223|1256->1226|1256->1226|1256->1226|1256->1226|1256->1226|1256->1226|1258->1228|1258->1228|1259->1229|1259->1229|1260->1230|1261->1231|1261->1231|1262->1232|1263->1233|1263->1233|1264->1234|1267->1237|1267->1237|1267->1237|1267->1237|1267->1237|1267->1237|1268->1238|1268->1238|1269->1239|1269->1239|1269->1239|1270->1240|1273->1243|1273->1243|1273->1243|1273->1243|1273->1243|1273->1243|1275->1245|1275->1245|1276->1246|1276->1246|1277->1247|1278->1248|1278->1248|1279->1249|1280->1250|1280->1250|1281->1251|1284->1254|1284->1254|1284->1254|1284->1254|1284->1254|1284->1254|1285->1255|1285->1255|1286->1256|1286->1256|1286->1256|1287->1257|1290->1260|1290->1260|1290->1260|1290->1260|1290->1260|1290->1260|1292->1262|1292->1262|1293->1263|1293->1263|1294->1264|1295->1265|1295->1265|1296->1266|1298->1268|1298->1268|1299->1269|1302->1272|1302->1272|1302->1272|1302->1272|1302->1272|1302->1272|1303->1273|1303->1273|1304->1274|1304->1274|1304->1274|1305->1275|1308->1278|1308->1278|1308->1278|1308->1278|1308->1278|1308->1278|1310->1280|1310->1280|1311->1281|1311->1281|1313->1283|1315->1285|1324->1294|1324->1294|1325->1295|1325->1295|1326->1296|1328->1298|1328->1298|1329->1299|1329->1299|1330->1300|1330->1300|1336->1306|1336->1306|1338->1308|1338->1308|1338->1308|1339->1309|1355->1325|1355->1325|1356->1326|1357->1327|1357->1327|1357->1327|1357->1327|1358->1328|1359->1329|1359->1329|1360->1330|1379->1349|1379->1349|1384->1354|1384->1354|1386->1356|1388->1358|1388->1358|1389->1359|1390->1360|1390->1360|1392->1362|1392->1362|1392->1362|1393->1363|1395->1365|1395->1365|1397->1367|1397->1367|1398->1368|1399->1369|1399->1369|1400->1370|1400->1370|1401->1371|1401->1371|1401->1371|1402->1372|1403->1373|1405->1375|1405->1375|1405->1375|1407->1377|1409->1379|1409->1379|1410->1380|1413->1383|1413->1383|1413->1383|1413->1383|1413->1383|1413->1383|1414->1384|1414->1384|1415->1385|1415->1385|1415->1385|1416->1386|1419->1389|1419->1389|1420->1390|1423->1393|1423->1393|1423->1393|1423->1393|1423->1393|1423->1393|1424->1394|1424->1394|1425->1395|1425->1395|1425->1395|1426->1396|1429->1399|1429->1399|1429->1399|1429->1399|1429->1399|1429->1399|1431->1401|1431->1401|1432->1402|1432->1402|1441->1411|1443->1413|1446->1416|1446->1416|1448->1418|1448->1418|1448->1418|1449->1419|1451->1421|1451->1421|1452->1422|1453->1423|1453->1423|1453->1423|1456->1426|1456->1426|1456->1426|1457->1427|1457->1427|1457->1427|1458->1428|1458->1428|1458->1428|1459->1429|1459->1429|1459->1429|1464->1434|1464->1434|1464->1434|1472->1442|1473->1443|1473->1443|1473->1443|1473->1443|1476->1446|1476->1446|1476->1446|1499->1469|1499->1469|1499->1469|1499->1469|1569->1539|1570->1540|1587->1557|1587->1557|1587->1557|1589->1559|1589->1559|1589->1559|1591->1561|1591->1561|1591->1561|1596->1566|1596->1566|1596->1566|1619->1589|1622->1592|1632->1602|1632->1602|1632->1602|1633->1603|1633->1603|1633->1603|1634->1604|1634->1604|1634->1604|1672->1642|1672->1642|1672->1642|1673->1643|1673->1643|1673->1643|1675->1645|1678->1648|1678->1648|1678->1648|1678->1648|1678->1648|1678->1648|1680->1650|1680->1650|1680->1650|1681->1651|1684->1654|1684->1654|1684->1654|1684->1654|1684->1654|1684->1654|1686->1656|1688->1658|1691->1661|1762->1732|1763->1733|1764->1734|1765->1735|1770->1740
                   -- GENERATED --
               */
           

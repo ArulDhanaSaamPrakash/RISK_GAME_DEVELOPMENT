@@ -1,80 +1,63 @@
-2017-10-20 17:03:48,073 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
-2017-10-20 17:03:48,230 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-4 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2017-10-20 17:03:59,873 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:04:02,005 [WARN] from application in ForkJoinPool-1-worker-1 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:04:02,053 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
-2017-10-20 17:04:04,301 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:04:05,185 [INFO] from play.api.libs.concurrent.ActorSystemProvider in ForkJoinPool-1-worker-1 - Starting application default Akka system: application
-2017-10-20 17:04:05,434 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
-2017-10-20 17:04:18,124 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:12:38,999 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-27 - Shutdown application default Akka system: application
-2017-10-20 17:12:39,018 [INFO] from application in application-akka.actor.default-dispatcher-27 - Shutting down connection pool.
-2017-10-20 17:12:39,288 [WARN] from application in application-akka.actor.default-dispatcher-27 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:12:39,563 [WARN] from application in application-akka.actor.default-dispatcher-27 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:12:39,570 [INFO] from application in application-akka.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
-2017-10-20 17:12:39,615 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-27 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:12:39,792 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-27 - Starting application default Akka system: application
-2017-10-20 17:12:39,835 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-27 - Application started (Dev)
-2017-10-20 17:12:39,897 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:20:31,321 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Shutdown application default Akka system: application
-2017-10-20 17:20:31,339 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
-2017-10-20 17:20:31,643 [WARN] from application in application-akka.actor.default-dispatcher-15 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:20:31,750 [WARN] from application in application-akka.actor.default-dispatcher-15 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:20:31,751 [INFO] from application in application-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
-2017-10-20 17:20:31,783 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-15 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:20:31,877 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Starting application default Akka system: application
-2017-10-20 17:20:31,918 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-15 - Application started (Dev)
-2017-10-20 17:20:31,968 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:23:28,471 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Shutdown application default Akka system: application
-2017-10-20 17:23:28,500 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
-2017-10-20 17:23:28,746 [WARN] from application in application-akka.actor.default-dispatcher-13 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:23:28,837 [WARN] from application in application-akka.actor.default-dispatcher-13 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:23:28,839 [INFO] from application in application-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
-2017-10-20 17:23:28,866 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:23:28,984 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Starting application default Akka system: application
-2017-10-20 17:23:29,022 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
-2017-10-20 17:23:29,059 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:26:47,194 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Shutdown application default Akka system: application
-2017-10-20 17:26:47,214 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2017-10-20 17:26:47,528 [WARN] from application in application-akka.actor.default-dispatcher-6 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:26:47,741 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:26:47,743 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2017-10-20 17:26:47,775 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:26:47,898 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Starting application default Akka system: application
-2017-10-20 17:26:48,030 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2017-10-20 17:26:48,129 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:29:09,272 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Shutdown application default Akka system: application
-2017-10-20 17:29:09,290 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2017-10-20 17:29:09,608 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:29:09,739 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:29:09,739 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2017-10-20 17:29:09,795 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:29:09,921 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
-2017-10-20 17:29:09,963 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2017-10-20 17:29:09,996 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:35:07,621 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
-2017-10-20 17:35:07,653 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2017-10-20 17:35:07,963 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:35:08,070 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:35:08,071 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2017-10-20 17:35:08,101 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:35:08,227 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
-2017-10-20 17:35:08,269 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2017-10-20 17:35:08,298 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:44:30,286 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Shutdown application default Akka system: application
-2017-10-20 17:44:30,342 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2017-10-20 17:44:30,596 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:44:30,663 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:44:30,666 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2017-10-20 17:44:30,684 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:44:30,756 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
-2017-10-20 17:44:30,874 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2017-10-20 17:44:30,902 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:45:14,300 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-12 - Cannot invoke the action
+2017-11-09 01:35:19,516 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-11-09 01:35:19,970 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-3 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2017-11-09 01:36:08,462 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 01:36:10,235 [WARN] from application in ForkJoinPool-1-worker-1 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 01:36:10,281 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2017-11-09 01:36:11,824 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 01:36:13,064 [INFO] from play.api.libs.concurrent.ActorSystemProvider in ForkJoinPool-1-worker-1 - Starting application default Akka system: application
+2017-11-09 01:36:13,272 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-11-09 01:36:30,996 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:05:49,216 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-108 - Shutdown application default Akka system: application
+2017-11-09 02:05:49,300 [INFO] from application in application-akka.actor.default-dispatcher-108 - Shutting down connection pool.
+2017-11-09 02:05:49,952 [WARN] from application in application-akka.actor.default-dispatcher-108 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:05:50,103 [WARN] from application in application-akka.actor.default-dispatcher-108 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:05:50,104 [INFO] from application in application-akka.actor.default-dispatcher-108 - Creating Pool for datasource 'default'
+2017-11-09 02:05:50,128 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-108 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:05:50,326 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-108 - Starting application default Akka system: application
+2017-11-09 02:05:50,384 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-108 - Application started (Dev)
+2017-11-09 02:05:50,441 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:07:35,993 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Shutdown application default Akka system: application
+2017-11-09 02:07:36,039 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2017-11-09 02:07:36,135 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:07:36,281 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:07:36,282 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-11-09 02:07:36,311 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:07:36,460 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-11-09 02:07:36,502 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-11-09 02:07:36,560 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:10:54,298 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-18 - Shutdown application default Akka system: application
+2017-11-09 02:10:54,332 [INFO] from application in application-akka.actor.default-dispatcher-18 - Shutting down connection pool.
+2017-11-09 02:10:54,677 [WARN] from application in application-akka.actor.default-dispatcher-18 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:10:54,834 [WARN] from application in application-akka.actor.default-dispatcher-18 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:10:54,834 [INFO] from application in application-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
+2017-11-09 02:10:54,861 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-18 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:10:54,953 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-18 - Starting application default Akka system: application
+2017-11-09 02:10:54,996 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-18 - Application started (Dev)
+2017-11-09 02:10:55,039 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:14:55,785 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-12 - Shutdown application default Akka system: application
+2017-11-09 02:14:55,809 [INFO] from application in application-akka.actor.default-dispatcher-12 - Shutting down connection pool.
+2017-11-09 02:14:56,068 [WARN] from application in application-akka.actor.default-dispatcher-12 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:14:56,177 [WARN] from application in application-akka.actor.default-dispatcher-12 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:14:56,178 [INFO] from application in application-akka.actor.default-dispatcher-12 - Creating Pool for datasource 'default'
+2017-11-09 02:14:56,210 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-12 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:14:56,285 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-12 - Starting application default Akka system: application
+2017-11-09 02:14:56,338 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-12 - Application started (Dev)
+2017-11-09 02:14:56,369 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:17:09,140 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Shutdown application default Akka system: application
+2017-11-09 02:17:09,153 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2017-11-09 02:17:09,362 [WARN] from application in application-akka.actor.default-dispatcher-11 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:17:09,398 [WARN] from application in application-akka.actor.default-dispatcher-11 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:17:09,398 [INFO] from application in application-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
+2017-11-09 02:17:09,415 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-11 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:17:09,451 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Starting application default Akka system: application
+2017-11-09 02:17:09,512 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-11 - Application started (Dev)
+2017-11-09 02:17:09,582 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:17:09,664 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-4 - Cannot invoke the action
 java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -111,9 +94,9 @@ java.lang.NullPointerException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:45:14,363 [ERROR] from application in application-akka.actor.default-dispatcher-12 - 
+2017-11-09 02:17:09,710 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-! @75l8b5lcf - Internal server error, for (POST) [/leave] ->
+! @760jcg85a - Internal server error, for (POST) [/performstep] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -140,9 +123,10 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
 Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -174,20 +158,148 @@ Caused by: java.lang.NullPointerException: null
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
 	... 6 common frames omitted
-2017-10-20 17:46:36,980 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Shutdown application default Akka system: application
-2017-10-20 17:46:37,007 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
-2017-10-20 17:46:37,322 [WARN] from application in application-akka.actor.default-dispatcher-13 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:46:37,390 [WARN] from application in application-akka.actor.default-dispatcher-13 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:46:37,391 [INFO] from application in application-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
-2017-10-20 17:46:37,415 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:46:37,526 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Starting application default Akka system: application
-2017-10-20 17:46:37,584 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
-2017-10-20 17:46:37,616 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:47:12,751 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-2 - Cannot invoke the action
+2017-11-09 02:17:19,375 [ERROR] from controllers.GameController in application-akka.actor.default-dispatcher-5 - Error while starting the game:java.lang.NullPointerException
+2017-11-09 02:20:59,155 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-11-09 02:20:59,175 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2017-11-09 02:20:59,372 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:20:59,429 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:20:59,433 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2017-11-09 02:20:59,460 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:20:59,508 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-11-09 02:20:59,581 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-11-09 02:20:59,607 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:21:13,211 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Shutdown application default Akka system: application
+2017-11-09 02:21:13,228 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2017-11-09 02:21:13,297 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:21:13,399 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:21:13,401 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2017-11-09 02:21:13,424 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:21:13,524 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
+2017-11-09 02:21:13,561 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2017-11-09 02:21:13,606 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:21:51,132 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Shutdown application default Akka system: application
+2017-11-09 02:21:51,145 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2017-11-09 02:21:51,197 [WARN] from application in application-akka.actor.default-dispatcher-6 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:21:51,267 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:21:51,267 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2017-11-09 02:21:51,283 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:21:51,368 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Starting application default Akka system: application
+2017-11-09 02:21:51,426 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2017-11-09 02:21:51,451 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:23:41,429 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Shutdown application default Akka system: application
+2017-11-09 02:23:41,460 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2017-11-09 02:23:41,695 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:23:41,869 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:23:41,873 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-11-09 02:23:41,911 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:23:42,037 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-11-09 02:23:42,079 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-11-09 02:23:42,109 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:25:02,004 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Shutdown application default Akka system: application
+2017-11-09 02:25:02,063 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2017-11-09 02:25:02,162 [WARN] from application in application-akka.actor.default-dispatcher-10 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:25:02,308 [WARN] from application in application-akka.actor.default-dispatcher-10 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:25:02,312 [INFO] from application in application-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2017-11-09 02:25:02,340 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-10 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:25:02,471 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Starting application default Akka system: application
+2017-11-09 02:25:02,507 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
+2017-11-09 02:25:02,537 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:37:43,110 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-50 - Shutdown application default Akka system: application
+2017-11-09 02:37:43,127 [INFO] from application in application-akka.actor.default-dispatcher-50 - Shutting down connection pool.
+2017-11-09 02:37:43,336 [WARN] from application in application-akka.actor.default-dispatcher-50 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:37:43,375 [WARN] from application in application-akka.actor.default-dispatcher-50 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:37:43,375 [INFO] from application in application-akka.actor.default-dispatcher-50 - Creating Pool for datasource 'default'
+2017-11-09 02:37:43,387 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-50 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:37:43,414 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-50 - Starting application default Akka system: application
+2017-11-09 02:37:43,447 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-50 - Application started (Dev)
+2017-11-09 02:37:43,483 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:38:53,967 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Shutdown application default Akka system: application
+2017-11-09 02:38:53,976 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2017-11-09 02:38:54,023 [WARN] from application in application-akka.actor.default-dispatcher-11 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:38:54,067 [WARN] from application in application-akka.actor.default-dispatcher-11 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:38:54,068 [INFO] from application in application-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
+2017-11-09 02:38:54,088 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-11 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:38:54,152 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Starting application default Akka system: application
+2017-11-09 02:38:54,211 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-11 - Application started (Dev)
+2017-11-09 02:38:54,250 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:42:00,968 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Shutdown application default Akka system: application
+2017-11-09 02:42:00,979 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2017-11-09 02:42:01,191 [WARN] from application in application-akka.actor.default-dispatcher-11 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:42:01,236 [WARN] from application in application-akka.actor.default-dispatcher-11 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:42:01,237 [INFO] from application in application-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
+2017-11-09 02:42:01,253 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-11 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:42:01,336 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-11 - Starting application default Akka system: application
+2017-11-09 02:42:01,393 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-11 - Application started (Dev)
+2017-11-09 02:42:01,424 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:50:38,700 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-31 - Shutdown application default Akka system: application
+2017-11-09 02:50:38,724 [INFO] from application in application-akka.actor.default-dispatcher-31 - Shutting down connection pool.
+2017-11-09 02:50:38,969 [WARN] from application in application-akka.actor.default-dispatcher-31 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:50:39,126 [WARN] from application in application-akka.actor.default-dispatcher-31 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:50:39,128 [INFO] from application in application-akka.actor.default-dispatcher-31 - Creating Pool for datasource 'default'
+2017-11-09 02:50:39,171 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-31 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:50:39,239 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-31 - Starting application default Akka system: application
+2017-11-09 02:50:39,307 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-31 - Application started (Dev)
+2017-11-09 02:50:39,334 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 02:58:41,349 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-34 - Shutdown application default Akka system: application
+2017-11-09 02:58:41,372 [INFO] from application in application-akka.actor.default-dispatcher-34 - Shutting down connection pool.
+2017-11-09 02:58:41,630 [WARN] from application in application-akka.actor.default-dispatcher-34 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 02:58:41,705 [WARN] from application in application-akka.actor.default-dispatcher-34 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 02:58:41,706 [INFO] from application in application-akka.actor.default-dispatcher-34 - Creating Pool for datasource 'default'
+2017-11-09 02:58:41,736 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-34 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 02:58:41,818 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-34 - Starting application default Akka system: application
+2017-11-09 02:58:41,857 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-34 - Application started (Dev)
+2017-11-09 02:58:41,880 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:02:04,414 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Shutdown application default Akka system: application
+2017-11-09 03:02:04,441 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2017-11-09 03:02:04,646 [WARN] from application in application-akka.actor.default-dispatcher-10 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:02:04,705 [WARN] from application in application-akka.actor.default-dispatcher-10 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:02:04,706 [INFO] from application in application-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2017-11-09 03:02:04,724 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-10 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:02:04,794 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Starting application default Akka system: application
+2017-11-09 03:02:04,868 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
+2017-11-09 03:02:04,896 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:02:29,584 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Shutdown application default Akka system: application
+2017-11-09 03:02:29,594 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2017-11-09 03:02:29,643 [WARN] from application in application-akka.actor.default-dispatcher-5 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:02:29,684 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:02:29,685 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2017-11-09 03:02:29,703 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:02:29,745 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Starting application default Akka system: application
+2017-11-09 03:02:29,796 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2017-11-09 03:02:29,820 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:05:44,525 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Shutdown application default Akka system: application
+2017-11-09 03:05:44,544 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2017-11-09 03:05:44,820 [WARN] from application in application-akka.actor.default-dispatcher-10 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:05:44,869 [WARN] from application in application-akka.actor.default-dispatcher-10 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:05:44,869 [INFO] from application in application-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2017-11-09 03:05:44,899 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-10 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:05:44,941 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Starting application default Akka system: application
+2017-11-09 03:05:44,991 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
+2017-11-09 03:05:45,039 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:05:48,851 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Shutdown application default Akka system: application
+2017-11-09 03:05:48,862 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2017-11-09 03:05:48,893 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:05:48,916 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:05:48,917 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2017-11-09 03:05:48,924 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:05:48,941 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
+2017-11-09 03:05:48,961 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2017-11-09 03:05:49,192 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:08:17,146 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Shutdown application default Akka system: application
+2017-11-09 03:08:17,167 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
+2017-11-09 03:08:17,416 [WARN] from application in application-akka.actor.default-dispatcher-13 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:08:17,455 [WARN] from application in application-akka.actor.default-dispatcher-13 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:08:17,456 [INFO] from application in application-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
+2017-11-09 03:08:17,481 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:08:17,516 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Starting application default Akka system: application
+2017-11-09 03:08:17,555 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-11-09 03:08:17,604 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:08:17,661 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-2 - Cannot invoke the action
 java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -224,9 +336,9 @@ java.lang.NullPointerException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:12,758 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
+2017-11-09 03:08:17,668 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
 
-! @75l8bcegd - Internal server error, for (POST) [/leave] ->
+! @760jj8mfm - Internal server error, for (POST) [/performstep] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -253,9 +365,10 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
 Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -287,11 +400,57 @@ Caused by: java.lang.NullPointerException: null
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
 	... 6 common frames omitted
-2017-10-20 17:47:26,693 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-11 - Cannot invoke the action
+2017-11-09 03:08:45,584 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Shutdown application default Akka system: application
+2017-11-09 03:08:45,591 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2017-11-09 03:08:45,626 [WARN] from application in application-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:08:45,666 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:08:45,667 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2017-11-09 03:08:45,679 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:08:45,708 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-4 - Starting application default Akka system: application
+2017-11-09 03:08:45,775 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2017-11-09 03:08:45,798 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:11:41,436 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-11-09 03:11:41,453 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2017-11-09 03:11:41,675 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:11:41,703 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:11:41,703 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2017-11-09 03:11:41,726 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:11:41,749 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-11-09 03:11:41,794 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-11-09 03:11:41,827 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:17:26,693 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-24 - Shutdown application default Akka system: application
+2017-11-09 03:17:26,714 [INFO] from application in application-akka.actor.default-dispatcher-24 - Shutting down connection pool.
+2017-11-09 03:17:26,912 [WARN] from application in application-akka.actor.default-dispatcher-24 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:17:26,952 [WARN] from application in application-akka.actor.default-dispatcher-24 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:17:26,953 [INFO] from application in application-akka.actor.default-dispatcher-24 - Creating Pool for datasource 'default'
+2017-11-09 03:17:26,972 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-24 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:17:27,005 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-24 - Starting application default Akka system: application
+2017-11-09 03:17:27,046 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-24 - Application started (Dev)
+2017-11-09 03:17:27,088 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:22:00,837 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Shutdown application default Akka system: application
+2017-11-09 03:22:00,857 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2017-11-09 03:22:01,089 [WARN] from application in application-akka.actor.default-dispatcher-5 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:22:01,120 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:22:01,121 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2017-11-09 03:22:01,149 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:22:01,176 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Starting application default Akka system: application
+2017-11-09 03:22:01,207 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2017-11-09 03:22:01,248 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:24:14,822 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Shutdown application default Akka system: application
+2017-11-09 03:24:14,838 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2017-11-09 03:24:14,890 [WARN] from application in application-akka.actor.default-dispatcher-10 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:24:14,930 [WARN] from application in application-akka.actor.default-dispatcher-10 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:24:14,931 [INFO] from application in application-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2017-11-09 03:24:14,952 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-10 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:24:14,980 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Starting application default Akka system: application
+2017-11-09 03:24:15,020 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
+2017-11-09 03:24:15,059 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:24:15,099 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-7 - Cannot invoke the action
 java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -328,9 +487,9 @@ java.lang.NullPointerException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:26,697 [ERROR] from application in application-akka.actor.default-dispatcher-11 - 
+2017-11-09 03:24:15,105 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
 
-! @75l8bd96f - Internal server error, for (POST) [/leave] ->
+! @760jlb8o8 - Internal server error, for (POST) [/performstep] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -357,9 +516,10 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
 Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -391,11 +551,30 @@ Caused by: java.lang.NullPointerException: null
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
 	... 6 common frames omitted
-2017-10-20 17:47:27,628 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-11 - Cannot invoke the action
+2017-11-09 03:28:56,144 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Shutdown application default Akka system: application
+2017-11-09 03:28:56,170 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
+2017-11-09 03:28:56,381 [WARN] from application in application-akka.actor.default-dispatcher-13 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:28:56,406 [WARN] from application in application-akka.actor.default-dispatcher-13 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:28:56,406 [INFO] from application in application-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
+2017-11-09 03:28:56,435 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:28:56,465 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Starting application default Akka system: application
+2017-11-09 03:28:56,514 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-11-09 03:28:56,548 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:31:32,061 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Shutdown application default Akka system: application
+2017-11-09 03:31:32,078 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
+2017-11-09 03:31:32,336 [WARN] from application in application-akka.actor.default-dispatcher-15 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:31:32,383 [WARN] from application in application-akka.actor.default-dispatcher-15 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:31:32,384 [INFO] from application in application-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
+2017-11-09 03:31:32,405 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-15 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:31:32,447 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Starting application default Akka system: application
+2017-11-09 03:31:32,484 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-15 - Application started (Dev)
+2017-11-09 03:31:32,526 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:31:32,573 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-7 - Cannot invoke the action
 java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -432,9 +611,9 @@ java.lang.NullPointerException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:27,638 [ERROR] from application in application-akka.actor.default-dispatcher-11 - 
+2017-11-09 03:31:32,580 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
 
-! @75l8bdagg - Internal server error, for (POST) [/leave] ->
+! @760jma626 - Internal server error, for (POST) [/performstep] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -461,9 +640,10 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
 Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
+	at utility.StartGameUtility.isGameCompleteForAllPlayers(StartGameUtility.java:459) ~[classes/:na]
+	at controllers.GameController.performStep(GameController.java:565) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.apply(Routes.scala:720) ~[classes/:na]
 	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
@@ -495,643 +675,33 @@ Caused by: java.lang.NullPointerException: null
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
 	... 6 common frames omitted
-2017-10-20 17:47:27,791 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-11 - Cannot invoke the action
-java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:27,801 [ERROR] from application in application-akka.actor.default-dispatcher-11 - 
-
-! @75l8bdamm - Internal server error, for (POST) [/leave] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.7.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	... 6 common frames omitted
-2017-10-20 17:47:27,963 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-11 - Cannot invoke the action
-java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:27,967 [ERROR] from application in application-akka.actor.default-dispatcher-11 - 
-
-! @75l8bdb3a - Internal server error, for (POST) [/leave] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.7.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	... 6 common frames omitted
-2017-10-20 17:47:28,106 [ERROR] from play.core.server.netty.PlayDefaultUpstreamHandler in application-akka.actor.default-dispatcher-9 - Cannot invoke the action
-java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-2017-10-20 17:47:28,112 [ERROR] from application in application-akka.actor.default-dispatcher-9 - 
-
-! @75l8bdb8o - Internal server error, for (POST) [/leave] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.2.jar:2.4.2]
-	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [play-netty-server_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.7.jar:na]
-	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.7.jar:na]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.7.jar:na]
-Caused by: java.lang.NullPointerException: null
-	at controllers.GameController.leaveGame(GameController.java:648) ~[classes/:2.4.2]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(Routes.scala:636) ~[classes/:na]
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.7.jar:na]
-	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.7.jar:na]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.7.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.7.jar:na]
-	... 6 common frames omitted
-2017-10-20 17:48:21,549 [ERROR] from application in New I/O worker #2 - 
-
-! @75l8bgc0k - Internal server error, for (GET) [/assets/stylesheets/demo.css] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:23,337 [ERROR] from application in New I/O worker #3 - 
-
-! @75l8bgf0e - Internal server error, for (GET) [/assets/javascripts/sweetalert.min.js] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:24,308 [ERROR] from application in New I/O worker #1 - 
-
-! @75l8bggbk - Internal server error, for (GET) [/assets/javascripts/jquery-1.9.0.min.js] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:25,138 [ERROR] from application in New I/O worker #4 - 
-
-! @75l8bghee - Internal server error, for (GET) [/assets/stylesheets/sweetalert.css] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:25,959 [ERROR] from application in New I/O worker #6 - 
-
-! @75l8bginh - Internal server error, for (GET) [/assets/stylesheets/animate-custom.css] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:26,602 [ERROR] from application in New I/O worker #5 - 
-
-! @75l8bgjm9 - Internal server error, for (GET) [/assets/stylesheets/style.css] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:27,392 [ERROR] from application in New I/O worker #2 - 
-
-! @75l8bgl0c - Internal server error, for (GET) [/assets/stylesheets/demo.css] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:28,125 [ERROR] from application in New I/O worker #2 - 
-
-! @75l8bgm2m - Internal server error, for (GET) [/assets/javascripts/sweetalert.min.js] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:48:33,939 [ERROR] from application in New I/O worker #2 - 
-
-! @75l8bh4i8 - Internal server error, for (GET) [/logout] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[Not parsed?]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na]
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na]
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na]
-	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na]
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na]
-	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.7.jar:na]
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na]
-	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na]
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65) ~[na:na]
-	at sbt.protocol.TaskResult$class.result(Values.scala:56) ~[na:na]
-	at sbt.protocol.TaskSuccess.result(Values.scala:62) ~[na:na]
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:197) ~[na:na]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.11.jar:na]
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:152) ~[na:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) ~[akka-actor_2.11-2.3.11.jar:na]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) ~[akka-actor_2.11-2.3.11.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na]
-2017-10-20 17:49:12,235 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Shutdown application default Akka system: application
-2017-10-20 17:49:12,262 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
-2017-10-20 17:49:12,525 [WARN] from application in application-akka.actor.default-dispatcher-10 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:49:12,589 [WARN] from application in application-akka.actor.default-dispatcher-10 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:49:12,591 [INFO] from application in application-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
-2017-10-20 17:49:12,617 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-10 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:49:12,669 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-10 - Starting application default Akka system: application
-2017-10-20 17:49:12,700 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-10 - Application started (Dev)
-2017-10-20 17:49:35,093 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:51:08,547 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Shutdown application default Akka system: application
-2017-10-20 17:51:08,562 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2017-10-20 17:51:08,625 [WARN] from application in application-akka.actor.default-dispatcher-5 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:51:08,688 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:51:08,690 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2017-10-20 17:51:08,717 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:51:08,807 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-5 - Starting application default Akka system: application
-2017-10-20 17:51:08,845 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2017-10-20 17:51:08,873 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:53:48,512 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-12 - Shutdown application default Akka system: application
-2017-10-20 17:53:48,530 [INFO] from application in application-akka.actor.default-dispatcher-12 - Shutting down connection pool.
-2017-10-20 17:53:49,133 [WARN] from application in application-akka.actor.default-dispatcher-12 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:53:49,201 [WARN] from application in application-akka.actor.default-dispatcher-12 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:53:49,202 [INFO] from application in application-akka.actor.default-dispatcher-12 - Creating Pool for datasource 'default'
-2017-10-20 17:53:49,227 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-12 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:53:49,278 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-12 - Starting application default Akka system: application
-2017-10-20 17:53:49,312 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-12 - Application started (Dev)
-2017-10-20 17:53:49,342 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 17:55:41,499 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
-2017-10-20 17:55:41,519 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2017-10-20 17:55:41,572 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 17:55:41,662 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 17:55:41,662 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2017-10-20 17:55:41,685 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 17:55:41,747 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
-2017-10-20 17:55:41,798 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2017-10-20 17:55:41,823 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 18:34:32,700 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Shutdown application default Akka system: application
-2017-10-20 18:34:32,728 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
-2017-10-20 18:34:32,844 [WARN] from application in application-akka.actor.default-dispatcher-15 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 18:34:32,905 [WARN] from application in application-akka.actor.default-dispatcher-15 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 18:34:32,906 [INFO] from application in application-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
-2017-10-20 18:34:32,929 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-15 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 18:34:32,987 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-15 - Starting application default Akka system: application
-2017-10-20 18:34:33,022 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-15 - Application started (Dev)
-2017-10-20 18:34:33,051 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 18:36:39,803 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-14 - Shutdown application default Akka system: application
-2017-10-20 18:36:39,828 [INFO] from application in application-akka.actor.default-dispatcher-14 - Shutting down connection pool.
-2017-10-20 18:36:40,059 [WARN] from application in application-akka.actor.default-dispatcher-14 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-10-20 18:36:40,123 [WARN] from application in application-akka.actor.default-dispatcher-14 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-10-20 18:36:40,124 [INFO] from application in application-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
-2017-10-20 18:36:40,156 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-14 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
-2017-10-20 18:36:40,297 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-14 - Starting application default Akka system: application
-2017-10-20 18:36:40,340 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-14 - Application started (Dev)
-2017-10-20 18:36:40,413 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-10-20 21:45:41,978 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-97 - Shutdown application default Akka system: application
-2017-10-20 21:45:41,998 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-97 - Shutting down connection pool.
+2017-11-09 03:31:56,150 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-11-09 03:31:56,164 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2017-11-09 03:31:56,195 [WARN] from application in application-akka.actor.default-dispatcher-9 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:31:56,213 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:31:56,213 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2017-11-09 03:31:56,223 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:31:56,254 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-11-09 03:31:56,276 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-11-09 03:31:56,300 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:31:56,326 [ERROR] from controllers.GameController in application-akka.actor.default-dispatcher-2 - Error while starting the game:java.lang.NullPointerException
+2017-11-09 03:33:57,442 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-8 - Shutdown application default Akka system: application
+2017-11-09 03:33:57,457 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2017-11-09 03:33:57,748 [WARN] from application in application-akka.actor.default-dispatcher-8 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:33:57,765 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:33:57,765 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2017-11-09 03:33:57,779 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:33:57,843 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-8 - Starting application default Akka system: application
+2017-11-09 03:33:57,877 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2017-11-09 03:33:57,909 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:34:01,467 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Shutdown application default Akka system: application
+2017-11-09 03:34:01,485 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2017-11-09 03:34:01,536 [WARN] from application in application-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-11-09 03:34:01,578 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
+2017-11-09 03:34:01,579 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-11-09 03:34:01,597 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1/RISK_GAME_DB
+2017-11-09 03:34:01,632 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-11-09 03:34:01,667 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-11-09 03:34:06,597 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
+2017-11-09 03:35:57,016 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-296 - Shutdown application default Akka system: application
+2017-11-09 03:35:57,030 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-296 - Shutting down connection pool.

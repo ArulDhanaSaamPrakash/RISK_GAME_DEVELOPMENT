@@ -251,7 +251,7 @@ var isRequirementPlanningDone=false;
                             var tempStatus="riskStatus"+obj.riskId;
 
                             appendquery = "<tr><td>" + obj.riskId + "</td><td style='text-align:left'><a id='"+obj.riskId+"' href='#' onclick='onRiskClick(id)' >"+obj.riskDescription+"</a></td><td id="+tempStatus+">" + isCompleted + "</td>" +
-                                    "<td><button "+isDisabled+"" +
+                                    "<td><button style='float:right;background-color: #4CAF50;border-color: #4CAF50;'"+isDisabled+"" +
                                     "  class='open-riskDialog btn btn-warning' href='#riskDialog'" +
                                     "data-toggle='modal' "+
                                     " data-buttondisable='"+buttonDisable+"'" +
@@ -384,7 +384,7 @@ var isRequirementPlanningDone=false;
                                 if(obj.phaseName=="PLANNING"){
                                     result = result + "<button " +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal;height:55px; ' " +
+                                            " style='white-space: normal;height:70px; ' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -405,7 +405,8 @@ var isRequirementPlanningDone=false;
                                 }else{
                                     result = result + "<button disabled" +
                                             " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                            " style='white-space: normal;height:55px; ' " +
+                                 
+                                            " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                             " data-toggle='modal' " +obj.status+
                                             " data-buttondisable='"+buttonDisable+"'" +
@@ -432,7 +433,7 @@ var isRequirementPlanningDone=false;
                               if(obj.phaseName=="PLANNING"){
                                   result = result + "<button " +
                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                          " style='white-space: normal;height:55px; ' " +
+                                          " style='white-space: normal;height:70px; ' " +
                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                           " data-toggle='modal' " +obj.status+
                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -458,7 +459,7 @@ var isRequirementPlanningDone=false;
                                                       {
                                                                     result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -480,7 +481,7 @@ var isRequirementPlanningDone=false;
                                                       else if(obj.phaseName=="IMPLEMENTATION"){
                                                         result = result + "<button disabled" +
                                                                   " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                  " style='white-space: normal;height:55px; ' " +
+                                                                  " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                   " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                   " data-toggle='modal' " +obj.status+
                                                                   " data-buttondisable='"+buttonDisable+"'" +
@@ -505,7 +506,7 @@ var isRequirementPlanningDone=false;
 
                                                                       result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -529,7 +530,7 @@ var isRequirementPlanningDone=false;
                                                                 {
                                                                   result = result + "<button disabled" +
                                                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                          " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                           " data-toggle='modal' " +obj.status+
                                                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -557,7 +558,7 @@ var isRequirementPlanningDone=false;
 
                                                                       result = result + "<button " +
                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                              " style='white-space: normal;height:70px; ' " +
                                                                               " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                               " data-toggle='modal' " +obj.status+
                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -581,7 +582,7 @@ var isRequirementPlanningDone=false;
                                                                 {
                                                                   result = result + "<button disabled" +
                                                                           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                          " style='white-space: normal;height:55px; ' " +
+                                                                         " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                           " data-toggle='modal' " +obj.status+
                                                                           " data-buttondisable='"+buttonDisable+"'" +
@@ -605,7 +606,7 @@ var isRequirementPlanningDone=false;
 
                                                                                           result = result + "<button " +
                                                                                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                                                        " style='white-space: normal;height:55px; ' " +
+                                                                                                        " style='white-space: normal;height:70px; ' " +
                                                                                                             " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                                                         " data-toggle='modal' " +obj.status+
                                                                                                         " data-buttondisable='"+buttonDisable+"'" +
@@ -629,7 +630,7 @@ var isRequirementPlanningDone=false;
                                                                               {
                                                                                 result = result + "<button disabled" +
                                                                                               " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                                                                              " style='white-space: normal;height:55px; ' " +
+                                                                                              " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
                                                                                                   " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
                                                                                               " data-toggle='modal' " +obj.status+
                                                                                               " data-buttondisable='"+buttonDisable+"'" +
@@ -658,7 +659,7 @@ var isRequirementPlanningDone=false;
   //This is else part
   result = result + "<button disabled" +
           " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-          " style='white-space: normal;height:55px; ' " +
+         " style='white-space: normal;height:70px; background-color: #4CAF50 !important;' " +
           " class='open-EditTodo col-md-3 btn btn-success "+setClassColor+"'" +
           " data-toggle='modal' " +obj.status+
           " data-buttondisable='"+buttonDisable+"'" +
@@ -1152,7 +1153,7 @@ isSurpriseCard=true;
 
                                 result = result + "<button " +
                                         " href='#editTodoDialog'  id='" + obj.projectStepId + "'" +
-                                        " style='white-space: normal;height:55px ' " +
+                                        " style='white-space: normal;height:70px;padding-bottom: 10px; ' " +
                                         " class='open-EditTodo col-md-3 btn btn-success " + setClassColor + "'" +
                                         " data-toggle='modal' " + obj.status +
                                         " data-buttondisable='" + buttonDisable + "'" +
@@ -1168,7 +1169,7 @@ isSurpriseCard=true;
 //                                            "data-todo='{'id':12,'todo':'xyz'}'"+
                                         "title='Budget :" + obj.budget + "  Level: " + obj.level + "  Personnel: " + obj.personnel + "'" +
                                         "  id='todolink'>" + obj.projectStepName +
-                                        "</button><div class='col-md-1' style='height:65px;'></div>";
+                                        "</button><div class='col-md-1' style='height:70px;padding-bottom: 80px; '></div>";
 //                                    "</button><div class='col-md-1' style='height:90px;"+setColor+"'"></div>";
 
                             }
@@ -1188,7 +1189,7 @@ isSurpriseCard=true;
                   if(count==1)
                   {
                   result = result+ "<button class='col-md-3 btn btn-warning' " +
-                      "style='background-color: #DB8B00 !important;'" +
+                      "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                       "onclick='onPhaseClick(id)' " +
                       "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                   }
@@ -1197,13 +1198,13 @@ isSurpriseCard=true;
                     if(isRequirementPlanningDone)
                     {
                       result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                     }
                     else {
                       result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
                             "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
 
@@ -1214,13 +1215,13 @@ isSurpriseCard=true;
                     if(isDesignPlanningDone)
                     {
                       result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                     }
                     else {
                       result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
                             "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
 
@@ -1231,13 +1232,13 @@ isSurpriseCard=true;
                     if(isImplementationPlanningDone)
                     {
                       result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                     }
                     else {
                       result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
                             "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
 
@@ -1248,13 +1249,13 @@ isSurpriseCard=true;
                     if(isTestingPlanningDone)
                     {
                       result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                     }
                     else {
                       result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                            "style='background-color: #DB8B00 !important;'" +
+                            "style='background-color: #4CAF50 !important;'" +
                             "onclick='onPhaseClick(id)' " +
                             "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
 
@@ -1266,13 +1267,13 @@ isSurpriseCard=true;
                     if(isImplementedBeforeProduction && isProductionPlanningDone)
                     {
                     result = result+ "<button class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50;border-color: #4CAF50;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
                     }
                     else {
                     result = result+ "<button disabled='true' class='col-md-3 btn btn-warning' " +
-                          "style='background-color: #DB8B00 !important;'" +
+                          "style='background-color: #4CAF50 !important;'" +
                           "onclick='onPhaseClick(id)' " +
                           "id='@phases.getPhaseId'>@phases.getPhaseName</button><div class='col-md-1' style='height: 40px;'> </div>";
 
@@ -1625,7 +1626,7 @@ else {
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" onclick="onProjectStepTabClick()" href="#projectSteps">Project Steps</a></li>
                         <li><a data-toggle="tab" href="#riskDashboard" onclick="onRiskDashboardClick()">Risk Dashboard</a></li>
-                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)" style="float:right">Skip Turn</button>
+                        <button class="btn btn-danger" id="btnSkip" onclick="onPerformStep(id)" style="float:right;background-color: #4CAF50;border-color: #4CAF50;">Skip Turn</button>
                         <button style="display: none" class="btn btn-danger" id="btnSkipTimeout" onclick="onPerformStep(id)">Timeout button</button>
 
                     </ul>
@@ -1699,10 +1700,10 @@ else {
                                 </tbody>
                             </table>
 
-                            <br/>
+                            
                             <div id="stepForRisk"></div>
 
-                            <br/><br/>
+                            <br/>
                             <div id="risksteps"></div>
 
                         </div>
