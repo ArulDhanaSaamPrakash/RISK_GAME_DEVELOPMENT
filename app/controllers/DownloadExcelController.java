@@ -36,6 +36,7 @@ public class DownloadExcelController extends Controller {
     public HSSFWorkbook wb = new HSSFWorkbook();
     public HSSFSheet sheet = wb.createSheet("GameReport");
     public HSSFSheet sheetDesc = wb.createSheet("GameDescription");
+    public HSSFSheet sheetRiskDesc = wb.createSheet("RiskDescription");
     public int index = 1,indexDesc = 0;
     
     public static Result exportReports(String exportReportInput)
@@ -49,6 +50,7 @@ public class DownloadExcelController extends Controller {
                   Controller.response().setHeader("Content-Disposition","attachment;filename="+filename);
                   dec.downloadExcel(input);
                   dec.downloadExcelForRiskProblem(input);
+                  dec.fillRiskInformation();
                   
         }catch (Exception e){
                 e.getMessage();
@@ -116,6 +118,10 @@ public class DownloadExcelController extends Controller {
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc.createCell((short) 0).setCellValue("Timeouts");
                     rowheadDesc.createCell((short) 1).setCellValue("Total number of time outs in the game");
+                    rowheadDesc = sheetDesc.createRow((short) indexDesc++);
+                    rowheadDesc.createCell((short) 0).setCellValue("Number of moves played");
+                    rowheadDesc.createCell((short) 1).setCellValue("Total number of moves made in the game");
+                    
                     indexDesc++;
                     
                     /* Database query for fetching the game configurations */
@@ -127,7 +133,6 @@ public class DownloadExcelController extends Controller {
                              " and GAME.GAME_ID=GAME_STATS_V.GAME_ID "+
                              "GROUP BY 1,2,time_for_each_move,4";
                              
-                    System.out.println(strQuery);
                     st=con.createStatement();
                     rs=st.executeQuery(strQuery);
                     
@@ -151,13 +156,13 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 4).setCellValue("Total_Time");
                     rowhead.createCell((short) 5).setCellValue("Skipped_Turn");
                     rowhead.createCell((short) 6).setCellValue("Timeouts");
+                    rowhead.createCell((short) 7).setCellValue("Number of moves Played");
                     index++;
                     
                     /* Database query for fetching all the game player id's associated with the gameid*/               
                     strQuery = "SELECT DISTINCT (GAME_PLAYER_ID) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT " + 
                                "WHERE GAME_PLAYER_ID LIKE \"%"+input+"\" ";
                     
-                    System.out.println("***********"+strQuery);
                     rs=st.executeQuery(strQuery);
                
                     /* Retrive all the game player ids and add it to the players list*/
@@ -177,7 +182,6 @@ public class DownloadExcelController extends Controller {
                     		   "FROM RISK_GAME_DB.GAME_STATS_V GAME_STATS_V " +
                     		   "WHERE GAME_PLAYER_ID like \"%" + players.get(i) + "\"";
                     		
-                    System.out.println("######"+strQuery);
                     rs=st.executeQuery(strQuery);
                  
                     /* Retrieve all the metrics like average, minimum, maximum, total time and skip turns*/
@@ -204,6 +208,19 @@ public class DownloadExcelController extends Controller {
                     /* Retrieve timeouts information*/
                     while (rs.next()) {
                             row.createCell((short) 6).setCellValue(rs.getString(1));
+                    }
+                    
+                    /* Database query to get the Number of moves played*/
+                    strQuery = "select max(turn_no) " +
+                    		   "FROM RISK_GAME_DB.game_moves_snapshot " +
+                    		   "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
+                    		   "and move_type != 'production' ";
+                    		
+                    rs=st.executeQuery(strQuery);
+                 
+                    /* Retrieve timeouts information*/
+                    while (rs.next()) {
+                            row.createCell((short) 7).setCellValue(rs.getString(1));
                     }
             }
                 wb.write(GameReport);
@@ -266,8 +283,37 @@ public class DownloadExcelController extends Controller {
                     	players.add(rs.getString(1));
                     }
                     
-                	/* Setting the headings for the report*/
-                	HSSFRow rowhead = sheet.createRow((short) index);
+                	for(int i=0;i<players.size();i++,index++){
+                    
+                    HSSFRow rowhead;
+                    rowhead = sheet.createRow((short) index++);
+                    rowhead.createCell((short) 0).setCellValue("Game_Player_Id");
+                    rowhead.createCell((short) 1).setCellValue("Risk_ID");
+                    rowhead.createCell((short) 2).setCellValue("Status");
+                    rowhead.createCell((short) 3).setCellValue("RiskDescription");
+                    
+                    strQuery = "SELECT game_player_id,config_risk_mapping.risk_id, "+
+                               "CASE WHEN status=1 THEN \"MITIGATED\" ELSE \"NOT MITIGATED\" END AS STATUS, description "+
+                               "FROM RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
+                               "INNER JOIN RISK_GAME_DB.config_risk_mapping config_risk_mapping "+
+                               "ON config_risk_mapping.config_risk_mapping_id=GAME_PLAYER_RISK_STATUS.risk_id "+
+                               "AND game_player_id =" +"\"" + players.get(i) + "\" " +
+                               "INNER JOIN RISK_GAME_DB.risks RISKS "+
+                               "ON RISKS.risk_id=config_risk_mapping.risk_id "+
+                               "order by LENGTH(config_risk_mapping.risk_id), config_risk_mapping.risk_id ";
+                    
+                    rs=st.executeQuery(strQuery);
+                 
+                    while (rs.next()) {
+ 
+                    	    row = sheet.createRow((short) index);
+                    	    row.createCell((short) 0).setCellValue(rs.getString(1));
+                            row.createCell((short) 1).setCellValue(rs.getString(2));
+                            row.createCell((short) 2).setCellValue(rs.getString(3));
+                            row.createCell((short) 3).setCellValue(rs.getString(4));
+                            index++;
+                    }
+                    
                     rowhead = sheet.createRow((short) index);
                     rowhead.createCell((short) 0).setCellValue("Game_Player_Id");
                     rowhead.createCell((short) 1).setCellValue("Risk_ID");
@@ -278,8 +324,6 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 6).setCellValue("OOPS_Avoided");
                     rowhead.createCell((short) 7).setCellValue("OOPS_Avoided_Turn_No");
                     index++;
-                    
-                    for(int i=0;i<players.size();i++){
                 	
                 	/* Database query to retrieve the results of risk vs problem*/
                     strQuery = "SELECT  GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.risk_id, "+
@@ -371,11 +415,56 @@ public class DownloadExcelController extends Controller {
                     st.close();
                     rs.close();
                     con.close();
-                    wb.close();
                     return "File downloaded successfully";
             }catch (Exception e) {
                   e.printStackTrace();
                  return "File not downloaded successfully";
             }
       }
+      
+      public String fillRiskInformation(){
+           
+            String strQuery;
+            Connection con;
+            int indexRisk=1;
+            try {
+      
+            	con = DB.getConnection();
+            	Statement st;
+                ResultSet rs;
+            	    
+            	HSSFRow rowhead = sheetRiskDesc.createRow((short) 0);
+                rowhead.createCell((short) 0).setCellValue("RiskId");
+                rowhead.createCell((short) 1).setCellValue("RiskDescription");
+                rowhead.createCell((short) 2).setCellValue("Budget");
+                rowhead.createCell((short) 3).setCellValue("Personnel");
+                    
+                /* Database query for fetching risk related information */
+                strQuery="select * from RISK_GAME_DB.risks order by LENGTH(risk_id), risk_id";
+                             
+                st=con.createStatement();
+                rs=st.executeQuery(strQuery);
+                    
+                /* Retrive the data related to risks*/
+                HSSFRow row;
+                while (rs.next()) {
+                    	row = sheetRiskDesc.createRow((short) indexRisk);
+                    	row.createCell((short) 0).setCellValue(rs.getString(1));
+                        row.createCell((short) 1).setCellValue(rs.getString(2));
+                        row.createCell((short) 2).setCellValue(rs.getString(3));
+                        row.createCell((short) 3).setCellValue(rs.getString(4));
+                        indexRisk++;
+                }
+                wb.write(GameReport);
+                st.close();
+                rs.close();
+                con.close();
+                wb.close();
+                return "File downloaded successfully";
+            }catch (Exception e) {
+                  e.printStackTrace();
+                 return "File not downloaded successfully";
+            }
+      }
+    
 }
