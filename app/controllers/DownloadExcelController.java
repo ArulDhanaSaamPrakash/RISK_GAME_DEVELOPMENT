@@ -243,7 +243,7 @@ public class DownloadExcelController extends Controller {
             	    ArrayList<String> players = new ArrayList<String>();
             	    con = DB.getConnection();
             	    Statement st;
-                    ResultSet rs;
+                    ResultSet rs; 
             	    
                     HSSFRow rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc = sheetDesc.createRow((short) indexDesc++);
