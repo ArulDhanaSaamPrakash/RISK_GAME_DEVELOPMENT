@@ -37,7 +37,7 @@ public class DownloadExcelController extends Controller {
     public HSSFSheet sheet = wb.createSheet("GameReport");
     public HSSFSheet sheetDesc = wb.createSheet("GameDescription");
     public HSSFSheet sheetRiskDesc = wb.createSheet("RiskDescription");
-    public int index = 1,indexDesc = 0;
+    public int index = 0,indexDesc = 0;
     
     public static Result exportReports(String exportReportInput)
     {
@@ -69,13 +69,17 @@ public class DownloadExcelController extends Controller {
             	    Statement st;
                     ResultSet rs;
             	    
-            	    HSSFRow rowhead = sheet.createRow((short) 0);
+            	    HSSFRow rowhead = sheet.createRow((short) index);
+                    rowhead.createCell((short) 0).setCellValue("Game Configuration");
+                    index++;
+            	    rowhead = sheet.createRow((short) index);
                     rowhead.createCell((short) 0).setCellValue("Game_Id");
                     rowhead.createCell((short) 1).setCellValue("Start_Time");
                     rowhead.createCell((short) 2).setCellValue("End_Time");
                     rowhead.createCell((short) 3).setCellValue("Max_Time");
                     rowhead.createCell((short) 4).setCellValue("Steps_For_Each_Player");
                     rowhead.createCell((short) 5).setCellValue("Number_Of_Players");
+                    index++;
                     
                     HSSFRow rowheadDesc = sheetDesc.createRow((short) indexDesc++);
                     rowheadDesc.createCell((short) 0).setCellValue("Game_Id");
@@ -145,9 +149,12 @@ public class DownloadExcelController extends Controller {
                             row.createCell((short) 3).setCellValue(rs.getString(4));
                             row.createCell((short) 4).setCellValue(rs.getString(5));
                             row.createCell((short) 5).setCellValue(rs.getString(6));
-                            index=index+3;
+                            index=index+2;
                     }
                     
+                    rowhead = sheet.createRow((short) index++);
+                    rowhead.createCell((short) 0).setCellValue("Game Statistics");
+                   
                     rowhead = sheet.createRow((short) index);
                     rowhead.createCell((short) 0).setCellValue("PlayerId");
                     rowhead.createCell((short) 1).setCellValue("Avg_Time");
@@ -287,6 +294,8 @@ public class DownloadExcelController extends Controller {
                     
                     HSSFRow rowhead;
                     rowhead = sheet.createRow((short) index++);
+                    rowhead.createCell((short) 0).setCellValue("Player Risks");
+                    rowhead = sheet.createRow((short) index++);
                     rowhead.createCell((short) 0).setCellValue("Game_Player_Id");
                     rowhead.createCell((short) 1).setCellValue("Risk_ID");
                     rowhead.createCell((short) 2).setCellValue("Status");
@@ -314,7 +323,10 @@ public class DownloadExcelController extends Controller {
                             index++;
                     }
                     
-                    rowhead = sheet.createRow((short) index);
+                    index++;
+                    rowhead = sheet.createRow((short) index++);
+                    rowhead.createCell((short) 0).setCellValue("Player Risk Events");
+                    rowhead = sheet.createRow((short) index++);
                     rowhead.createCell((short) 0).setCellValue("Game_Player_Id");
                     rowhead.createCell((short) 1).setCellValue("Risk_ID");
                     rowhead.createCell((short) 2).setCellValue("Status");
@@ -323,8 +335,7 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 5).setCellValue("OOPS_Generated_Turn_No");
                     rowhead.createCell((short) 6).setCellValue("OOPS_Avoided");
                     rowhead.createCell((short) 7).setCellValue("OOPS_Avoided_Turn_No");
-                    index++;
-                	
+                    
                 	/* Database query to retrieve the results of risk vs problem*/
                     strQuery = "SELECT  GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID,CONFIG_RISK_MAPPING.risk_id, "+
                                "CASE "+
@@ -407,7 +418,7 @@ public class DownloadExcelController extends Controller {
                             row.createCell((short) 5).setCellValue(rs.getString(6));
                             row.createCell((short) 6).setCellValue(rs.getString(7));
                             row.createCell((short) 7).setCellValue(rs.getString(8));
-                            index++;
+                            index=index+2;
                     }
                    
             }       
@@ -458,7 +469,7 @@ public class DownloadExcelController extends Controller {
                 wb.write(GameReport);
                 st.close();
                 rs.close();
-                con.close();
+                // con.close();
                 wb.close();
                 return "File downloaded successfully";
             }catch (Exception e) {
@@ -466,5 +477,5 @@ public class DownloadExcelController extends Controller {
                  return "File not downloaded successfully";
             }
       }
-    
+      
 }
