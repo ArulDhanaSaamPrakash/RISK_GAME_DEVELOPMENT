@@ -157,10 +157,10 @@ public class DownloadExcelController extends Controller {
                    
                     rowhead = sheet.createRow((short) index);
                     rowhead.createCell((short) 0).setCellValue("PlayerId");
-                    rowhead.createCell((short) 1).setCellValue("Avg_Time");
-                    rowhead.createCell((short) 2).setCellValue("Max_Time");
-                    rowhead.createCell((short) 3).setCellValue("Min_Time");
-                    rowhead.createCell((short) 4).setCellValue("Total_Time");
+                    rowhead.createCell((short) 1).setCellValue("Avg_Time (sec)");
+                    rowhead.createCell((short) 2).setCellValue("Max_Time (sec)");
+                    rowhead.createCell((short) 3).setCellValue("Min_Time (sec)");
+                    rowhead.createCell((short) 4).setCellValue("Total_Time (sec)");
                     rowhead.createCell((short) 5).setCellValue("Skipped_Turn");
                     rowhead.createCell((short) 6).setCellValue("Timeouts");
                     rowhead.createCell((short) 7).setCellValue("Number of moves Played");
@@ -227,7 +227,7 @@ public class DownloadExcelController extends Controller {
                  
                     /* Retrieve timeouts information*/
                     while (rs.next()) {
-                            row.createCell((short) 7).setCellValue(rs.getString(1));
+                            row.createCell((short) 7).setCellValue(Integer.parseInt(rs.getString(1))+1);
                     }
             }
                 wb.write(GameReport);
