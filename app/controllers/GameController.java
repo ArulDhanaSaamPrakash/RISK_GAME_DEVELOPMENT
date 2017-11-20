@@ -210,7 +210,7 @@ public class GameController extends Controller {
         //If host of the game tries to join the game, REJECT THE request
         logger.log(Level.FINE, "Checking if requested person is host again");
         if(StartGameUtility.isHost(gameId,userName)){
-            result.put(Constants.ERRORMSG,"You cannot do that as host. Contact system admin");
+            result.put(Constants.ERRORMSG,"You cannot join the game again once the host has left");
             result.put(Constants.MESSAGE, Constants.FAILURE);
             return ok(result);
 

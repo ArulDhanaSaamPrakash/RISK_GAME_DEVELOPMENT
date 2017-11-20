@@ -90,7 +90,7 @@ public class DashboardController extends Controller {
     public static Result activeGames(){
 
         String query = "select status,start_time,isTimeBound,game_id,first_name,last_name,G.host from GAME G " +
-                "join USERS U on U.player_id = G.host where end_time is null";
+                "join USERS U on U.player_id = G.host where status ='HOSTED'";
         logger.log(Level.FINE,"Inside active games");
         Connection connection = DB.getConnection();
         PreparedStatement stmt = null;
