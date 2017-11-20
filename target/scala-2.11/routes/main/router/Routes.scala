@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Fri Oct 20 13:05:29 EDT 2017
+// @DATE:Thu Nov 09 13:59:54 EST 2017
 
 package router
 
@@ -66,7 +66,6 @@ class Routes extends GeneratedRouter {
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """riskdashboard""", """controllers.GameController.getRiskCards()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """risk""", """controllers.GameController.getMitigationSteps()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """exportReports""", """controllers.DownloadExcelController.exportReports(exportReportInput:String)"""),
-    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """exportRiskProblemReport""", """controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -550,23 +549,6 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:47
-  private[this] lazy val controllers_DownloadExcelController_exportRiskProblemReport28_route: Route.ParamsExtractor = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("exportRiskProblemReport")))
-  )
-  private[this] lazy val controllers_DownloadExcelController_exportRiskProblemReport28_invoker = createInvoker(
-    controllers.DownloadExcelController.exportRiskProblemReport(fakeValue[String]),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.DownloadExcelController",
-      "exportRiskProblemReport",
-      Seq(classOf[String]),
-      "GET",
-      """""",
-      this.prefix + """exportRiskProblemReport"""
-    )
-  )
-
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -736,12 +718,6 @@ class Routes extends GeneratedRouter {
     case controllers_DownloadExcelController_exportReports27_route(params) =>
       call(params.fromQuery[String]("exportReportInput", None)) { (exportReportInput) =>
         controllers_DownloadExcelController_exportReports27_invoker.call(controllers.DownloadExcelController.exportReports(exportReportInput))
-      }
-  
-    // @LINE:47
-    case controllers_DownloadExcelController_exportRiskProblemReport28_route(params) =>
-      call(params.fromQuery[String]("exportRiskProblemReport", None)) { (exportRiskProblemReport) =>
-        controllers_DownloadExcelController_exportRiskProblemReport28_invoker.call(controllers.DownloadExcelController.exportRiskProblemReport(exportRiskProblemReport))
       }
   }
 }

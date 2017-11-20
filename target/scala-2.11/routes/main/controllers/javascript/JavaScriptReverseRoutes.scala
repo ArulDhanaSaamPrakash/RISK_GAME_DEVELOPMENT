@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Fri Oct 20 13:05:29 EDT 2017
+// @DATE:Thu Nov 09 13:59:54 EST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -346,16 +346,6 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:47
-    def exportRiskProblemReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DownloadExcelController.exportRiskProblemReport",
-      """
-        function(exportRiskProblemReport) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "exportRiskProblemReport" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("exportRiskProblemReport", exportRiskProblemReport)])})
-        }
-      """
-    )
   
     // @LINE:46
     def exportReports: JavaScriptReverseRoute = JavaScriptReverseRoute(

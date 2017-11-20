@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Fri Oct 20 13:05:29 EDT 2017
+// @DATE:Thu Nov 09 13:59:54 EST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -237,12 +237,6 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:47
-    def exportRiskProblemReport(exportRiskProblemReport:String): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "exportRiskProblemReport" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("exportRiskProblemReport", exportRiskProblemReport)))))
-    }
   
     // @LINE:46
     def exportReports(exportReportInput:String): Call = {
