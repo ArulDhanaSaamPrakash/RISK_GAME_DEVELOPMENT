@@ -16,3 +16,25 @@
 *.png
 
 target/streams/compile/playRoutes/$global/streams/op-cache
+
+*.log
+
+*.properties
+
+*.xml
+
+*.class
+
+*.scala
+
+target/streams/web-assets/webExportedDirectory/$global/streams/sync-mappings
+
+target/streams/web-assets/assets/$global/streams/sync-mappings
+
+*.11
+
+target/streams/compile/compileIncremental/$global/streams/export
+
+*.log
+
+*.xml

@@ -4,7 +4,7 @@
 		module="risk_game_development-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171109135926"
+		publication="20171120133112"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
