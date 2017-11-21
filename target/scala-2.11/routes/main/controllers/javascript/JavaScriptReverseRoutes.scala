@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Thu Nov 09 13:59:54 EST 2017
+// @DATE:Mon Nov 20 23:31:20 EST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -239,6 +239,26 @@ package controllers.javascript {
   
   }
 
+  // @LINE:47
+  class ReverseDBController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:47
+    def DeleteAllGameData: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DBController.DeleteAllGameData",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteAllGames"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:12
   class ReverseLoginController(_prefix: => String) {
 
@@ -253,6 +273,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:48
+    def speciallogout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.speciallogout",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "speciallogout"})
         }
       """
     )

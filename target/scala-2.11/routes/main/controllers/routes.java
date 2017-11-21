@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Thu Nov 09 13:59:54 EST 2017
+// @DATE:Mon Nov 20 23:31:20 EST 2017
 
 package controllers;
 
@@ -13,6 +13,7 @@ public class routes {
   public static final controllers.ReverseRegisterController RegisterController = new controllers.ReverseRegisterController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseGameController GameController = new controllers.ReverseGameController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseDashboardController DashboardController = new controllers.ReverseDashboardController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseDBController DBController = new controllers.ReverseDBController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLoginController LoginController = new controllers.ReverseLoginController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseDownloadExcelController DownloadExcelController = new controllers.ReverseDownloadExcelController(RoutesPrefix.byNamePrefix());
@@ -23,6 +24,7 @@ public class routes {
     public static final controllers.javascript.ReverseRegisterController RegisterController = new controllers.javascript.ReverseRegisterController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseGameController GameController = new controllers.javascript.ReverseGameController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseDashboardController DashboardController = new controllers.javascript.ReverseDashboardController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseDBController DBController = new controllers.javascript.ReverseDBController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLoginController LoginController = new controllers.javascript.ReverseLoginController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseDownloadExcelController DownloadExcelController = new controllers.javascript.ReverseDownloadExcelController(RoutesPrefix.byNamePrefix());

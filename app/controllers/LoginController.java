@@ -22,6 +22,27 @@ import static play.mvc.Results.ok;
 import utility.Constants;
 import utility.GameUtility;
 import views.html.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.*;
+import play.Play;
+import play.mvc.BodyParser;
+import play.mvc.Controller;
+import play.mvc.Http;
+import play.mvc.Result;
+import utility.Constants;
+import utility.GameUtility;
+import utility.StartGameUtility;
+import play.db.DB;
+import java.sql.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by srijithkarippure on 9/25/16.
@@ -107,6 +128,59 @@ public class LoginController extends Controller{
             return ok(views.html.index.render());
         }
     }
+
+/**
+     * Method called when speciallogout route is hit
+     * @return
+     */
+ @BodyParser.Of(BodyParser.Json.class)
+    public static Result speciallogout(){
+JsonNode data = request().body().asJson();
+        if(session().isEmpty()){
+            logger.log(Level.FINE, "Please login to use this logout function");
+            return badRequest("You are not logged in to perform this action");
+        }
+        else{
+           
+        Connection conn = null;
+        PreparedStatement checkStmt = null;
+        Statement stmt = null;
+        String game_ID =data.get("gameID").asText();
+        try {
+              conn = DB.getConnection();
+              conn.setAutoCommit(false);
+              String  query = "DELETE FROM RISK_GAME_DB.GAME WHERE game_id='"+game_ID+"'";
+               String  query1 = "DELETE FROM RISK_GAME_DB.GAME_PLAYER WHERE game_id='"+game_ID+"'";
+              stmt=conn.createStatement();
+              stmt.addBatch(query1);
+              stmt.addBatch(query);
+              
+              stmt.executeBatch(); // Returns 1 if successfully inserted
+              conn.commit();
+              System.out.println("I am here ");
+
+              logger.log(Level.FINE, "Username:" + session().get(Constants.USERNAME));
+            logger.log(Level.FINE, "Successfully logged out");
+              return ok("sucess");
+        }
+        catch(Exception e){
+            logger.log(Level.SEVERE,"Error while DELETING DATA FROM DATABASE:"  +  e);
+            return ok(views.html.index.render()); //Even during Failure We go out. 
+        }
+        finally {
+            if(stmt!=null)
+                try {
+                    stmt.close();
+                    conn.close();
+                } catch (SQLException e) {
+                    logger.log(Level.SEVERE, "Error while closing stmt" + e);
+                }
+        }
+
+        }
+    }
+
+
 
     /**
      * Used for testing purpose.

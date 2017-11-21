@@ -54,23 +54,31 @@
               //obj.istimebound = "Yes";
               obj.istimebound = obj.istimebound == "1" ? "Yes" : "No";
               // $('#myTable').append('<tr><td>my data</td><td>more data</td></tr>');
-              var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>Join</a></td></tr>";
+              var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>Join</a></td></tr>";
               //$('#grid-basic tr:last').after(appendquery);
               //$('#grid-basic').find(tbody).append(appendquery);
               $("#grid-basic tbody").append(appendquery);
             }
 
             $("#grid-basic").bootgrid({
-              formatters: {
-                "link": function(column, row)
-                {
-                  // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
-                  return "<a href=\"#\" onclick='redirectFromHere(\"" + row.gameid + "\")'>" + "View" + "</a>";
-                }
-              },
-              rowCount: [5,10,-1],
-              columnSelection: false
-            });
+                      formatters: {
+                          "link1": function(column, row)
+                          {
+                              // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                              return "<a href=\"#\" onclick='Showmodel(\"" + row.gameid + "\",\"" + row.status + "\",\"" + row.istimebound + "\")'>" + "Join" + "</a>";
+                          },
+                          "link": function(column, row)
+                            {
+                            // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                            return "<a href=\"#\" onclick='redirectFromHere(\"" + row.gameid + "\")'>" + "View" + "</a>";
+                             }
+                      },
+                      rowCount: [5,10,-1],
+                      columnSelection: false
+                  });
+
+
+
           },
           error : function(data) {
             alert("error");
@@ -171,49 +179,49 @@
 
       var observer;
 
-      function joingame() {
+    function joingame() {
         // debugger;var gameid = $('input[name=TimeBound]:checked').val();
         //debugger;
         var gameid = $( "#mgameid" ).val();
         var isobserver = $("#isobserver").val();
 
         var obj = {
-          'gameid': gameid,
-          'isobserver': isobserver == "1" ? true : false
+            'gameid': gameid,
+            'isobserver': isobserver == "1" ? true : false
         };
 
         $.ajax({
-          type : 'POST',
-          url : '@routes.GameController.joinGame()',
-          // data : JSON.stringify(obj),
-          data: JSON.stringify(obj),
-          // dataType: 'json',
-          contentType : 'application/json',
-          success : function(data) {
-            if(data.message == "success")
-            {
-              $("#jgameid").val(gameid);
-              $('#hdn_observer').val(isobserver);
-              $("#joingameform").submit();
+            type : 'POST',
+            url : '@routes.GameController.joinGame()',
+            // data : JSON.stringify(obj),
+            data: JSON.stringify(obj),
+            // dataType: 'json',
+            contentType : 'application/json',
+            success : function(data) {
+                if(data.message == "success")
+                {
+                    $("#jgameid").val(gameid);
+                    $('#hdn_observer').val(isobserver);
+                    $("#joingameform").submit();
 
-            }
-            else
-            {
-              // alert(data.errormsg);
-              $("#errorspan2").html(data.errormsg);
-            }
+                }
+                else
+                {
+                    // alert(data.errormsg);
+                    $("#errorspan2").html(data.errormsg);
+                }
 
-          },
-          error : function(data) {
-            alert("error");
-            //setError('Make call failed');
-          }
+            },
+            error : function(data) {
+                alert("error");
+                //setError('Make call failed');
+            }
         });
 
         @*$.getJSON("@routes.DashboardController.testMethod1()",obj, function(data) {*@
         @*alert("Contact added!");*@
         @*});*@
-      }
+    }
 
        
        function validateForm()
@@ -227,8 +235,78 @@
         }
 
     }
-    
+
+
+
+    //Test done by Arul For Killing All the games... and User data except the default admin.. 
+    function deleteAllGames()
+    {
+        var obj = {
+
+            "username": "username",  //Passing some dummy value for POST so that DATA WILL BE RECEIVED
+            "password": "password"
+        };
+        $.ajax({
+            type: 'POST',
+            url: '@routes.DBController.DeleteAllGameData()',
+            // data : JSON.stringify(obj),
+            data: JSON.stringify(obj),
+            async: false,
+            cache: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if(data=="success") {
+                    swal("All the games data and user data except the default admin details have been sucessfully deleted..");
+                }
+                else
+                {
+                    swal("OOPS!",data, "error");
+                }
+            },
+            error: function (data) {
+                swal("error");
+            }
+        });
+    }
+        $(document).ready(function() {
+        $('#deletesubmit').click(function(){
+            if($("#datadeleteform")[0].checkValidity()) {
+              if(confirm(" This would delete all the game data and user data except the default admin \n"+
+                         "Are you sure about deleting the data ? "))
+              {
+                deleteAllGames(); 
+              }
+              return false;   
+            }
+           });
+       });
   </script>
+
+  <style>
+down vote
+If you do not want to change your HTML structure you can also do by adding text-align: center; to the wrapper element and a display: inline-block; to the centered element.
+
+#container {
+    width:100%;
+    text-align:center;
+}
+
+#left {
+    float:left;
+    width:30%;
+}
+
+#center {
+    display: inline-block;
+    margin:0 auto;
+    width:30%;
+}
+
+#right {
+    float:right;
+    width:40%;
+}
+</style>
 
   </head>
   <body>
@@ -238,19 +316,48 @@
       <h3>
                Welcome @Http.Context.current().args.get("firstname").asInstanceOf[String]
               </h3>
-    <form name="GameReportForm" method="GET" onsubmit="return validateForm()" action="/exportReports">
-      <label>Game Statistics Report </label> <br>
-      <input type="text" id="exportReportInput" name="exportReportInput" placeholder="Enter gameID">
-      <input type="submit" name="Export" value="Export" style="height: 30px; width: 100px;">
-  </form>
+
+
+<div id="container">
+  <div id="left">
+          <form name="GameReportForm" method="GET" onsubmit="return validateForm()" action="/exportReports">
+            <label>Game Statistics Report </label> <br>
+            <input type="text" id="exportReportInput" name="exportReportInput" placeholder="Enter gameID">
+            <input type="submit" name="Export" class="btn btn-primary btn-default" value="Export" style="height: 30px; width: 100px;">
+          </form>
+  </div>
+  <div id="right">
+    <label>Click the button below to launch a new game </label> <br>
+<button type="button" onclick="$('#errorspan').html('');"  class="btn btn-primary btn-default" data-toggle="modal" data-target="#myModal">
+  Launch a new game
+              </button>
+
+  </div>
+  <div id="center">
+
+                      <form  id="datadeleteform" method ="POST"  action="@routes.DBController.DeleteAllGameData()">
+                      <label>Click this button to delete all the game's Data </label> 
+                         <input type="submit" id="deletesubmit" class="btn btn-primary btn-default" value="Delete Game Data" />
+                      </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
   
-      <form style="display: hidden" action="/hostgame" method="POST" id="hostgameform">
-        <input type="hidden" id = "hgameid" name ="hgameid" value="0"  />
-      </form>
-      <form style="display: hidden" action="/joingame" method="POST" id="joingameform">
-        <input type="hidden" id = "jgameid" name ="jgameid" value="0"  />
-        <input type="hidden" id = "hdn_observer" name ="hdn_observer" value="0" />
-      </form>
+     <form style="display: hidden" action="/hostgame" method="POST" id="hostgameform">
+                  <input type="hidden" id = "hgameid" name ="hgameid" value="0"  />
+                  </form>
+              <form style="display: hidden" action="/joingame" method="POST" id="joingameform">
+                  <input type="hidden" id = "jgameid" name ="jgameid" value="0"  />
+                  <input type="hidden" id = "hdn_observer" name ="hdn_observer" value="0" />
+              </form>
 
       <form id="frmInstructor" method="POST" action="/observegame" hidden>
         <input type="hidden" value="" id="username" />
@@ -266,119 +373,123 @@
       @*Join Game*@
       @*</button>*@
 
-        <!-- Host Game Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">HOST GAME</h4>
-            </div>
-            <div class="modal-body">
-              <span style="color:red;" id="errorspan" ></span>
-              <form class="form-horizontal">
-                <fieldset>
+                  <!-- Host Game Modal -->
 
-                    <!-- Form Name -->
-                  <legend>Game Settings</legend>
 
-                    <!-- Multiple Radios -->
-                    @*<div class="form-group">*@
-                    @*<label class="col-md-4 control-label" for="TimeBound">Is the game timebound</label>*@
-                    @*<div class="col-md-4">*@
-                    @*<div class="radio">*@
-                    @*<label for="TimeBound-0">*@
-                    @*<input type="radio" name="TimeBound" id="TimeBound-0" value="1" checked="checked">*@
-                    @*Yes*@
-                    @*</label>*@
-                    @*</div>*@
-                    @*<div class="radio">*@
-                    @*<label for="TimeBound-1">*@
-                    @*<input type="radio" name="TimeBound" id="TimeBound-1" value="0">*@
-                    @*No*@
-                    @*</label>*@
-                    @*</div>*@
-                    @*</div>*@
-                    @*</div>*@
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">LAUNCH GAME</h4>
+                          </div>
+                          <div class="modal-body">
+                                    <span style="color:red;" id="errorspan" ></span>
+                                  <form class="form-horizontal">
+                                      <fieldset>
 
-                    <!-- Select Basic -->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="selecttime">Time for each step(in mins):</label>
-                    <div class="col-md-4">
-                      <select id="selecttime" name="selecttime" class="form-control">
-                        <option value="1">1</option>
-                        <option selected value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="5">10</option>
-                      </select>
-                    </div>
+                                              <!-- Form Name -->
+                                          <legend>Game Settings</legend>
+
+                                              <!-- Multiple Radios -->
+                                          @*<div class="form-group">*@
+                                              @*<label class="col-md-4 control-label" for="TimeBound">Is the game timebound</label>*@
+                                              @*<div class="col-md-4">*@
+                                                  @*<div class="radio">*@
+                                                      @*<label for="TimeBound-0">*@
+                                                          @*<input type="radio" name="TimeBound" id="TimeBound-0" value="1" checked="checked">*@
+                                                          @*Yes*@
+                                                      @*</label>*@
+                                                  @*</div>*@
+                                                  @*<div class="radio">*@
+                                                      @*<label for="TimeBound-1">*@
+                                                          @*<input type="radio" name="TimeBound" id="TimeBound-1" value="0">*@
+                                                          @*No*@
+                                                      @*</label>*@
+                                                  @*</div>*@
+                                              @*</div>*@
+                                          @*</div>*@
+
+                                              <!-- Select Basic -->
+                                          <div class="form-group">
+                                              <label class="col-md-5 control-label" for="selecttime">Time for each step(in mins):</label>
+                                              <div class="col-md-4">
+                                                  <select id="selecttime" name="selecttime" class="form-control">
+                                                      <option value="1">1</option>
+                                                      <option selected value="2">2</option>
+                                                      <option value="3">3</option>
+                                                      <option value="4">4</option>
+                                                      <option value="5">5</option>
+                                                      <option value="10">10</option>
+                                                  </select>
+                                              </div>
+                                          </div>
+
+                                              <!-- Select Basic -->
+                                          <div class="form-group">
+                                              <label class="col-md-5 control-label" for="selectsteps">No. of turns:</label>
+                                              <div class="col-md-4">
+                                                  <select id="selectsteps" name="selectsteps" class="form-control">
+                                                      <option value="5">5</option>
+                                                      <option value="10">10</option>
+                                                      <option value="15">15</option>
+                                                      <option selected value="20">20</option>
+                                                      <option value="25">25</option>
+                                                      <option value="30">30</option>
+                                                      <option value="100">100</option>
+                                                  </select>
+                                              </div>
+                                          </div>
+
+                                      </fieldset>
+                                  </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary" onclick = "hostgame()" >Launch</button>
+                          </div>
+                      </div>
                   </div>
+              </div>
 
-                    <!-- Select Basic -->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="selectsteps">No. of project steps:</label>
-                    <div class="col-md-4">
-                      <select id="selectsteps" name="selectsteps" class="form-control">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option selected value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="30">30</option>
-                        <option value="20">50</option>
-                        <option value="25">100</option>
-                        <option value="30">500</option>
-                      </select>
-                    </div>
+                  <!-- join Game Modal -->
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel2">JOIN GAME AS PLAYER OR OBSERVER</h4>
+                          </div>
+                          <div class="modal-body">
+                              <span style="color:red;" id="errorspan2" ></span>
+        <div class="form-group">
+
+                              <label for="mgameid">
+            Game ID:
+                              </label>
+                              <input type="text" class="form-control" id="mgameid" />
+                          </div>
+                              <div class="form-group">
+                                  <label class="col-md-6 control-label" id="labelforobserver" for="selecttime">Do you want to join as an observer:</label>
+
+
+                                      <span title="You will be only able to see the steps performed by the users in the game but you cannot participate" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+
+                                      <select id="isobserver" name="isobserver" class="form-control">
+                                          <option value="1">Yes</option>
+                                          <option value="0">No</option>
+                                      </select>
+                                  <div class="glyphicon glyphicon-info-sign" style="color: red;
+                                  ">Join the same Game ID as your friends' to compete against each other!</div>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" onclick = "joingame()" class="btn btn-primary">Join Game</button>
+                          </div>
+                      </div>
                   </div>
-
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick = "hostgame()" >Host Game</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        <!-- join Game Modal -->
-      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel2">JOIN GAME AS PLAYER OR OBSERVER</h4>
-            </div>
-            <div class="modal-body">
-              <span style="color:red;" id="errorspan2" ></span>
-              <div class="form-group">
-
-                <label for="mgameid">
-						Game ID:
-                </label>
-                <input type="text" class="form-control" id="mgameid" />
               </div>
-              <div class="form-group">
-                <label class="col-md-6 control-label" id="labelforobserver" for="selecttime">Do you want to join as observer:</label>
-
-                <select id="isobserver" name="isobserver" class="form-control">
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
-                </select>
-
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" onclick = "joingame()" class="btn btn-primary">Join Game</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -394,6 +505,9 @@
             <th data-column-id="gametime" data-order="desc">GameTime</th>
             <th data-column-id="fullName" data-order="desc">Host Name</th>
             <th data-column-id="joingamegrid" data-formatter="link" data-order="desc">View Game Snapshot</th>
+            <th data-column-id="joingamegrid" data-formatter="link1" data-order="desc">Join Game</th>
+
+
           </tr>
         </thead>
         <tbody>

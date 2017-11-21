@@ -1,7 +1,4 @@
-[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/join.scala.html:49: not found: value gameId[0m
-[0m[[31merror[0m] [0m      <input type="hidden" id = "gameid" name ="gameid" value='@gameId' />[0m
-[0m[[31merror[0m] [0m                                                                ^[0m
-[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/join.scala.html:64: not found: value gameId[0m
-[0m[[31merror[0m] [0m    @gameId[0m
-[0m[[31merror[0m] [0m     ^[0m
-[0m[[31merror[0m] [0mtwo errors found[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/LoginController.java:153: ';' expected[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/LoginController.java:154: ';' expected[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/LoginController.java:154: unclosed character literal[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/LoginController.java:154: unclosed character literal[0m
