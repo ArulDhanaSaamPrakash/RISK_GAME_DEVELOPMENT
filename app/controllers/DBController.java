@@ -38,11 +38,9 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
               String query1="DELETE FROM GAME_MOVES_SNAPSHOT";
               String query2="DELETE FROM GAME_ORDERING";
               String query3="DELETE FROM GAME_PLAYER";
-              String query4="DELETE FROM GAME_PLAYER_PROJECT_STEP_STATUS";
+              String query4="DELETE FROM GAME";
               String query5="DELETE FROM GAME_PLAYER_RISK_STATUS";
-              String query6="DELETE FROM GAME";
-              String query7="DELETE FROM USERS where player_id not in (\"droot@andrew.cmu.edu\",\"rosso@andrew.cmu.edu\","+
-			  "\"aantronx@andrew.cmu.edu\")";
+              String query6="DELETE FROM GAME_PLAYER_RISK_STATUS";
 	  		  stmt=conn.createStatement();
               stmt.addBatch(query1);
               stmt.addBatch(query2);
@@ -50,7 +48,7 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
               stmt.addBatch(query4);
               stmt.addBatch(query5);
               stmt.addBatch(query6);
-              stmt.addBatch(query7);
+             // stmt.addBatch(query7);
               stmt.executeBatch(); // Returns 1 if successfully inserted
               conn.commit();
               System.out.println("I am here ");

@@ -54,31 +54,49 @@
               //obj.istimebound = "Yes";
               obj.istimebound = obj.istimebound == "1" ? "Yes" : "No";
               // $('#myTable').append('<tr><td>my data</td><td>more data</td></tr>');
-              var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>Join</a></td></tr>";
+
+              if(obj.status== (new String("Waiting for players to join").valueOf()))
+              {
+                var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>Join</a></td> </tr>";
+              }else
+              {
+                var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>NO ONE CAN JOIN NOW</a></td></tr>";
+              }
+
+              
               //$('#grid-basic tr:last').after(appendquery);
               //$('#grid-basic').find(tbody).append(appendquery);
               $("#grid-basic tbody").append(appendquery);
             }
-
             $("#grid-basic").bootgrid({
                       formatters: {
                           "link1": function(column, row)
                           {
-                              // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                            console.log(row.status);
+
+                            if(row.status == (new String("Waiting for players to join").valueOf()))
+                            {
                               return "<a href=\"#\" onclick='Showmodel(\"" + row.gameid + "\",\"" + row.status + "\",\"" + row.istimebound + "\")'>" + "Join" + "</a>";
+                            }else
+                            {
+                              return "<p>You can only view this game</p>";
+                              //return "<a href=\"#\">" + "NO ONE CAN JOIN NOW" + "</a>";
+                            }
+
+                              
+                              // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                              
                           },
                           "link": function(column, row)
                             {
-                            // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
-                            return "<a href=\"#\" onclick='redirectFromHere(\"" + row.gameid + "\")'>" + "View" + "</a>";
+                               // return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+
+                               return "<a href=\"#\" onclick='redirectFromHere(\"" + row.gameid + "\")'>" + "View" + "</a>";
                              }
                       },
                       rowCount: [5,10,-1],
                       columnSelection: false
                   });
-
-
-
           },
           error : function(data) {
             alert("error");
