@@ -273,8 +273,12 @@
             cache: false,
             contentType: 'application/json',
             success: function (data) {
-                if(data=="success") {
+                if(data=="success") {            
                     swal("All the games data have been sucessfully deleted..");
+                     setTimeout(function() {
+                      location.reload();
+                  }, 4000);
+             
                 }
                 else
                 {
@@ -303,7 +307,12 @@
             contentType: 'application/json',
             success: function (data) {
                 if(data=="success") {
-                    swal("The games data for the game "+document.getElementById("deltesinglegame").value+" have been sucessfully deleted..");
+                    
+                  swal("The games data for the game "+document.getElementById("deltesinglegame").value+" have been sucessfully deleted..");
+                  setTimeout(function() {
+                      location.reload();
+                  }, 4000);
+                   
                 }
                 else
                 {
@@ -335,6 +344,13 @@
             }
            });
        });
+
+
+
+  </script>
+
+  <script>
+
   </script>
 
   <style>
@@ -348,18 +364,18 @@ If you do not want to change your HTML structure you can also do by adding text-
 
 #left {
     float:left;
-    width:20%;
+    width:25%;
 }
 
 #center {
     display: inline-block;
     margin:0 auto;
-    width:40%;
+    width:45%;
 }
 
 #right {
     float:right;
-    width:40%;
+    width:30%;
 }
 </style>
   </head>

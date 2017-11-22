@@ -1,13 +1,13 @@
-New log file opened at Tue Nov 21 23:29:50 EST 2017 by 3125@Aruls-MacBook-Air.local
-Taking next connection to: 57927
-New client attempting to connect on port: 57928-57927
-  Address = /10.0.0.144:57927
-This client on port 57928 has uuid 7f845993-b233-40e5-bf9d-17f84a7851cc configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-7f845993-b233-40e5-bf9d-17f84a7851cc
-Taking next connection to: 57927
-New client attempting to connect on port: 57941-57927
-  Address = /10.0.0.144:57927
-Handshake exception on socket: 57941
+New log file opened at Wed Nov 22 13:56:08 EST 2017 by 4321@Aruls-MacBook-Air.local
+Taking next connection to: 59678
+New client attempting to connect on port: 59679-59678
+  Address = /10.0.0.144:59678
+This client on port 59679 has uuid 5fc592a2-33e6-4197-8483-d80731702da8 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-5fc592a2-33e6-4197-8483-d80731702da8
+Taking next connection to: 59678
+New client attempting to connect on port: 59682-59678
+  Address = /10.0.0.144:59678
+Handshake exception on socket: 59682
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -17,9 +17,84 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 57927
-New client attempting to connect on port: 57942-57927
-  Address = /10.0.0.144:57927
-This client on port 57942 has uuid d2e34c9e-a668-4c88-80ad-f4919877ae9b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-7f845993-b233-40e5-bf9d-17f84a7851cc, play-fork-run-d2e34c9e-a668-4c88-80ad-f4919877ae9b
-Taking next connection to: 57927
+Taking next connection to: 59678
+New client attempting to connect on port: 59683-59678
+  Address = /10.0.0.144:59678
+This client on port 59683 has uuid c20c4f24-933a-48f4-92cf-42ba878d78c4 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-5fc592a2-33e6-4197-8483-d80731702da8, play-fork-run-c20c4f24-933a-48f4-92cf-42ba878d78c4
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59678

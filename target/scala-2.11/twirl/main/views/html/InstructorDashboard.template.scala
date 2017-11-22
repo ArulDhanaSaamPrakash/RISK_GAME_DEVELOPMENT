@@ -58,143 +58,151 @@ Seq[Any](format.raw/*4.1*/("""<!DOCTYPE html>
 
       $(document).ready(function()"""),format.raw/*31.35*/("""{"""),format.raw/*31.36*/("""
         """),format.raw/*32.9*/("""// $("#grid-basic").bootgrid();
+        var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://login.cmu.edu/', true);
+xhr.onreadystatechange = function() """),format.raw/*35.37*/("""{"""),format.raw/*35.38*/("""
+  """),format.raw/*36.3*/("""if (xhr.readyState === 4)  """),format.raw/*36.30*/("""{"""),format.raw/*36.31*/(""" 
+    """),format.raw/*37.5*/("""console.log(xhr.responseText);
+  """),format.raw/*38.3*/("""}"""),format.raw/*38.4*/("""
+"""),format.raw/*39.1*/("""}"""),format.raw/*39.2*/(""";
+xhr.send(null);
         showActiveGames();
 
-      """),format.raw/*35.7*/("""}"""),format.raw/*35.8*/(""");
+      """),format.raw/*43.7*/("""}"""),format.raw/*43.8*/(""");
 
-      function showActiveGames() """),format.raw/*37.34*/("""{"""),format.raw/*37.35*/("""
-        """),format.raw/*38.9*/("""//debugger;
-        var obj = """),format.raw/*39.19*/("""{"""),format.raw/*39.20*/("""
-          """),format.raw/*40.11*/("""'phaseId': "tst"
-        """),format.raw/*41.9*/("""}"""),format.raw/*41.10*/(""";
-        $.ajax("""),format.raw/*42.16*/("""{"""),format.raw/*42.17*/("""
-          """),format.raw/*43.11*/("""type : 'POST',
-          url : '"""),_display_(/*44.19*/routes/*44.25*/.DashboardController.completedGames()),format.raw/*44.62*/("""',
+      function showActiveGames() """),format.raw/*45.34*/("""{"""),format.raw/*45.35*/("""
+        """),format.raw/*46.9*/("""//debugger;
+        var obj = """),format.raw/*47.19*/("""{"""),format.raw/*47.20*/("""
+          """),format.raw/*48.11*/("""'phaseId': "tst"
+        """),format.raw/*49.9*/("""}"""),format.raw/*49.10*/(""";
+        $.ajax("""),format.raw/*50.16*/("""{"""),format.raw/*50.17*/("""
+          """),format.raw/*51.11*/("""type : 'POST',
+          url : '"""),_display_(/*52.19*/routes/*52.25*/.DashboardController.completedGames()),format.raw/*52.62*/("""',
           //data : JSON.stringify("test"),
           //data: "",
           dataType: 'json',
           //contentType : 'application/json',
-          success : function(data) """),format.raw/*49.36*/("""{"""),format.raw/*49.37*/("""
-            """),format.raw/*50.13*/("""//alert(data.length);x`
-            for (i = 0; i < data.length; i++) """),format.raw/*51.47*/("""{"""),format.raw/*51.48*/("""
-              """),format.raw/*52.15*/("""//data[i].timebound
+          success : function(data) """),format.raw/*57.36*/("""{"""),format.raw/*57.37*/("""
+            """),format.raw/*58.13*/("""//alert(data.length);x`
+            for (i = 0; i < data.length; i++) """),format.raw/*59.47*/("""{"""),format.raw/*59.48*/("""
+              """),format.raw/*60.15*/("""//data[i].timebound
               var obj = data[i];
               //obj.istimebound = "Yes";
               obj.istimebound = obj.istimebound == "1" ? "Yes" : "No";
               // $('#myTable').append('<tr><td>my data</td><td>more data</td></tr>');
 
               if(obj.status== (new String("Waiting for players to join").valueOf()))
-              """),format.raw/*59.15*/("""{"""),format.raw/*59.16*/("""
-                """),format.raw/*60.17*/("""var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>Join</a></td> </tr>";
-              """),format.raw/*61.15*/("""}"""),format.raw/*61.16*/("""else
-              """),format.raw/*62.15*/("""{"""),format.raw/*62.16*/("""
-                """),format.raw/*63.17*/("""var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>NO ONE CAN JOIN NOW</a></td></tr>";
-              """),format.raw/*64.15*/("""}"""),format.raw/*64.16*/("""
+              """),format.raw/*67.15*/("""{"""),format.raw/*67.16*/("""
+                """),format.raw/*68.17*/("""var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>Join</a></td> </tr>";
+              """),format.raw/*69.15*/("""}"""),format.raw/*69.16*/("""else
+              """),format.raw/*70.15*/("""{"""),format.raw/*70.16*/("""
+                """),format.raw/*71.17*/("""var appendquery = "<tr><td class='gameid-class'>" + obj.gameid + "</td> <td>" + obj.status + "</td> <td>" + obj.gametime + "</td> <td>" + obj.fullName + "</td> <td><a href='#'>View</a></td> <td><a href='#'>NO ONE CAN JOIN NOW</a></td></tr>";
+              """),format.raw/*72.15*/("""}"""),format.raw/*72.16*/("""
 
               
-              """),format.raw/*67.15*/("""//$('#grid-basic tr:last').after(appendquery);
+              """),format.raw/*75.15*/("""//$('#grid-basic tr:last').after(appendquery);
               //$('#grid-basic').find(tbody).append(appendquery);
               $("#grid-basic tbody").append(appendquery);
-            """),format.raw/*70.13*/("""}"""),format.raw/*70.14*/("""
-            """),format.raw/*71.13*/("""$("#grid-basic").bootgrid("""),format.raw/*71.39*/("""{"""),format.raw/*71.40*/("""
-                      """),format.raw/*72.23*/("""formatters: """),format.raw/*72.35*/("""{"""),format.raw/*72.36*/("""
-                          """),format.raw/*73.27*/(""""link1": function(column, row)
-                          """),format.raw/*74.27*/("""{"""),format.raw/*74.28*/("""
-                            """),format.raw/*75.29*/("""console.log(row.status);
+            """),format.raw/*78.13*/("""}"""),format.raw/*78.14*/("""
+            """),format.raw/*79.13*/("""$("#grid-basic").bootgrid("""),format.raw/*79.39*/("""{"""),format.raw/*79.40*/("""
+                      """),format.raw/*80.23*/("""formatters: """),format.raw/*80.35*/("""{"""),format.raw/*80.36*/("""
+                          """),format.raw/*81.27*/(""""link1": function(column, row)
+                          """),format.raw/*82.27*/("""{"""),format.raw/*82.28*/("""
+                            """),format.raw/*83.29*/("""console.log(row.status);
 
                             if(row.status == (new String("Waiting for players to join").valueOf()))
-                            """),format.raw/*78.29*/("""{"""),format.raw/*78.30*/("""
-                              """),format.raw/*79.31*/("""return "<a href=\"#\" onclick='Showmodel(\"" + row.gameid + "\",\"" + row.status + "\",\"" + row.istimebound + "\")'>" + "Join" + "</a>";
-                            """),format.raw/*80.29*/("""}"""),format.raw/*80.30*/("""else
-                            """),format.raw/*81.29*/("""{"""),format.raw/*81.30*/("""
-                              """),format.raw/*82.31*/("""return "<p>You can only view this game</p>";
+                            """),format.raw/*86.29*/("""{"""),format.raw/*86.30*/("""
+                              """),format.raw/*87.31*/("""return "<a href=\"#\" onclick='Showmodel(\"" + row.gameid + "\",\"" + row.status + "\",\"" + row.istimebound + "\")'>" + "Join" + "</a>";
+                            """),format.raw/*88.29*/("""}"""),format.raw/*88.30*/("""else
+                            """),format.raw/*89.29*/("""{"""),format.raw/*89.30*/("""
+                              """),format.raw/*90.31*/("""return "<p>You can only view this game</p>";
                               //return "<a href=\"#\">" + "NO ONE CAN JOIN NOW" + "</a>";
-                            """),format.raw/*84.29*/("""}"""),format.raw/*84.30*/("""
+                            """),format.raw/*92.29*/("""}"""),format.raw/*92.30*/("""
 
                               
-                              """),format.raw/*87.31*/("""// return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                              """),format.raw/*95.31*/("""// return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
                               
-                          """),format.raw/*89.27*/("""}"""),format.raw/*89.28*/(""",
+                          """),format.raw/*97.27*/("""}"""),format.raw/*97.28*/(""",
                           "link": function(column, row)
-                            """),format.raw/*91.29*/("""{"""),format.raw/*91.30*/("""
-                               """),format.raw/*92.32*/("""// return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
+                            """),format.raw/*99.29*/("""{"""),format.raw/*99.30*/("""
+                               """),format.raw/*100.32*/("""// return "<a href=\"javascript:Showmodel(" + row.gameid + ");\">" + "Join" ": " + row.gameid + "</a>";
 
                                return "<a href=\"#\" onclick='redirectFromHere(\"" + row.gameid + "\")'>" + "View" + "</a>";
-                             """),format.raw/*95.30*/("""}"""),format.raw/*95.31*/("""
-                      """),format.raw/*96.23*/("""}"""),format.raw/*96.24*/(""",
+                             """),format.raw/*103.30*/("""}"""),format.raw/*103.31*/("""
+                      """),format.raw/*104.23*/("""}"""),format.raw/*104.24*/(""",
                       rowCount: [5,10,-1],
                       columnSelection: false
-                  """),format.raw/*99.19*/("""}"""),format.raw/*99.20*/(""");
-          """),format.raw/*100.11*/("""}"""),format.raw/*100.12*/(""",
-          error : function(data) """),format.raw/*101.34*/("""{"""),format.raw/*101.35*/("""
-            """),format.raw/*102.13*/("""alert("error");
+                  """),format.raw/*107.19*/("""}"""),format.raw/*107.20*/(""");
+          """),format.raw/*108.11*/("""}"""),format.raw/*108.12*/(""",
+          error : function(data) """),format.raw/*109.34*/("""{"""),format.raw/*109.35*/("""
+            """),format.raw/*110.13*/("""alert("error");
             //setError('Make call failed');
-          """),format.raw/*104.11*/("""}"""),format.raw/*104.12*/("""
-        """),format.raw/*105.9*/("""}"""),format.raw/*105.10*/(""");
+          """),format.raw/*112.11*/("""}"""),format.raw/*112.12*/("""
+        """),format.raw/*113.9*/("""}"""),format.raw/*113.10*/(""");
 
-        """),format.raw/*107.88*/("""
-        """),format.raw/*108.37*/("""
-        """),format.raw/*109.16*/("""
-      """),format.raw/*110.7*/("""}"""),format.raw/*110.8*/("""
+        """),format.raw/*115.88*/("""
+        """),format.raw/*116.37*/("""
+        """),format.raw/*117.16*/("""
+      """),format.raw/*118.7*/("""}"""),format.raw/*118.8*/("""
 
-      """),format.raw/*112.7*/("""function redirectFromHere(gameid) """),format.raw/*112.41*/("""{"""),format.raw/*112.42*/("""
-        """),format.raw/*113.9*/("""$('#gameid').val(gameid);
+      """),format.raw/*120.7*/("""function redirectFromHere(gameid) """),format.raw/*120.41*/("""{"""),format.raw/*120.42*/("""
+        """),format.raw/*121.9*/("""$('#gameid').val(gameid);
 
         $('#frmInstructor').submit();
-      """),format.raw/*116.7*/("""}"""),format.raw/*116.8*/("""
+      """),format.raw/*124.7*/("""}"""),format.raw/*124.8*/("""
 
-      """),format.raw/*118.7*/("""function Showmodel(gameid,status,istimebound)
-      """),format.raw/*119.7*/("""{"""),format.raw/*119.8*/("""
-        """),format.raw/*120.9*/("""// alert(gameid + status + istimebound);
+      """),format.raw/*126.7*/("""function Showmodel(gameid,status,istimebound)
+      """),format.raw/*127.7*/("""{"""),format.raw/*127.8*/("""
+        """),format.raw/*128.9*/("""// alert(gameid + status + istimebound);
         // gameid
         $( "#mgameid" ).val(gameid);
         $("#mgameid").prop("readonly", true);
 
         $("#errorspan2").html("");
         $('#wybierz1').hide();
-        if(status == "RUNNING") """),format.raw/*127.33*/("""{"""),format.raw/*127.34*/("""
-          """),format.raw/*128.11*/("""$("#isobserver").val('1');
+        if(status == "RUNNING") """),format.raw/*135.33*/("""{"""),format.raw/*135.34*/("""
+          """),format.raw/*136.11*/("""$("#isobserver").val('1');
           $("#isobserver").hide();
           $("#labelforobserver").hide();
 
           // $("#labelforobserver").text("You can only join this game as observer");
           $("#myModalLabel2").text("You can only join this game as observer");
           //  myModalLabel2
-        """),format.raw/*135.9*/("""}"""),format.raw/*135.10*/("""
-        """),format.raw/*136.9*/("""else """),format.raw/*136.14*/("""{"""),format.raw/*136.15*/("""
-          """),format.raw/*137.11*/("""$("#isobserver").show();
+        """),format.raw/*143.9*/("""}"""),format.raw/*143.10*/("""
+        """),format.raw/*144.9*/("""else """),format.raw/*144.14*/("""{"""),format.raw/*144.15*/("""
+          """),format.raw/*145.11*/("""$("#isobserver").show();
           $("#isobserver").val('0');
           $("#labelforobserver").show();
           $("#labelforobserver").text("Do you want to join as observer:");
           $("#myModalLabel2").text("JOIN GAME AS PLAYER OR OBSERVER");
-        """),format.raw/*142.9*/("""}"""),format.raw/*142.10*/("""
-        """),format.raw/*143.9*/("""$('#myModal2').modal('show');
-      """),format.raw/*144.7*/("""}"""),format.raw/*144.8*/("""
+        """),format.raw/*150.9*/("""}"""),format.raw/*150.10*/("""
+        """),format.raw/*151.9*/("""$('#myModal2').modal('show');
+      """),format.raw/*152.7*/("""}"""),format.raw/*152.8*/("""
 
-      """),format.raw/*146.7*/("""function hostgame() """),format.raw/*146.27*/("""{"""),format.raw/*146.28*/("""
-        """),format.raw/*147.9*/("""// debugger;
+      """),format.raw/*154.7*/("""function hostgame() """),format.raw/*154.27*/("""{"""),format.raw/*154.28*/("""
+        """),format.raw/*155.9*/("""// debugger;
         //  var istimebound = $('input[name=TimeBound]:checked').val();
         var timeforstep = $( "#selecttime" ).val();
         var noofsteps = $( "#selectsteps" ).val();
 
-        var obj = """),format.raw/*152.19*/("""{"""),format.raw/*152.20*/("""
-          """),format.raw/*153.11*/("""'istimebound': true,
+        var obj = """),format.raw/*160.19*/("""{"""),format.raw/*160.20*/("""
+          """),format.raw/*161.11*/("""'istimebound': true,
           // 'istimebound': istimebound == "1" ? true : false,
           'timeforeachmove': timeforstep,
           'stepsforeachplayer': noofsteps
-        """),format.raw/*157.9*/("""}"""),format.raw/*157.10*/(""";
-        $.ajax("""),format.raw/*158.16*/("""{"""),format.raw/*158.17*/("""
-          """),format.raw/*159.11*/("""type : 'POST',
-          url : '"""),_display_(/*160.19*/routes/*160.25*/.GameController.hostGame()),format.raw/*160.51*/("""',
+        """),format.raw/*165.9*/("""}"""),format.raw/*165.10*/(""";
+        $.ajax("""),format.raw/*166.16*/("""{"""),format.raw/*166.17*/("""
+          """),format.raw/*167.11*/("""type : 'POST',
+          url : '"""),_display_(/*168.19*/routes/*168.25*/.GameController.hostGame()),format.raw/*168.51*/("""',
           // data : JSON.stringify(obj),
           data: JSON.stringify(obj),
           dataType: 'json',
           contentType : 'application/json',
-          success : function(data) """),format.raw/*165.36*/("""{"""),format.raw/*165.37*/("""
-            """),format.raw/*166.13*/("""debugger;
+          success : function(data) """),format.raw/*173.36*/("""{"""),format.raw/*173.37*/("""
+            """),format.raw/*174.13*/("""debugger;
             if(data.message == "success")
-            """),format.raw/*168.13*/("""{"""),format.raw/*168.14*/("""
-              """),format.raw/*169.15*/("""//  var $form=$(document.createElement('form')).css("""),format.raw/*169.67*/("""{"""),format.raw/*169.68*/("""display:'none'"""),format.raw/*169.82*/("""}"""),format.raw/*169.83*/(""").attr("method","POST").attr("action","/hostgame");
+            """),format.raw/*176.13*/("""{"""),format.raw/*176.14*/("""
+              """),format.raw/*177.15*/("""//  var $form=$(document.createElement('form')).css("""),format.raw/*177.67*/("""{"""),format.raw/*177.68*/("""display:'none'"""),format.raw/*177.82*/("""}"""),format.raw/*177.83*/(""").attr("method","POST").attr("action","/hostgame");
               // var $input=$(document.createElement('input')).attr('name','FIRST NAME HERE').val("FIRST VALUE HERE");
               // var $input2=$(document.createElemet('input')).attr('name','SECOND NAME HERE').val("SECOND VALUE HERE");
               //  $form.append($input).append($input2);
@@ -202,202 +210,218 @@ Seq[Any](format.raw/*4.1*/("""<!DOCTYPE html>
               //  $form.submit();
               $("#hgameid").val(data.gameid);
               $("#hostgameform").submit();
-            """),format.raw/*177.13*/("""}"""),format.raw/*177.14*/("""
-            """),format.raw/*178.13*/("""else
-            """),format.raw/*179.13*/("""{"""),format.raw/*179.14*/("""
-              """),format.raw/*180.15*/("""//  alert(data.errormsg);
+            """),format.raw/*185.13*/("""}"""),format.raw/*185.14*/("""
+            """),format.raw/*186.13*/("""else
+            """),format.raw/*187.13*/("""{"""),format.raw/*187.14*/("""
+              """),format.raw/*188.15*/("""//  alert(data.errormsg);
               $("#errorspan").html(data.errormsg);
-            """),format.raw/*182.13*/("""}"""),format.raw/*182.14*/("""
-            """),format.raw/*183.13*/("""// $.('#id').val(data);
+            """),format.raw/*190.13*/("""}"""),format.raw/*190.14*/("""
+            """),format.raw/*191.13*/("""// $.('#id').val(data);
             //setError('Call succedded');
             //$('#test1').attr("src", data)
-          """),format.raw/*186.11*/("""}"""),format.raw/*186.12*/(""",
-          error : function(data) """),format.raw/*187.34*/("""{"""),format.raw/*187.35*/("""
-            """),format.raw/*188.13*/("""alert("error");
+          """),format.raw/*194.11*/("""}"""),format.raw/*194.12*/(""",
+          error : function(data) """),format.raw/*195.34*/("""{"""),format.raw/*195.35*/("""
+            """),format.raw/*196.13*/("""alert("error");
             //setError('Make call failed');
-          """),format.raw/*190.11*/("""}"""),format.raw/*190.12*/("""
-        """),format.raw/*191.9*/("""}"""),format.raw/*191.10*/(""");
+          """),format.raw/*198.11*/("""}"""),format.raw/*198.12*/("""
+        """),format.raw/*199.9*/("""}"""),format.raw/*199.10*/(""");
 
-        """),format.raw/*193.88*/("""
-        """),format.raw/*194.37*/("""
-        """),format.raw/*195.16*/("""
-      """),format.raw/*196.7*/("""}"""),format.raw/*196.8*/("""
+        """),format.raw/*201.88*/("""
+        """),format.raw/*202.37*/("""
+        """),format.raw/*203.16*/("""
+      """),format.raw/*204.7*/("""}"""),format.raw/*204.8*/("""
 
-      """),format.raw/*198.7*/("""var observer;
+      """),format.raw/*206.7*/("""var observer;
 
-    function joingame() """),format.raw/*200.25*/("""{"""),format.raw/*200.26*/("""
-        """),format.raw/*201.9*/("""// debugger;var gameid = $('input[name=TimeBound]:checked').val();
+    function joingame() """),format.raw/*208.25*/("""{"""),format.raw/*208.26*/("""
+        """),format.raw/*209.9*/("""// debugger;var gameid = $('input[name=TimeBound]:checked').val();
         //debugger;
         var gameid = $( "#mgameid" ).val();
         var isobserver = $("#isobserver").val();
 
-        var obj = """),format.raw/*206.19*/("""{"""),format.raw/*206.20*/("""
-            """),format.raw/*207.13*/("""'gameid': gameid,
+        var obj = """),format.raw/*214.19*/("""{"""),format.raw/*214.20*/("""
+            """),format.raw/*215.13*/("""'gameid': gameid,
             'isobserver': isobserver == "1" ? true : false
-        """),format.raw/*209.9*/("""}"""),format.raw/*209.10*/(""";
+        """),format.raw/*217.9*/("""}"""),format.raw/*217.10*/(""";
 
-        $.ajax("""),format.raw/*211.16*/("""{"""),format.raw/*211.17*/("""
-            """),format.raw/*212.13*/("""type : 'POST',
-            url : '"""),_display_(/*213.21*/routes/*213.27*/.GameController.joinGame()),format.raw/*213.53*/("""',
+        $.ajax("""),format.raw/*219.16*/("""{"""),format.raw/*219.17*/("""
+            """),format.raw/*220.13*/("""type : 'POST',
+            url : '"""),_display_(/*221.21*/routes/*221.27*/.GameController.joinGame()),format.raw/*221.53*/("""',
             // data : JSON.stringify(obj),
             data: JSON.stringify(obj),
             // dataType: 'json',
             contentType : 'application/json',
-            success : function(data) """),format.raw/*218.38*/("""{"""),format.raw/*218.39*/("""
-                """),format.raw/*219.17*/("""if(data.message == "success")
-                """),format.raw/*220.17*/("""{"""),format.raw/*220.18*/("""
-                    """),format.raw/*221.21*/("""$("#jgameid").val(gameid);
+            success : function(data) """),format.raw/*226.38*/("""{"""),format.raw/*226.39*/("""
+                """),format.raw/*227.17*/("""if(data.message == "success")
+                """),format.raw/*228.17*/("""{"""),format.raw/*228.18*/("""
+                    """),format.raw/*229.21*/("""$("#jgameid").val(gameid);
                     $('#hdn_observer').val(isobserver);
                     $("#joingameform").submit();
 
-                """),format.raw/*225.17*/("""}"""),format.raw/*225.18*/("""
-                """),format.raw/*226.17*/("""else
-                """),format.raw/*227.17*/("""{"""),format.raw/*227.18*/("""
-                    """),format.raw/*228.21*/("""// alert(data.errormsg);
+                """),format.raw/*233.17*/("""}"""),format.raw/*233.18*/("""
+                """),format.raw/*234.17*/("""else
+                """),format.raw/*235.17*/("""{"""),format.raw/*235.18*/("""
+                    """),format.raw/*236.21*/("""// alert(data.errormsg);
                     $("#errorspan2").html(data.errormsg);
-                """),format.raw/*230.17*/("""}"""),format.raw/*230.18*/("""
+                """),format.raw/*238.17*/("""}"""),format.raw/*238.18*/("""
 
-            """),format.raw/*232.13*/("""}"""),format.raw/*232.14*/(""",
-            error : function(data) """),format.raw/*233.36*/("""{"""),format.raw/*233.37*/("""
-                """),format.raw/*234.17*/("""alert("error");
+            """),format.raw/*240.13*/("""}"""),format.raw/*240.14*/(""",
+            error : function(data) """),format.raw/*241.36*/("""{"""),format.raw/*241.37*/("""
+                """),format.raw/*242.17*/("""alert("error");
                 //setError('Make call failed');
-            """),format.raw/*236.13*/("""}"""),format.raw/*236.14*/("""
-        """),format.raw/*237.9*/("""}"""),format.raw/*237.10*/(""");
+            """),format.raw/*244.13*/("""}"""),format.raw/*244.14*/("""
+        """),format.raw/*245.9*/("""}"""),format.raw/*245.10*/(""");
 
-        """),format.raw/*239.88*/("""
-        """),format.raw/*240.37*/("""
-        """),format.raw/*241.16*/("""
-    """),format.raw/*242.5*/("""}"""),format.raw/*242.6*/("""
+        """),format.raw/*247.88*/("""
+        """),format.raw/*248.37*/("""
+        """),format.raw/*249.16*/("""
+    """),format.raw/*250.5*/("""}"""),format.raw/*250.6*/("""
 
        
-       """),format.raw/*245.8*/("""function validateForm()
-       """),format.raw/*246.8*/("""{"""),format.raw/*246.9*/("""
-        """),format.raw/*247.9*/("""var a=document.forms["GameReportForm"]["exportReportInput"].value;
+       """),format.raw/*253.8*/("""function validateForm()
+       """),format.raw/*254.8*/("""{"""),format.raw/*254.9*/("""
+        """),format.raw/*255.9*/("""var a=document.forms["GameReportForm"]["exportReportInput"].value;
         if (a==null || a=="")
-        """),format.raw/*249.9*/("""{"""),format.raw/*249.10*/("""
-             """),format.raw/*250.14*/("""alert("Please enter a valid gameID");
+        """),format.raw/*257.9*/("""{"""),format.raw/*257.10*/("""
+             """),format.raw/*258.14*/("""alert("Please enter a valid gameID");
              return false;
             
-        """),format.raw/*253.9*/("""}"""),format.raw/*253.10*/("""
+        """),format.raw/*261.9*/("""}"""),format.raw/*261.10*/("""
 
-    """),format.raw/*255.5*/("""}"""),format.raw/*255.6*/("""
+    """),format.raw/*263.5*/("""}"""),format.raw/*263.6*/("""
 
 
 
-    """),format.raw/*259.5*/("""//Test done by Arul For Killing All the games... and User data except the default admin.. 
+    """),format.raw/*267.5*/("""//Test done by Arul For Killing All the games... and User data except the default admin.. 
     function deleteAllGames()
-    """),format.raw/*261.5*/("""{"""),format.raw/*261.6*/("""
-        """),format.raw/*262.9*/("""var obj = """),format.raw/*262.19*/("""{"""),format.raw/*262.20*/("""
+    """),format.raw/*269.5*/("""{"""),format.raw/*269.6*/("""
+        """),format.raw/*270.9*/("""var obj = """),format.raw/*270.19*/("""{"""),format.raw/*270.20*/("""
 
-            """),format.raw/*264.13*/(""""username": "username",  //Passing some dummy value for POST so that DATA WILL BE RECEIVED
+            """),format.raw/*272.13*/(""""username": "username",  //Passing some dummy value for POST so that DATA WILL BE RECEIVED
             "password": "password"
-        """),format.raw/*266.9*/("""}"""),format.raw/*266.10*/(""";
-        $.ajax("""),format.raw/*267.16*/("""{"""),format.raw/*267.17*/("""
-            """),format.raw/*268.13*/("""type: 'POST',
-            url: '"""),_display_(/*269.20*/routes/*269.26*/.DBController.DeleteAllGameData()),format.raw/*269.59*/("""',
+        """),format.raw/*274.9*/("""}"""),format.raw/*274.10*/(""";
+        $.ajax("""),format.raw/*275.16*/("""{"""),format.raw/*275.17*/("""
+            """),format.raw/*276.13*/("""type: 'POST',
+            url: '"""),_display_(/*277.20*/routes/*277.26*/.DBController.DeleteAllGameData()),format.raw/*277.59*/("""',
             // data : JSON.stringify(obj),
             data: JSON.stringify(obj),
             async: false,
             cache: false,
             contentType: 'application/json',
-            success: function (data) """),format.raw/*275.38*/("""{"""),format.raw/*275.39*/("""
-                """),format.raw/*276.17*/("""if(data=="success") """),format.raw/*276.37*/("""{"""),format.raw/*276.38*/("""
-                    """),format.raw/*277.21*/("""swal("All the games data have been sucessfully deleted..");
-                """),format.raw/*278.17*/("""}"""),format.raw/*278.18*/("""
-                """),format.raw/*279.17*/("""else
-                """),format.raw/*280.17*/("""{"""),format.raw/*280.18*/("""
-                    """),format.raw/*281.21*/("""swal("OOPS! error");
-                """),format.raw/*282.17*/("""}"""),format.raw/*282.18*/("""
-            """),format.raw/*283.13*/("""}"""),format.raw/*283.14*/(""",
-            error: function (data) """),format.raw/*284.36*/("""{"""),format.raw/*284.37*/("""
-                """),format.raw/*285.17*/("""swal("error");
-            """),format.raw/*286.13*/("""}"""),format.raw/*286.14*/("""
-        """),format.raw/*287.9*/("""}"""),format.raw/*287.10*/(""");
-    """),format.raw/*288.5*/("""}"""),format.raw/*288.6*/("""
+            success: function (data) """),format.raw/*283.38*/("""{"""),format.raw/*283.39*/("""
+                """),format.raw/*284.17*/("""if(data=="success") """),format.raw/*284.37*/("""{"""),format.raw/*284.38*/("""            
+                    """),format.raw/*285.21*/("""swal("All the games data have been sucessfully deleted..");
+                     setTimeout(function() """),format.raw/*286.44*/("""{"""),format.raw/*286.45*/("""
+                      """),format.raw/*287.23*/("""location.reload();
+                  """),format.raw/*288.19*/("""}"""),format.raw/*288.20*/(""", 4000);
+             
+                """),format.raw/*290.17*/("""}"""),format.raw/*290.18*/("""
+                """),format.raw/*291.17*/("""else
+                """),format.raw/*292.17*/("""{"""),format.raw/*292.18*/("""
+                    """),format.raw/*293.21*/("""swal("OOPS! error");
+                """),format.raw/*294.17*/("""}"""),format.raw/*294.18*/("""
+            """),format.raw/*295.13*/("""}"""),format.raw/*295.14*/(""",
+            error: function (data) """),format.raw/*296.36*/("""{"""),format.raw/*296.37*/("""
+                """),format.raw/*297.17*/("""swal("error");
+            """),format.raw/*298.13*/("""}"""),format.raw/*298.14*/("""
+        """),format.raw/*299.9*/("""}"""),format.raw/*299.10*/(""");
+    """),format.raw/*300.5*/("""}"""),format.raw/*300.6*/("""
 
-    """),format.raw/*290.5*/("""function deleteSingleGames()
-    """),format.raw/*291.5*/("""{"""),format.raw/*291.6*/("""
-        """),format.raw/*292.9*/("""var obj = """),format.raw/*292.19*/("""{"""),format.raw/*292.20*/("""
+    """),format.raw/*302.5*/("""function deleteSingleGames()
+    """),format.raw/*303.5*/("""{"""),format.raw/*303.6*/("""
+        """),format.raw/*304.9*/("""var obj = """),format.raw/*304.19*/("""{"""),format.raw/*304.20*/("""
 
-            """),format.raw/*294.13*/(""""game_ID": document.getElementById("deltesinglegame").value
-        """),format.raw/*295.9*/("""}"""),format.raw/*295.10*/(""";
-        $.ajax("""),format.raw/*296.16*/("""{"""),format.raw/*296.17*/("""
-            """),format.raw/*297.13*/("""type: 'POST',
-            url: '"""),_display_(/*298.20*/routes/*298.26*/.DBController.DeleteSingleGameData()),format.raw/*298.62*/("""',
+            """),format.raw/*306.13*/(""""game_ID": document.getElementById("deltesinglegame").value
+        """),format.raw/*307.9*/("""}"""),format.raw/*307.10*/(""";
+        $.ajax("""),format.raw/*308.16*/("""{"""),format.raw/*308.17*/("""
+            """),format.raw/*309.13*/("""type: 'POST',
+            url: '"""),_display_(/*310.20*/routes/*310.26*/.DBController.DeleteSingleGameData()),format.raw/*310.62*/("""',
             // data : JSON.stringify(obj),
             data: JSON.stringify(obj),
             async: false,
             cache: false,
             contentType: 'application/json',
-            success: function (data) """),format.raw/*304.38*/("""{"""),format.raw/*304.39*/("""
-                """),format.raw/*305.17*/("""if(data=="success") """),format.raw/*305.37*/("""{"""),format.raw/*305.38*/("""
-                    """),format.raw/*306.21*/("""swal("The games data for the game "+document.getElementById("deltesinglegame").value+" have been sucessfully deleted..");
-                """),format.raw/*307.17*/("""}"""),format.raw/*307.18*/("""
-                """),format.raw/*308.17*/("""else
-                """),format.raw/*309.17*/("""{"""),format.raw/*309.18*/("""
-                    """),format.raw/*310.21*/("""swal("The Game ID you entered is Invalid. Kindly check it..");
-                """),format.raw/*311.17*/("""}"""),format.raw/*311.18*/("""
-            """),format.raw/*312.13*/("""}"""),format.raw/*312.14*/(""",
-            error: function (data) """),format.raw/*313.36*/("""{"""),format.raw/*313.37*/("""
-                """),format.raw/*314.17*/("""swal("error");
-            """),format.raw/*315.13*/("""}"""),format.raw/*315.14*/("""
-        """),format.raw/*316.9*/("""}"""),format.raw/*316.10*/(""");
-    """),format.raw/*317.5*/("""}"""),format.raw/*317.6*/("""
-        """),format.raw/*318.9*/("""$(document).ready(function() """),format.raw/*318.38*/("""{"""),format.raw/*318.39*/("""
-        """),format.raw/*319.9*/("""$('#deletesubmit').click(function()"""),format.raw/*319.44*/("""{"""),format.raw/*319.45*/("""
-            """),format.raw/*320.13*/("""if($("#datadeleteform")[0].checkValidity()) """),format.raw/*320.57*/("""{"""),format.raw/*320.58*/("""
-              """),format.raw/*321.15*/("""if(document.getElementById("deltesinglegame").value.toUpperCase() != (new String("ALL").valueOf()))
-                """),format.raw/*322.17*/("""{"""),format.raw/*322.18*/("""
-                    """),format.raw/*323.21*/("""confirm("Are you sure about deleting the game data for the game "+document.getElementById("deltesinglegame").value+" ?");
+            success: function (data) """),format.raw/*316.38*/("""{"""),format.raw/*316.39*/("""
+                """),format.raw/*317.17*/("""if(data=="success") """),format.raw/*317.37*/("""{"""),format.raw/*317.38*/("""
+                    
+                  """),format.raw/*319.19*/("""swal("The games data for the game "+document.getElementById("deltesinglegame").value+" have been sucessfully deleted..");
+                  setTimeout(function() """),format.raw/*320.41*/("""{"""),format.raw/*320.42*/("""
+                      """),format.raw/*321.23*/("""location.reload();
+                  """),format.raw/*322.19*/("""}"""),format.raw/*322.20*/(""", 4000);
+                   
+                """),format.raw/*324.17*/("""}"""),format.raw/*324.18*/("""
+                """),format.raw/*325.17*/("""else
+                """),format.raw/*326.17*/("""{"""),format.raw/*326.18*/("""
+                    """),format.raw/*327.21*/("""swal("The Game ID you entered is Invalid. Kindly check it..");
+                """),format.raw/*328.17*/("""}"""),format.raw/*328.18*/("""
+            """),format.raw/*329.13*/("""}"""),format.raw/*329.14*/(""",
+            error: function (data) """),format.raw/*330.36*/("""{"""),format.raw/*330.37*/("""
+                """),format.raw/*331.17*/("""swal("error");
+            """),format.raw/*332.13*/("""}"""),format.raw/*332.14*/("""
+        """),format.raw/*333.9*/("""}"""),format.raw/*333.10*/(""");
+    """),format.raw/*334.5*/("""}"""),format.raw/*334.6*/("""
+        """),format.raw/*335.9*/("""$(document).ready(function() """),format.raw/*335.38*/("""{"""),format.raw/*335.39*/("""
+        """),format.raw/*336.9*/("""$('#deletesubmit').click(function()"""),format.raw/*336.44*/("""{"""),format.raw/*336.45*/("""
+            """),format.raw/*337.13*/("""if($("#datadeleteform")[0].checkValidity()) """),format.raw/*337.57*/("""{"""),format.raw/*337.58*/("""
+              """),format.raw/*338.15*/("""if(document.getElementById("deltesinglegame").value.toUpperCase() != (new String("ALL").valueOf()))
+                """),format.raw/*339.17*/("""{"""),format.raw/*339.18*/("""
+                    """),format.raw/*340.21*/("""confirm("Are you sure about deleting the game data for the game "+document.getElementById("deltesinglegame").value+" ?");
                     deleteSingleGames();
                     return false;
-                """),format.raw/*326.17*/("""}"""),format.raw/*326.18*/("""else
-                """),format.raw/*327.17*/("""{"""),format.raw/*327.18*/("""
-                  """),format.raw/*328.19*/("""if(confirm(" This would delete all the game data and user data except the default admin \n"+
+                """),format.raw/*343.17*/("""}"""),format.raw/*343.18*/("""else
+                """),format.raw/*344.17*/("""{"""),format.raw/*344.18*/("""
+                  """),format.raw/*345.19*/("""if(confirm(" This would delete all the game data and user data except the default admin \n"+
                          "Are you sure about deleting the data ? "))
-                  """),format.raw/*330.19*/("""{"""),format.raw/*330.20*/("""
-                     """),format.raw/*331.22*/("""deleteAllGames(); 
-                  """),format.raw/*332.19*/("""}"""),format.raw/*332.20*/("""
-                  """),format.raw/*333.19*/("""return false;   
-                """),format.raw/*334.17*/("""}"""),format.raw/*334.18*/("""
-            """),format.raw/*335.13*/("""}"""),format.raw/*335.14*/("""
-           """),format.raw/*336.12*/("""}"""),format.raw/*336.13*/(""");
-       """),format.raw/*337.8*/("""}"""),format.raw/*337.9*/(""");
+                  """),format.raw/*347.19*/("""{"""),format.raw/*347.20*/("""
+                     """),format.raw/*348.22*/("""deleteAllGames(); 
+                  """),format.raw/*349.19*/("""}"""),format.raw/*349.20*/("""
+                  """),format.raw/*350.19*/("""return false;   
+                """),format.raw/*351.17*/("""}"""),format.raw/*351.18*/("""
+            """),format.raw/*352.13*/("""}"""),format.raw/*352.14*/("""
+           """),format.raw/*353.12*/("""}"""),format.raw/*353.13*/(""");
+       """),format.raw/*354.8*/("""}"""),format.raw/*354.9*/(""");
+
+
+
+  </script>
+
+  <script>
+
   </script>
 
   <style>
 down vote
 If you do not want to change your HTML structure you can also do by adding text-align: center; to the wrapper element and a display: inline-block; to the centered element.
 
-#container """),format.raw/*344.12*/("""{"""),format.raw/*344.13*/("""
-    """),format.raw/*345.5*/("""width:100%;
+#container """),format.raw/*368.12*/("""{"""),format.raw/*368.13*/("""
+    """),format.raw/*369.5*/("""width:100%;
     text-align:center;
-"""),format.raw/*347.1*/("""}"""),format.raw/*347.2*/("""
+"""),format.raw/*371.1*/("""}"""),format.raw/*371.2*/("""
 
-"""),format.raw/*349.1*/("""#left """),format.raw/*349.7*/("""{"""),format.raw/*349.8*/("""
-    """),format.raw/*350.5*/("""float:left;
-    width:20%;
-"""),format.raw/*352.1*/("""}"""),format.raw/*352.2*/("""
+"""),format.raw/*373.1*/("""#left """),format.raw/*373.7*/("""{"""),format.raw/*373.8*/("""
+    """),format.raw/*374.5*/("""float:left;
+    width:25%;
+"""),format.raw/*376.1*/("""}"""),format.raw/*376.2*/("""
 
-"""),format.raw/*354.1*/("""#center """),format.raw/*354.9*/("""{"""),format.raw/*354.10*/("""
-    """),format.raw/*355.5*/("""display: inline-block;
+"""),format.raw/*378.1*/("""#center """),format.raw/*378.9*/("""{"""),format.raw/*378.10*/("""
+    """),format.raw/*379.5*/("""display: inline-block;
     margin:0 auto;
-    width:40%;
-"""),format.raw/*358.1*/("""}"""),format.raw/*358.2*/("""
+    width:45%;
+"""),format.raw/*382.1*/("""}"""),format.raw/*382.2*/("""
 
-"""),format.raw/*360.1*/("""#right """),format.raw/*360.8*/("""{"""),format.raw/*360.9*/("""
-    """),format.raw/*361.5*/("""float:right;
-    width:40%;
-"""),format.raw/*363.1*/("""}"""),format.raw/*363.2*/("""
-"""),format.raw/*364.1*/("""</style>
+"""),format.raw/*384.1*/("""#right """),format.raw/*384.8*/("""{"""),format.raw/*384.9*/("""
+    """),format.raw/*385.5*/("""float:right;
+    width:30%;
+"""),format.raw/*387.1*/("""}"""),format.raw/*387.2*/("""
+"""),format.raw/*388.1*/("""</style>
   </head>
   <body>
-    """),_display_(/*367.6*/header()),format.raw/*367.14*/("""<br>
+    """),_display_(/*391.6*/header()),format.raw/*391.14*/("""<br>
   <div class="row">
     <div class="col-md-12">
       <h3>
-               Welcome """),_display_(/*371.25*/Http/*371.29*/.Context.current().args.get("firstname").asInstanceOf[String]),format.raw/*371.90*/("""
-              """),format.raw/*372.15*/("""</h3>
+               Welcome """),_display_(/*395.25*/Http/*395.29*/.Context.current().args.get("firstname").asInstanceOf[String]),format.raw/*395.90*/("""
+              """),format.raw/*396.15*/("""</h3>
 <div id="container">
   <div id="left">
           <form name="GameReportForm" method="GET" onsubmit="return validateForm()" action="/exportReports">
@@ -417,7 +441,7 @@ If you do not want to change your HTML structure you can also do by adding text-
                       <form id="SingleDeleteForm">
 
                       </form>
-                      <form  id="datadeleteform" method ="POST"  action=""""),_display_(/*392.75*/routes/*392.81*/.DBController.DeleteAllGameData()),format.raw/*392.114*/("""">
+                      <form  id="datadeleteform" method ="POST"  action=""""),_display_(/*416.75*/routes/*416.81*/.DBController.DeleteAllGameData()),format.raw/*416.114*/("""">
                      
                        <label>Enter a Game ID or All to delete the Game Data</label> 
                        <br>
@@ -450,15 +474,15 @@ If you do not want to change your HTML structure you can also do by adding text-
       </form>
 
         <!-- Button trigger modal -->
-      """),format.raw/*425.143*/("""
-  """),format.raw/*426.16*/("""
-      """),format.raw/*427.20*/("""
+      """),format.raw/*449.143*/("""
+  """),format.raw/*450.16*/("""
+      """),format.raw/*451.20*/("""
 
-      """),format.raw/*429.108*/("""
-      """),format.raw/*430.20*/("""
-      """),format.raw/*431.20*/("""
+      """),format.raw/*453.108*/("""
+      """),format.raw/*454.20*/("""
+      """),format.raw/*455.20*/("""
 
-                  """),format.raw/*433.19*/("""<!-- Host Game Modal -->
+                  """),format.raw/*457.19*/("""<!-- Host Game Modal -->
 
 
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -477,25 +501,25 @@ If you do not want to change your HTML structure you can also do by adding text-
                                           <legend>Game Settings</legend>
 
                                               <!-- Multiple Radios -->
-                                          """),format.raw/*452.71*/("""
-                                              """),format.raw/*453.134*/("""
-                                              """),format.raw/*454.73*/("""
-                                                  """),format.raw/*455.74*/("""
-                                                      """),format.raw/*456.84*/("""
-                                                          """),format.raw/*457.145*/("""
-                                                          """),format.raw/*458.66*/("""
-                                                      """),format.raw/*459.67*/("""
-                                                  """),format.raw/*460.61*/("""
-                                                  """),format.raw/*461.74*/("""
-                                                      """),format.raw/*462.84*/("""
-                                                          """),format.raw/*463.127*/("""
-                                                          """),format.raw/*464.65*/("""
-                                                      """),format.raw/*465.67*/("""
-                                                  """),format.raw/*466.61*/("""
-                                              """),format.raw/*467.57*/("""
-                                          """),format.raw/*468.53*/("""
+                                          """),format.raw/*476.71*/("""
+                                              """),format.raw/*477.134*/("""
+                                              """),format.raw/*478.73*/("""
+                                                  """),format.raw/*479.74*/("""
+                                                      """),format.raw/*480.84*/("""
+                                                          """),format.raw/*481.145*/("""
+                                                          """),format.raw/*482.66*/("""
+                                                      """),format.raw/*483.67*/("""
+                                                  """),format.raw/*484.61*/("""
+                                                  """),format.raw/*485.74*/("""
+                                                      """),format.raw/*486.84*/("""
+                                                          """),format.raw/*487.127*/("""
+                                                          """),format.raw/*488.65*/("""
+                                                      """),format.raw/*489.67*/("""
+                                                  """),format.raw/*490.61*/("""
+                                              """),format.raw/*491.57*/("""
+                                          """),format.raw/*492.53*/("""
 
-                                              """),format.raw/*470.47*/("""<!-- Select Basic -->
+                                              """),format.raw/*494.47*/("""<!-- Select Basic -->
                                           <div class="form-group">
                                               <label class="col-md-5 control-label" for="selecttime">Time for each step(in mins):</label>
                                               <div class="col-md-4">
@@ -603,8 +627,8 @@ If you do not want to change your HTML structure you can also do by adding text-
       </table>
     </div>
   </div>
-    """),_display_(/*578.6*/footer()),format.raw/*578.14*/("""
-  """),format.raw/*579.3*/("""</body>
+    """),_display_(/*602.6*/footer()),format.raw/*602.14*/("""
+  """),format.raw/*603.3*/("""</body>
 </html>"""))
       }
     }
@@ -625,11 +649,11 @@ If you do not want to change your HTML structure you can also do by adding text-
 object InstructorDashboard extends InstructorDashboard_Scope0.InstructorDashboard
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 21 21:30:40 EST 2017
+                  DATE: Wed Nov 22 15:12:38 EST 2017
                   SOURCE: /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/views/InstructorDashboard.scala.html
-                  HASH: c32ce1ae801b74a3b9a8e990f9608224ab0823bb
-                  MATRIX: 885->37|1444->569|1459->575|1514->609|1596->664|1611->670|1667->705|1749->760|1764->766|1830->810|1912->865|1927->871|1988->911|2070->966|2085->972|2152->1017|2367->1205|2382->1211|2446->1254|2526->1307|2541->1313|2598->1349|2678->1402|2693->1408|2764->1458|2844->1511|2859->1517|2924->1561|3236->1845|3265->1846|3301->1855|3394->1921|3422->1922|3487->1959|3516->1960|3552->1969|3610->1999|3639->2000|3678->2011|3730->2036|3759->2037|3804->2054|3833->2055|3872->2066|3932->2099|3947->2105|4005->2142|4210->2319|4239->2320|4280->2333|4378->2403|4407->2404|4450->2419|4829->2770|4858->2771|4903->2788|5173->3030|5202->3031|5249->3050|5278->3051|5323->3068|5607->3324|5636->3325|5695->3356|5906->3539|5935->3540|5976->3553|6030->3579|6059->3580|6110->3603|6150->3615|6179->3616|6234->3643|6319->3700|6348->3701|6405->3730|6587->3884|6616->3885|6675->3916|6869->4082|6898->4083|6959->4116|6988->4117|7047->4148|7238->4311|7267->4312|7358->4375|7547->4536|7576->4537|7690->4623|7719->4624|7779->4656|8066->4915|8095->4916|8146->4939|8175->4940|8311->5048|8340->5049|8382->5062|8412->5063|8476->5098|8506->5099|8548->5112|8647->5182|8677->5183|8714->5192|8744->5193|8785->5284|8823->5321|8861->5337|8896->5344|8925->5345|8961->5353|9024->5387|9054->5388|9091->5397|9190->5468|9219->5469|9255->5477|9335->5529|9364->5530|9401->5539|9671->5780|9701->5781|9741->5792|10073->6096|10103->6097|10140->6106|10174->6111|10204->6112|10244->6123|10529->6380|10559->6381|10596->6390|10660->6426|10689->6427|10725->6435|10774->6455|10804->6456|10841->6465|11077->6672|11107->6673|11147->6684|11351->6860|11381->6861|11427->6878|11457->6879|11497->6890|11558->6923|11574->6929|11622->6955|11839->7143|11869->7144|11911->7157|12004->7221|12034->7222|12078->7237|12159->7289|12189->7290|12232->7304|12262->7305|12816->7830|12846->7831|12888->7844|12934->7861|12964->7862|13008->7877|13126->7966|13156->7967|13198->7980|13347->8100|13377->8101|13441->8136|13471->8137|13513->8150|13612->8220|13642->8221|13679->8230|13709->8231|13750->8322|13788->8359|13826->8375|13861->8382|13890->8383|13926->8391|13994->8430|14024->8431|14061->8440|14289->8639|14319->8640|14361->8653|14474->8738|14504->8739|14551->8757|14581->8758|14623->8771|14686->8806|14702->8812|14750->8838|14980->9039|15010->9040|15056->9057|15131->9103|15161->9104|15211->9125|15389->9274|15419->9275|15465->9292|15515->9313|15545->9314|15595->9335|15723->9434|15753->9435|15796->9449|15826->9450|15892->9487|15922->9488|15968->9505|16073->9581|16103->9582|16140->9591|16170->9592|16211->9683|16249->9720|16287->9736|16320->9741|16349->9742|16394->9759|16453->9790|16482->9791|16519->9800|16652->9905|16682->9906|16725->9920|16839->10006|16869->10007|16903->10013|16932->10014|16968->10022|17121->10147|17150->10148|17187->10157|17226->10167|17256->10168|17299->10182|17461->10316|17491->10317|17537->10334|17567->10335|17609->10348|17670->10381|17686->10387|17741->10420|17989->10639|18019->10640|18065->10657|18114->10677|18144->10678|18194->10699|18299->10775|18329->10776|18375->10793|18425->10814|18455->10815|18505->10836|18571->10873|18601->10874|18643->10887|18673->10888|18739->10925|18769->10926|18815->10943|18871->10970|18901->10971|18938->10980|18968->10981|19003->10988|19032->10989|19066->10995|19127->11028|19156->11029|19193->11038|19232->11048|19262->11049|19305->11063|19401->11131|19431->11132|19477->11149|19507->11150|19549->11163|19610->11196|19626->11202|19684->11238|19932->11457|19962->11458|20008->11475|20057->11495|20087->11496|20137->11517|20304->11655|20334->11656|20380->11673|20430->11694|20460->11695|20510->11716|20618->11795|20648->11796|20690->11809|20720->11810|20786->11847|20816->11848|20862->11865|20918->11892|20948->11893|20985->11902|21015->11903|21050->11910|21079->11911|21116->11920|21174->11949|21204->11950|21241->11959|21305->11994|21335->11995|21377->12008|21450->12052|21480->12053|21524->12068|21669->12184|21699->12185|21749->12206|21991->12419|22021->12420|22071->12441|22101->12442|22149->12461|22358->12641|22388->12642|22439->12664|22505->12701|22535->12702|22583->12721|22645->12754|22675->12755|22717->12768|22747->12769|22788->12781|22818->12782|22856->12792|22885->12793|23134->13013|23164->13014|23197->13019|23260->13054|23289->13055|23319->13057|23353->13063|23382->13064|23415->13069|23470->13096|23499->13097|23529->13099|23565->13107|23595->13108|23628->13113|23713->13170|23742->13171|23772->13173|23807->13180|23836->13181|23869->13186|23925->13214|23954->13215|23983->13216|24043->13249|24073->13257|24189->13345|24203->13349|24286->13410|24330->13425|25294->14361|25310->14367|25366->14400|26666->15806|26698->15822|26734->15842|26772->15951|26808->15971|26844->15991|26893->16011|28004->17121|28081->17255|28157->17328|28237->17402|28321->17486|28410->17631|28498->17697|28582->17764|28662->17825|28742->17899|28826->17983|28915->18110|29003->18175|29087->18242|29167->18303|29243->18360|29315->18413|29392->18461|35443->24485|35473->24493|35504->24496
-                  LINES: 32->4|43->15|43->15|43->15|44->16|44->16|44->16|45->17|45->17|45->17|46->18|46->18|46->18|47->19|47->19|47->19|49->21|49->21|49->21|50->22|50->22|50->22|51->23|51->23|51->23|52->24|52->24|52->24|59->31|59->31|60->32|63->35|63->35|65->37|65->37|66->38|67->39|67->39|68->40|69->41|69->41|70->42|70->42|71->43|72->44|72->44|72->44|77->49|77->49|78->50|79->51|79->51|80->52|87->59|87->59|88->60|89->61|89->61|90->62|90->62|91->63|92->64|92->64|95->67|98->70|98->70|99->71|99->71|99->71|100->72|100->72|100->72|101->73|102->74|102->74|103->75|106->78|106->78|107->79|108->80|108->80|109->81|109->81|110->82|112->84|112->84|115->87|117->89|117->89|119->91|119->91|120->92|123->95|123->95|124->96|124->96|127->99|127->99|128->100|128->100|129->101|129->101|130->102|132->104|132->104|133->105|133->105|135->107|136->108|137->109|138->110|138->110|140->112|140->112|140->112|141->113|144->116|144->116|146->118|147->119|147->119|148->120|155->127|155->127|156->128|163->135|163->135|164->136|164->136|164->136|165->137|170->142|170->142|171->143|172->144|172->144|174->146|174->146|174->146|175->147|180->152|180->152|181->153|185->157|185->157|186->158|186->158|187->159|188->160|188->160|188->160|193->165|193->165|194->166|196->168|196->168|197->169|197->169|197->169|197->169|197->169|205->177|205->177|206->178|207->179|207->179|208->180|210->182|210->182|211->183|214->186|214->186|215->187|215->187|216->188|218->190|218->190|219->191|219->191|221->193|222->194|223->195|224->196|224->196|226->198|228->200|228->200|229->201|234->206|234->206|235->207|237->209|237->209|239->211|239->211|240->212|241->213|241->213|241->213|246->218|246->218|247->219|248->220|248->220|249->221|253->225|253->225|254->226|255->227|255->227|256->228|258->230|258->230|260->232|260->232|261->233|261->233|262->234|264->236|264->236|265->237|265->237|267->239|268->240|269->241|270->242|270->242|273->245|274->246|274->246|275->247|277->249|277->249|278->250|281->253|281->253|283->255|283->255|287->259|289->261|289->261|290->262|290->262|290->262|292->264|294->266|294->266|295->267|295->267|296->268|297->269|297->269|297->269|303->275|303->275|304->276|304->276|304->276|305->277|306->278|306->278|307->279|308->280|308->280|309->281|310->282|310->282|311->283|311->283|312->284|312->284|313->285|314->286|314->286|315->287|315->287|316->288|316->288|318->290|319->291|319->291|320->292|320->292|320->292|322->294|323->295|323->295|324->296|324->296|325->297|326->298|326->298|326->298|332->304|332->304|333->305|333->305|333->305|334->306|335->307|335->307|336->308|337->309|337->309|338->310|339->311|339->311|340->312|340->312|341->313|341->313|342->314|343->315|343->315|344->316|344->316|345->317|345->317|346->318|346->318|346->318|347->319|347->319|347->319|348->320|348->320|348->320|349->321|350->322|350->322|351->323|354->326|354->326|355->327|355->327|356->328|358->330|358->330|359->331|360->332|360->332|361->333|362->334|362->334|363->335|363->335|364->336|364->336|365->337|365->337|372->344|372->344|373->345|375->347|375->347|377->349|377->349|377->349|378->350|380->352|380->352|382->354|382->354|382->354|383->355|386->358|386->358|388->360|388->360|388->360|389->361|391->363|391->363|392->364|395->367|395->367|399->371|399->371|399->371|400->372|420->392|420->392|420->392|453->425|454->426|455->427|457->429|458->430|459->431|461->433|480->452|481->453|482->454|483->455|484->456|485->457|486->458|487->459|488->460|489->461|490->462|491->463|492->464|493->465|494->466|495->467|496->468|498->470|606->578|606->578|607->579
+                  HASH: f75bf724efbfe49fd9cf3f027a5aea27ddfb7261
+                  MATRIX: 885->37|1444->569|1459->575|1514->609|1596->664|1611->670|1667->705|1749->760|1764->766|1830->810|1912->865|1927->871|1988->911|2070->966|2085->972|2152->1017|2367->1205|2382->1211|2446->1254|2526->1307|2541->1313|2598->1349|2678->1402|2693->1408|2764->1458|2844->1511|2859->1517|2924->1561|3236->1845|3265->1846|3301->1855|3486->2012|3515->2013|3545->2016|3600->2043|3629->2044|3662->2050|3722->2083|3750->2084|3778->2085|3806->2086|3885->2138|3913->2139|3978->2176|4007->2177|4043->2186|4101->2216|4130->2217|4169->2228|4221->2253|4250->2254|4295->2271|4324->2272|4363->2283|4423->2316|4438->2322|4496->2359|4701->2536|4730->2537|4771->2550|4869->2620|4898->2621|4941->2636|5320->2987|5349->2988|5394->3005|5664->3247|5693->3248|5740->3267|5769->3268|5814->3285|6098->3541|6127->3542|6186->3573|6397->3756|6426->3757|6467->3770|6521->3796|6550->3797|6601->3820|6641->3832|6670->3833|6725->3860|6810->3917|6839->3918|6896->3947|7078->4101|7107->4102|7166->4133|7360->4299|7389->4300|7450->4333|7479->4334|7538->4365|7729->4528|7758->4529|7849->4592|8038->4753|8067->4754|8181->4840|8210->4841|8271->4873|8559->5132|8589->5133|8641->5156|8671->5157|8808->5265|8838->5266|8880->5279|8910->5280|8974->5315|9004->5316|9046->5329|9145->5399|9175->5400|9212->5409|9242->5410|9283->5501|9321->5538|9359->5554|9394->5561|9423->5562|9459->5570|9522->5604|9552->5605|9589->5614|9688->5685|9717->5686|9753->5694|9833->5746|9862->5747|9899->5756|10169->5997|10199->5998|10239->6009|10571->6313|10601->6314|10638->6323|10672->6328|10702->6329|10742->6340|11027->6597|11057->6598|11094->6607|11158->6643|11187->6644|11223->6652|11272->6672|11302->6673|11339->6682|11575->6889|11605->6890|11645->6901|11849->7077|11879->7078|11925->7095|11955->7096|11995->7107|12056->7140|12072->7146|12120->7172|12337->7360|12367->7361|12409->7374|12502->7438|12532->7439|12576->7454|12657->7506|12687->7507|12730->7521|12760->7522|13314->8047|13344->8048|13386->8061|13432->8078|13462->8079|13506->8094|13624->8183|13654->8184|13696->8197|13845->8317|13875->8318|13939->8353|13969->8354|14011->8367|14110->8437|14140->8438|14177->8447|14207->8448|14248->8539|14286->8576|14324->8592|14359->8599|14388->8600|14424->8608|14492->8647|14522->8648|14559->8657|14787->8856|14817->8857|14859->8870|14972->8955|15002->8956|15049->8974|15079->8975|15121->8988|15184->9023|15200->9029|15248->9055|15478->9256|15508->9257|15554->9274|15629->9320|15659->9321|15709->9342|15887->9491|15917->9492|15963->9509|16013->9530|16043->9531|16093->9552|16221->9651|16251->9652|16294->9666|16324->9667|16390->9704|16420->9705|16466->9722|16571->9798|16601->9799|16638->9808|16668->9809|16709->9900|16747->9937|16785->9953|16818->9958|16847->9959|16892->9976|16951->10007|16980->10008|17017->10017|17150->10122|17180->10123|17223->10137|17337->10223|17367->10224|17401->10230|17430->10231|17466->10239|17619->10364|17648->10365|17685->10374|17724->10384|17754->10385|17797->10399|17959->10533|17989->10534|18035->10551|18065->10552|18107->10565|18168->10598|18184->10604|18239->10637|18487->10856|18517->10857|18563->10874|18612->10894|18642->10895|18704->10928|18836->11031|18866->11032|18918->11055|18984->11092|19014->11093|19082->11132|19112->11133|19158->11150|19208->11171|19238->11172|19288->11193|19354->11230|19384->11231|19426->11244|19456->11245|19522->11282|19552->11283|19598->11300|19654->11327|19684->11328|19721->11337|19751->11338|19786->11345|19815->11346|19849->11352|19910->11385|19939->11386|19976->11395|20015->11405|20045->11406|20088->11420|20184->11488|20214->11489|20260->11506|20290->11507|20332->11520|20393->11553|20409->11559|20467->11595|20715->11814|20745->11815|20791->11832|20840->11852|20870->11853|20939->11893|21130->12055|21160->12056|21212->12079|21278->12116|21308->12117|21382->12162|21412->12163|21458->12180|21508->12201|21538->12202|21588->12223|21696->12302|21726->12303|21768->12316|21798->12317|21864->12354|21894->12355|21940->12372|21996->12399|22026->12400|22063->12409|22093->12410|22128->12417|22157->12418|22194->12427|22252->12456|22282->12457|22319->12466|22383->12501|22413->12502|22455->12515|22528->12559|22558->12560|22602->12575|22747->12691|22777->12692|22827->12713|23069->12926|23099->12927|23149->12948|23179->12949|23227->12968|23436->13148|23466->13149|23517->13171|23583->13208|23613->13209|23661->13228|23723->13261|23753->13262|23795->13275|23825->13276|23866->13288|23896->13289|23934->13299|23963->13300|24240->13548|24270->13549|24303->13554|24366->13589|24395->13590|24425->13592|24459->13598|24488->13599|24521->13604|24576->13631|24605->13632|24635->13634|24671->13642|24701->13643|24734->13648|24819->13705|24848->13706|24878->13708|24913->13715|24942->13716|24975->13721|25031->13749|25060->13750|25089->13751|25149->13784|25179->13792|25295->13880|25309->13884|25392->13945|25436->13960|26400->14896|26416->14902|26472->14935|27772->16341|27804->16357|27840->16377|27878->16486|27914->16506|27950->16526|27999->16546|29110->17656|29187->17790|29263->17863|29343->17937|29427->18021|29516->18166|29604->18232|29688->18299|29768->18360|29848->18434|29932->18518|30021->18645|30109->18710|30193->18777|30273->18838|30349->18895|30421->18948|30498->18996|36549->25020|36579->25028|36610->25031
+                  LINES: 32->4|43->15|43->15|43->15|44->16|44->16|44->16|45->17|45->17|45->17|46->18|46->18|46->18|47->19|47->19|47->19|49->21|49->21|49->21|50->22|50->22|50->22|51->23|51->23|51->23|52->24|52->24|52->24|59->31|59->31|60->32|63->35|63->35|64->36|64->36|64->36|65->37|66->38|66->38|67->39|67->39|71->43|71->43|73->45|73->45|74->46|75->47|75->47|76->48|77->49|77->49|78->50|78->50|79->51|80->52|80->52|80->52|85->57|85->57|86->58|87->59|87->59|88->60|95->67|95->67|96->68|97->69|97->69|98->70|98->70|99->71|100->72|100->72|103->75|106->78|106->78|107->79|107->79|107->79|108->80|108->80|108->80|109->81|110->82|110->82|111->83|114->86|114->86|115->87|116->88|116->88|117->89|117->89|118->90|120->92|120->92|123->95|125->97|125->97|127->99|127->99|128->100|131->103|131->103|132->104|132->104|135->107|135->107|136->108|136->108|137->109|137->109|138->110|140->112|140->112|141->113|141->113|143->115|144->116|145->117|146->118|146->118|148->120|148->120|148->120|149->121|152->124|152->124|154->126|155->127|155->127|156->128|163->135|163->135|164->136|171->143|171->143|172->144|172->144|172->144|173->145|178->150|178->150|179->151|180->152|180->152|182->154|182->154|182->154|183->155|188->160|188->160|189->161|193->165|193->165|194->166|194->166|195->167|196->168|196->168|196->168|201->173|201->173|202->174|204->176|204->176|205->177|205->177|205->177|205->177|205->177|213->185|213->185|214->186|215->187|215->187|216->188|218->190|218->190|219->191|222->194|222->194|223->195|223->195|224->196|226->198|226->198|227->199|227->199|229->201|230->202|231->203|232->204|232->204|234->206|236->208|236->208|237->209|242->214|242->214|243->215|245->217|245->217|247->219|247->219|248->220|249->221|249->221|249->221|254->226|254->226|255->227|256->228|256->228|257->229|261->233|261->233|262->234|263->235|263->235|264->236|266->238|266->238|268->240|268->240|269->241|269->241|270->242|272->244|272->244|273->245|273->245|275->247|276->248|277->249|278->250|278->250|281->253|282->254|282->254|283->255|285->257|285->257|286->258|289->261|289->261|291->263|291->263|295->267|297->269|297->269|298->270|298->270|298->270|300->272|302->274|302->274|303->275|303->275|304->276|305->277|305->277|305->277|311->283|311->283|312->284|312->284|312->284|313->285|314->286|314->286|315->287|316->288|316->288|318->290|318->290|319->291|320->292|320->292|321->293|322->294|322->294|323->295|323->295|324->296|324->296|325->297|326->298|326->298|327->299|327->299|328->300|328->300|330->302|331->303|331->303|332->304|332->304|332->304|334->306|335->307|335->307|336->308|336->308|337->309|338->310|338->310|338->310|344->316|344->316|345->317|345->317|345->317|347->319|348->320|348->320|349->321|350->322|350->322|352->324|352->324|353->325|354->326|354->326|355->327|356->328|356->328|357->329|357->329|358->330|358->330|359->331|360->332|360->332|361->333|361->333|362->334|362->334|363->335|363->335|363->335|364->336|364->336|364->336|365->337|365->337|365->337|366->338|367->339|367->339|368->340|371->343|371->343|372->344|372->344|373->345|375->347|375->347|376->348|377->349|377->349|378->350|379->351|379->351|380->352|380->352|381->353|381->353|382->354|382->354|396->368|396->368|397->369|399->371|399->371|401->373|401->373|401->373|402->374|404->376|404->376|406->378|406->378|406->378|407->379|410->382|410->382|412->384|412->384|412->384|413->385|415->387|415->387|416->388|419->391|419->391|423->395|423->395|423->395|424->396|444->416|444->416|444->416|477->449|478->450|479->451|481->453|482->454|483->455|485->457|504->476|505->477|506->478|507->479|508->480|509->481|510->482|511->483|512->484|513->485|514->486|515->487|516->488|517->489|518->490|519->491|520->492|522->494|630->602|630->602|631->603
                   -- GENERATED --
               */
           
