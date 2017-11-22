@@ -82,7 +82,7 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
 
          	  conn.setAutoCommit(false);
          	   stmt=conn.createStatement();
-         	   String strquerry="select *from game where game_id=\""+gameID+"\"";
+         	   String strquerry="select *from GAME where game_id=\""+gameID+"\"";
          	       rs=stmt.executeQuery(strquerry);
          	       boolean flag=false;
          	       if (!rs.next()){
@@ -96,10 +96,11 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
          	  	String  query = "delete from RISK_GAME_DB.AVOIDED_RISKS where game_player_id like \"%"+gameID+"\"";
               String query1="delete FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT where game_player_id like \"%"+gameID+"\"";
               String query2="delete from RISK_GAME_DB.GAME_ORDERING where game_id=\""+gameID+"\"";
-              String query3="delete from RISK_GAME_DB.GAME_PLAYER where game_id=\""+gameID+"\"";
-              String query4="delete from RISK_GAME_DB.GAME where game_id=\""+gameID+"\"";
-              String query5="DELETE FROM GAME_PLAYER_PROJECT_STEP_STATUS where game_player_id like \"%"+gameID+"\"";
-              String query6="DELETE FROM GAME_PLAYER_RISK_STATUS where game_player_id like \"%"+gameID+"\"";
+              
+              String query3="DELETE FROM GAME_PLAYER_PROJECT_STEP_STATUS where game_player_id like \"%"+gameID+"\"";
+              String query4="DELETE FROM GAME_PLAYER_RISK_STATUS where game_player_id like \"%"+gameID+"\"";
+              String query5="delete from RISK_GAME_DB.GAME_PLAYER where game_id=\""+gameID+"\"";
+              String query6="delete from RISK_GAME_DB.GAME where game_id=\""+gameID+"\"";
 	  		 
               stmt.addBatch(query1);
               stmt.addBatch(query2);
