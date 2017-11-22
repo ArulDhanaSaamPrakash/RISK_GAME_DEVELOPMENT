@@ -457,12 +457,14 @@ public class GameController extends Controller {
                 result.put("oops_budget",0);
                 result.put("oops_points",0);
                 result.put("oops_bonus",0); 
+                result.put("oops_message",currentOOPS.getmessage());
             }else
             {
                     result.put("oops_resource",currentOOPS.getResources());
                 result.put("oops_budget",currentOOPS.getBudget());
                 result.put("oops_points",currentOOPS.getCapabilityPoints());
                 result.put("oops_bonus",currentOOPS.getCapabilityBonus());
+                result.put("oops_message",currentOOPS.getmessage());
             }
                 
 

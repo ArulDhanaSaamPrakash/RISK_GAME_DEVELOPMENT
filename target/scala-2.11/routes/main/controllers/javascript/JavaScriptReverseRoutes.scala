@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Mon Nov 20 23:31:20 EST 2017
+// @DATE:Tue Nov 21 21:10:55 EST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -247,6 +247,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:48
+    def DeleteSingleGameData: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DBController.DeleteSingleGameData",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteSingleGames"})
+        }
+      """
+    )
+  
     // @LINE:47
     def DeleteAllGameData: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DBController.DeleteAllGameData",
@@ -277,7 +287,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:48
+    // @LINE:49
     def speciallogout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LoginController.speciallogout",
       """

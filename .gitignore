@@ -40,3 +40,5 @@ target/streams/compile/compileIncremental/$global/streams/export
 *.xml
 
 *.class
+
+*.class

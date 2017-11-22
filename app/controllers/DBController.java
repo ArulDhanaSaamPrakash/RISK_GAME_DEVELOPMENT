@@ -40,7 +40,7 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
               String query3="DELETE FROM GAME_PLAYER";
               String query4="DELETE FROM GAME";
               String query5="DELETE FROM GAME_PLAYER_RISK_STATUS";
-              String query6="DELETE FROM GAME_PLAYER_RISK_STATUS";
+              String query6="DELETE FROM GAME_PLAYER_PROJECT_STEP_STATUS";
 	  		  stmt=conn.createStatement();
               stmt.addBatch(query1);
               stmt.addBatch(query2);
@@ -68,4 +68,69 @@ public static final Logger logger = Logger.getLogger(DBController.class.getName(
                 }
         }
     }
+
+@BodyParser.Of(BodyParser.Json.class)
+    public static Result DeleteSingleGameData(){
+    	       JsonNode data = request().body().asJson();
+        String gameID = data.get("game_ID").asText();
+        Connection conn = null;
+        PreparedStatement checkStmt = null;
+        Statement stmt = null;
+          ResultSet rs;
+        try {
+              conn = DB.getConnection();
+
+         	  conn.setAutoCommit(false);
+         	   stmt=conn.createStatement();
+         	   String strquerry="select *from game where game_id=\""+gameID+"\"";
+         	       rs=stmt.executeQuery(strquerry);
+         	       boolean flag=false;
+         	       if (!rs.next()){
+         	       	flag=true;
+					}
+         	  if(flag)
+         	  {
+  				return ok("GAME_ID NOT PRESENT");
+         	  }else
+         	  {
+         	  	String  query = "delete from RISK_GAME_DB.AVOIDED_RISKS where game_player_id like \"%"+gameID+"\"";
+              String query1="delete FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT where game_player_id like \"%"+gameID+"\"";
+              String query2="delete from RISK_GAME_DB.GAME_ORDERING where game_id=\""+gameID+"\"";
+              String query3="delete from RISK_GAME_DB.GAME_PLAYER where game_id=\""+gameID+"\"";
+              String query4="delete from RISK_GAME_DB.GAME where game_id=\""+gameID+"\"";
+              String query5="DELETE FROM GAME_PLAYER_PROJECT_STEP_STATUS where game_player_id like \"%"+gameID+"\"";
+              String query6="DELETE FROM GAME_PLAYER_RISK_STATUS where game_player_id like \"%"+gameID+"\"";
+	  		 
+              stmt.addBatch(query1);
+              stmt.addBatch(query2);
+              stmt.addBatch(query3);
+              stmt.addBatch(query4);
+              stmt.addBatch(query5);
+              stmt.addBatch(query6);
+             // stmt.addBatch(query7);
+              stmt.executeBatch(); // Returns 1 if successfully inserted
+              conn.commit();
+              
+              return ok("success");// : ok("Failure");
+         	  }
+ 			  
+        }
+        catch(Exception e){
+            logger.log(Level.SEVERE,"Error while DELETING DATA FROM DATABASE:"  +  e);
+            return ok("Failure");
+        }
+        finally {
+            if(stmt!=null)
+                try {
+                    stmt.close();
+                    conn.close();
+                } catch (SQLException e) {
+                    logger.log(Level.SEVERE, "Error while closing stmt" + e);
+                }
+        }
+    }
+
+
+
+
 	}

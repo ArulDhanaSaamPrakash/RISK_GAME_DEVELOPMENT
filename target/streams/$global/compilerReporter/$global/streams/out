@@ -1,4 +1,1 @@
-[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/DBController.java:51: cannot find symbol[0m
-[0m[[31merror[0m] [0m  symbol:   variable query7[0m
-[0m[[31merror[0m] [0m  location: class controllers.DBController[0m
-[0m[[31merror[0m] [0mquery7[0m
+[0m[[31merror[0m] [0m/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/app/controllers/DBController.java:88: ')' expected[0m

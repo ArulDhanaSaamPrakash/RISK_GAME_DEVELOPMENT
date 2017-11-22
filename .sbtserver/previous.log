@@ -1,5 +1,5 @@
-New log file opened at Tue Nov 21 14:46:09 EST 2017 by 1565@Aruls-Air.wv.cc.cmu.edu
-jvm 1565@Aruls-Air.wv.cc.cmu.edu
+New log file opened at Tue Nov 21 16:30:22 EST 2017 by 2089@Aruls-Air.wv.cc.cmu.edu
+jvm 2089@Aruls-Air.wv.cc.cmu.edu
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.111-b14
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/project, returning: (risk_game_development-build)
 Loading project definition from /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@33954f86, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2c81cdce, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -67,9 +67,56 @@ Set current project to riskgame (in build file:/Users/Arul/Documents/RISK_GAME_D
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@77f89a70, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
+
+Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
+Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 55987a7c, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+	-classpath
+	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
+Scala compilation took 10.986223179 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 14 s, completed Nov 21, 2017 4:30:51 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:discoveredMainClasses
 Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@37813308, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@2f372d5, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -86,64 +133,36 @@ Sources indirectly invalidated by:
 	external source: Set()
 All initially invalidated sources: Set()
 
-Total time: 2 s, completed Nov 21, 2017 2:46:17 PM
+Total time: 1 s, completed Nov 21, 2017 4:30:52 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:mainClass
 Evaluating tasks: compile:mainClass
-Running task... Cancel: sbt.server.ServerTaskCancellation@58593914, check cycles: false
-Total time: 0 s, completed Nov 21, 2017 2:46:18 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:discoveredMainClasses
-Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@71acce05, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Total time: 1 s, completed Nov 21, 2017 2:46:19 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:mainClass
-Evaluating tasks: compile:mainClass
-Running task... Cancel: sbt.server.ServerTaskCancellation@75a0d19e, check cycles: false
-Total time: 0 s, completed Nov 21, 2017 2:46:19 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@54f6d8ad, check cycles: false
+Total time: 0 s, completed Nov 21, 2017 4:30:52 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > backgroundRun
 Evaluating tasks: compile:backgroundRun
-Running task... Cancel: sbt.server.ServerTaskCancellation@33eb64be, check cycles: false
-Total time: 0 s, completed Nov 21, 2017 2:46:29 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@2c38d42c, check cycles: false
+Total time: 1 s, completed Nov 21, 2017 4:30:54 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkConfig
 Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@4f2b675e, check cycles: false
-Total time: 1 s, completed Nov 21, 2017 2:46:37 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@5bf644d9, check cycles: false
+Total time: 1 s, completed Nov 21, 2017 4:31:05 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > riskgame/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@57e2ec1, check cycles: false
-Total time: 0 s, completed Nov 21, 2017 2:46:43 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@51f6fc23, check cycles: false
+Total time: 0 s, completed Nov 21, 2017 4:31:10 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@4d12997d, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@43885c5a, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -163,27 +182,27 @@ All initially invalidated sources: Set()
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 21, 2017 2:46:56 PM
+Total time: 3 s, completed Nov 21, 2017 4:31:37 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@36755cf2, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@5891de7f, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
 Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
@@ -193,7 +212,7 @@ Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 2107eba3, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 41d00af0, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -203,7 +222,7 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
 	-classpath
 	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 10.230767188 s
+Scala compilation took 2.224225601 s
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -213,27 +232,27 @@ All newly invalidated sources after taking into account (previously) recompiled 
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 14 s, completed Nov 21, 2017 2:49:15 PM
+Total time: 5 s, completed Nov 21, 2017 4:32:56 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@5099e552, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@20f8976b, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
 Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
@@ -243,7 +262,7 @@ Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 1e6b639d, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 6ed0461e, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -253,7 +272,7 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
 	-classpath
 	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 2.078213455 s
+Scala compilation took 1.423062947 s
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -263,27 +282,27 @@ All newly invalidated sources after taking into account (previously) recompiled 
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 4 s, completed Nov 21, 2017 2:50:38 PM
+Total time: 3 s, completed Nov 21, 2017 4:33:18 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3b1411de, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@733e145b, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
 Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
@@ -293,7 +312,7 @@ Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 4d874a45, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 6a003215, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -303,7 +322,7 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
 	-classpath
 	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 2.057250532 s
+Scala compilation took 2.474061058 s
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -313,27 +332,27 @@ All newly invalidated sources after taking into account (previously) recompiled 
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 4 s, completed Nov 21, 2017 2:52:24 PM
+Total time: 4 s, completed Nov 21, 2017 4:33:46 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@186bfd71, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@13ccc2d7, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
 Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
@@ -343,7 +362,7 @@ Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 658293a6, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 645ccffb, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -353,7 +372,7 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
 	-classpath
 	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.52829615 s
+Scala compilation took 1.37943268 s
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -363,27 +382,27 @@ All newly invalidated sources after taking into account (previously) recompiled 
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 2:56:03 PM
+Total time: 2 s, completed Nov 21, 2017 4:34:13 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@66ee2161, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@763c6cdf, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
+All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/index.template.scala)
 
 Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
 Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
@@ -393,7 +412,7 @@ Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 35ea3ead, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 62f71502, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -403,7 +422,7 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
 	-classpath
 	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.384900528 s
+Scala compilation took 1.157076626 s
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -413,431 +432,6 @@ All newly invalidated sources after taking into account (previously) recompiled 
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 2:59:29 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@400c3b28, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 1 s, completed Nov 21, 2017 2:59:31 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@287b05d5, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 17768dbe, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.007052333 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 21, 2017 2:59:57 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@72f3a3f9, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 78ef7ec5, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.575694153 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:01:11 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3218b047, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 13f6f237, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.278718598 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:06:15 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3340c04e, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 3492909e, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.336326766 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:10:33 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@5af2ba5f, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 42b7a2af, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.238371168 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:12:14 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@21958552, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 50add7aa, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.187908529 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:14:44 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@705c8980, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/twirl/main/views/html/InstructorDashboard.template.scala)
-
-Read from stdout: Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes...
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Getting compiler-interface from component compiler for Scala 2.11.7
-Other repositories:
-Default repositories:
-Running cached compiler 727d7901, interfacing (CompilerInterface) with Scala compiler version 2.11.7
-Calling Scala compiler with arguments  (CompilerInterface):
-	-deprecation
-	-unchecked
-	-encoding
-	utf8
-	-bootclasspath
-	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Arul/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
-	-classpath
-	/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-assert-1.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/fest-util-1.1.6.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/hamcrest-core-1.3.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11-extended-1.0.4.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/junit-4.11.jar:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/lib/poi-3.17.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/twirl-api_2.11/jars/twirl-api_2.11-1.1.1.jar:/Users/Arul/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2.jar:/Users/Arul/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.19.0-GA.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/Arul/.ivy2/cache/com.typesafe/config/bundles/config-1.3.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.8.1.jar:/Users/Arul/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.7.jar:/Users/Arul/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.5.4.jar:/Users/Arul/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.5.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.4.2.jar:/Users/Arul/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.12.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.3.jar:/Users/Arul/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.3.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.3.11.jar:/Users/Arul/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/Arul/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/Arul/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/Arul/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/Arul/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar:/Users/Arul/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar:/Users/Arul/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar:/Users/Arul/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.3.0.jar:/Users/Arul/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar:/Users/Arul/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.0.3.Final.jar:/Users/Arul/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/Arul/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.0.0.jar:/Users/Arul/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.2.1.Final.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.1.6.RELEASE.jar:/Users/Arul/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.9.jar:/Users/Arul/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/annotations/jars/annotations-2.0.1.jar:/Users/Arul/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.1.jar:/Users/Arul/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.3.jar:/Users/Arul/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.21.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/io.netty/netty/bundles/netty-3.10.3.Final.jar:/Users/Arul/.ivy2/cache/com.typesafe.netty/netty-http-pipelining/jars/netty-http-pipelining-1.1.4.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.jolbox/bonecp/bundles/bonecp-0.8.0.RELEASE.jar:/Users/Arul/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.3.7.jar:/Users/Arul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.187.jar:/Users/Arul/.ivy2/cache/tyrex/tyrex/jars/tyrex-1.0.1.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.6.11.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.4.2.jar:/Users/Arul/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.9.21.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/Users/Arul/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar:/Users/Arul/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.1.jar:/Users/Arul/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/Users/Arul/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar
-Scala compilation took 1.262377791 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 21, 2017 3:33:26 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@726809de, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 1 s, completed Nov 21, 2017 3:34:17 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@484ae535, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 21, 2017 3:34:40 PM
+Total time: 2 s, completed Nov 21, 2017 4:35:07 PM
 > server-post-command-cleanup
 > server-handle-next-server-request

@@ -20,6 +20,59 @@
   }
 
   </style>
+
+  <script>
+
+function speciallogout()
+    {
+       // $("#errormsg").hide();
+        //debugger;
+
+        var password = $('#password').val();
+        var username = $('#username').val();
+
+        var obj = {
+
+            "username": username,
+            "password": password
+        };
+
+
+        $.ajax({
+            type: 'POST',
+            url: '@routes.LoginController.login()',
+            // data : JSON.stringify(obj),
+            data: JSON.stringify(obj),
+            async: false,
+            cache: false,
+            // dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                // alert(data);
+                if(data=="success") {
+                   // resetForm($('#registerform'));
+                    $("#dashform").submit()
+                    //$('#dashlink').click();
+                    //swal("Registration Successful!", "Now you can login!", "success");
+                    //window.location.href = "#tologin";
+                }
+                else
+                {
+                    swal("OOPS!",data, "error");
+                }
+                // alert(data);
+                // $.('#id').val(data);
+                //setError('Call succedded');
+                //$('#test1').attr("src", data)
+            },
+            error: function (data) {
+                alert("error");
+                //setError('Make call failed');
+            }
+        });
+    }
+
+  </script>
   
 </head>
 <body>
@@ -45,7 +98,7 @@ function myFunction(myMessage) {
 }
 </script>
 
-<a href="javascript:myFunction('You clicked!')">My link</a>
+<a href="javascript:speciallogout()">My link</a>
 
 */
       <li>&nbsp;&nbsp;&nbsp;</li>

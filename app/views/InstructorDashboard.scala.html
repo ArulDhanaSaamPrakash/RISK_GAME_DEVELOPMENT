@@ -274,11 +274,40 @@
             contentType: 'application/json',
             success: function (data) {
                 if(data=="success") {
-                    swal("All the games data and user data except the default admin details have been sucessfully deleted..");
+                    swal("All the games data have been sucessfully deleted..");
                 }
                 else
                 {
-                    swal("OOPS!",data, "error");
+                    swal("OOPS! error");
+                }
+            },
+            error: function (data) {
+                swal("error");
+            }
+        });
+    }
+
+    function deleteSingleGames()
+    {
+        var obj = {
+
+            "game_ID": document.getElementById("deltesinglegame").value
+        };
+        $.ajax({
+            type: 'POST',
+            url: '@routes.DBController.DeleteSingleGameData()',
+            // data : JSON.stringify(obj),
+            data: JSON.stringify(obj),
+            async: false,
+            cache: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if(data=="success") {
+                    swal("The games data for the game "+document.getElementById("deltesinglegame").value+" have been sucessfully deleted..");
+                }
+                else
+                {
+                    swal("The Game ID you entered is Invalid. Kindly check it..");
                 }
             },
             error: function (data) {
@@ -289,12 +318,20 @@
         $(document).ready(function() {
         $('#deletesubmit').click(function(){
             if($("#datadeleteform")[0].checkValidity()) {
-              if(confirm(" This would delete all the game data and user data except the default admin \n"+
+              if(document.getElementById("deltesinglegame").value.toUpperCase() != (new String("ALL").valueOf()))
+                {
+                    confirm("Are you sure about deleting the game data for the game "+document.getElementById("deltesinglegame").value+" ?");
+                    deleteSingleGames();
+                    return false;
+                }else
+                {
+                  if(confirm(" This would delete all the game data and user data except the default admin \n"+
                          "Are you sure about deleting the data ? "))
-              {
-                deleteAllGames(); 
-              }
-              return false;   
+                  {
+                     deleteAllGames(); 
+                  }
+                  return false;   
+                }
             }
            });
        });
@@ -311,13 +348,13 @@ If you do not want to change your HTML structure you can also do by adding text-
 
 #left {
     float:left;
-    width:30%;
+    width:20%;
 }
 
 #center {
     display: inline-block;
     margin:0 auto;
-    width:30%;
+    width:40%;
 }
 
 #right {
@@ -325,7 +362,6 @@ If you do not want to change your HTML structure you can also do by adding text-
     width:40%;
 }
 </style>
-
   </head>
   <body>
     @header()<br>
@@ -334,8 +370,6 @@ If you do not want to change your HTML structure you can also do by adding text-
       <h3>
                Welcome @Http.Context.current().args.get("firstname").asInstanceOf[String]
               </h3>
-
-
 <div id="container">
   <div id="left">
           <form name="GameReportForm" method="GET" onsubmit="return validateForm()" action="/exportReports">
@@ -352,9 +386,14 @@ If you do not want to change your HTML structure you can also do by adding text-
 
   </div>
   <div id="center">
+                      <form id="SingleDeleteForm">
 
+                      </form>
                       <form  id="datadeleteform" method ="POST"  action="@routes.DBController.DeleteAllGameData()">
-                      <label>Click this button to delete all the game's Data </label> 
+                     
+                       <label>Enter a Game ID or All to delete the Game Data</label> 
+                       <br>
+                      <input type="text" id="deltesinglegame" name="deltesinglegame" placeholder="Enter a gameID to delete a game or 'all' to delete all the games" size="55">
                          <input type="submit" id="deletesubmit" class="btn btn-primary btn-default" value="Delete Game Data" />
                       </form>
 

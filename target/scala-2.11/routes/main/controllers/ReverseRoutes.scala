@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Mon Nov 20 23:31:20 EST 2017
+// @DATE:Tue Nov 21 21:10:55 EST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -172,6 +172,12 @@ package controllers {
     }
 
   
+    // @LINE:48
+    def DeleteSingleGameData(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "deleteSingleGames")
+    }
+  
     // @LINE:47
     def DeleteAllGameData(): Call = {
       import ReverseRouteContext.empty
@@ -193,7 +199,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
-    // @LINE:48
+    // @LINE:49
     def speciallogout(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "speciallogout")

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes
-// @DATE:Mon Nov 20 23:31:20 EST 2017
+// @DATE:Tue Nov 21 21:10:55 EST 2017
 
 package router
 
@@ -67,6 +67,7 @@ class Routes extends GeneratedRouter {
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """risk""", """controllers.GameController.getMitigationSteps()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """exportReports""", """controllers.DownloadExcelController.exportReports(exportReportInput:String)"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """deleteAllGames""", """controllers.DBController.DeleteAllGameData()"""),
+    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """deleteSingleGames""", """controllers.DBController.DeleteSingleGameData()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """speciallogout""", """controllers.LoginController.speciallogout()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -569,10 +570,27 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:48
-  private[this] lazy val controllers_LoginController_speciallogout29_route: Route.ParamsExtractor = Route("POST",
+  private[this] lazy val controllers_DBController_DeleteSingleGameData29_route: Route.ParamsExtractor = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteSingleGames")))
+  )
+  private[this] lazy val controllers_DBController_DeleteSingleGameData29_invoker = createInvoker(
+    controllers.DBController.DeleteSingleGameData(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DBController",
+      "DeleteSingleGameData",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """deleteSingleGames"""
+    )
+  )
+
+  // @LINE:49
+  private[this] lazy val controllers_LoginController_speciallogout30_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("speciallogout")))
   )
-  private[this] lazy val controllers_LoginController_speciallogout29_invoker = createInvoker(
+  private[this] lazy val controllers_LoginController_speciallogout30_invoker = createInvoker(
     controllers.LoginController.speciallogout(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -763,9 +781,15 @@ class Routes extends GeneratedRouter {
       }
   
     // @LINE:48
-    case controllers_LoginController_speciallogout29_route(params) =>
+    case controllers_DBController_DeleteSingleGameData29_route(params) =>
       call { 
-        controllers_LoginController_speciallogout29_invoker.call(controllers.LoginController.speciallogout())
+        controllers_DBController_DeleteSingleGameData29_invoker.call(controllers.DBController.DeleteSingleGameData())
+      }
+  
+    // @LINE:49
+    case controllers_LoginController_speciallogout30_route(params) =>
+      call { 
+        controllers_LoginController_speciallogout30_invoker.call(controllers.LoginController.speciallogout())
       }
   }
 }

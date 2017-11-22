@@ -539,6 +539,7 @@ if(isAvoided)
         currentOOPS.setBudget(oops.getBudget());
         currentOOPS.setCapabilityPoints(oops.getCapabilityPoints());
         currentOOPS.setCapabilityBonus(oops.getCapabilityBonus());
+        currentOOPS.setmessage(oops.getmessage());
         return false;
 
 
@@ -555,6 +556,7 @@ if(isAvoided)
         currentOOPS.setBudget(oops.getBudget());
         currentOOPS.setCapabilityPoints(oops.getCapabilityPoints());
         currentOOPS.setCapabilityBonus(oops.getCapabilityBonus());
+        currentOOPS.setmessage(oops.getmessage());
 }
 
 
@@ -670,6 +672,7 @@ if(isAvoided)
                     oopsobj.setCapabilityBonus(rs.getInt(Constants.CAPABILITY_BONUS));
                     oopsobj.setCapabilityPoints(rs.getInt(Constants.CAPABILITY_POINTS));
                     oopsobj.setResources(rs.getInt(Constants.PERSONNEL));
+                    oopsobj.setmessage(rs.getString("oops_message"));
                     oopslist.add(oopsobj);
                 }
 

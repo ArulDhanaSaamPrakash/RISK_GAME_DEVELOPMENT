@@ -12,7 +12,15 @@ public class OOPS {
     private int budget;
     private int capabilityPoints;
     private int capabilityBonus;
+    private String message;
 
+public String getmessage() {
+        return message;
+    }
+
+    public void setmessage(String message) {
+        this.message = message;
+    }
 
     public String getId() {
         return id;
