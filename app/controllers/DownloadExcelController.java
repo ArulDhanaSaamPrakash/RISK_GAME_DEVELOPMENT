@@ -219,7 +219,7 @@ public class DownloadExcelController extends Controller {
                     
                     /* Database query to get the Number of moves played*/
                     strQuery = "select max(turn_no) " +
-                    		   "FROM RISK_GAME_DB.game_moves_snapshot " +
+                    		   "FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT " +
                     		   "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
                     		   "and move_type != 'production' ";
                     		
@@ -301,15 +301,15 @@ public class DownloadExcelController extends Controller {
                     rowhead.createCell((short) 2).setCellValue("Status");
                     rowhead.createCell((short) 3).setCellValue("RiskDescription");
                     
-                    strQuery = "SELECT game_player_id,config_risk_mapping.risk_id, "+
+                    strQuery = "SELECT game_player_id,CONFIG_RISK_MAPPING.risk_id, "+
                                "CASE WHEN status=1 THEN \"MITIGATED\" ELSE \"NOT MITIGATED\" END AS STATUS, description "+
                                "FROM RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
-                               "INNER JOIN RISK_GAME_DB.config_risk_mapping config_risk_mapping "+
-                               "ON config_risk_mapping.config_risk_mapping_id=GAME_PLAYER_RISK_STATUS.risk_id "+
+                               "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING "+
+                               "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_id=GAME_PLAYER_RISK_STATUS.risk_id "+
                                "AND game_player_id =" +"\"" + players.get(i) + "\" " +
-                               "INNER JOIN RISK_GAME_DB.risks RISKS "+
-                               "ON RISKS.risk_id=config_risk_mapping.risk_id "+
-                               "order by LENGTH(config_risk_mapping.risk_id), config_risk_mapping.risk_id ";
+                               "INNER JOIN RISK_GAME_DB.RISKS RISKS "+
+                               "ON RISKS.risk_id=CONFIG_RISK_MAPPING.risk_id "+
+                               "order by LENGTH(CONFIG_RISK_MAPPING.risk_id), CONFIG_RISK_MAPPING.risk_id ";
                     
                     rs=st.executeQuery(strQuery);
                  
@@ -353,7 +353,7 @@ public class DownloadExcelController extends Controller {
                                "GAME_MOVES_SNAPSHOT.turn_no as 'OOPS GENERATED TURN NO', "+
                                "null AS 'OOPS AVOIDED', "+
                                "null AS 'OOPS AVOIDED TURN NO' "+
-                               "from risk_game_db.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
+                               "from RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
                                "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING "+
                                "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID "+
                                "AND GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
@@ -381,7 +381,7 @@ public class DownloadExcelController extends Controller {
                                "where temp.GAME_PLAYER_ID= GAME_MOVES_SNAPSHOT.GAME_PLAYER_ID "+
                                "and GAME_MOVES_SNAPSHOT.turn_no>= temp.tur_no ) as 'OOPS AVOIDED', "+
                                "AVOIDED_RISKS.tur_no AS 'OOPS AVOIDED TURN NO' "+
-                               "from risk_game_db.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
+                               "from RISK_GAME_DB.GAME_PLAYER_RISK_STATUS GAME_PLAYER_RISK_STATUS "+
                                "INNER JOIN RISK_GAME_DB.CONFIG_RISK_MAPPING CONFIG_RISK_MAPPING "+
                                "ON CONFIG_RISK_MAPPING.CONFIG_RISK_MAPPING_ID= GAME_PLAYER_RISK_STATUS.RISK_ID "+
                                "AND GAME_PLAYER_RISK_STATUS.GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
@@ -451,12 +451,12 @@ public class DownloadExcelController extends Controller {
                 rowhead.createCell((short) 3).setCellValue("Personnel");
                     
                 /* Database query for fetching risk related information */
-                strQuery="select * from RISK_GAME_DB.risks order by LENGTH(risk_id), risk_id";
+                strQuery="select * from RISK_GAME_DB.RISKS order by LENGTH(risk_id), risk_id";
                              
                 st=con.createStatement();
                 rs=st.executeQuery(strQuery);
                     
-                /* Retrive the data related to risks*/
+                /* Retrive the data related to RISKS*/
                 HSSFRow row;
                 while (rs.next()) {
                     	row = sheetRiskDesc.createRow((short) indexRisk);

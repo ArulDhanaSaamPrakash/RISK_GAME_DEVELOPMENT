@@ -1,11 +1,1 @@
-2017-11-25 22:54:12,697 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
-2017-11-25 22:54:13,057 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-3 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2017-11-25 22:54:27,025 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2017-11-25 22:54:28,914 [WARN] from application in ForkJoinPool-1-worker-1 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 38: user is deprecated, use username instead
-2017-11-25 22:54:28,952 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
-2017-11-25 22:54:30,961 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://msesrv4c-vm.mse.cs.cmu.edu/RISK_GAME_DB
-2017-11-25 22:54:32,240 [INFO] from play.api.libs.concurrent.ActorSystemProvider in ForkJoinPool-1-worker-1 - Starting application default Akka system: application
-2017-11-25 22:54:32,428 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
-2017-11-25 22:54:39,576 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.conf @ file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf: 8: application.secret is deprecated, use play.crypto.secret instead
-2017-11-25 23:31:17,428 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-14 - Shutdown application default Akka system: application
-2017-11-25 23:31:17,623 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-14 - Shutting down connection pool.
+2017-11-26 00:59:40,661 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-2 - Starting application default Akka system: application

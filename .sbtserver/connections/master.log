@@ -1,13 +1,13 @@
-New log file opened at Sat Nov 25 22:53:08 EST 2017 by 2298@Aruls-MacBook-Air.local
-Taking next connection to: 52471
-New client attempting to connect on port: 52472-52471
-  Address = /10.0.0.144:52471
-This client on port 52472 has uuid 8f2f5d68-3ccc-4890-babc-c4827acac78b configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-8f2f5d68-3ccc-4890-babc-c4827acac78b
-Taking next connection to: 52471
-New client attempting to connect on port: 52477-52471
-  Address = /10.0.0.144:52471
-Handshake exception on socket: 52477
+New log file opened at Sun Nov 26 00:59:22 EST 2017 by 3344@Aruls-MacBook-Air.local
+Taking next connection to: 53664
+New client attempting to connect on port: 53665-53664
+  Address = /10.0.0.144:53664
+This client on port 53665 has uuid 0153e097-bcd8-4082-8840-607b94c5d57a configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-0153e097-bcd8-4082-8840-607b94c5d57a
+Taking next connection to: 53664
+New client attempting to connect on port: 53668-53664
+  Address = /10.0.0.144:53664
+Handshake exception on socket: 53668
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -17,45 +17,15 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 52471
-New client attempting to connect on port: 52478-52471
-  Address = /10.0.0.144:52471
-This client on port 52478 has uuid f7bbbf78-ffcd-4f3b-9526-d7109e31a66b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-8f2f5d68-3ccc-4890-babc-c4827acac78b, play-fork-run-f7bbbf78-ffcd-4f3b-9526-d7109e31a66b
-Taking next connection to: 52471
+Taking next connection to: 53664
+New client attempting to connect on port: 53669-53664
+  Address = /10.0.0.144:53664
+This client on port 53669 has uuid 39af6a50-397e-4129-992f-fb029de6c7ce configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-0153e097-bcd8-4082-8840-607b94c5d57a, play-fork-run-39af6a50-397e-4129-992f-fb029de6c7ce
+Taking next connection to: 53664
 Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52471
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 3344@Aruls-MacBook-Air.local logs at Sun Nov 26 01:02:37 EST 2017, goodbye.

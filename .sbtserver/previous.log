@@ -1,5 +1,5 @@
-New log file opened at Sat Nov 25 22:42:45 EST 2017 by 2114@Aruls-MacBook-Air.local
-jvm 2114@Aruls-MacBook-Air.local
+New log file opened at Sat Nov 25 22:53:08 EST 2017 by 2298@Aruls-MacBook-Air.local
+jvm 2298@Aruls-MacBook-Air.local
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.111-b14
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/project, returning: (risk_game_development-build)
 Loading project definition from /Users/Arul/Documents/RISK_GAME_DEVELOPMENT/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@fd817c9, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@18a43d58, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -69,7 +69,7 @@ Set current project to riskgame (in build file:/Users/Arul/Documents/RISK_GAME_D
 > server-handle-next-server-request
 > compile
 Evaluating tasks: compile:compile
-Running task... Cancel: sbt.server.ServerTaskCancellation@35c887af, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@506cc4f3, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -86,12 +86,12 @@ Sources indirectly invalidated by:
 	external source: Set()
 All initially invalidated sources: Set()
 
-Total time: 3 s, completed Nov 25, 2017 10:43:06 PM
+Total time: 3 s, completed Nov 25, 2017 10:53:26 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:discoveredMainClasses
 Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@31fef1a4, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@475e7854, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -108,58 +108,36 @@ Sources indirectly invalidated by:
 	external source: Set()
 All initially invalidated sources: Set()
 
-Total time: 1 s, completed Nov 25, 2017 10:43:07 PM
+Total time: 2 s, completed Nov 25, 2017 10:53:28 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:mainClass
 Evaluating tasks: compile:mainClass
-Running task... Cancel: sbt.server.ServerTaskCancellation@247908cb, check cycles: false
-Total time: 0 s, completed Nov 25, 2017 10:43:07 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/compile:discoveredMainClasses
-Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@c3dbbb3, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Total time: 1 s, completed Nov 25, 2017 10:43:08 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@282e9e83, check cycles: false
+Total time: 0 s, completed Nov 25, 2017 10:53:29 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > backgroundRun
 Evaluating tasks: compile:backgroundRun
-Running task... Cancel: sbt.server.ServerTaskCancellation@5963a0fe, check cycles: false
-Total time: 1 s, completed Nov 25, 2017 10:43:55 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@2a96fa24, check cycles: false
+Total time: 1 s, completed Nov 25, 2017 10:53:58 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkConfig
 Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@281a39b1, check cycles: false
-Total time: 1 s, completed Nov 25, 2017 10:44:05 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@471d25c5, check cycles: false
+Total time: 1 s, completed Nov 25, 2017 10:54:08 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > riskgame/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@493c33dd, check cycles: false
-Total time: 0 s, completed Nov 25, 2017 10:44:10 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@60d669af, check cycles: false
+Total time: 0 s, completed Nov 25, 2017 10:54:13 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@430782d9, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@762b577a, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -179,12 +157,12 @@ All initially invalidated sources: Set()
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 25, 2017 10:44:16 PM
+Total time: 4 s, completed Nov 25, 2017 10:54:26 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@467b02c7, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@45765a7b, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -204,12 +182,12 @@ All initially invalidated sources: Set()
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 3 s, completed Nov 25, 2017 10:44:57 PM
+Total time: 2 s, completed Nov 25, 2017 10:56:05 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@2c703337, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@49e84821, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -229,12 +207,12 @@ All initially invalidated sources: Set()
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 25, 2017 10:45:02 PM
+Total time: 2 s, completed Nov 25, 2017 10:56:11 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@2667ed9c, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@65350ecf, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -254,31 +232,6 @@ All initially invalidated sources: Set()
 Copy resource mappings: 
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
 	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 1 s, completed Nov 25, 2017 10:45:09 PM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/}riskgame/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@33ea7be7, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/application.conf,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/application.conf)
-	(/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/conf/routes,/Users/Arul/Documents/RISK_GAME_DEVELOPMENT/target/scala-2.11/classes/routes)
-Total time: 2 s, completed Nov 25, 2017 10:45:15 PM
+Total time: 2 s, completed Nov 25, 2017 10:56:19 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
