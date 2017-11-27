@@ -218,16 +218,28 @@ public class DownloadExcelController extends Controller {
                     }
                     
                     /* Database query to get the Number of moves played*/
-                    strQuery = "select max(turn_no) " +
+                    /*strQuery = "select max(turn_no) " +
                     		   "FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT " +
                     		   "WHERE GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " +
-                    		   "and move_type != 'production' ";
+                    		   "and move_type != 'production' ";*/
                     		
+                    strQuery = "select "
+                               + "case when "
+                               + "(SELECT count(*) FROM RISK_GAME_DB.GAME_MOVES_SNAPSHOT "
+                               + "where GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " 
+                               + "and move_type='production') >0 "
+                               + "then max(turn_no)+1 "
+                               + "else max(turn_no) "
+                               + "end as turns "
+                               + "from RISK_GAME_DB.GAME_MOVES_SNAPSHOT "
+                               + "where GAME_PLAYER_ID =" +"\"" + players.get(i) + "\" " 
+                               + "and move_type!='production';";
+                               
                     rs=st.executeQuery(strQuery);
                  
                     /* Retrieve timeouts information*/
                     while (rs.next()) {
-                            row.createCell((short) 7).setCellValue(Integer.parseInt(rs.getString(1))+1);
+                            row.createCell((short) 7).setCellValue(Integer.parseInt(rs.getString(1)));
                     }
             }
                 wb.write(GameReport);
