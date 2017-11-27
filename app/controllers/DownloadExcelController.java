@@ -193,9 +193,11 @@ public class DownloadExcelController extends Controller {
                  
                     /* Retrieve all the metrics like average, minimum, maximum, total time and skip turns*/
                     row = sheet.createRow((short) index);
+                    double total_time=0;
                     while (rs.next()) {
                     	    row.createCell((short) 0).setCellValue(players.get(i));
-                            row.createCell((short) 1).setCellValue(rs.getString(1));
+                            // row.createCell((short) 1).setCellValue(rs.getString(1));
+                            total_time= Double.parseDouble(rs.getString(4));
                             row.createCell((short) 2).setCellValue(rs.getString(2));
                             row.createCell((short) 3).setCellValue(rs.getString(3));
                             row.createCell((short) 4).setCellValue(rs.getString(4));
@@ -238,8 +240,11 @@ public class DownloadExcelController extends Controller {
                     rs=st.executeQuery(strQuery);
                  
                     /* Retrieve timeouts information*/
+                    double numberOfSteps=0;
                     while (rs.next()) {
                             row.createCell((short) 7).setCellValue(Integer.parseInt(rs.getString(1)));
+                            numberOfSteps=Integer.parseInt(rs.getString(1));
+                            row.createCell((short) 1).setCellValue(total_time/numberOfSteps);
                     }
             }
                 wb.write(GameReport);
